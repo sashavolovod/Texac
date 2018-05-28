@@ -57,6 +57,14 @@
             this.NТабельный = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ФИО = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Должность = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nТабельныйDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.сокрНазваниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.работаетDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.подраздDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsEmployee = new System.Windows.Forms.BindingSource(this.components);
+            this.dataDataSet = new Texac.dataDataSet();
             this.bnEmployee = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -70,6 +78,14 @@
             this.cbEmployee = new System.Windows.Forms.ToolStripComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvTrebovania = new System.Windows.Forms.DataGridView();
+            this.trebovanieIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.docNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.docDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.scladDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zakazchikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsTrebovania = new System.Windows.Forms.BindingSource(this.components);
             this.bnTrebovania = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -81,38 +97,28 @@
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAdd = new System.Windows.Forms.ToolStripButton();
-            this.nТабельныйDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.сокрНазваниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.работаетDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.подраздDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsEmployee = new System.Windows.Forms.BindingSource(this.components);
-            this.dataDataSet = new Texac.dataDataSet();
-            this.bsTrebovania = new System.Windows.Forms.BindingSource(this.components);
             this.taEmployee = new Texac.dataDataSetTableAdapters.РаботникиViewTableAdapter();
             this.tableAdapterManager = new Texac.dataDataSetTableAdapters.TableAdapterManager();
             this.taTrebovania = new Texac.dataDataSetTableAdapters.TrebovaniaViewTableAdapter();
-            this.trebovanieIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.docNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.docDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scladDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zakazchikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsTrebovaniaDgv = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.miOpenTrebovanie = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьТребованияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьПустоеТребованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьТребованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmploeyes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnEmployee)).BeginInit();
             this.bnEmployee.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrebovania)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTrebovania)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnTrebovania)).BeginInit();
             this.bnTrebovania.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsEmployee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsTrebovania)).BeginInit();
+            this.cmsTrebovaniaDgv.SuspendLayout();
             this.SuspendLayout();
             // 
             // ssStatusStrip
@@ -321,6 +327,58 @@
             this.Должность.Name = "Должность";
             this.Должность.ReadOnly = true;
             // 
+            // nТабельныйDataGridViewTextBoxColumn
+            // 
+            this.nТабельныйDataGridViewTextBoxColumn.DataPropertyName = "NТабельный";
+            this.nТабельныйDataGridViewTextBoxColumn.HeaderText = "NТабельный";
+            this.nТабельныйDataGridViewTextBoxColumn.Name = "nТабельныйDataGridViewTextBoxColumn";
+            this.nТабельныйDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // фИОDataGridViewTextBoxColumn
+            // 
+            this.фИОDataGridViewTextBoxColumn.DataPropertyName = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.фИОDataGridViewTextBoxColumn.Name = "фИОDataGridViewTextBoxColumn";
+            this.фИОDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // названиеDataGridViewTextBoxColumn
+            // 
+            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
+            this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // сокрНазваниеDataGridViewTextBoxColumn
+            // 
+            this.сокрНазваниеDataGridViewTextBoxColumn.DataPropertyName = "СокрНазвание";
+            this.сокрНазваниеDataGridViewTextBoxColumn.HeaderText = "СокрНазвание";
+            this.сокрНазваниеDataGridViewTextBoxColumn.Name = "сокрНазваниеDataGridViewTextBoxColumn";
+            this.сокрНазваниеDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // работаетDataGridViewCheckBoxColumn
+            // 
+            this.работаетDataGridViewCheckBoxColumn.DataPropertyName = "Работает";
+            this.работаетDataGridViewCheckBoxColumn.HeaderText = "Работает";
+            this.работаетDataGridViewCheckBoxColumn.Name = "работаетDataGridViewCheckBoxColumn";
+            this.работаетDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // подраздDataGridViewTextBoxColumn
+            // 
+            this.подраздDataGridViewTextBoxColumn.DataPropertyName = "Подразд";
+            this.подраздDataGridViewTextBoxColumn.HeaderText = "Подразд";
+            this.подраздDataGridViewTextBoxColumn.Name = "подраздDataGridViewTextBoxColumn";
+            this.подраздDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsEmployee
+            // 
+            this.bsEmployee.DataMember = "РаботникиView";
+            this.bsEmployee.DataSource = this.dataDataSet;
+            // 
+            // dataDataSet
+            // 
+            this.dataDataSet.DataSetName = "dataDataSet";
+            this.dataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // bnEmployee
             // 
             this.bnEmployee.AddNewItem = null;
@@ -469,6 +527,64 @@
             this.dgvTrebovania.TabIndex = 5;
             this.dgvTrebovania.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrebovania_CellDoubleClick);
             // 
+            // trebovanieIdDataGridViewTextBoxColumn
+            // 
+            this.trebovanieIdDataGridViewTextBoxColumn.DataPropertyName = "TrebovanieId";
+            this.trebovanieIdDataGridViewTextBoxColumn.HeaderText = "№";
+            this.trebovanieIdDataGridViewTextBoxColumn.Name = "trebovanieIdDataGridViewTextBoxColumn";
+            this.trebovanieIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // docNumberDataGridViewTextBoxColumn
+            // 
+            this.docNumberDataGridViewTextBoxColumn.DataPropertyName = "DocNumber";
+            this.docNumberDataGridViewTextBoxColumn.HeaderText = "Номер требования";
+            this.docNumberDataGridViewTextBoxColumn.Name = "docNumberDataGridViewTextBoxColumn";
+            this.docNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // docDateDataGridViewTextBoxColumn
+            // 
+            this.docDateDataGridViewTextBoxColumn.DataPropertyName = "DocDate";
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.docDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.docDateDataGridViewTextBoxColumn.HeaderText = "Дата требования";
+            this.docDateDataGridViewTextBoxColumn.Name = "docDateDataGridViewTextBoxColumn";
+            this.docDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // scladDataGridViewTextBoxColumn
+            // 
+            this.scladDataGridViewTextBoxColumn.DataPropertyName = "Sclad";
+            this.scladDataGridViewTextBoxColumn.HeaderText = "Склад";
+            this.scladDataGridViewTextBoxColumn.Name = "scladDataGridViewTextBoxColumn";
+            this.scladDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // zakazchikDataGridViewTextBoxColumn
+            // 
+            this.zakazchikDataGridViewTextBoxColumn.DataPropertyName = "Zakazchik";
+            this.zakazchikDataGridViewTextBoxColumn.HeaderText = "Заказчик";
+            this.zakazchikDataGridViewTextBoxColumn.Name = "zakazchikDataGridViewTextBoxColumn";
+            this.zakazchikDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // OrderNumber
+            // 
+            this.OrderNumber.DataPropertyName = "OrderNumber";
+            this.OrderNumber.HeaderText = "№ заказа";
+            this.OrderNumber.Name = "OrderNumber";
+            this.OrderNumber.ReadOnly = true;
+            // 
+            // bsTrebovania
+            // 
+            this.bsTrebovania.DataMember = "TrebovaniaView";
+            this.bsTrebovania.DataSource = this.dataDataSet;
+            // 
             // bnTrebovania
             // 
             this.bnTrebovania.AddNewItem = null;
@@ -574,63 +690,6 @@
             this.btnAdd.Text = "Добавить требования";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // nТабельныйDataGridViewTextBoxColumn
-            // 
-            this.nТабельныйDataGridViewTextBoxColumn.DataPropertyName = "NТабельный";
-            this.nТабельныйDataGridViewTextBoxColumn.HeaderText = "NТабельный";
-            this.nТабельныйDataGridViewTextBoxColumn.Name = "nТабельныйDataGridViewTextBoxColumn";
-            this.nТабельныйDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // фИОDataGridViewTextBoxColumn
-            // 
-            this.фИОDataGridViewTextBoxColumn.DataPropertyName = "ФИО";
-            this.фИОDataGridViewTextBoxColumn.HeaderText = "ФИО";
-            this.фИОDataGridViewTextBoxColumn.Name = "фИОDataGridViewTextBoxColumn";
-            this.фИОDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // названиеDataGridViewTextBoxColumn
-            // 
-            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
-            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
-            this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // сокрНазваниеDataGridViewTextBoxColumn
-            // 
-            this.сокрНазваниеDataGridViewTextBoxColumn.DataPropertyName = "СокрНазвание";
-            this.сокрНазваниеDataGridViewTextBoxColumn.HeaderText = "СокрНазвание";
-            this.сокрНазваниеDataGridViewTextBoxColumn.Name = "сокрНазваниеDataGridViewTextBoxColumn";
-            this.сокрНазваниеDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // работаетDataGridViewCheckBoxColumn
-            // 
-            this.работаетDataGridViewCheckBoxColumn.DataPropertyName = "Работает";
-            this.работаетDataGridViewCheckBoxColumn.HeaderText = "Работает";
-            this.работаетDataGridViewCheckBoxColumn.Name = "работаетDataGridViewCheckBoxColumn";
-            this.работаетDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // подраздDataGridViewTextBoxColumn
-            // 
-            this.подраздDataGridViewTextBoxColumn.DataPropertyName = "Подразд";
-            this.подраздDataGridViewTextBoxColumn.HeaderText = "Подразд";
-            this.подраздDataGridViewTextBoxColumn.Name = "подраздDataGridViewTextBoxColumn";
-            this.подраздDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bsEmployee
-            // 
-            this.bsEmployee.DataMember = "РаботникиView";
-            this.bsEmployee.DataSource = this.dataDataSet;
-            // 
-            // dataDataSet
-            // 
-            this.dataDataSet.DataSetName = "dataDataSet";
-            this.dataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bsTrebovania
-            // 
-            this.bsTrebovania.DataMember = "TrebovaniaView";
-            this.bsTrebovania.DataSource = this.dataDataSet;
-            // 
             // taEmployee
             // 
             this.taEmployee.ClearBeforeFill = true;
@@ -649,58 +708,39 @@
             // 
             this.taTrebovania.ClearBeforeFill = true;
             // 
-            // trebovanieIdDataGridViewTextBoxColumn
+            // cmsTrebovaniaDgv
             // 
-            this.trebovanieIdDataGridViewTextBoxColumn.DataPropertyName = "TrebovanieId";
-            this.trebovanieIdDataGridViewTextBoxColumn.HeaderText = "№";
-            this.trebovanieIdDataGridViewTextBoxColumn.Name = "trebovanieIdDataGridViewTextBoxColumn";
-            this.trebovanieIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cmsTrebovaniaDgv.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miOpenTrebovanie,
+            this.добавитьТребованияToolStripMenuItem,
+            this.создатьПустоеТребованиеToolStripMenuItem,
+            this.удалитьТребованиеToolStripMenuItem});
+            this.cmsTrebovaniaDgv.Name = "cmsTrebovaniaDgv";
+            this.cmsTrebovaniaDgv.Size = new System.Drawing.Size(225, 114);
             // 
-            // docNumberDataGridViewTextBoxColumn
+            // miOpenTrebovanie
             // 
-            this.docNumberDataGridViewTextBoxColumn.DataPropertyName = "DocNumber";
-            this.docNumberDataGridViewTextBoxColumn.HeaderText = "Номер требования";
-            this.docNumberDataGridViewTextBoxColumn.Name = "docNumberDataGridViewTextBoxColumn";
-            this.docNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.miOpenTrebovanie.Name = "miOpenTrebovanie";
+            this.miOpenTrebovanie.Size = new System.Drawing.Size(224, 22);
+            this.miOpenTrebovanie.Text = "Открыть...";
             // 
-            // docDateDataGridViewTextBoxColumn
+            // добавитьТребованияToolStripMenuItem
             // 
-            this.docDateDataGridViewTextBoxColumn.DataPropertyName = "DocDate";
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.docDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.docDateDataGridViewTextBoxColumn.HeaderText = "Дата требования";
-            this.docDateDataGridViewTextBoxColumn.Name = "docDateDataGridViewTextBoxColumn";
-            this.docDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.добавитьТребованияToolStripMenuItem.Name = "добавитьТребованияToolStripMenuItem";
+            this.добавитьТребованияToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.добавитьТребованияToolStripMenuItem.Text = "Добавить требования";
             // 
-            // scladDataGridViewTextBoxColumn
+            // создатьПустоеТребованиеToolStripMenuItem
             // 
-            this.scladDataGridViewTextBoxColumn.DataPropertyName = "Sclad";
-            this.scladDataGridViewTextBoxColumn.HeaderText = "Склад";
-            this.scladDataGridViewTextBoxColumn.Name = "scladDataGridViewTextBoxColumn";
-            this.scladDataGridViewTextBoxColumn.ReadOnly = true;
+            this.создатьПустоеТребованиеToolStripMenuItem.Name = "создатьПустоеТребованиеToolStripMenuItem";
+            this.создатьПустоеТребованиеToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.создатьПустоеТребованиеToolStripMenuItem.Text = "Создать пустое требование";
             // 
-            // zakazchikDataGridViewTextBoxColumn
+            // удалитьТребованиеToolStripMenuItem
             // 
-            this.zakazchikDataGridViewTextBoxColumn.DataPropertyName = "Zakazchik";
-            this.zakazchikDataGridViewTextBoxColumn.HeaderText = "Заказчик";
-            this.zakazchikDataGridViewTextBoxColumn.Name = "zakazchikDataGridViewTextBoxColumn";
-            this.zakazchikDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // OrderNumber
-            // 
-            this.OrderNumber.DataPropertyName = "OrderNumber";
-            this.OrderNumber.HeaderText = "№ заказа";
-            this.OrderNumber.Name = "OrderNumber";
-            this.OrderNumber.ReadOnly = true;
+            this.удалитьТребованиеToolStripMenuItem.Name = "удалитьТребованиеToolStripMenuItem";
+            this.удалитьТребованиеToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.удалитьТребованиеToolStripMenuItem.Text = "Удалить требование";
             // 
             // MainForm
             // 
@@ -721,18 +761,19 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmploeyes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnEmployee)).EndInit();
             this.bnEmployee.ResumeLayout(false);
             this.bnEmployee.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrebovania)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTrebovania)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnTrebovania)).EndInit();
             this.bnTrebovania.ResumeLayout(false);
             this.bnTrebovania.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsEmployee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsTrebovania)).EndInit();
+            this.cmsTrebovaniaDgv.ResumeLayout(false);
             ((System.Configuration.IPersistComponentSettings)(this)).LoadComponentSettings();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -807,6 +848,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn docDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn docNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn trebovanieIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ContextMenuStrip cmsTrebovaniaDgv;
+        private System.Windows.Forms.ToolStripMenuItem miOpenTrebovanie;
+        private System.Windows.Forms.ToolStripMenuItem добавитьТребованияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem создатьПустоеТребованиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьТребованиеToolStripMenuItem;
     }
 }
 
