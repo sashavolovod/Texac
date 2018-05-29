@@ -134,5 +134,32 @@ namespace Texac
                 conn.Close();
         }
 
+        private void actDelTrebovanie_Click(object sender, EventArgs e)
+        {
+            if (bsTrebovania.Position >= 0)
+            {
+                dataDataSet.TrebovaniaViewRow row = (dataDataSet.TrebovaniaViewRow)((DataRowView)bsTrebovania.Current).Row;
+                if (MessageBox.Show("Вы действительно хоите удалить требование " + row.DocNumber.ToString() +"?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    
+                    OleDbCommand cmd = new OleDbCommand("DELETE FROM tblTrebovanie WHERE TrebovanieId = ?", conn);
+                    cmd.Parameters.AddWithValue("TrebovanieId", row.TrebovanieId);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    UpdateTable();
+                }    
+            }
+        }
+
+        private void dgvTrebovania_MouseDown(object sender, MouseEventArgs e)
+        {
+            var hti = dgvTrebovania.HitTest(e.X, e.Y);
+            if (hti.RowIndex >= 0)
+            {
+                dgvTrebovania.ClearSelection();
+                dgvTrebovania.CurrentCell = dgvTrebovania[hti.ColumnIndex, hti.RowIndex];
+            }
+        }
     }
 }

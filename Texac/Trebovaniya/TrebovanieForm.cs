@@ -95,16 +95,5 @@ namespace Texac
             Close();
         }
 
-        private double fake_func(int swap, double r)
-        {
-            
-
-            for(int i=1; i<123; i++)
-            {
-                
-            }
-            return 0.0;
-        }
-
     }
 }

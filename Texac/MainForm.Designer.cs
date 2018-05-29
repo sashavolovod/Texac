@@ -85,6 +85,11 @@
             this.zakazchikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmsTrebovaniaDgv = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.miOpenTrebovanie = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьТребованияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьПустоеТребованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actDelTrebovanie = new System.Windows.Forms.ToolStripMenuItem();
             this.bsTrebovania = new System.Windows.Forms.BindingSource(this.components);
             this.bnTrebovania = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -100,11 +105,6 @@
             this.taEmployee = new Texac.dataDataSetTableAdapters.РаботникиViewTableAdapter();
             this.tableAdapterManager = new Texac.dataDataSetTableAdapters.TableAdapterManager();
             this.taTrebovania = new Texac.dataDataSetTableAdapters.TrebovaniaViewTableAdapter();
-            this.cmsTrebovaniaDgv = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.miOpenTrebovanie = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьТребованияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьПустоеТребованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьТребованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -115,10 +115,10 @@
             this.bnEmployee.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrebovania)).BeginInit();
+            this.cmsTrebovaniaDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrebovania)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnTrebovania)).BeginInit();
             this.bnTrebovania.SuspendLayout();
-            this.cmsTrebovaniaDgv.SuspendLayout();
             this.SuspendLayout();
             // 
             // ssStatusStrip
@@ -517,6 +517,7 @@
             this.zakazchikDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn,
             this.OrderNumber});
+            this.dgvTrebovania.ContextMenuStrip = this.cmsTrebovaniaDgv;
             this.dgvTrebovania.DataSource = this.bsTrebovania;
             this.dgvTrebovania.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTrebovania.Location = new System.Drawing.Point(3, 28);
@@ -526,6 +527,7 @@
             this.dgvTrebovania.Size = new System.Drawing.Size(836, 443);
             this.dgvTrebovania.TabIndex = 5;
             this.dgvTrebovania.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrebovania_CellDoubleClick);
+            this.dgvTrebovania.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvTrebovania_MouseDown);
             // 
             // trebovanieIdDataGridViewTextBoxColumn
             // 
@@ -579,6 +581,42 @@
             this.OrderNumber.HeaderText = "№ заказа";
             this.OrderNumber.Name = "OrderNumber";
             this.OrderNumber.ReadOnly = true;
+            // 
+            // cmsTrebovaniaDgv
+            // 
+            this.cmsTrebovaniaDgv.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miOpenTrebovanie,
+            this.добавитьТребованияToolStripMenuItem,
+            this.создатьПустоеТребованиеToolStripMenuItem,
+            this.actDelTrebovanie});
+            this.cmsTrebovaniaDgv.Name = "cmsTrebovaniaDgv";
+            this.cmsTrebovaniaDgv.Size = new System.Drawing.Size(225, 92);
+            // 
+            // miOpenTrebovanie
+            // 
+            this.miOpenTrebovanie.Name = "miOpenTrebovanie";
+            this.miOpenTrebovanie.Size = new System.Drawing.Size(224, 22);
+            this.miOpenTrebovanie.Text = "Открыть...";
+            // 
+            // добавитьТребованияToolStripMenuItem
+            // 
+            this.добавитьТребованияToolStripMenuItem.Name = "добавитьТребованияToolStripMenuItem";
+            this.добавитьТребованияToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.добавитьТребованияToolStripMenuItem.Text = "Добавить требования";
+            this.добавитьТребованияToolStripMenuItem.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // создатьПустоеТребованиеToolStripMenuItem
+            // 
+            this.создатьПустоеТребованиеToolStripMenuItem.Name = "создатьПустоеТребованиеToolStripMenuItem";
+            this.создатьПустоеТребованиеToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.создатьПустоеТребованиеToolStripMenuItem.Text = "Создать пустое требование";
+            // 
+            // actDelTrebovanie
+            // 
+            this.actDelTrebovanie.Name = "actDelTrebovanie";
+            this.actDelTrebovanie.Size = new System.Drawing.Size(224, 22);
+            this.actDelTrebovanie.Text = "Удалить требование...";
+            this.actDelTrebovanie.Click += new System.EventHandler(this.actDelTrebovanie_Click);
             // 
             // bsTrebovania
             // 
@@ -708,40 +746,6 @@
             // 
             this.taTrebovania.ClearBeforeFill = true;
             // 
-            // cmsTrebovaniaDgv
-            // 
-            this.cmsTrebovaniaDgv.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miOpenTrebovanie,
-            this.добавитьТребованияToolStripMenuItem,
-            this.создатьПустоеТребованиеToolStripMenuItem,
-            this.удалитьТребованиеToolStripMenuItem});
-            this.cmsTrebovaniaDgv.Name = "cmsTrebovaniaDgv";
-            this.cmsTrebovaniaDgv.Size = new System.Drawing.Size(225, 114);
-            // 
-            // miOpenTrebovanie
-            // 
-            this.miOpenTrebovanie.Name = "miOpenTrebovanie";
-            this.miOpenTrebovanie.Size = new System.Drawing.Size(224, 22);
-            this.miOpenTrebovanie.Text = "Открыть...";
-            // 
-            // добавитьТребованияToolStripMenuItem
-            // 
-            this.добавитьТребованияToolStripMenuItem.Name = "добавитьТребованияToolStripMenuItem";
-            this.добавитьТребованияToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.добавитьТребованияToolStripMenuItem.Text = "Добавить требования";
-            // 
-            // создатьПустоеТребованиеToolStripMenuItem
-            // 
-            this.создатьПустоеТребованиеToolStripMenuItem.Name = "создатьПустоеТребованиеToolStripMenuItem";
-            this.создатьПустоеТребованиеToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.создатьПустоеТребованиеToolStripMenuItem.Text = "Создать пустое требование";
-            // 
-            // удалитьТребованиеToolStripMenuItem
-            // 
-            this.удалитьТребованиеToolStripMenuItem.Name = "удалитьТребованиеToolStripMenuItem";
-            this.удалитьТребованиеToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.удалитьТребованиеToolStripMenuItem.Text = "Удалить требование";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -769,11 +773,11 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrebovania)).EndInit();
+            this.cmsTrebovaniaDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsTrebovania)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnTrebovania)).EndInit();
             this.bnTrebovania.ResumeLayout(false);
             this.bnTrebovania.PerformLayout();
-            this.cmsTrebovaniaDgv.ResumeLayout(false);
             ((System.Configuration.IPersistComponentSettings)(this)).LoadComponentSettings();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -852,7 +856,7 @@
         private System.Windows.Forms.ToolStripMenuItem miOpenTrebovanie;
         private System.Windows.Forms.ToolStripMenuItem добавитьТребованияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьПустоеТребованиеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem удалитьТребованиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem actDelTrebovanie;
     }
 }
 
