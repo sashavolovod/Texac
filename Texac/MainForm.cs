@@ -155,7 +155,7 @@ namespace Texac
         private void dgvTrebovania_MouseDown(object sender, MouseEventArgs e)
         {
             var hti = dgvTrebovania.HitTest(e.X, e.Y);
-            if (hti.RowIndex >= 0)
+            if (hti.RowIndex >= 0 && hti.ColumnIndex>=0)
             {
                 dgvTrebovania.ClearSelection();
                 dgvTrebovania.CurrentCell = dgvTrebovania[hti.ColumnIndex, hti.RowIndex];
