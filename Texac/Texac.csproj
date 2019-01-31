@@ -112,6 +112,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dataDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Employees\EmployeeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Employees\EmployeeList.Designer.cs">
+      <DependentUpon>EmployeeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,12 @@
     <Compile Include="Trebovaniya\TrebovanieForm.Designer.cs">
       <DependentUpon>TrebovanieForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trebovaniya\TrebovanieList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Trebovaniya\TrebovanieList.Designer.cs">
+      <DependentUpon>TrebovanieList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trebovaniya\TrebovanieReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +177,9 @@
     <Compile Include="Trebovaniya\OrderTypeForm.Designer.cs">
       <DependentUpon>OrderTypeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Employees\EmployeeList.resx">
+      <DependentUpon>EmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +203,9 @@
     <EmbeddedResource Include="Reports\Trebovanie.rdlc" />
     <EmbeddedResource Include="Trebovaniya\TrebovanieForm.resx">
       <DependentUpon>TrebovanieForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trebovaniya\TrebovanieList.resx">
+      <DependentUpon>TrebovanieList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trebovaniya\TrebovanieReportForm.resx">
       <DependentUpon>TrebovanieReportForm.cs</DependentUpon>
@@ -290,6 +308,12 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
