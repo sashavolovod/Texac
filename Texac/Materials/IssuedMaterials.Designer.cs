@@ -30,14 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssuedMaterials));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.tbOrderNumber = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvMaterialReportDetails = new System.Windows.Forms.DataGridView();
-            this.materialReportDetailsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsIssuedMaterialsView = new System.Windows.Forms.BindingSource(this.components);
+            this.dataDataSet = new Texac.dataDataSet();
+            this.issuedMaterialsViewBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -47,32 +57,15 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialReportDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataDataSet = new Texac.dataDataSet();
-            this.taMaterialReportDetails = new Texac.dataDataSetTableAdapters.MaterialReportDetailsTableAdapter();
+            this.issuedMaterialsViewBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.tableAdapterManager = new Texac.dataDataSetTableAdapters.TableAdapterManager();
+            this.taIssuedMaterialsView = new Texac.dataDataSetTableAdapters.IssuedMaterialsViewTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterialReportDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialReportDetailsBindingNavigator)).BeginInit();
-            this.materialReportDetailsBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.materialReportDetailsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsIssuedMaterialsView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.issuedMaterialsViewBindingNavigator)).BeginInit();
+            this.issuedMaterialsViewBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -111,10 +104,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dgvMaterialReportDetails);
-            this.panel1.Controls.Add(this.materialReportDetailsBindingNavigator);
+            this.panel1.Controls.Add(this.issuedMaterialsViewBindingNavigator);
             this.panel1.Location = new System.Drawing.Point(3, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(857, 380);
+            this.panel1.Size = new System.Drawing.Size(857, 392);
             this.panel1.TabIndex = 3;
             // 
             // dgvMaterialReportDetails
@@ -122,17 +115,17 @@
             this.dgvMaterialReportDetails.AllowUserToAddRows = false;
             this.dgvMaterialReportDetails.AllowUserToDeleteRows = false;
             this.dgvMaterialReportDetails.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvMaterialReportDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvMaterialReportDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMaterialReportDetails.AutoGenerateColumns = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMaterialReportDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMaterialReportDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMaterialReportDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMaterialReportDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -142,30 +135,97 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewTextBoxColumn15});
-            this.dgvMaterialReportDetails.DataSource = this.materialReportDetailsBindingSource;
+            this.dataGridViewTextBoxColumn8});
+            this.dgvMaterialReportDetails.DataSource = this.bsIssuedMaterialsView;
             this.dgvMaterialReportDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMaterialReportDetails.Location = new System.Drawing.Point(0, 25);
             this.dgvMaterialReportDetails.Name = "dgvMaterialReportDetails";
             this.dgvMaterialReportDetails.ReadOnly = true;
-            this.dgvMaterialReportDetails.Size = new System.Drawing.Size(857, 355);
+            this.dgvMaterialReportDetails.Size = new System.Drawing.Size(857, 367);
             this.dgvMaterialReportDetails.TabIndex = 0;
+            this.dgvMaterialReportDetails.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvMaterialReportDetails_CellFormatting);
             // 
-            // materialReportDetailsBindingNavigator
+            // dataGridViewTextBoxColumn1
             // 
-            this.materialReportDetailsBindingNavigator.AddNewItem = null;
-            this.materialReportDetailsBindingNavigator.BindingSource = this.materialReportDetailsBindingSource;
-            this.materialReportDetailsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.materialReportDetailsBindingNavigator.DeleteItem = null;
-            this.materialReportDetailsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CardNumber";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Номер карточки";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "OrderNumber";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Номер заказа";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "OrderNumberBooker";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Номер заказа по бух";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "MaterialName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Наименование материала";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Unit";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Ед. изм.";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Sum-IncomeQty";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Приход";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "NormQty";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Норма";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Sum-OutgoQty";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Расход";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 75;
+            // 
+            // bsIssuedMaterialsView
+            // 
+            this.bsIssuedMaterialsView.DataMember = "IssuedMaterialsView";
+            this.bsIssuedMaterialsView.DataSource = this.dataDataSet;
+            // 
+            // dataDataSet
+            // 
+            this.dataDataSet.DataSetName = "dataDataSet";
+            this.dataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // issuedMaterialsViewBindingNavigator
+            // 
+            this.issuedMaterialsViewBindingNavigator.AddNewItem = null;
+            this.issuedMaterialsViewBindingNavigator.BindingSource = this.bsIssuedMaterialsView;
+            this.issuedMaterialsViewBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.issuedMaterialsViewBindingNavigator.DeleteItem = null;
+            this.issuedMaterialsViewBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -174,17 +234,18 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
-            this.materialReportDetailsBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.materialReportDetailsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.materialReportDetailsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.materialReportDetailsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.materialReportDetailsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.materialReportDetailsBindingNavigator.Name = "materialReportDetailsBindingNavigator";
-            this.materialReportDetailsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.materialReportDetailsBindingNavigator.Size = new System.Drawing.Size(857, 25);
-            this.materialReportDetailsBindingNavigator.TabIndex = 5;
-            this.materialReportDetailsBindingNavigator.Text = "bindingNavigator1";
+            this.bindingNavigatorSeparator2,
+            this.issuedMaterialsViewBindingNavigatorSaveItem});
+            this.issuedMaterialsViewBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.issuedMaterialsViewBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.issuedMaterialsViewBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.issuedMaterialsViewBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.issuedMaterialsViewBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.issuedMaterialsViewBindingNavigator.Name = "issuedMaterialsViewBindingNavigator";
+            this.issuedMaterialsViewBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.issuedMaterialsViewBindingNavigator.Size = new System.Drawing.Size(857, 25);
+            this.issuedMaterialsViewBindingNavigator.TabIndex = 5;
+            this.issuedMaterialsViewBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
@@ -253,158 +314,29 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // dataGridViewTextBoxColumn1
+            // issuedMaterialsViewBindingNavigatorSaveItem
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaterialDetailID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "MaterialDetailID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ReportID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ReportID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CardNumber";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Номер карточки";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "OrderNumber";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Номер заказа";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "OrderNumberBooker";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Номер по бухгалтерии";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "MaterialName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Наименование материала";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Unit";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Ед. изм";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "StartBalanceQty";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Ост. на нач.";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "IncomeQty";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Приход";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "NormQty";
-            this.dataGridViewTextBoxColumn10.HeaderText = "По норме";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "LastPeriodOutgoQty";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Расход в пред. период";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "OutgoQty";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Расход в тек. периоде";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "EndBalanceQty";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Остаток на конец отч. периода";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Temp";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Temp";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Visible = false;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Deleted";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Deleted";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "TimeStamp";
-            this.dataGridViewTextBoxColumn15.HeaderText = "TimeStamp";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Visible = false;
-            // 
-            // materialReportDetailsBindingSource
-            // 
-            this.materialReportDetailsBindingSource.DataMember = "MaterialReportDetails";
-            this.materialReportDetailsBindingSource.DataSource = this.dataDataSet;
-            // 
-            // dataDataSet
-            // 
-            this.dataDataSet.DataSetName = "dataDataSet";
-            this.dataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // taMaterialReportDetails
-            // 
-            this.taMaterialReportDetails.ClearBeforeFill = true;
+            this.issuedMaterialsViewBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.issuedMaterialsViewBindingNavigatorSaveItem.Enabled = false;
+            this.issuedMaterialsViewBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("issuedMaterialsViewBindingNavigatorSaveItem.Image")));
+            this.issuedMaterialsViewBindingNavigatorSaveItem.Name = "issuedMaterialsViewBindingNavigatorSaveItem";
+            this.issuedMaterialsViewBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.issuedMaterialsViewBindingNavigatorSaveItem.Text = "Save Data";
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.MaterialReportDetailsTableAdapter = this.taMaterialReportDetails;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.MaterialReportDetailsTableAdapter = null;
             this.tableAdapterManager.TrebovanieDetailsTableAdapter = null;
             this.tableAdapterManager.TrebovanieTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Texac.dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ВидыПрофессиийTableAdapter = null;
             this.tableAdapterManager.РаботникиЦехаTableAdapter = null;
+            // 
+            // taIssuedMaterialsView
+            // 
+            this.taIssuedMaterialsView.ClearBeforeFill = true;
             // 
             // IssuedMaterials
             // 
@@ -415,15 +347,15 @@
             this.Controls.Add(this.tbOrderNumber);
             this.Controls.Add(this.label1);
             this.Name = "IssuedMaterials";
-            this.Size = new System.Drawing.Size(863, 434);
+            this.Size = new System.Drawing.Size(863, 446);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterialReportDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialReportDetailsBindingNavigator)).EndInit();
-            this.materialReportDetailsBindingNavigator.ResumeLayout(false);
-            this.materialReportDetailsBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.materialReportDetailsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsIssuedMaterialsView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.issuedMaterialsViewBindingNavigator)).EndInit();
+            this.issuedMaterialsViewBindingNavigator.ResumeLayout(false);
+            this.issuedMaterialsViewBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,11 +367,12 @@
         private System.Windows.Forms.TextBox tbOrderNumber;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel panel1;
-        private dataDataSet dataDataSet;
-        private System.Windows.Forms.BindingSource materialReportDetailsBindingSource;
-        private dataDataSetTableAdapters.MaterialReportDetailsTableAdapter taMaterialReportDetails;
-        private dataDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView dgvMaterialReportDetails;
+        private System.Windows.Forms.BindingSource bsIssuedMaterialsView;
+        private System.Windows.Forms.BindingNavigator issuedMaterialsViewBindingNavigator;
+        private System.Windows.Forms.ToolStripButton issuedMaterialsViewBindingNavigatorSaveItem;
+        private dataDataSetTableAdapters.IssuedMaterialsViewTableAdapter issuedMaterialsViewTableAdapter;
+        private dataDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
@@ -449,15 +382,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.BindingNavigator materialReportDetailsBindingNavigator;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private dataDataSet dataDataSet;
+        private dataDataSetTableAdapters.IssuedMaterialsViewTableAdapter taIssuedMaterialsView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;

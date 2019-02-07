@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Drawing;
 
 namespace Texac.Materials
 {
@@ -21,16 +22,16 @@ namespace Texac.Materials
 
             OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.connStr);
             conn.Open();
-            taMaterialReportDetails.Connection = conn;
+            taIssuedMaterialsView.Connection = conn;
 
             if (orderNumber.Contains("-") || orderNumber.Contains("/"))
             {
-                taMaterialReportDetails.FillByOrderNumberBooker(dataDataSet.MaterialReportDetails, orderNumber);
+                taIssuedMaterialsView.FillByOrderNumberBooker(dataDataSet.IssuedMaterialsView, orderNumber);
             }
             else
             {
                 Int32.TryParse(orderNumber, out id);
-                taMaterialReportDetails.FillByOrderNumber(dataDataSet.MaterialReportDetails, id);
+                taIssuedMaterialsView.FillByOrderNumber(dataDataSet.IssuedMaterialsView, id);
             }
            
             conn.Close();
@@ -48,6 +49,25 @@ namespace Texac.Materials
         public void selectTextBox()
         {
             tbOrderNumber.Focus();
+        }
+
+        private void dgvMaterialReportDetails_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            double v1;
+            double v2;
+            DataGridViewRow  row = dgvMaterialReportDetails.Rows[e.RowIndex];
+
+            if(!double.TryParse(row.Cells[6].Value.ToString(), out v1))
+                v1=0.0;
+
+            if (!double.TryParse(row.Cells[7].Value.ToString(), out v2))
+                v2 = 0.0;
+
+            if (v1 != v2)
+            {
+                e.CellStyle.ForeColor = System.Drawing.Color.Maroon;
+                e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold);
+            }
         }
     }
 }
