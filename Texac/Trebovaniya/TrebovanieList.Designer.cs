@@ -166,7 +166,7 @@
             this.создатьПустоеТребованиеToolStripMenuItem,
             this.actDelTrebovanie});
             this.cmsTrebovaniaDgv.Name = "cmsTrebovaniaDgv";
-            this.cmsTrebovaniaDgv.Size = new System.Drawing.Size(225, 114);
+            this.cmsTrebovaniaDgv.Size = new System.Drawing.Size(225, 92);
             // 
             // miOpenTrebovanie
             // 
@@ -312,6 +312,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(130, 22);
             this.btnAdd.Text = "Добавить требования";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tableAdapterManager
             // 

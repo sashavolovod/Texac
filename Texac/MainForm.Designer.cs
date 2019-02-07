@@ -40,14 +40,13 @@
             this.единицыИзмеренияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miDocs = new System.Windows.Forms.ToolStripMenuItem();
             this.miTrebovaniya = new System.Windows.Forms.ToolStripMenuItem();
+            this.miIssuedMaterials = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miMaterialreport = new System.Windows.Forms.ToolStripMenuItem();
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.mnuMain.SuspendLayout();
-            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ssStatusStrip
@@ -133,7 +132,8 @@
             // miDocs
             // 
             this.miDocs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miTrebovaniya});
+            this.miTrebovaniya,
+            this.miIssuedMaterials});
             this.miDocs.Name = "miDocs";
             this.miDocs.Size = new System.Drawing.Size(82, 20);
             this.miDocs.Text = "Документы";
@@ -141,9 +141,16 @@
             // miTrebovaniya
             // 
             this.miTrebovaniya.Name = "miTrebovaniya";
-            this.miTrebovaniya.Size = new System.Drawing.Size(140, 22);
+            this.miTrebovaniya.Size = new System.Drawing.Size(210, 22);
             this.miTrebovaniya.Text = "Требования";
             this.miTrebovaniya.Click += new System.EventHandler(this.miTrebovaniya_Click);
+            // 
+            // miIssuedMaterials
+            // 
+            this.miIssuedMaterials.Name = "miIssuedMaterials";
+            this.miIssuedMaterials.Size = new System.Drawing.Size(210, 22);
+            this.miIssuedMaterials.Text = "Полученные материалы";
+            this.miIssuedMaterials.Click += new System.EventHandler(this.miIssuedMaterials_Click);
             // 
             // отчетыToolStripMenuItem
             // 
@@ -174,19 +181,8 @@
             this.miAbout.Size = new System.Drawing.Size(149, 22);
             this.miAbout.Text = "О программе";
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 431);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Главная панель";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
@@ -209,7 +205,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
             ((System.Configuration.IPersistComponentSettings)(this)).LoadComponentSettings();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -235,7 +230,7 @@
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miMaterialreport;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ToolStripMenuItem miIssuedMaterials;
     }
 }
 

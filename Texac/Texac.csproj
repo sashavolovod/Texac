@@ -124,6 +124,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials\IssuedMaterials.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Materials\IssuedMaterials.Designer.cs">
+      <DependentUpon>IssuedMaterials.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials\IssuedMaterials.resx">
+      <DependentUpon>IssuedMaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

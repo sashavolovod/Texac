@@ -4,6 +4,9 @@
 
     partial class dataDataSet
     {
+        partial class MaterialReportDetailsDataTable
+        {
+        }
     }
 }
 

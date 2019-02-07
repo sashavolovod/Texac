@@ -4,6 +4,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Windows.Forms;
 using Texac.Employees;
+using Texac.Materials;
 using Texac.Trebovaniya;
 
 namespace Texac
@@ -49,7 +50,6 @@ namespace Texac
 
         }
         
-
         private void miMaterialreport_Click(object sender, EventArgs e)
         {
             new RashodParametersForm().Show();
@@ -83,6 +83,12 @@ namespace Texac
                 tab.Controls.Add(c);
                 tabControl1.TabPages.Add(tab);
                 tabControl1.SelectedIndex = indexNewTab;
+
+
+                if(c is IssuedMaterials)
+                {
+                    (c as IssuedMaterials).selectTextBox();
+                }
             }
         }
 
@@ -92,6 +98,8 @@ namespace Texac
                 return new EmployeeList();
             else if (tabPageName == "Требования")
                 return new TrebovanieList();
+            else if (tabPageName == "Полученные материалы")
+                return new IssuedMaterials();
 
             return new Control();
         }
@@ -117,11 +125,13 @@ namespace Texac
                 var tabRect = this.tabControl1.GetTabRect(i);
                 tabRect.Inflate(-2, -2);
                 var closeImage = Properties.Resources.Close;
+
                 var imageRect = new Rectangle(
                     (tabRect.Right - closeImage.Width),
                     tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
                     closeImage.Width,
                     closeImage.Height);
+
                 if (imageRect.Contains(e.Location))
                 {
                     this.tabControl1.TabPages.RemoveAt(i);
@@ -140,6 +150,10 @@ namespace Texac
             TextRenderer.DrawText(e.Graphics, tabPage.Text, tabPage.Font, tabRect, tabPage.ForeColor, TextFormatFlags.Left);
         }
 
-
+        private void miIssuedMaterials_Click(object sender, EventArgs e)
+        {
+            openNewTab("Полученные материалы");
+            
+        }
     }
 }
