@@ -43,9 +43,11 @@
             this.miIssuedMaterials = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miMaterialreport = new System.Windows.Forms.ToolStripMenuItem();
+            this.miReadyWork = new System.Windows.Forms.ToolStripMenuItem();
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.miTtn = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,7 +135,8 @@
             // 
             this.miDocs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miTrebovaniya,
-            this.miIssuedMaterials});
+            this.miIssuedMaterials,
+            this.miTtn});
             this.miDocs.Name = "miDocs";
             this.miDocs.Size = new System.Drawing.Size(82, 20);
             this.miDocs.Text = "Документы";
@@ -155,7 +158,8 @@
             // отчетыToolStripMenuItem
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miMaterialreport});
+            this.miMaterialreport,
+            this.miReadyWork});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
@@ -163,9 +167,16 @@
             // miMaterialreport
             // 
             this.miMaterialreport.Name = "miMaterialreport";
-            this.miMaterialreport.Size = new System.Drawing.Size(180, 22);
+            this.miMaterialreport.Size = new System.Drawing.Size(224, 22);
             this.miMaterialreport.Text = "Расход материалов";
             this.miMaterialreport.Click += new System.EventHandler(this.miMaterialreport_Click);
+            // 
+            // miReadyWork
+            // 
+            this.miReadyWork.Name = "miReadyWork";
+            this.miReadyWork.Size = new System.Drawing.Size(224, 22);
+            this.miReadyWork.Text = "По выполненным работам";
+            this.miReadyWork.Click += new System.EventHandler(this.miReadyWork_Click);
             // 
             // miHelp
             // 
@@ -189,6 +200,12 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 457);
             this.tabControl1.TabIndex = 2;
+            // 
+            // miTtn
+            // 
+            this.miTtn.Name = "miTtn";
+            this.miTtn.Size = new System.Drawing.Size(210, 22);
+            this.miTtn.Text = "ТТН";
             // 
             // MainForm
             // 
@@ -231,6 +248,8 @@
         private System.Windows.Forms.ToolStripMenuItem miMaterialreport;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ToolStripMenuItem miIssuedMaterials;
+        private System.Windows.Forms.ToolStripMenuItem miReadyWork;
+        private System.Windows.Forms.ToolStripMenuItem miTtn;
     }
 }
 

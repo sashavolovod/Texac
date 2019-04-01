@@ -55,7 +55,6 @@ namespace Texac
             new RashodParametersForm().Show();
         }
 
-
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (conn.State == ConnectionState.Open)
@@ -83,7 +82,6 @@ namespace Texac
                 tab.Controls.Add(c);
                 tabControl1.TabPages.Add(tab);
                 tabControl1.SelectedIndex = indexNewTab;
-
 
                 if(c is IssuedMaterials)
                 {
@@ -154,6 +152,11 @@ namespace Texac
         {
             openNewTab("Полученные материалы");
             
+        }
+
+        private void miReadyWork_Click(object sender, EventArgs e)
+        {
+            new frmEndWorkReportParametrs().Show();
         }
     }
 }

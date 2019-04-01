@@ -77,7 +77,7 @@
     <ManifestKeyFile>Texac_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -124,13 +124,25 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Materials\EndWorkReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials\EndWorkReportForm.Designer.cs">
+      <DependentUpon>EndWorkReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materials\EndWorkReportParametrsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materials\EndWorkReportParametrsForm.Designer.cs">
+      <DependentUpon>EndWorkReportParametrsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Materials\IssuedMaterials.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Materials\IssuedMaterials.Designer.cs">
       <DependentUpon>IssuedMaterials.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyForm.cs">
+    <Compile Include="MyControls\MyForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -183,11 +195,23 @@
     <Compile Include="Trebovaniya\OrderTypeForm.Designer.cs">
       <DependentUpon>OrderTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TTN\TtnList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TTN\TtnList.Designer.cs">
+      <DependentUpon>TtnList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Employees\EmployeeList.resx">
       <DependentUpon>EmployeeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials\EndWorkReportForm.resx">
+      <DependentUpon>EndWorkReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materials\EndWorkReportParametrsForm.resx">
+      <DependentUpon>EndWorkReportParametrsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials\IssuedMaterials.resx">
       <DependentUpon>IssuedMaterials.cs</DependentUpon>
@@ -208,8 +232,10 @@
     <EmbeddedResource Include="RashodParametersForm.resx">
       <DependentUpon>RashodParametersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\EndWorkReport.rdlc" />
     <EmbeddedResource Include="Reports\RashodMaterialov.rdlc" />
     <EmbeddedResource Include="Reports\Trebovanie.rdlc" />
+    <EmbeddedResource Include="Reports\TTN.rdlc" />
     <EmbeddedResource Include="Trebovaniya\TrebovanieForm.resx">
       <DependentUpon>TrebovanieForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trebovaniya\OrderTypeForm.resx">
       <DependentUpon>OrderTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTN\TtnList.resx">
+      <DependentUpon>TtnList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dataDataSet.xsc">
       <DependentUpon>dataDataSet.xsd</DependentUpon>

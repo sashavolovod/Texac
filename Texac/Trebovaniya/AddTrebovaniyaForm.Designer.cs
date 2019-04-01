@@ -32,15 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTrebovaniya = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMatCartId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsTrebovaniyaView = new System.Windows.Forms.BindingSource(this.components);
             this.ds = new Texac.dataDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,6 +46,16 @@
             this.tam = new Texac.dataDataSetTableAdapters.TableAdapterManager();
             this.taTrebovanieDetails = new Texac.dataDataSetTableAdapters.TrebovanieDetailsTableAdapter();
             this.taTrebovanie = new Texac.dataDataSetTableAdapters.TrebovanieTableAdapter();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMatCartId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ASUPCODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrebovaniya)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrebovaniyaView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
@@ -84,6 +85,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.colMaterial,
+            this.ASUPCODE,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn8,
@@ -95,75 +97,6 @@
             this.dgvTrebovaniya.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTrebovaniya.Size = new System.Drawing.Size(818, 496);
             this.dgvTrebovaniya.TabIndex = 10;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Sclad";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Склад";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn7.Width = 50;
-            // 
-            // colMatCartId
-            // 
-            this.colMatCartId.DataPropertyName = "MatCartId";
-            this.colMatCartId.HeaderText = "MatCartId";
-            this.colMatCartId.Name = "colMatCartId";
-            this.colMatCartId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colMatCartId.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "OrderId";
-            this.dataGridViewTextBoxColumn2.HeaderText = "OrderId";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "MaterialCode";
-            this.dataGridViewTextBoxColumn3.HeaderText = "MaterialCode";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // colMaterial
-            // 
-            this.colMaterial.DataPropertyName = "MaterialName";
-            this.colMaterial.HeaderText = "Наименование материала";
-            this.colMaterial.Name = "colMaterial";
-            this.colMaterial.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colMaterial.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Qty";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Кол-во";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Ed";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Ед. изм.";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "DateTP";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Дата ТП";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "OrderType";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Номер заказа";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // bsTrebovaniyaView
             // 
@@ -259,6 +192,7 @@
             // tam
             // 
             this.tam.BackupDataSetBeforeUpdate = false;
+            this.tam.MaterialReportDetailsTableAdapter = null;
             this.tam.TrebovanieDetailsTableAdapter = this.taTrebovanieDetails;
             this.tam.TrebovanieTableAdapter = this.taTrebovanie;
             this.tam.UpdateOrder = Texac.dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -272,6 +206,81 @@
             // taTrebovanie
             // 
             this.taTrebovanie.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Sclad";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Склад";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn7.Width = 50;
+            // 
+            // colMatCartId
+            // 
+            this.colMatCartId.DataPropertyName = "MatCartId";
+            this.colMatCartId.HeaderText = "MatCartId";
+            this.colMatCartId.Name = "colMatCartId";
+            this.colMatCartId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colMatCartId.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "OrderId";
+            this.dataGridViewTextBoxColumn2.HeaderText = "OrderId";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "MaterialCode";
+            this.dataGridViewTextBoxColumn3.HeaderText = "MaterialCode";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // colMaterial
+            // 
+            this.colMaterial.DataPropertyName = "MaterialName";
+            this.colMaterial.HeaderText = "Наименование материала";
+            this.colMaterial.Name = "colMaterial";
+            this.colMaterial.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colMaterial.Width = 250;
+            // 
+            // ASUPCODE
+            // 
+            this.ASUPCODE.DataPropertyName = "ASUPCODE";
+            this.ASUPCODE.HeaderText = "Номер карточки";
+            this.ASUPCODE.Name = "ASUPCODE";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Qty";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Кол-во";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Ed";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Ед. изм.";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "DateTP";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Дата ТП";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "OrderType";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Номер заказа";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // AddTrebovaniyaForm
             // 
@@ -288,8 +297,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.ResumeLayout(false);
             ((System.Configuration.IPersistComponentSettings)(this)).LoadComponentSettings();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -308,6 +318,7 @@
         private dataDataSetTableAdapters.TableAdapterManager tam;
         private dataDataSetTableAdapters.TrebovanieDetailsTableAdapter taTrebovanieDetails;
         private dataDataSetTableAdapters.TrebovanieTableAdapter taTrebovanie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ASUPCODE;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;

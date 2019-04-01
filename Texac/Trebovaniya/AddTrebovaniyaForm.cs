@@ -163,6 +163,9 @@ namespace Texac.Trebovaniya
                 d.Kol1 = row.Qty;
                 d.Kol2 = 0.0;
 
+                if(row.IsASUPCODENull()==false)
+                    d.ASUPCODE = row.ASUPCODE;
+
                 if (d.Material != prevMaterialName)
                     linePerDoc++;
 

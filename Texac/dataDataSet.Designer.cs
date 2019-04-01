@@ -46,6 +46,8 @@ namespace Texac {
         
         private IssuedMaterialsViewDataTable tableIssuedMaterialsView;
         
+        private Orders208DataTable tableOrders208;
+        
         private global::System.Data.DataRelation relationtblTrebovanietblTrebovanieDetails;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
@@ -108,6 +110,9 @@ namespace Texac {
                 }
                 if ((ds.Tables["IssuedMaterialsView"] != null)) {
                     base.Tables.Add(new IssuedMaterialsViewDataTable(ds.Tables["IssuedMaterialsView"]));
+                }
+                if ((ds.Tables["Orders208"] != null)) {
+                    base.Tables.Add(new Orders208DataTable(ds.Tables["Orders208"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -239,6 +244,16 @@ namespace Texac {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Orders208DataTable Orders208 {
+            get {
+                return this.tableOrders208;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -336,6 +351,9 @@ namespace Texac {
                 }
                 if ((ds.Tables["IssuedMaterialsView"] != null)) {
                     base.Tables.Add(new IssuedMaterialsViewDataTable(ds.Tables["IssuedMaterialsView"]));
+                }
+                if ((ds.Tables["Orders208"] != null)) {
+                    base.Tables.Add(new Orders208DataTable(ds.Tables["Orders208"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -436,6 +454,12 @@ namespace Texac {
                     this.tableIssuedMaterialsView.InitVars();
                 }
             }
+            this.tableOrders208 = ((Orders208DataTable)(base.Tables["Orders208"]));
+            if ((initTable == true)) {
+                if ((this.tableOrders208 != null)) {
+                    this.tableOrders208.InitVars();
+                }
+            }
             this.relationtblTrebovanietblTrebovanieDetails = this.Relations["tblTrebovanietblTrebovanieDetails"];
         }
         
@@ -469,6 +493,8 @@ namespace Texac {
             base.Tables.Add(this.tableMaterialReportDetails);
             this.tableIssuedMaterialsView = new IssuedMaterialsViewDataTable();
             base.Tables.Add(this.tableIssuedMaterialsView);
+            this.tableOrders208 = new Orders208DataTable();
+            base.Tables.Add(this.tableOrders208);
             this.relationtblTrebovanietblTrebovanieDetails = new global::System.Data.DataRelation("tblTrebovanietblTrebovanieDetails", new global::System.Data.DataColumn[] {
                         this.tableTrebovanie.TrebovanieIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableTrebovanieDetails.tblTrebovanielIdColumn}, false);
@@ -538,6 +564,12 @@ namespace Texac {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeIssuedMaterialsView() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeOrders208() {
             return false;
         }
         
@@ -628,6 +660,9 @@ namespace Texac {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void IssuedMaterialsViewRowChangeEventHandler(object sender, IssuedMaterialsViewRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Orders208RowChangeEventHandler(object sender, Orders208RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3353,6 +3388,8 @@ namespace Texac {
             
             private global::System.Data.DataColumn columnKol2;
             
+            private global::System.Data.DataColumn columnASUPCODE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TrebovanieDetailsDataTable() {
@@ -3452,6 +3489,14 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ASUPCODEColumn {
+                get {
+                    return this.columnASUPCODE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3487,7 +3532,7 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TrebovanieDetailsRow AddTrebovanieDetailsRow(TrebovanieRow parentTrebovanieRowBytblTrebovanietblTrebovanieDetails, int MatCartId, int MaterialCode, string Material, string Ed, double Kol1, double Kol2) {
+            public TrebovanieDetailsRow AddTrebovanieDetailsRow(TrebovanieRow parentTrebovanieRowBytblTrebovanietblTrebovanieDetails, int MatCartId, int MaterialCode, string Material, string Ed, double Kol1, double Kol2, int ASUPCODE) {
                 TrebovanieDetailsRow rowTrebovanieDetailsRow = ((TrebovanieDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3497,7 +3542,8 @@ namespace Texac {
                         Material,
                         Ed,
                         Kol1,
-                        Kol2};
+                        Kol2,
+                        ASUPCODE};
                 if ((parentTrebovanieRowBytblTrebovanietblTrebovanieDetails != null)) {
                     columnValuesArray[1] = parentTrebovanieRowBytblTrebovanietblTrebovanieDetails[0];
                 }
@@ -3538,6 +3584,7 @@ namespace Texac {
                 this.columnEd = base.Columns["Ed"];
                 this.columnKol1 = base.Columns["Kol1"];
                 this.columnKol2 = base.Columns["Kol2"];
+                this.columnASUPCODE = base.Columns["ASUPCODE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3559,6 +3606,8 @@ namespace Texac {
                 base.Columns.Add(this.columnKol1);
                 this.columnKol2 = new global::System.Data.DataColumn("Kol2", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKol2);
+                this.columnASUPCODE = new global::System.Data.DataColumn("ASUPCODE", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnASUPCODE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columntblTrebovanieDetailId}, true));
                 this.columntblTrebovanieDetailId.AutoIncrement = true;
@@ -3723,6 +3772,8 @@ namespace Texac {
             
             private global::System.Data.DataColumn columnOrderNumber;
             
+            private global::System.Data.DataColumn columnASUPCODE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AddTrebovaniyaViewDataTable() {
@@ -3846,6 +3897,14 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ASUPCODEColumn {
+                get {
+                    return this.columnASUPCODE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3881,7 +3940,7 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AddTrebovaniyaViewRow AddAddTrebovaniyaViewRow(int OrderId, int MaterialCode, string MaterialName, double Qty, string Ed, string Sclad, System.DateTime DateTP, string OrderType, int Customer, string OrderNumber) {
+            public AddTrebovaniyaViewRow AddAddTrebovaniyaViewRow(int OrderId, int MaterialCode, string MaterialName, double Qty, string Ed, string Sclad, System.DateTime DateTP, string OrderType, int Customer, string OrderNumber, int ASUPCODE) {
                 AddTrebovaniyaViewRow rowAddTrebovaniyaViewRow = ((AddTrebovaniyaViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3894,7 +3953,8 @@ namespace Texac {
                         DateTP,
                         OrderType,
                         Customer,
-                        OrderNumber};
+                        OrderNumber,
+                        ASUPCODE};
                 rowAddTrebovaniyaViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAddTrebovaniyaViewRow);
                 return rowAddTrebovaniyaViewRow;
@@ -3928,6 +3988,7 @@ namespace Texac {
                 this.columnOrderType = base.Columns["OrderType"];
                 this.columnCustomer = base.Columns["Customer"];
                 this.columnOrderNumber = base.Columns["OrderNumber"];
+                this.columnASUPCODE = base.Columns["ASUPCODE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3955,6 +4016,8 @@ namespace Texac {
                 base.Columns.Add(this.columnCustomer);
                 this.columnOrderNumber = new global::System.Data.DataColumn("OrderNumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOrderNumber);
+                this.columnASUPCODE = new global::System.Data.DataColumn("ASUPCODE", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnASUPCODE);
                 this.columnMatCartId.AutoIncrement = true;
                 this.columnMatCartId.AutoIncrementSeed = -1;
                 this.columnMatCartId.AutoIncrementStep = -1;
@@ -3964,6 +4027,7 @@ namespace Texac {
                 this.columnSclad.MaxLength = 50;
                 this.columnOrderType.MaxLength = 17;
                 this.columnOrderNumber.MaxLength = 17;
+                this.columnASUPCODE.DefaultValue = ((int)(0));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5164,6 +5228,401 @@ namespace Texac {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "IssuedMaterialsViewDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Orders208DataTable : global::System.Data.TypedTableBase<Orders208Row> {
+            
+            private global::System.Data.DataColumn columnNППЗаказа;
+            
+            private global::System.Data.DataColumn columnNЗаказаЗавода;
+            
+            private global::System.Data.DataColumn columnНаименованиеТО;
+            
+            private global::System.Data.DataColumn columnОбозначениеТО;
+            
+            private global::System.Data.DataColumn columnВсегоКолво;
+            
+            private global::System.Data.DataColumn columnПланТрудоемкость;
+            
+            private global::System.Data.DataColumn columnВыполненоНаНачало;
+            
+            private global::System.Data.DataColumn columnВыполненоЗаПериод;
+            
+            private global::System.Data.DataColumn columnВыполненоНаКонецМесяца;
+            
+            private global::System.Data.DataColumn columnMaterialDate;
+            
+            private global::System.Data.DataColumn columnФКол_во;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Orders208DataTable() {
+                this.TableName = "Orders208";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Orders208DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Orders208DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NППЗаказаColumn {
+                get {
+                    return this.columnNППЗаказа;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NЗаказаЗаводаColumn {
+                get {
+                    return this.columnNЗаказаЗавода;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn НаименованиеТОColumn {
+                get {
+                    return this.columnНаименованиеТО;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ОбозначениеТОColumn {
+                get {
+                    return this.columnОбозначениеТО;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ВсегоКолвоColumn {
+                get {
+                    return this.columnВсегоКолво;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ПланТрудоемкостьColumn {
+                get {
+                    return this.columnПланТрудоемкость;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ВыполненоНаНачалоColumn {
+                get {
+                    return this.columnВыполненоНаНачало;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ВыполненоЗаПериодColumn {
+                get {
+                    return this.columnВыполненоЗаПериод;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ВыполненоНаКонецМесяцаColumn {
+                get {
+                    return this.columnВыполненоНаКонецМесяца;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MaterialDateColumn {
+                get {
+                    return this.columnMaterialDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ФКол_воColumn {
+                get {
+                    return this.columnФКол_во;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Orders208Row this[int index] {
+                get {
+                    return ((Orders208Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Orders208RowChangeEventHandler Orders208RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Orders208RowChangeEventHandler Orders208RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Orders208RowChangeEventHandler Orders208RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Orders208RowChangeEventHandler Orders208RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddOrders208Row(Orders208Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Orders208Row AddOrders208Row(string NЗаказаЗавода, string НаименованиеТО, string ОбозначениеТО, double ВсегоКолво, double ПланТрудоемкость, double ВыполненоНаНачало, double ВыполненоЗаПериод, double ВыполненоНаКонецМесяца, System.DateTime MaterialDate, int ФКол_во) {
+                Orders208Row rowOrders208Row = ((Orders208Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        NЗаказаЗавода,
+                        НаименованиеТО,
+                        ОбозначениеТО,
+                        ВсегоКолво,
+                        ПланТрудоемкость,
+                        ВыполненоНаНачало,
+                        ВыполненоЗаПериод,
+                        ВыполненоНаКонецМесяца,
+                        MaterialDate,
+                        ФКол_во};
+                rowOrders208Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowOrders208Row);
+                return rowOrders208Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Orders208DataTable cln = ((Orders208DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Orders208DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnNППЗаказа = base.Columns["NППЗаказа"];
+                this.columnNЗаказаЗавода = base.Columns["NЗаказаЗавода"];
+                this.columnНаименованиеТО = base.Columns["НаименованиеТО"];
+                this.columnОбозначениеТО = base.Columns["ОбозначениеТО"];
+                this.columnВсегоКолво = base.Columns["ВсегоКолво"];
+                this.columnПланТрудоемкость = base.Columns["ПланТрудоемкость"];
+                this.columnВыполненоНаНачало = base.Columns["ВыполненоНаНачало"];
+                this.columnВыполненоЗаПериод = base.Columns["ВыполненоЗаПериод"];
+                this.columnВыполненоНаКонецМесяца = base.Columns["ВыполненоНаКонецМесяца"];
+                this.columnMaterialDate = base.Columns["MaterialDate"];
+                this.columnФКол_во = base.Columns["ФКол_во"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnNППЗаказа = new global::System.Data.DataColumn("NППЗаказа", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNППЗаказа);
+                this.columnNЗаказаЗавода = new global::System.Data.DataColumn("NЗаказаЗавода", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNЗаказаЗавода);
+                this.columnНаименованиеТО = new global::System.Data.DataColumn("НаименованиеТО", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНаименованиеТО);
+                this.columnОбозначениеТО = new global::System.Data.DataColumn("ОбозначениеТО", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnОбозначениеТО);
+                this.columnВсегоКолво = new global::System.Data.DataColumn("ВсегоКолво", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnВсегоКолво);
+                this.columnПланТрудоемкость = new global::System.Data.DataColumn("ПланТрудоемкость", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПланТрудоемкость);
+                this.columnВыполненоНаНачало = new global::System.Data.DataColumn("ВыполненоНаНачало", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnВыполненоНаНачало);
+                this.columnВыполненоЗаПериод = new global::System.Data.DataColumn("ВыполненоЗаПериод", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnВыполненоЗаПериод);
+                this.columnВыполненоНаКонецМесяца = new global::System.Data.DataColumn("ВыполненоНаКонецМесяца", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnВыполненоНаКонецМесяца);
+                this.columnMaterialDate = new global::System.Data.DataColumn("MaterialDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaterialDate);
+                this.columnФКол_во = new global::System.Data.DataColumn("ФКол_во", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФКол_во);
+                this.columnNППЗаказа.AutoIncrement = true;
+                this.columnNППЗаказа.AutoIncrementSeed = -1;
+                this.columnNППЗаказа.AutoIncrementStep = -1;
+                this.columnNЗаказаЗавода.MaxLength = 17;
+                this.columnНаименованиеТО.MaxLength = 35;
+                this.columnОбозначениеТО.MaxLength = 26;
+                this.columnВыполненоНаКонецМесяца.ReadOnly = true;
+                this.columnФКол_во.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Orders208Row NewOrders208Row() {
+                return ((Orders208Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Orders208Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Orders208Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Orders208RowChanged != null)) {
+                    this.Orders208RowChanged(this, new Orders208RowChangeEvent(((Orders208Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Orders208RowChanging != null)) {
+                    this.Orders208RowChanging(this, new Orders208RowChangeEvent(((Orders208Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Orders208RowDeleted != null)) {
+                    this.Orders208RowDeleted(this, new Orders208RowChangeEvent(((Orders208Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Orders208RowDeleting != null)) {
+                    this.Orders208RowDeleting(this, new Orders208RowChangeEvent(((Orders208Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveOrders208Row(Orders208Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dataDataSet ds = new dataDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Orders208DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -7748,6 +8207,22 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ASUPCODE {
+                get {
+                    try {
+                        return ((int)(this[this.tableTrebovanieDetails.ASUPCODEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ASUPCODE\' in table \'TrebovanieDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrebovanieDetails.ASUPCODEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TrebovanieRow tblTrebovanieRow {
                 get {
                     return ((TrebovanieRow)(this.GetParentRow(this.Table.ParentRelations["tblTrebovanietblTrebovanieDetails"])));
@@ -7839,6 +8314,18 @@ namespace Texac {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetKol2Null() {
                 this[this.tableTrebovanieDetails.Kol2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsASUPCODENull() {
+                return this.IsNull(this.tableTrebovanieDetails.ASUPCODEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetASUPCODENull() {
+                this[this.tableTrebovanieDetails.ASUPCODEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8034,6 +8521,22 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ASUPCODE {
+                get {
+                    try {
+                        return ((int)(this[this.tableAddTrebovaniyaView.ASUPCODEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ASUPCODE\' in table \'AddTrebovaniyaView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAddTrebovaniyaView.ASUPCODEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMatCartIdNull() {
                 return this.IsNull(this.tableAddTrebovaniyaView.MatCartIdColumn);
             }
@@ -8162,6 +8665,18 @@ namespace Texac {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetOrderNumberNull() {
                 this[this.tableAddTrebovaniyaView.OrderNumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsASUPCODENull() {
+                return this.IsNull(this.tableAddTrebovaniyaView.ASUPCODEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetASUPCODENull() {
+                this[this.tableAddTrebovaniyaView.ASUPCODEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8937,6 +9452,329 @@ namespace Texac {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Orders208Row : global::System.Data.DataRow {
+            
+            private Orders208DataTable tableOrders208;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Orders208Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableOrders208 = ((Orders208DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int NППЗаказа {
+                get {
+                    try {
+                        return ((int)(this[this.tableOrders208.NППЗаказаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NППЗаказа\' in table \'Orders208\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders208.NППЗаказаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NЗаказаЗавода {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrders208.NЗаказаЗаводаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NЗаказаЗавода\' in table \'Orders208\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders208.NЗаказаЗаводаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string НаименованиеТО {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrders208.НаименованиеТОColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'НаименованиеТО\' in table \'Orders208\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders208.НаименованиеТОColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ОбозначениеТО {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrders208.ОбозначениеТОColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ОбозначениеТО\' in table \'Orders208\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders208.ОбозначениеТОColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double ВсегоКолво {
+                get {
+                    try {
+                        return ((double)(this[this.tableOrders208.ВсегоКолвоColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ВсегоКолво\' in table \'Orders208\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders208.ВсегоКолвоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double ПланТрудоемкость {
+                get {
+                    try {
+                        return ((double)(this[this.tableOrders208.ПланТрудоемкостьColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ПланТрудоемкость\' in table \'Orders208\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders208.ПланТрудоемкостьColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double ВыполненоНаНачало {
+                get {
+                    try {
+                        return ((double)(this[this.tableOrders208.ВыполненоНаНачалоColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ВыполненоНаНачало\' in table \'Orders208\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders208.ВыполненоНаНачалоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double ВыполненоЗаПериод {
+                get {
+                    try {
+                        return ((double)(this[this.tableOrders208.ВыполненоЗаПериодColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ВыполненоЗаПериод\' in table \'Orders208\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders208.ВыполненоЗаПериодColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double ВыполненоНаКонецМесяца {
+                get {
+                    try {
+                        return ((double)(this[this.tableOrders208.ВыполненоНаКонецМесяцаColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ВыполненоНаКонецМесяца\' in table \'Orders208\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders208.ВыполненоНаКонецМесяцаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime MaterialDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableOrders208.MaterialDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MaterialDate\' in table \'Orders208\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders208.MaterialDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ФКол_во {
+                get {
+                    try {
+                        return ((int)(this[this.tableOrders208.ФКол_воColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ФКол_во\' in table \'Orders208\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrders208.ФКол_воColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNППЗаказаNull() {
+                return this.IsNull(this.tableOrders208.NППЗаказаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNППЗаказаNull() {
+                this[this.tableOrders208.NППЗаказаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNЗаказаЗаводаNull() {
+                return this.IsNull(this.tableOrders208.NЗаказаЗаводаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNЗаказаЗаводаNull() {
+                this[this.tableOrders208.NЗаказаЗаводаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsНаименованиеТОNull() {
+                return this.IsNull(this.tableOrders208.НаименованиеТОColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetНаименованиеТОNull() {
+                this[this.tableOrders208.НаименованиеТОColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsОбозначениеТОNull() {
+                return this.IsNull(this.tableOrders208.ОбозначениеТОColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetОбозначениеТОNull() {
+                this[this.tableOrders208.ОбозначениеТОColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsВсегоКолвоNull() {
+                return this.IsNull(this.tableOrders208.ВсегоКолвоColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetВсегоКолвоNull() {
+                this[this.tableOrders208.ВсегоКолвоColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsПланТрудоемкостьNull() {
+                return this.IsNull(this.tableOrders208.ПланТрудоемкостьColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetПланТрудоемкостьNull() {
+                this[this.tableOrders208.ПланТрудоемкостьColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsВыполненоНаНачалоNull() {
+                return this.IsNull(this.tableOrders208.ВыполненоНаНачалоColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetВыполненоНаНачалоNull() {
+                this[this.tableOrders208.ВыполненоНаНачалоColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsВыполненоЗаПериодNull() {
+                return this.IsNull(this.tableOrders208.ВыполненоЗаПериодColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetВыполненоЗаПериодNull() {
+                this[this.tableOrders208.ВыполненоЗаПериодColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsВыполненоНаКонецМесяцаNull() {
+                return this.IsNull(this.tableOrders208.ВыполненоНаКонецМесяцаColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetВыполненоНаКонецМесяцаNull() {
+                this[this.tableOrders208.ВыполненоНаКонецМесяцаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMaterialDateNull() {
+                return this.IsNull(this.tableOrders208.MaterialDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMaterialDateNull() {
+                this[this.tableOrders208.MaterialDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsФКол_воNull() {
+                return this.IsNull(this.tableOrders208.ФКол_воColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetФКол_воNull() {
+                this[this.tableOrders208.ФКол_воColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -9296,6 +10134,40 @@ namespace Texac {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public IssuedMaterialsViewRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Orders208RowChangeEvent : global::System.EventArgs {
+            
+            private Orders208Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Orders208RowChangeEvent(Orders208Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Orders208Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -13134,10 +14006,11 @@ namespace Texac.dataDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Ed", "Ed");
             tableMapping.ColumnMappings.Add("Kol1", "Kol1");
             tableMapping.ColumnMappings.Add("Kol2", "Kol2");
+            tableMapping.ColumnMappings.Add("ASUPCODE", "ASUPCODE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `tblTrebovanieDetails` WHERE ((`tblTrebovanieDetailId` = ?) AND ((? = 1 AND `tblTrebovanielId` IS NULL) OR (`tblTrebovanielId` = ?)) AND ((? = 1 AND `MatCartId` IS NULL) OR (`MatCartId` = ?)) AND ((? = 1 AND `MaterialCode` IS NULL) OR (`MaterialCode` = ?)) AND ((? = 1 AND `Material` IS NULL) OR (`Material` = ?)) AND ((? = 1 AND `Ed` IS NULL) OR (`Ed` = ?)) AND ((? = 1 AND `Kol1` IS NULL) OR (`Kol1` = ?)) AND ((? = 1 AND `Kol2` IS NULL) OR (`Kol2` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `tblTrebovanieDetails` WHERE ((`tblTrebovanieDetailId` = ?) AND ((? = 1 AND `tblTrebovanielId` IS NULL) OR (`tblTrebovanielId` = ?)) AND ((? = 1 AND `MatCartId` IS NULL) OR (`MatCartId` = ?)) AND ((? = 1 AND `MaterialCode` IS NULL) OR (`MaterialCode` = ?)) AND ((? = 1 AND `Material` IS NULL) OR (`Material` = ?)) AND ((? = 1 AND `Ed` IS NULL) OR (`Ed` = ?)) AND ((? = 1 AND `Kol1` IS NULL) OR (`Kol1` = ?)) AND ((? = 1 AND `Kol2` IS NULL) OR (`Kol2` = ?)) AND ((? = 1 AND `ASUPCODE` IS NULL) OR (`ASUPCODE` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_tblTrebovanieDetailId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanieDetailId", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Original, true, null));
@@ -13154,10 +14027,13 @@ namespace Texac.dataDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Kol1", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol1", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Kol2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol2", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Kol2", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol2", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `tblTrebovanieDetails` (`tblTrebovanielId`, `MatCartId`, `MaterialCod" +
-                "e`, `Material`, `Ed`, `Kol1`, `Kol2`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                "e`, `Material`, `Ed`, `Kol1`, `Kol2`, `ASUPCODE`) VALUES (?, ?, ?, ?, ?, ?, ?, ?" +
+                ")";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MatCartId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MatCartId", global::System.Data.DataRowVersion.Current, false, null));
@@ -13166,9 +14042,10 @@ namespace Texac.dataDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Ed", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ed", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Kol1", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol1", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Kol2", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `tblTrebovanieDetails` SET `tblTrebovanielId` = ?, `MatCartId` = ?, `MaterialCode` = ?, `Material` = ?, `Ed` = ?, `Kol1` = ?, `Kol2` = ? WHERE ((`tblTrebovanieDetailId` = ?) AND ((? = 1 AND `tblTrebovanielId` IS NULL) OR (`tblTrebovanielId` = ?)) AND ((? = 1 AND `MatCartId` IS NULL) OR (`MatCartId` = ?)) AND ((? = 1 AND `MaterialCode` IS NULL) OR (`MaterialCode` = ?)) AND ((? = 1 AND `Material` IS NULL) OR (`Material` = ?)) AND ((? = 1 AND `Ed` IS NULL) OR (`Ed` = ?)) AND ((? = 1 AND `Kol1` IS NULL) OR (`Kol1` = ?)) AND ((? = 1 AND `Kol2` IS NULL) OR (`Kol2` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `tblTrebovanieDetails` SET `tblTrebovanielId` = ?, `MatCartId` = ?, `MaterialCode` = ?, `Material` = ?, `Ed` = ?, `Kol1` = ?, `Kol2` = ?, `ASUPCODE` = ? WHERE ((`tblTrebovanieDetailId` = ?) AND ((? = 1 AND `tblTrebovanielId` IS NULL) OR (`tblTrebovanielId` = ?)) AND ((? = 1 AND `MatCartId` IS NULL) OR (`MatCartId` = ?)) AND ((? = 1 AND `MaterialCode` IS NULL) OR (`MaterialCode` = ?)) AND ((? = 1 AND `Material` IS NULL) OR (`Material` = ?)) AND ((? = 1 AND `Ed` IS NULL) OR (`Ed` = ?)) AND ((? = 1 AND `Kol1` IS NULL) OR (`Kol1` = ?)) AND ((? = 1 AND `Kol2` IS NULL) OR (`Kol2` = ?)) AND ((? = 1 AND `ASUPCODE` IS NULL) OR (`ASUPCODE` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MatCartId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MatCartId", global::System.Data.DataRowVersion.Current, false, null));
@@ -13177,6 +14054,7 @@ namespace Texac.dataDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Ed", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Ed", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Kol1", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol1", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Kol2", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol2", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_tblTrebovanieDetailId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanieDetailId", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Original, false, null));
@@ -13192,6 +14070,8 @@ namespace Texac.dataDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Kol1", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol1", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Kol2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol2", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Kol2", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol2", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13207,20 +14087,21 @@ namespace Texac.dataDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT tblTrebovanieDetailId, tblTrebovanielId, MatCartId, MaterialCode, Material" +
-                ", Ed, Kol1, Kol2 FROM tblTrebovanieDetails";
+            this._commandCollection[0].CommandText = "SELECT        tblTrebovanieDetailId, tblTrebovanielId, MatCartId, MaterialCode, M" +
+                "aterial, Ed, Kol1, Kol2, ASUPCODE\r\nFROM            tblTrebovanieDetails";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT tblTrebovanieDetailId, tblTrebovanielId, MatCartId, MaterialCode, Material" +
-                ", Ed, Kol1, Kol2 FROM tblTrebovanieDetails WHERE (tblTrebovanielId = ?)";
+            this._commandCollection[1].CommandText = "SELECT ASUPCODE, Ed, Kol1, Kol2, MatCartId, Material, MaterialCode, tblTrebovanie" +
+                "DetailId, tblTrebovanielId FROM tblTrebovanieDetails WHERE (tblTrebovanielId = ?" +
+                ")";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Material, Ed, SUM(Kol1) AS Kol1, SUM(Kol2) AS Kol2\r\nFROM           " +
-                " tblTrebovanieDetails\r\nGROUP BY Material, Ed, tblTrebovanielId\r\nHAVING        (t" +
-                "blTrebovanielId = ?)";
+            this._commandCollection[2].CommandText = "SELECT        Material, Ed, SUM(Kol1) AS Kol1, SUM(Kol2) AS Kol2, ASUPCODE\r\nFROM " +
+                "           tblTrebovanieDetails\r\nGROUP BY Material, Ed, tblTrebovanielId, ASUPCO" +
+                "DE\r\nHAVING        (tblTrebovanielId = ?)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Current, false, null));
         }
@@ -13320,7 +14201,7 @@ namespace Texac.dataDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_tblTrebovanieDetailId, global::System.Nullable<int> Original_tblTrebovanielId, global::System.Nullable<int> Original_MatCartId, global::System.Nullable<int> Original_MaterialCode, string Original_Material, string Original_Ed, global::System.Nullable<double> Original_Kol1, global::System.Nullable<double> Original_Kol2) {
+        public virtual int Delete(int Original_tblTrebovanieDetailId, global::System.Nullable<int> Original_tblTrebovanielId, global::System.Nullable<int> Original_MatCartId, global::System.Nullable<int> Original_MaterialCode, string Original_Material, string Original_Ed, global::System.Nullable<double> Original_Kol1, global::System.Nullable<double> Original_Kol2, global::System.Nullable<int> Original_ASUPCODE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_tblTrebovanieDetailId));
             if ((Original_tblTrebovanielId.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -13378,6 +14259,14 @@ namespace Texac.dataDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
+            if ((Original_ASUPCODE.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_ASUPCODE.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -13398,7 +14287,7 @@ namespace Texac.dataDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> tblTrebovanielId, global::System.Nullable<int> MatCartId, global::System.Nullable<int> MaterialCode, string Material, string Ed, global::System.Nullable<double> Kol1, global::System.Nullable<double> Kol2) {
+        public virtual int Insert(global::System.Nullable<int> tblTrebovanielId, global::System.Nullable<int> MatCartId, global::System.Nullable<int> MaterialCode, string Material, string Ed, global::System.Nullable<double> Kol1, global::System.Nullable<double> Kol2, global::System.Nullable<int> ASUPCODE) {
             if ((tblTrebovanielId.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(tblTrebovanielId.Value));
             }
@@ -13441,6 +14330,12 @@ namespace Texac.dataDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((ASUPCODE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(ASUPCODE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -13461,7 +14356,24 @@ namespace Texac.dataDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> tblTrebovanielId, global::System.Nullable<int> MatCartId, global::System.Nullable<int> MaterialCode, string Material, string Ed, global::System.Nullable<double> Kol1, global::System.Nullable<double> Kol2, int Original_tblTrebovanieDetailId, global::System.Nullable<int> Original_tblTrebovanielId, global::System.Nullable<int> Original_MatCartId, global::System.Nullable<int> Original_MaterialCode, string Original_Material, string Original_Ed, global::System.Nullable<double> Original_Kol1, global::System.Nullable<double> Original_Kol2) {
+        public virtual int Update(
+                    global::System.Nullable<int> tblTrebovanielId, 
+                    global::System.Nullable<int> MatCartId, 
+                    global::System.Nullable<int> MaterialCode, 
+                    string Material, 
+                    string Ed, 
+                    global::System.Nullable<double> Kol1, 
+                    global::System.Nullable<double> Kol2, 
+                    global::System.Nullable<int> ASUPCODE, 
+                    int Original_tblTrebovanieDetailId, 
+                    global::System.Nullable<int> Original_tblTrebovanielId, 
+                    global::System.Nullable<int> Original_MatCartId, 
+                    global::System.Nullable<int> Original_MaterialCode, 
+                    string Original_Material, 
+                    string Original_Ed, 
+                    global::System.Nullable<double> Original_Kol1, 
+                    global::System.Nullable<double> Original_Kol2, 
+                    global::System.Nullable<int> Original_ASUPCODE) {
             if ((tblTrebovanielId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(tblTrebovanielId.Value));
             }
@@ -13504,62 +14416,76 @@ namespace Texac.dataDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_tblTrebovanieDetailId));
-            if ((Original_tblTrebovanielId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_tblTrebovanielId.Value));
+            if ((ASUPCODE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ASUPCODE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_tblTrebovanieDetailId));
+            if ((Original_tblTrebovanielId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_tblTrebovanielId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_MatCartId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_MatCartId.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_MatCartId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_MaterialCode.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_MaterialCode.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_MaterialCode.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_Material == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Material));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Material));
             }
             if ((Original_Ed == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Ed));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Ed));
             }
             if ((Original_Kol1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((double)(Original_Kol1.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((double)(Original_Kol1.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             if ((Original_Kol2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(Original_Kol2.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((double)(Original_Kol2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ASUPCODE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_ASUPCODE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13710,6 +14636,7 @@ namespace Texac.dataDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("OrderType", "OrderType");
             tableMapping.ColumnMappings.Add("Customer", "Customer");
             tableMapping.ColumnMappings.Add("OrderNumber", "OrderNumber");
+            tableMapping.ColumnMappings.Add("ASUPCODE", "ASUPCODE");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -13726,23 +14653,25 @@ namespace Texac.dataDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MatCartId, OrderId, MaterialCode, MaterialName, Qty, Ed, Sclad, DateTP, Or" +
-                "derType, Customer, OrderNumber FROM AddTrebovaniyaView";
+            this._commandCollection[0].CommandText = "SELECT        MatCartId, OrderId, MaterialCode, MaterialName, Qty, Ed, Sclad, Dat" +
+                "eTP, OrderType, Customer, OrderNumber, ASUPCODE\r\nFROM            AddTrebovaniyaV" +
+                "iew";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT MatCartId, OrderId, MaterialCode, MaterialName, Qty, Ed, Sclad, DateTP, Or" +
-                "derType, Customer, OrderNumber FROM AddTrebovaniyaView WHERE (DateTP BETWEEN ? A" +
-                "ND ?) AND (OrderType LIKE ?) ORDER BY Sclad, Customer, MaterialName";
+            this._commandCollection[1].CommandText = @"SELECT        ASUPCODE, Customer, DateTP, Ed, MatCartId, MaterialCode, MaterialName, OrderId, OrderNumber, OrderType, Qty, Sclad
+FROM            AddTrebovaniyaView
+WHERE        (DateTP BETWEEN ? AND ?) AND (OrderType LIKE ?)
+ORDER BY Sclad, Customer, MaterialName";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DateTP", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DateTP", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DateTP1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DateTP", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("OrderType", global::System.Data.OleDb.OleDbType.WChar, 17, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "OrderType", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT MatCartId, OrderId, MaterialCode, MaterialName, Qty, Ed, Sclad, DateTP, Or" +
-                "derType, Customer, OrderNumber FROM AddTrebovaniyaView WHERE (OrderId = ?) ORDER" +
-                " BY Sclad, Customer, MaterialName";
+            this._commandCollection[2].CommandText = "SELECT ASUPCODE, Customer, DateTP, Ed, MatCartId, MaterialCode, MaterialName, Ord" +
+                "erId, OrderNumber, OrderType, Qty, Sclad FROM AddTrebovaniyaView WHERE (OrderId " +
+                "= ?) ORDER BY Sclad, Customer, MaterialName";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("OrderId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "OrderId", global::System.Data.DataRowVersion.Current, false, null));
         }
@@ -15096,6 +16025,239 @@ ORDER BY MaterialName";
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(OrderNumberBooker));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Orders208TableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public Orders208TableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Orders208";
+            tableMapping.ColumnMappings.Add("NППЗаказа", "NППЗаказа");
+            tableMapping.ColumnMappings.Add("NЗаказаЗавода", "NЗаказаЗавода");
+            tableMapping.ColumnMappings.Add("НаименованиеТО", "НаименованиеТО");
+            tableMapping.ColumnMappings.Add("ОбозначениеТО", "ОбозначениеТО");
+            tableMapping.ColumnMappings.Add("ВсегоКолво", "ВсегоКолво");
+            tableMapping.ColumnMappings.Add("ПланТрудоемкость", "ПланТрудоемкость");
+            tableMapping.ColumnMappings.Add("ВыполненоНаНачало", "ВыполненоНаНачало");
+            tableMapping.ColumnMappings.Add("ВыполненоЗаПериод", "ВыполненоЗаПериод");
+            tableMapping.ColumnMappings.Add("ВыполненоНаКонецМесяца", "ВыполненоНаКонецМесяца");
+            tableMapping.ColumnMappings.Add("MaterialDate", "MaterialDate");
+            tableMapping.ColumnMappings.Add("ФКол_во", "ФКол_во");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::Texac.Properties.Settings.Default.connStr;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT     NППЗаказа, NЗаказаЗавода, НаименованиеТО, ОбозначениеТО, 0 AS ФКол_во," +
+                " ВсегоКолво, ПланТрудоемкость, ВыполненоНаНачало, \r\n                      Выполн" +
+                "еноЗаПериод, MaterialDate\r\nFROM         tmpEndWorkReport";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "PARAMETERS startDate DateTime, endDate DateTime, orderType Text (10);\r\nSELECT    " +
+                " NППЗаказа, NЗаказаЗавода, НаименованиеТО, ОбозначениеТО, ФКол_во, ВсегоКолво, П" +
+                "ланТрудоемкость, ВыполненоНаНачало, \r\n                      iif([ФКол_во] = [Все" +
+                "гоКолво] AND [ПланТрудоемкость] * [ВсегоКолво] - [ВыполненоНаНачало] - [Выполнен" +
+                "оЗаПериод2] >= 0, \r\n                      [ПланТрудоемкость] * [ВсегоКолво] - [В" +
+                "ыполненоНаНачало], ВыполненоЗаПериод2) AS ВыполненоЗаПериод, ВыполненоНаКонецМес" +
+                "яца, \r\n                      MaterialDate\r\nFROM         (SELECT     Заказы.NППЗа" +
+                "каза, Заказы.NЗаказаЗавода, КодыНаименованийТО.НаименованиеТО, Заказы.Обозначени" +
+                "еТО, \r\n                                              IIf([ФКол_во] IS NULL, [Кол" +
+                "_во], [Кол_во] - IIf(IsNull([QtyStart]), 0, [QtyStart])) AS ВсегоКолво,\r\n       " +
+                "                                       Заказы.ПланТрудоемкость, \r\n              " +
+                "                                SUM(IIf([ДатаОкончанияРаботы] <  [startDate], [К" +
+                "оличОкончРаб] * [НормаВремени], 0)) AS ВыполненоНаНачало, \r\n                    " +
+                "                          SUM(IIf([ДатаОкончанияРаботы] BETWEEN [startDate] AND " +
+                "[endDate], [КоличОкончРаб] * [НормаВремени], 0)) AS ВыполненоЗаПериод2,\r\n       " +
+                "                                       Заказы.MaterialDate,\r\n                   " +
+                "                           Заказы.ФКол_во,\r\n                                    " +
+                "          iif([ФактДатаИзготовления] BETWEEN [startDate] AND [endDate], 0, 1) AS" +
+                " ВыполненоНаКонецМесяца\r\n                       FROM          КодыНаименованийТО" +
+                " INNER JOIN\r\n                                              ((Заказы LEFT JOIN\r\n " +
+                "                                             ВыполнениеЗаказа ON Заказы.NППЗаказ" +
+                "а = ВыполнениеЗаказа.NППЗаказа) LEFT JOIN\r\n                                     " +
+                "         qQtyStartDate2 ON Заказы.NППЗаказа = qQtyStartDate2.NППЗаказа) ON КодыН" +
+                "аименованийТО.КодТО = Заказы.КодТО\r\n                       GROUP BY Заказы.NППЗа" +
+                "каза, Заказы.NЗаказаЗавода, КодыНаименованийТО.НаименованиеТО, Заказы.Обозначени" +
+                "еТО, \r\n                                              IIf([ФКол_во] IS NULL, [Кол" +
+                "_во], [Кол_во] - IIf(IsNull([QtyStart]), 0, [QtyStart])),\r\n                     " +
+                "                         Заказы.ПланТрудоемкость, \r\n                            " +
+                "                  Заказы.MaterialDate, \r\n                                       " +
+                "       Заказы.Отчет, \r\n                                              Заказы.ФКол" +
+                "_во,\r\n                                              iif([ФактДатаИзготовления] B" +
+                "ETWEEN [startDate] AND [endDate], 0, 1)\r\n                       HAVING      ([За" +
+                "казы.NЗаказаЗавода] LIKE [orderType] AND IIf([ФКол_во] IS NULL, [Кол_во], [Кол_в" +
+                "о] - IIf(IsNull([QtyStart]), 0, [QtyStart])) > 0 AND \r\n                         " +
+                "                     [Заказы.MaterialDate] >= #1/1/2013# AND [Заказы.Отчет] = Fa" +
+                "lse) OR\r\n                                              ([Заказы.NЗаказаЗавода] L" +
+                "IKE [orderType] AND [Заказы.MaterialDate] BETWEEN [startDate] AND [endDate]))\r\nO" +
+                "RDER BY NЗаказаЗавода";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("startDate", global::System.Data.OleDb.OleDbType.DBTimeStamp, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("endDate", global::System.Data.OleDb.OleDbType.DBTimeStamp, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("orderType", global::System.Data.OleDb.OleDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dataDataSet.Orders208DataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Fill208(dataDataSet.Orders208DataTable dataTable, System.DateTime startDate, System.DateTime endDate, string orderType) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(startDate));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(endDate));
+            if ((orderType == null)) {
+                throw new global::System.ArgumentNullException("orderType");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(orderType));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();

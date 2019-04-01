@@ -46,19 +46,20 @@
             this.scladTextBox = new System.Windows.Forms.TextBox();
             this.bsTrebovanieDetails = new System.Windows.Forms.BindingSource(this.components);
             this.dgvTrebovanieDetails = new System.Windows.Forms.DataGridView();
-            this.colTrebovanieDetailId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrebovanielId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMatCartId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaterialCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colKol1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colKol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbCustomer = new System.Windows.Forms.ComboBox();
             this.taTrebovanie = new Texac.dataDataSetTableAdapters.TrebovanieTableAdapter();
             this.tableAdapterManager = new Texac.dataDataSetTableAdapters.TableAdapterManager();
             this.taTrebovanieDetails = new Texac.dataDataSetTableAdapters.TrebovanieDetailsTableAdapter();
             this.taDepartmentsView = new Texac.dataDataSetTableAdapters.DepartmentsViewTableAdapter();
+            this.colTrebovanieDetailId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrebovanielId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMatCartId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaterialCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ASUPCODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colKol1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colKol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             docNumberLabel = new System.Windows.Forms.Label();
             docDateLabel = new System.Windows.Forms.Label();
             scladLabel = new System.Windows.Forms.Label();
@@ -203,6 +204,7 @@
             this.colTrebovanielId,
             this.colMatCartId,
             this.colMaterialCode,
+            this.ASUPCODE,
             this.colMaterial,
             this.colEd,
             this.colKol1,
@@ -220,6 +222,37 @@
             this.dgvTrebovanieDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTrebovanieDetails.Size = new System.Drawing.Size(868, 313);
             this.dgvTrebovanieDetails.TabIndex = 11;
+            // 
+            // cbCustomer
+            // 
+            this.cbCustomer.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bsTrebovanie, "NЦеха", true));
+            this.cbCustomer.FormattingEnabled = true;
+            this.cbCustomer.Location = new System.Drawing.Point(534, 20);
+            this.cbCustomer.Name = "cbCustomer";
+            this.cbCustomer.Size = new System.Drawing.Size(266, 21);
+            this.cbCustomer.TabIndex = 12;
+            // 
+            // taTrebovanie
+            // 
+            this.taTrebovanie.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.MaterialReportDetailsTableAdapter = null;
+            this.tableAdapterManager.TrebovanieDetailsTableAdapter = this.taTrebovanieDetails;
+            this.tableAdapterManager.TrebovanieTableAdapter = this.taTrebovanie;
+            this.tableAdapterManager.UpdateOrder = Texac.dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ВидыПрофессиийTableAdapter = null;
+            this.tableAdapterManager.РаботникиЦехаTableAdapter = null;
+            // 
+            // taTrebovanieDetails
+            // 
+            this.taTrebovanieDetails.ClearBeforeFill = true;
+            // 
+            // taDepartmentsView
+            // 
+            this.taDepartmentsView.ClearBeforeFill = true;
             // 
             // colTrebovanieDetailId
             // 
@@ -250,6 +283,12 @@
             this.colMaterialCode.Name = "colMaterialCode";
             this.colMaterialCode.Width = 75;
             // 
+            // ASUPCODE
+            // 
+            this.ASUPCODE.DataPropertyName = "ASUPCODE";
+            this.ASUPCODE.HeaderText = "Номер карточки";
+            this.ASUPCODE.Name = "ASUPCODE";
+            // 
             // colMaterial
             // 
             this.colMaterial.DataPropertyName = "Material";
@@ -275,36 +314,6 @@
             this.colKol2.DataPropertyName = "Kol2";
             this.colKol2.HeaderText = "Получено";
             this.colKol2.Name = "colKol2";
-            // 
-            // cbCustomer
-            // 
-            this.cbCustomer.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bsTrebovanie, "NЦеха", true));
-            this.cbCustomer.FormattingEnabled = true;
-            this.cbCustomer.Location = new System.Drawing.Point(534, 20);
-            this.cbCustomer.Name = "cbCustomer";
-            this.cbCustomer.Size = new System.Drawing.Size(266, 21);
-            this.cbCustomer.TabIndex = 12;
-            // 
-            // taTrebovanie
-            // 
-            this.taTrebovanie.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.TrebovanieDetailsTableAdapter = this.taTrebovanieDetails;
-            this.tableAdapterManager.TrebovanieTableAdapter = this.taTrebovanie;
-            this.tableAdapterManager.UpdateOrder = Texac.dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ВидыПрофессиийTableAdapter = null;
-            this.tableAdapterManager.РаботникиЦехаTableAdapter = null;
-            // 
-            // taTrebovanieDetails
-            // 
-            this.taTrebovanieDetails.ClearBeforeFill = true;
-            // 
-            // taDepartmentsView
-            // 
-            this.taDepartmentsView.ClearBeforeFill = true;
             // 
             // TrebovanieForm
             // 
@@ -350,15 +359,16 @@
         private System.Windows.Forms.BindingSource bsTrebovanieDetails;
         private dataDataSetTableAdapters.TrebovanieDetailsTableAdapter taTrebovanieDetails;
         private System.Windows.Forms.DataGridView dgvTrebovanieDetails;
+        private System.Windows.Forms.ComboBox cbCustomer;
+        private dataDataSetTableAdapters.DepartmentsViewTableAdapter taDepartmentsView;
         private System.Windows.Forms.DataGridViewTextBoxColumn colKol2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colKol1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEd;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaterial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ASUPCODE;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaterialCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMatCartId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrebovanielId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrebovanieDetailId;
-        private System.Windows.Forms.ComboBox cbCustomer;
-        private dataDataSetTableAdapters.DepartmentsViewTableAdapter taDepartmentsView;
     }
 }
