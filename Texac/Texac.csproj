@@ -112,6 +112,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dataDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DopZN\DopZnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DopZN\DopZnForm.Designer.cs">
+      <DependentUpon>DopZnForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employees\EmployeeList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -201,6 +207,10 @@
     <Compile Include="TTN\TtnList.Designer.cs">
       <DependentUpon>TtnList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DopZN\DopZnForm.resx">
+      <DependentUpon>DopZnForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DopZN\DopZnReport.rdlc" />
     <EmbeddedResource Include="Employees\EmployeeList.resx">
       <DependentUpon>EmployeeList.cs</DependentUpon>
     </EmbeddedResource>

@@ -48,6 +48,7 @@
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.miDopZN = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,7 +137,8 @@
             this.miDocs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miTrebovaniya,
             this.miIssuedMaterials,
-            this.miTtn});
+            this.miTtn,
+            this.miDopZN});
             this.miDocs.Name = "miDocs";
             this.miDocs.Size = new System.Drawing.Size(82, 20);
             this.miDocs.Text = "Документы";
@@ -144,21 +146,21 @@
             // miTrebovaniya
             // 
             this.miTrebovaniya.Name = "miTrebovaniya";
-            this.miTrebovaniya.Size = new System.Drawing.Size(210, 22);
+            this.miTrebovaniya.Size = new System.Drawing.Size(226, 22);
             this.miTrebovaniya.Text = "Требования";
             this.miTrebovaniya.Click += new System.EventHandler(this.miTrebovaniya_Click);
             // 
             // miIssuedMaterials
             // 
             this.miIssuedMaterials.Name = "miIssuedMaterials";
-            this.miIssuedMaterials.Size = new System.Drawing.Size(210, 22);
+            this.miIssuedMaterials.Size = new System.Drawing.Size(226, 22);
             this.miIssuedMaterials.Text = "Полученные материалы";
             this.miIssuedMaterials.Click += new System.EventHandler(this.miIssuedMaterials_Click);
             // 
             // miTtn
             // 
             this.miTtn.Name = "miTtn";
-            this.miTtn.Size = new System.Drawing.Size(210, 22);
+            this.miTtn.Size = new System.Drawing.Size(226, 22);
             this.miTtn.Text = "ТТН";
             this.miTtn.Click += new System.EventHandler(this.miTtn_Click);
             // 
@@ -208,6 +210,13 @@
             this.tabControl1.Size = new System.Drawing.Size(800, 457);
             this.tabControl1.TabIndex = 2;
             // 
+            // miDopZN
+            // 
+            this.miDopZN.Name = "miDopZN";
+            this.miDopZN.Size = new System.Drawing.Size(226, 22);
+            this.miDopZN.Text = "Дополнение к заказ-наряду";
+            this.miDopZN.Click += new System.EventHandler(this.miDopZN_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,6 +260,7 @@
         private System.Windows.Forms.ToolStripMenuItem miIssuedMaterials;
         private System.Windows.Forms.ToolStripMenuItem miReadyWork;
         private System.Windows.Forms.ToolStripMenuItem miTtn;
+        private System.Windows.Forms.ToolStripMenuItem miDopZN;
     }
 }
 

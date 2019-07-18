@@ -165,6 +165,9 @@ namespace Texac
 
         }
 
-
+        private void miDopZN_Click(object sender, EventArgs e)
+        {
+            new DopZnForm();
+        }
     }
 }
