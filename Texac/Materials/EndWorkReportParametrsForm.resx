@@ -117,28 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ASUPCODE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="bsTrebovaniyaView.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>86, 16</value>
-  </metadata>
-  <metadata name="ds.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 18</value>
-  </metadata>
-  <metadata name="taTrebovaniyaView.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>243, 12</value>
-  </metadata>
-  <metadata name="tam.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>367, 14</value>
-  </metadata>
-  <metadata name="taTrebovanieDetails.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>562, 14</value>
-  </metadata>
-  <metadata name="taTrebovanie.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>440, 14</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>99</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnView.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAS+SURBVEhL5ZV7TFNnGIe5iIgShc0rXlhUhCqXyRQYikUmKGhFlJuttAJWodgirNCWa0ERKKVV
+        VKggOmA4nBembqAuOs3EKaBuMyExwUtUppYtUQwKTn/vTuH8Y9TFzP3nk/zyfTnnPc978n3fyTH7MJGo
+        CkbHp2R4xErTxoWL1puzl/8/Mvedbi1svoHcg+1Irzz+OKmw8tzSKJGMvf1+iDaqxq4rPfq3ouEasg53
+        EBuEJeX1zvH2tWTL/jsREnUUT1lL/JJTCN/STCs3NxEzwjdUfJMteT8CRVmaeZI9WCCrATe5Fv6bvkZA
+        aj3cuWHn2JJ3I69AMyWrQC/ixamCI8Tp03Lyt67kCwSagLXqRs+4XfRZfDmYmMaB+QxP7hH20X/HYNg9
+        al/9IcNq5e7n3uvLKSC1Br4byilSWU3b9x6mkor6l6tkWpofWwKvWD3N5JeaAid3nwZW8XaylGlD21sv
+        Xd6gb4KfbC+iipqwWLEfvgkGuK7WwDEkE7PDc8FP2Q6hbDMSlHqExudCkKJFTOz6X+Vy+SqZTDaS1b1O
+        fqZ84V/dD4mX/hWCFN+QUH+GxOXnwdecJK60miYvyaCRXgmwmiWiIZw1sHTmk4VTNFlMi4THqhwqrztK
+        KmX6Mbks0YZVvsqW7LRFd2/fRHhyGZwiijAhOBMz+VosSqtHjO40EisvYqW6Ea6RhbBxX4shLgLYeorh
+        sDgDwUl6HG86gZqdRSgrynnzfmQrUlx/v3KJYtPKBo4gL/s78hIb4Lg8j8YGqcg5qpj8U2og0P5IiVUX
+        EV18gvzEOtJVH8HVy210oEpLyg0ChHLnvoxYsez1pZKI145oamzol+cbMJ2nJv/kWlqecxTBqkPETa4j
+        t5htNJmnxrjFGTR1RS601YfJ2P0n3bh+DcdqdJQjiaHoAC+E+Li/XBoY8Oa92JqV8nOxZhs8gxMoKHk7
+        LVyXh7n8fJoTu4N8EqoGjqS7sIwCJDtxtvMB3b9vpOZ6PWp12RQX4kdRTIOgOW69SxZyh7DKQaIjwy2E
+        EcvO56SKn1fu1qOl8y7ajU9x5nY3qs9ehLTEgAUCBVyWpcMpbAviCr7Fzj030XKuDc11pdCpJFj9hTdC
+        53+K+a4uHax2kNRNUmdtieZUXe3e/rOXWqi9qwsX7nbRL10Pqe3BI1ztfkptxl462fkHKbZVYDwnhIRS
+        HYjh/p1OaqwqgHqjkHi+HuTr7AjOlIk/mJubD2f1ZmbC6DBdaUFW75W2C/S0r496+vpw7/Fj6jAaqZVp
+        1sI0u3DvIdUeOkiFmVKo0yRkqKgaaHDnRgfV6FXYFLOCPnf5hNwmjuv/2M4ujtEOHbQzWFtbW9nY2Mye
+        O3vWLrl0nfH0ye/R86QH/S9e4NGzZ/jt1i18KZchPZGP3NR4LPX3wjxPjxd1VRXYX6nHDrUU/CA/zHQY
+        2zPG3n4joxwzaH4V04/D1tLS0oUzY2p2alL89eONDcjNyXwyi+PSaG9nl+jGma714Dj99NGoUcXDhg3z
+        nuQwQRTo53NAkbimK8TPu9V2xPAgxvH2L5nF1Mj0JTo6TBgfM9TKKpCZuzIxvZU9k0lMbJmY6iyYjGAy
+        nsloJq+enHfAtI4mmUn0QWJm9g8LX2qr0aPjOQAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

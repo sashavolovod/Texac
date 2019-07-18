@@ -1762,7 +1762,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!ASUPCODE.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0;(0);''</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1776,7 +1778,6 @@
                           <Style>None</Style>
                         </Border>
                         <BottomBorder>
-                          <Color>Black</Color>
                           <Style>Solid</Style>
                           <Width>0.5pt</Width>
                         </BottomBorder>
@@ -1787,6 +1788,7 @@
                         <PaddingBottom>1pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>

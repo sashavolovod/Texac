@@ -2292,6 +2292,8 @@ namespace Texac {
             
             private global::System.Data.DataColumn columnTrebovanieNumber;
             
+            private global::System.Data.DataColumn columnDocDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public RashodMaterialovViewDataTable() {
@@ -2423,6 +2425,14 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DocDateColumn {
+                get {
+                    return this.columnDocDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2458,7 +2468,7 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RashodMaterialovViewRow AddRashodMaterialovViewRow(string Материал_, double Всего, string ЕдИзм, string ТО, string NЗаказа, System.DateTime ДатаТП, string НаименованиеЦеха, int ASUPCODE, int NЦеха, string ФамилияРуководителя, string Цех, int TrebovanieNumber) {
+            public RashodMaterialovViewRow AddRashodMaterialovViewRow(string Материал_, double Всего, string ЕдИзм, string ТО, string NЗаказа, System.DateTime ДатаТП, string НаименованиеЦеха, int ASUPCODE, int NЦеха, string ФамилияРуководителя, string Цех, int TrebovanieNumber, System.DateTime DocDate) {
                 RashodMaterialovViewRow rowRashodMaterialovViewRow = ((RashodMaterialovViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Материал_,
@@ -2472,7 +2482,8 @@ namespace Texac {
                         NЦеха,
                         ФамилияРуководителя,
                         Цех,
-                        TrebovanieNumber};
+                        TrebovanieNumber,
+                        DocDate};
                 rowRashodMaterialovViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRashodMaterialovViewRow);
                 return rowRashodMaterialovViewRow;
@@ -2507,6 +2518,7 @@ namespace Texac {
                 this.columnФамилияРуководителя = base.Columns["ФамилияРуководителя"];
                 this.columnЦех = base.Columns["Цех"];
                 this.columnTrebovanieNumber = base.Columns["TrebovanieNumber"];
+                this.columnDocDate = base.Columns["DocDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2536,6 +2548,8 @@ namespace Texac {
                 base.Columns.Add(this.columnЦех);
                 this.columnTrebovanieNumber = new global::System.Data.DataColumn("TrebovanieNumber", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTrebovanieNumber);
+                this.columnDocDate = new global::System.Data.DataColumn("DocDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDocDate);
                 this.columnМатериал_.MaxLength = 255;
                 this.columnЕдИзм.MaxLength = 6;
                 this.columnТО.MaxLength = 255;
@@ -7481,6 +7495,22 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime DocDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRashodMaterialovView.DocDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DocDate\' in table \'RashodMaterialovView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRashodMaterialovView.DocDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsМатериал_Null() {
                 return this.IsNull(this.tableRashodMaterialovView.Материал_Column);
             }
@@ -7621,6 +7651,18 @@ namespace Texac {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTrebovanieNumberNull() {
                 this[this.tableRashodMaterialovView.TrebovanieNumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDocDateNull() {
+                return this.IsNull(this.tableRashodMaterialovView.DocDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDocDateNull() {
+                this[this.tableRashodMaterialovView.DocDateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -13097,6 +13139,7 @@ namespace Texac.dataDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("ФамилияРуководителя", "ФамилияРуководителя");
             tableMapping.ColumnMappings.Add("Цех", "Цех");
             tableMapping.ColumnMappings.Add("TrebovanieNumber", "TrebovanieNumber");
+            tableMapping.ColumnMappings.Add("DocDate", "DocDate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -13113,17 +13156,20 @@ namespace Texac.dataDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [Материал_], Всего, ЕдИзм, ТО, NЗаказа, ДатаТП, НаименованиеЦеха, ASUPCODE" +
-                ", NЦеха, ФамилияРуководителя, TrebovanieNumber, Цех FROM RashodMaterialovView OR" +
-                "DER BY НаименованиеЦеха";
+            this._commandCollection[0].CommandText = "SELECT        [Материал_], Всего, ЕдИзм, ТО, NЗаказа, ДатаТП, НаименованиеЦеха, A" +
+                "SUPCODE, NЦеха, ФамилияРуководителя, TrebovanieNumber, Цех, DocDate\r\nFROM       " +
+                "     RashodMaterialovView\r\nORDER BY НаименованиеЦеха";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT [Материал_], Всего, ЕдИзм, ТО, NЗаказа, ДатаТП, НаименованиеЦеха, ASUPCODE, NЦеха, ФамилияРуководителя, TrebovanieNumber, Цех FROM RashodMaterialovView WHERE (ДатаТП BETWEEN startDate AND endDate) AND (NЗаказа LIKE orderType) ORDER BY НаименованиеЦеха";
+            this._commandCollection[1].CommandText = @"SELECT        [Материал_], Всего, ЕдИзм, ТО, NЗаказа, ДатаТП, НаименованиеЦеха, ASUPCODE, NЦеха, ФамилияРуководителя, TrebovanieNumber, Цех, DocDate
+FROM            RashodMaterialovView
+WHERE        (DocDate BETWEEN ? AND ?) AND (NЗаказа LIKE ?)
+ORDER BY НаименованиеЦеха";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("startDate", global::System.Data.OleDb.OleDbType.DBTimeStamp, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("endDate", global::System.Data.OleDb.OleDbType.DBTimeStamp, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("orderType", global::System.Data.OleDb.OleDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("startDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocDate", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("endDate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DocDate", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("orderType", global::System.Data.OleDb.OleDbType.WChar, 17, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "NЗаказа", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13143,12 +13189,22 @@ namespace Texac.dataDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByDate(dataDataSet.RashodMaterialovViewDataTable dataTable, System.DateTime startDate, System.DateTime endDate, string orderType) {
+        public virtual int FillByDate(dataDataSet.RashodMaterialovViewDataTable dataTable, global::System.Nullable<global::System.DateTime> startDate, global::System.Nullable<global::System.DateTime> endDate, string orderType) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(startDate));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(endDate));
+            if ((startDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(startDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((endDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(endDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((orderType == null)) {
-                throw new global::System.ArgumentNullException("orderType");
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(orderType));

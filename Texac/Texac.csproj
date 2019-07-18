@@ -262,7 +262,6 @@
     </None>
     <None Include="dataDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dataDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="dataDataSet.xss">

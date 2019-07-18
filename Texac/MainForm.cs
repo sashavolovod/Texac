@@ -158,5 +158,13 @@ namespace Texac
         {
             new frmEndWorkReportParametrs().Show();
         }
+
+
+        private void miTtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

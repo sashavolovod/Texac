@@ -41,13 +41,13 @@
             this.miDocs = new System.Windows.Forms.ToolStripMenuItem();
             this.miTrebovaniya = new System.Windows.Forms.ToolStripMenuItem();
             this.miIssuedMaterials = new System.Windows.Forms.ToolStripMenuItem();
+            this.miTtn = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miMaterialreport = new System.Windows.Forms.ToolStripMenuItem();
             this.miReadyWork = new System.Windows.Forms.ToolStripMenuItem();
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.miTtn = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,6 +155,13 @@
             this.miIssuedMaterials.Text = "Полученные материалы";
             this.miIssuedMaterials.Click += new System.EventHandler(this.miIssuedMaterials_Click);
             // 
+            // miTtn
+            // 
+            this.miTtn.Name = "miTtn";
+            this.miTtn.Size = new System.Drawing.Size(210, 22);
+            this.miTtn.Text = "ТТН";
+            this.miTtn.Click += new System.EventHandler(this.miTtn_Click);
+            // 
             // отчетыToolStripMenuItem
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -200,12 +207,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 457);
             this.tabControl1.TabIndex = 2;
-            // 
-            // miTtn
-            // 
-            this.miTtn.Name = "miTtn";
-            this.miTtn.Size = new System.Drawing.Size(210, 22);
-            this.miTtn.Text = "ТТН";
             // 
             // MainForm
             // 

@@ -6,6 +6,9 @@
     }
 }
 
-namespace Texac.dataDataSetTableAdapters {
-    
+namespace Texac.dataDataSetTableAdapters
+{
+    partial class RashodMaterialovViewTableAdapter
+    {
+    }
 }
