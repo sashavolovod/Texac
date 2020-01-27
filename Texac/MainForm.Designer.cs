@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ssStatusStrip = new System.Windows.Forms.StatusStrip();
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.miFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,13 +43,14 @@
             this.miTrebovaniya = new System.Windows.Forms.ToolStripMenuItem();
             this.miIssuedMaterials = new System.Windows.Forms.ToolStripMenuItem();
             this.miTtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.miDopZN = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miMaterialreport = new System.Windows.Forms.ToolStripMenuItem();
             this.miReadyWork = new System.Windows.Forms.ToolStripMenuItem();
+            this.miMatZN = new System.Windows.Forms.ToolStripMenuItem();
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.miDopZN = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,11 +166,20 @@
             this.miTtn.Text = "ТТН";
             this.miTtn.Click += new System.EventHandler(this.miTtn_Click);
             // 
+            // miDopZN
+            // 
+            this.miDopZN.Image = ((System.Drawing.Image)(resources.GetObject("miDopZN.Image")));
+            this.miDopZN.Name = "miDopZN";
+            this.miDopZN.Size = new System.Drawing.Size(226, 22);
+            this.miDopZN.Text = "Дополнение к заказ-наряду";
+            this.miDopZN.Click += new System.EventHandler(this.miDopZN_Click);
+            // 
             // отчетыToolStripMenuItem
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miMaterialreport,
-            this.miReadyWork});
+            this.miReadyWork,
+            this.miMatZN});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
@@ -176,16 +187,23 @@
             // miMaterialreport
             // 
             this.miMaterialreport.Name = "miMaterialreport";
-            this.miMaterialreport.Size = new System.Drawing.Size(224, 22);
+            this.miMaterialreport.Size = new System.Drawing.Size(238, 22);
             this.miMaterialreport.Text = "Расход материалов";
             this.miMaterialreport.Click += new System.EventHandler(this.miMaterialreport_Click);
             // 
             // miReadyWork
             // 
             this.miReadyWork.Name = "miReadyWork";
-            this.miReadyWork.Size = new System.Drawing.Size(224, 22);
+            this.miReadyWork.Size = new System.Drawing.Size(238, 22);
             this.miReadyWork.Text = "По выполненным работам";
             this.miReadyWork.Click += new System.EventHandler(this.miReadyWork_Click);
+            // 
+            // miMatZN
+            // 
+            this.miMatZN.Name = "miMatZN";
+            this.miMatZN.Size = new System.Drawing.Size(238, 22);
+            this.miMatZN.Text = "Материалы по заказ-нарядам";
+            this.miMatZN.Click += new System.EventHandler(this.miMatZN_Click);
             // 
             // miHelp
             // 
@@ -209,13 +227,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(800, 457);
             this.tabControl1.TabIndex = 2;
-            // 
-            // miDopZN
-            // 
-            this.miDopZN.Name = "miDopZN";
-            this.miDopZN.Size = new System.Drawing.Size(226, 22);
-            this.miDopZN.Text = "Дополнение к заказ-наряду";
-            this.miDopZN.Click += new System.EventHandler(this.miDopZN_Click);
             // 
             // MainForm
             // 
@@ -261,6 +272,7 @@
         private System.Windows.Forms.ToolStripMenuItem miReadyWork;
         private System.Windows.Forms.ToolStripMenuItem miTtn;
         private System.Windows.Forms.ToolStripMenuItem miDopZN;
+        private System.Windows.Forms.ToolStripMenuItem miMatZN;
     }
 }
 

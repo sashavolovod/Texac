@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Texac.Employees;
 using Texac.Materials;
 using Texac.Trebovaniya;
+using Texac.Properties;
 
 namespace Texac
 {
@@ -98,7 +99,8 @@ namespace Texac
                 return new TrebovanieList();
             else if (tabPageName == "Полученные материалы")
                 return new IssuedMaterials();
-
+            else if (tabPageName == "Материалы по заказ-нарядам")
+                return new MaterialZN();
             return new Control();
         }
             
@@ -122,6 +124,7 @@ namespace Texac
             {
                 var tabRect = this.tabControl1.GetTabRect(i);
                 tabRect.Inflate(-2, -2);
+
                 var closeImage = Properties.Resources.Close;
 
                 var imageRect = new Rectangle(
@@ -129,7 +132,7 @@ namespace Texac
                     tabRect.Top + (tabRect.Height - closeImage.Height) / 2,
                     closeImage.Width,
                     closeImage.Height);
-
+                   
                 if (imageRect.Contains(e.Location))
                 {
                     this.tabControl1.TabPages.RemoveAt(i);
@@ -167,7 +170,12 @@ namespace Texac
 
         private void miDopZN_Click(object sender, EventArgs e)
         {
-            new DopZnForm();
+            new DopZnForm().Show();
+        }
+
+        private void miMatZN_Click(object sender, EventArgs e)
+        {
+            openNewTab("Материалы по заказ-нарядам");
         }
     }
 }

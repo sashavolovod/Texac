@@ -29,28 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label docNumberLabel;
-            System.Windows.Forms.Label docDateLabel;
-            System.Windows.Forms.Label scladLabel;
             System.Windows.Forms.Label nЦехаLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.docNumberTextBox = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.Label scladLabel;
+            System.Windows.Forms.Label docDateLabel;
+            System.Windows.Forms.Label docNumberLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrebovanieForm));
             this.bsTrebovanie = new System.Windows.Forms.BindingSource(this.components);
             this.ds = new Texac.dataDataSet();
-            this.docDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.scladTextBox = new System.Windows.Forms.TextBox();
             this.bsTrebovanieDetails = new System.Windows.Forms.BindingSource(this.components);
-            this.dgvTrebovanieDetails = new System.Windows.Forms.DataGridView();
-            this.cbCustomer = new System.Windows.Forms.ComboBox();
             this.taTrebovanie = new Texac.dataDataSetTableAdapters.TrebovanieTableAdapter();
             this.tableAdapterManager = new Texac.dataDataSetTableAdapters.TableAdapterManager();
             this.taTrebovanieDetails = new Texac.dataDataSetTableAdapters.TrebovanieDetailsTableAdapter();
             this.taDepartmentsView = new Texac.dataDataSetTableAdapters.DepartmentsViewTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbCustomer = new System.Windows.Forms.ComboBox();
+            this.scladTextBox = new System.Windows.Forms.TextBox();
+            this.dtpDocDate = new System.Windows.Forms.DateTimePicker();
+            this.tbTrebovanieNumber = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvTrebovanieDetails = new System.Windows.Forms.DataGridView();
             this.colTrebovanieDetailId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrebovanielId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMatCartId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,94 +64,68 @@
             this.colEd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colKol1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colKol2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            docNumberLabel = new System.Windows.Forms.Label();
-            docDateLabel = new System.Windows.Forms.Label();
-            scladLabel = new System.Windows.Forms.Label();
+            this.bnTrebovanieDetails = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             nЦехаLabel = new System.Windows.Forms.Label();
+            scladLabel = new System.Windows.Forms.Label();
+            docDateLabel = new System.Windows.Forms.Label();
+            docNumberLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrebovanie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrebovanieDetails)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrebovanieDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bnTrebovanieDetails)).BeginInit();
+            this.bnTrebovanieDetails.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // docNumberLabel
-            // 
-            docNumberLabel.AutoSize = true;
-            docNumberLabel.Location = new System.Drawing.Point(12, 23);
-            docNumberLabel.Name = "docNumberLabel";
-            docNumberLabel.Size = new System.Drawing.Size(21, 13);
-            docNumberLabel.TabIndex = 6;
-            docNumberLabel.Text = "№:";
-            // 
-            // docDateLabel
-            // 
-            docDateLabel.AutoSize = true;
-            docDateLabel.Location = new System.Drawing.Point(93, 23);
-            docDateLabel.Name = "docDateLabel";
-            docDateLabel.Size = new System.Drawing.Size(21, 13);
-            docDateLabel.TabIndex = 7;
-            docDateLabel.Text = "от:";
-            // 
-            // scladLabel
-            // 
-            scladLabel.AutoSize = true;
-            scladLabel.Location = new System.Drawing.Point(293, 23);
-            scladLabel.Name = "scladLabel";
-            scladLabel.Size = new System.Drawing.Size(83, 13);
-            scladLabel.TabIndex = 8;
-            scladLabel.Text = "Номер склада:";
             // 
             // nЦехаLabel
             // 
             nЦехаLabel.AutoSize = true;
-            nЦехаLabel.Location = new System.Drawing.Point(470, 23);
+            nЦехаLabel.Location = new System.Drawing.Point(478, 13);
             nЦехаLabel.Name = "nЦехаLabel";
             nЦехаLabel.Size = new System.Drawing.Size(58, 13);
-            nЦехаLabel.TabIndex = 9;
+            nЦехаLabel.TabIndex = 18;
             nЦехаLabel.Text = "Заказчик:";
             // 
-            // btnSave
+            // scladLabel
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSave.Location = new System.Drawing.Point(784, 391);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(95, 31);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Сохранить";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            scladLabel.AutoSize = true;
+            scladLabel.Location = new System.Drawing.Point(301, 13);
+            scladLabel.Name = "scladLabel";
+            scladLabel.Size = new System.Drawing.Size(83, 13);
+            scladLabel.TabIndex = 16;
+            scladLabel.Text = "Номер склада:";
             // 
-            // btnCancel
+            // docDateLabel
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(675, 391);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(103, 31);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Отмена";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            docDateLabel.AutoSize = true;
+            docDateLabel.Location = new System.Drawing.Point(101, 13);
+            docDateLabel.Name = "docDateLabel";
+            docDateLabel.Size = new System.Drawing.Size(21, 13);
+            docDateLabel.TabIndex = 14;
+            docDateLabel.Text = "от:";
             // 
-            // btnPrint
+            // docNumberLabel
             // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPrint.Location = new System.Drawing.Point(12, 391);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(90, 31);
-            this.btnPrint.TabIndex = 6;
-            this.btnPrint.Text = "Печать";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // docNumberTextBox
-            // 
-            this.docNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsTrebovanie, "DocNumber", true));
-            this.docNumberTextBox.Location = new System.Drawing.Point(39, 20);
-            this.docNumberTextBox.Name = "docNumberTextBox";
-            this.docNumberTextBox.Size = new System.Drawing.Size(48, 20);
-            this.docNumberTextBox.TabIndex = 7;
+            docNumberLabel.AutoSize = true;
+            docNumberLabel.Location = new System.Drawing.Point(20, 13);
+            docNumberLabel.Name = "docNumberLabel";
+            docNumberLabel.Size = new System.Drawing.Size(21, 13);
+            docNumberLabel.TabIndex = 13;
+            docNumberLabel.Text = "№:";
             // 
             // bsTrebovanie
             // 
@@ -159,78 +137,10 @@
             this.ds.DataSetName = "dataDataSet";
             this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // docDateDateTimePicker
-            // 
-            this.docDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsTrebovanie, "DocDate", true));
-            this.docDateDateTimePicker.Location = new System.Drawing.Point(120, 20);
-            this.docDateDateTimePicker.Name = "docDateDateTimePicker";
-            this.docDateDateTimePicker.Size = new System.Drawing.Size(141, 20);
-            this.docDateDateTimePicker.TabIndex = 8;
-            // 
-            // scladTextBox
-            // 
-            this.scladTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsTrebovanie, "Sclad", true));
-            this.scladTextBox.Location = new System.Drawing.Point(382, 20);
-            this.scladTextBox.Name = "scladTextBox";
-            this.scladTextBox.Size = new System.Drawing.Size(59, 20);
-            this.scladTextBox.TabIndex = 9;
-            // 
             // bsTrebovanieDetails
             // 
             this.bsTrebovanieDetails.DataMember = "tblTrebovanietblTrebovanieDetails";
             this.bsTrebovanieDetails.DataSource = this.bsTrebovanie;
-            // 
-            // dgvTrebovanieDetails
-            // 
-            this.dgvTrebovanieDetails.AllowUserToAddRows = false;
-            this.dgvTrebovanieDetails.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvTrebovanieDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTrebovanieDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvTrebovanieDetails.AutoGenerateColumns = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTrebovanieDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvTrebovanieDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTrebovanieDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colTrebovanieDetailId,
-            this.colTrebovanielId,
-            this.colMatCartId,
-            this.colMaterialCode,
-            this.ASUPCODE,
-            this.colMaterial,
-            this.colEd,
-            this.colKol1,
-            this.colKol2});
-            this.dgvTrebovanieDetails.DataSource = this.bsTrebovanieDetails;
-            this.dgvTrebovanieDetails.Location = new System.Drawing.Point(12, 58);
-            this.dgvTrebovanieDetails.Name = "dgvTrebovanieDetails";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTrebovanieDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvTrebovanieDetails.Size = new System.Drawing.Size(868, 313);
-            this.dgvTrebovanieDetails.TabIndex = 11;
-            // 
-            // cbCustomer
-            // 
-            this.cbCustomer.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bsTrebovanie, "NЦеха", true));
-            this.cbCustomer.FormattingEnabled = true;
-            this.cbCustomer.Location = new System.Drawing.Point(534, 20);
-            this.cbCustomer.Name = "cbCustomer";
-            this.cbCustomer.Size = new System.Drawing.Size(266, 21);
-            this.cbCustomer.TabIndex = 12;
             // 
             // taTrebovanie
             // 
@@ -253,6 +163,152 @@
             // taDepartmentsView
             // 
             this.taDepartmentsView.ClearBeforeFill = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.cbCustomer);
+            this.panel1.Controls.Add(nЦехаLabel);
+            this.panel1.Controls.Add(scladLabel);
+            this.panel1.Controls.Add(this.scladTextBox);
+            this.panel1.Controls.Add(docDateLabel);
+            this.panel1.Controls.Add(this.dtpDocDate);
+            this.panel1.Controls.Add(docNumberLabel);
+            this.panel1.Controls.Add(this.tbTrebovanieNumber);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(881, 42);
+            this.panel1.TabIndex = 13;
+            // 
+            // cbCustomer
+            // 
+            this.cbCustomer.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bsTrebovanie, "NЦеха", true));
+            this.cbCustomer.FormattingEnabled = true;
+            this.cbCustomer.Location = new System.Drawing.Point(542, 10);
+            this.cbCustomer.Name = "cbCustomer";
+            this.cbCustomer.Size = new System.Drawing.Size(266, 21);
+            this.cbCustomer.TabIndex = 20;
+            // 
+            // scladTextBox
+            // 
+            this.scladTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsTrebovanie, "Sclad", true));
+            this.scladTextBox.Location = new System.Drawing.Point(390, 10);
+            this.scladTextBox.Name = "scladTextBox";
+            this.scladTextBox.Size = new System.Drawing.Size(59, 20);
+            this.scladTextBox.TabIndex = 19;
+            // 
+            // dtpDocDate
+            // 
+            this.dtpDocDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsTrebovanie, "DocDate", true));
+            this.dtpDocDate.Location = new System.Drawing.Point(128, 10);
+            this.dtpDocDate.Name = "dtpDocDate";
+            this.dtpDocDate.Size = new System.Drawing.Size(141, 20);
+            this.dtpDocDate.TabIndex = 17;
+            // 
+            // tbTrebovanieNumber
+            // 
+            this.tbTrebovanieNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsTrebovanie, "DocNumber", true));
+            this.tbTrebovanieNumber.Location = new System.Drawing.Point(47, 10);
+            this.tbTrebovanieNumber.Name = "tbTrebovanieNumber";
+            this.tbTrebovanieNumber.Size = new System.Drawing.Size(48, 20);
+            this.tbTrebovanieNumber.TabIndex = 15;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnCancel);
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Controls.Add(this.btnPrint);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 384);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(881, 56);
+            this.panel2.TabIndex = 14;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(651, 13);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(103, 31);
+            this.btnCancel.TabIndex = 8;
+            this.btnCancel.Text = "Отмена";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSave.Location = new System.Drawing.Point(774, 13);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(95, 31);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Сохранить";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPrint.Location = new System.Drawing.Point(32, 13);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(90, 31);
+            this.btnPrint.TabIndex = 7;
+            this.btnPrint.Text = "Печать";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dgvTrebovanieDetails);
+            this.panel3.Controls.Add(this.bnTrebovanieDetails);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 42);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(881, 342);
+            this.panel3.TabIndex = 15;
+            // 
+            // dgvTrebovanieDetails
+            // 
+            this.dgvTrebovanieDetails.AllowUserToAddRows = false;
+            this.dgvTrebovanieDetails.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvTrebovanieDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvTrebovanieDetails.AutoGenerateColumns = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTrebovanieDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvTrebovanieDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTrebovanieDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colTrebovanieDetailId,
+            this.colTrebovanielId,
+            this.colMatCartId,
+            this.colMaterialCode,
+            this.ASUPCODE,
+            this.colMaterial,
+            this.colEd,
+            this.colKol1,
+            this.colKol2});
+            this.dgvTrebovanieDetails.DataSource = this.bsTrebovanieDetails;
+            this.dgvTrebovanieDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTrebovanieDetails.Location = new System.Drawing.Point(0, 25);
+            this.dgvTrebovanieDetails.Name = "dgvTrebovanieDetails";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTrebovanieDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvTrebovanieDetails.Size = new System.Drawing.Size(881, 317);
+            this.dgvTrebovanieDetails.TabIndex = 12;
             // 
             // colTrebovanieDetailId
             // 
@@ -315,60 +371,187 @@
             this.colKol2.HeaderText = "Получено";
             this.colKol2.Name = "colKol2";
             // 
+            // bnTrebovanieDetails
+            // 
+            this.bnTrebovanieDetails.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bnTrebovanieDetails.BindingSource = this.bsTrebovanieDetails;
+            this.bnTrebovanieDetails.CountItem = this.bindingNavigatorCountItem;
+            this.bnTrebovanieDetails.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bnTrebovanieDetails.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem});
+            this.bnTrebovanieDetails.Location = new System.Drawing.Point(0, 0);
+            this.bnTrebovanieDetails.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bnTrebovanieDetails.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bnTrebovanieDetails.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bnTrebovanieDetails.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bnTrebovanieDetails.Name = "bnTrebovanieDetails";
+            this.bnTrebovanieDetails.PositionItem = this.bindingNavigatorPositionItem;
+            this.bnTrebovanieDetails.Size = new System.Drawing.Size(881, 25);
+            this.bnTrebovanieDetails.TabIndex = 13;
+            this.bnTrebovanieDetails.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // TrebovanieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 438);
-            this.Controls.Add(this.cbCustomer);
-            this.Controls.Add(this.dgvTrebovanieDetails);
-            this.Controls.Add(nЦехаLabel);
-            this.Controls.Add(scladLabel);
-            this.Controls.Add(this.scladTextBox);
-            this.Controls.Add(docDateLabel);
-            this.Controls.Add(this.docDateDateTimePicker);
-            this.Controls.Add(docNumberLabel);
-            this.Controls.Add(this.docNumberTextBox);
-            this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
+            this.ClientSize = new System.Drawing.Size(881, 440);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "TrebovanieForm";
             this.Text = "Требование - ";
             this.Load += new System.EventHandler(this.TrebovanieForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsTrebovanie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrebovanieDetails)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrebovanieDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bnTrebovanieDetails)).EndInit();
+            this.bnTrebovanieDetails.ResumeLayout(false);
+            this.bnTrebovanieDetails.PerformLayout();
             ((System.Configuration.IPersistComponentSettings)(this)).LoadComponentSettings();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.BindingSource bsTrebovanie;
         private dataDataSetTableAdapters.TrebovanieTableAdapter taTrebovanie;
         private dataDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private dataDataSet ds;
-        private System.Windows.Forms.TextBox docNumberTextBox;
-        private System.Windows.Forms.DateTimePicker docDateDateTimePicker;
-        private System.Windows.Forms.TextBox scladTextBox;
         private System.Windows.Forms.BindingSource bsTrebovanieDetails;
         private dataDataSetTableAdapters.TrebovanieDetailsTableAdapter taTrebovanieDetails;
-        private System.Windows.Forms.DataGridView dgvTrebovanieDetails;
-        private System.Windows.Forms.ComboBox cbCustomer;
         private dataDataSetTableAdapters.DepartmentsViewTableAdapter taDepartmentsView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colKol2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colKol1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaterial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ASUPCODE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaterialCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMatCartId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTrebovanielId;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cbCustomer;
+        private System.Windows.Forms.TextBox scladTextBox;
+        private System.Windows.Forms.DateTimePicker dtpDocDate;
+        private System.Windows.Forms.TextBox tbTrebovanieNumber;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dgvTrebovanieDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrebovanieDetailId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTrebovanielId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMatCartId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaterialCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ASUPCODE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaterial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colKol1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colKol2;
+        private System.Windows.Forms.BindingNavigator bnTrebovanieDetails;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
     }
 }

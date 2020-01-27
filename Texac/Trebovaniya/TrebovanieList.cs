@@ -61,7 +61,6 @@ namespace Texac.Trebovaniya
                 }
             }
         }
-
         private void dgvTrebovania_MouseDown(object sender, MouseEventArgs e)
         {
             var hti = dgvTrebovania.HitTest(e.X, e.Y);
@@ -91,6 +90,12 @@ namespace Texac.Trebovaniya
         private void miOpenTrebovanie_Click(object sender, EventArgs e)
         {
             openDocument();
+        }
+
+        private void tsbAddEmpty_Click(object sender, EventArgs e)
+        {
+            new TrebovanieForm(-1).ShowDialog();
+            taTrebovania.Fill(dataDataSet.TrebovaniaView);
         }
     }
 }

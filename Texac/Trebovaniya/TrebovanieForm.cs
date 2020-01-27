@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,14 @@ using System.Windows.Forms;
 
 namespace Texac
 {
+    
     public partial class TrebovanieForm : MyForm
     {
         private Int32 id;
+        private bool isNewDoc = false;
+      //  private OleDbCommand cmd = null;
+
+
         public TrebovanieForm(Int32 id)
         {
             this.id = id;
@@ -54,21 +60,33 @@ namespace Texac
         private void TrebovanieForm_Load(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            taTrebovanieDetails.FillById(ds.TrebovanieDetails,id);
-            taTrebovanie.FillById(ds.Trebovanie, id);
             taDepartmentsView.Fill(ds.DepartmentsView);
-            dataDataSet.TrebovanieRow r = (dataDataSet.TrebovanieRow)ds.Trebovanie.Rows[0];
-            cbCustomer.SelectedValue = r.NЦеха;
+
+            if (id > 0)
+            {
+                taTrebovanie.FillById(ds.Trebovanie, id);
+                taTrebovanieDetails.FillById(ds.TrebovanieDetails, id);
+                dataDataSet.TrebovanieRow r = (dataDataSet.TrebovanieRow)ds.Trebovanie.Rows[0];
+                cbCustomer.SelectedValue = r.NЦеха;
+
+            }
+            else
+            {
+                taTrebovanie.Adapter.RowUpdated += Adapter_RowUpdated;
+                isNewDoc = true;
+                bsTrebovanie.AddNew();
+                cbCustomer.SelectedIndex = -1;
+                dtpDocDate.Value = DateTime.Now;
+
+                int docNumber = Properties.Settings.Default.TrebovanieLastNumber;
+                tbTrebovanieNumber.Text = (++docNumber).ToString();
+            }
+
+            
             Cursor.Current = Cursors.Default;
         }
 
-        private void trebovanieBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bsTrebovanie.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.ds);
 
-        }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
@@ -87,7 +105,32 @@ namespace Texac
         {
             Validate();
             bsTrebovanie.EndEdit();
-            tableAdapterManager.UpdateAll(this.ds);
+            bsTrebovanieDetails.EndEdit();
+
+            if (isNewDoc)
+            {
+                taTrebovanie.Update(ds.Trebovanie);
+                
+                dataDataSet.TrebovanieRow r = (dataDataSet.TrebovanieRow)ds.Trebovanie.Rows[0];
+
+                taTrebovanieDetails.Update(ds.TrebovanieDetails);
+
+
+                Properties.Settings.Default.TrebovanieLastNumber = r.DocNumber;
+            }
+            else
+            {
+                tableAdapterManager.UpdateAll(this.ds);
+            }
+        }
+        private void Adapter_RowUpdated(object sender, System.Data.OleDb.OleDbRowUpdatedEventArgs e)
+        {
+            if(e.StatementType==StatementType.Insert)
+            {
+                OleDbCommand cmdNewID = new OleDbCommand("SELECT @@IDENTITY", e.Command.Connection);
+                e.Row["TrebovanieId"] = (int)cmdNewID.ExecuteScalar();
+                e.Status = UpdateStatus.SkipCurrentRow;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

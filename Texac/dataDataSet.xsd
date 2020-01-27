@@ -488,7 +488,7 @@ ORDER BY НаименованиеЦеха</CommandText>
               <Mapping SourceColumn="DocDate" DataSetColumn="DocDate" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="connStr (Settings)" DbObjectName="RashodMaterialovView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByDate" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByDate">
+              <DbSource ConnectionRef="connStr (Settings)" DbObjectName="RashodMaterialovView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByDate" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByDate">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        [Материал_], Всего, ЕдИзм, ТО, NЗаказа, ДатаТП, НаименованиеЦеха, ASUPCODE, NЦеха, ФамилияРуководителя, TrebovanieNumber, Цех, DocDate
@@ -1704,9 +1704,4 @@ ORDER BY NЗаказаЗавода</CommandText>
       <xs:field xpath="mstns:MaterialDetailID" />
     </xs:unique>
   </xs:element>
-  <xs:annotation>
-    <xs:appinfo>
-      <msdata:Relationship name="tblTrebovanietblTrebovanieDetails" msdata:parent="Trebovanie" msdata:child="TrebovanieDetails" msdata:parentkey="TrebovanieId" msdata:childkey="tblTrebovanielId" msprop:Generator_UserChildTable="TrebovanieDetails" msprop:Generator_ChildPropName="GetTrebovanieDetailsRows" msprop:Generator_UserRelationName="tblTrebovanietblTrebovanieDetails" msprop:Generator_RelationVarName="relationtblTrebovanietblTrebovanieDetails" msprop:Generator_UserParentTable="Trebovanie" msprop:Generator_ParentPropName="tblTrebovanieRow" />
-    </xs:appinfo>
-  </xs:annotation>
 </xs:schema>

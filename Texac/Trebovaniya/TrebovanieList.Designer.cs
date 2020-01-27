@@ -60,6 +60,7 @@
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbAddEmpty = new System.Windows.Forms.ToolStripButton();
             this.tableAdapterManager = new Texac.dataDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrebovania)).BeginInit();
             this.cmsTrebovaniaDgv.SuspendLayout();
@@ -225,7 +226,8 @@
             this.bindingNavigatorMoveNextItem1,
             this.bindingNavigatorMoveLastItem1,
             this.bindingNavigatorSeparator5,
-            this.btnAdd});
+            this.btnAdd,
+            this.tsbAddEmpty});
             this.bnTrebovania.Location = new System.Drawing.Point(0, 0);
             this.bnTrebovania.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.bnTrebovania.MoveLastItem = this.bindingNavigatorMoveLastItem1;
@@ -310,14 +312,24 @@
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(130, 22);
-            this.btnAdd.Text = "Добавить требования";
+            this.btnAdd.Size = new System.Drawing.Size(162, 22);
+            this.btnAdd.Text = "Сформировать требования";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // tsbAddEmpty
+            // 
+            this.tsbAddEmpty.Image = ((System.Drawing.Image)(resources.GetObject("tsbAddEmpty.Image")));
+            this.tsbAddEmpty.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAddEmpty.Name = "tsbAddEmpty";
+            this.tsbAddEmpty.Size = new System.Drawing.Size(186, 22);
+            this.tsbAddEmpty.Text = "Добавить пустое требование";
+            this.tsbAddEmpty.Click += new System.EventHandler(this.tsbAddEmpty_Click);
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.MaterialReportDetailsTableAdapter = null;
             this.tableAdapterManager.TrebovanieDetailsTableAdapter = null;
             this.tableAdapterManager.TrebovanieTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Texac.dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -375,5 +387,6 @@
         private System.Windows.Forms.BindingNavigator bnTrebovania;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
         private System.Windows.Forms.DataGridView dgvTrebovania;
+        private System.Windows.Forms.ToolStripButton tsbAddEmpty;
     }
 }
