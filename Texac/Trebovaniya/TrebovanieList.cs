@@ -97,5 +97,39 @@ namespace Texac.Trebovaniya
             new TrebovanieForm(-1).ShowDialog();
             taTrebovania.Fill(dataDataSet.TrebovaniaView);
         }
+
+        private void tsbFilter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tsbFilter.Checked == true)
+            {
+                string rowFilter = string.Format("[{0}] = '{1}' or [{2}] = '{3}'", "DocNumber", tstbFilter.Text, "TrebovanieId", tstbFilter.Text);
+                DataView dv = new DataView(dataDataSet.TrebovaniaView);
+                dv.RowFilter = rowFilter;
+                dgvTrebovania.DataSource = dv;
+            }
+            else
+            {
+                dgvTrebovania.DataSource = dataDataSet.TrebovaniaView;
+            }
+        }
+
+        private void tsbDeleteFilter_Click(object sender, EventArgs e)
+        {
+            tsbFilter.Checked = false;
+            tstbFilter.Text = "";
+        }
+
+        private void tstbFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                tsbFilter.Checked = true;
+            }
+        }
     }
 }
