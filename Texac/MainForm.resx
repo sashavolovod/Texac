@@ -124,10 +124,22 @@
     <value>133, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="miTrebovaniya.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAF+SURBVEhLzZY/ysJAEMXTeR1t4iX0FkawtbC00FKw1mATiUQQDIhHECtJSBcbA1HYW8w6m2/3
+        Y5QN+YOCCz98A7P7nBdWY6h1v989hJUhTVM2Ho+Z53n/7Pd7FgQBu1wu7Ha7efLYv7VarRq4ER6PBxfk
+        aVp3Oh2wLIvj4QLYbrf8dDrxKIrger3C4XBoyOPrG7RaLd7r9XQGXGtQhW63C81mMwNNQJigAXxsgslk
+        Au12m5umKYDBYFA8gTpkNBpl+Uqo5v1+H+I41n6J8/lcLiLf98F1XS2bzQaSJHmJS4EGn4tI11M4gdow
+        nU5hOBxyCdW0huVyWc1AIWJYLBaFHI/HH4tIMZ/PAX8KClmv1/UmsG0bZrMZl1BNa9jtdtUmUAZ5mta6
+        ntIGX5tAUfYZOI5T7xnkaVrrekpHJO8Bl1BNa3EPqhko5E0uRJjQfb8TUZ6mta6ndER1+WpECJ3g1UAs
+        bPCwmQlQZ5/vmtbvPXgoC8Mwe23BPyT52mIYTxgWj4D3fpdZAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="miDopZN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABHxSURBVGhDzVoHVJTXEr7/FpYOslQB6U2QJiC9CIKwgIJI
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAABHxSURBVGhDzVoHVJTXEr7/FpYOslQB6U2QJiC9CIKwgIJI
         kSYoVtQo2EUUG0YFRIwtsSVPU4w1JGJJRI0lVl40iRqjUSNEnzVGwRi/N/fXEI2SePLi8d1zviMsu/PP
         d2fuzDd3Za9s9Wc2LJ/lSwcLC7RHqm/THa1Rr1Eor2OZrIRFM2d6hxpBEN/7f7N6Myk5HiMbIlnXfob+
         vYgNHZH9RTAmNPbAjJtpGPd9IlJ2dIFyvM5V1p31o0/oEyTiZ1/5Gsj85IWSWpv5hui53xvDL0dj8p0k

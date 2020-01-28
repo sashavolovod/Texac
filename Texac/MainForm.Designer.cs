@@ -147,6 +147,7 @@
             // 
             // miTrebovaniya
             // 
+            this.miTrebovaniya.Image = ((System.Drawing.Image)(resources.GetObject("miTrebovaniya.Image")));
             this.miTrebovaniya.Name = "miTrebovaniya";
             this.miTrebovaniya.Size = new System.Drawing.Size(226, 22);
             this.miTrebovaniya.Text = "Требования";

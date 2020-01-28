@@ -308,11 +308,11 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(162, 22);
+            this.btnAdd.Size = new System.Drawing.Size(178, 22);
             this.btnAdd.Text = "Сформировать требования";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 

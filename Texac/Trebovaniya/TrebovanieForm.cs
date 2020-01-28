@@ -68,7 +68,6 @@ namespace Texac
                 taTrebovanieDetails.FillById(ds.TrebovanieDetails, id);
                 dataDataSet.TrebovanieRow r = (dataDataSet.TrebovanieRow)ds.Trebovanie.Rows[0];
                 cbCustomer.SelectedValue = r.NЦеха;
-
             }
             else
             {
@@ -80,6 +79,7 @@ namespace Texac
 
                 int docNumber = Properties.Settings.Default.TrebovanieLastNumber;
                 tbTrebovanieNumber.Text = (++docNumber).ToString();
+
             }
 
             
@@ -110,26 +110,35 @@ namespace Texac
             if (isNewDoc)
             {
                 taTrebovanie.Update(ds.Trebovanie);
-                
                 dataDataSet.TrebovanieRow r = (dataDataSet.TrebovanieRow)ds.Trebovanie.Rows[0];
-
                 taTrebovanieDetails.Update(ds.TrebovanieDetails);
-
-
                 Properties.Settings.Default.TrebovanieLastNumber = r.DocNumber;
+                Properties.Settings.Default.Save();
             }
             else
             {
                 tableAdapterManager.UpdateAll(this.ds);
             }
+            ds.AcceptChanges();
         }
         private void Adapter_RowUpdated(object sender, System.Data.OleDb.OleDbRowUpdatedEventArgs e)
         {
             if(e.StatementType==StatementType.Insert)
             {
                 OleDbCommand cmdNewID = new OleDbCommand("SELECT @@IDENTITY", e.Command.Connection);
-                e.Row["TrebovanieId"] = (int)cmdNewID.ExecuteScalar();
+                id = (int)cmdNewID.ExecuteScalar();
+                e.Row["TrebovanieId"] = id;
                 e.Status = UpdateStatus.SkipCurrentRow;
+
+                for (int i = 0; i < ds.TrebovanieDetails.Rows.Count; i++)
+                {
+                    dataDataSet.TrebovanieDetailsRow r = (dataDataSet.TrebovanieDetailsRow)ds.TrebovanieDetails.Rows[i];
+                    if (r.tblTrebovanieDetailId < 0)
+                    {
+                        r.tblTrebovanielId = id;
+                    }
+                }
+
             }
         }
 

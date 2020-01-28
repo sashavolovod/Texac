@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTrebovaniyaForm));
             this.dgvTrebovaniya = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMatCartId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -289,6 +290,7 @@
             this.ClientSize = new System.Drawing.Size(818, 558);
             this.Controls.Add(this.dgvTrebovaniya);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddTrebovaniyaForm";
             this.Text = "Требование";
             this.Load += new System.EventHandler(this.AddTrebovaniyaForm_Load);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderNumberForm));
             this.tbOrderNumber = new System.Windows.Forms.TextBox();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnCnacel = new System.Windows.Forms.Button();
@@ -69,6 +70,7 @@
             this.Controls.Add(this.btnCnacel);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.tbOrderNumber);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrderNumberForm";
             this.Text = "Номер заказа";
             this.Load += new System.EventHandler(this.OrderNumberForm_Load);

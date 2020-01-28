@@ -37,10 +37,14 @@ namespace Texac
 
             if (row.IsOrderNumberNull())
             {
-                if (row.NЦеха == 70)
-                    parameters[8] = new ReportParameter("parOrderNumber", "23/1");
-                else
-                    parameters[8] = new ReportParameter("parOrderNumber", "25");
+                if (row.IsNЦехаNull() == false)
+                {
+                    if (row.NЦеха == 70)
+                        parameters[8] = new ReportParameter("parOrderNumber", "23/1");
+                    else
+                        parameters[8] = new ReportParameter("parOrderNumber", "25");
+                } else
+                    parameters[8] = new ReportParameter("parOrderNumber", "");
             }
             else
                 parameters[8] = new ReportParameter("parOrderNumber", row.OrderNumber);
