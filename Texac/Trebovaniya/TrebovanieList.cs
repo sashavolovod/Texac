@@ -71,12 +71,12 @@ namespace Texac.Trebovaniya
             }
         }
 
-        private void openDocument()
+        private void openDocument(bool copy=false)
         {
             if (bsTrebovania.Position >= 0)
             {
                 dataDataSet.TrebovaniaViewRow row = (dataDataSet.TrebovaniaViewRow)((DataRowView)bsTrebovania.Current).Row;
-                TrebovanieForm form = new TrebovanieForm(row.TrebovanieId);
+                TrebovanieForm form = new TrebovanieForm(row.TrebovanieId, copy);
                 form.FormClosing += TrebovanieForm_FormClosing;
                 form.Show();
             }
@@ -94,8 +94,13 @@ namespace Texac.Trebovaniya
 
         private void tsbAddEmpty_Click(object sender, EventArgs e)
         {
-            new TrebovanieForm(-1).ShowDialog();
+            new TrebovanieForm(-1, false).ShowDialog();
             taTrebovania.Fill(dataDataSet.TrebovaniaView);
+        }
+
+        private void miCopy_Click(object sender, EventArgs e)
+        {
+            openDocument(true);
         }
 
         private void tsbFilter_Click(object sender, EventArgs e)
@@ -107,7 +112,18 @@ namespace Texac.Trebovaniya
         {
             if (tsbFilter.Checked == true)
             {
-                string rowFilter = string.Format("[{0}] = '{1}' or [{2}] = '{3}'", "DocNumber", tstbFilter.Text, "TrebovanieId", tstbFilter.Text);
+                int f;
+                string rowFilter;
+                if (Int32.TryParse(tstbFilter.Text, out f))
+                {
+                    rowFilter = string.Format("[{1}] = '{0}' or [{2}] = '{0}' or [{3}] like '%{0}%'",
+                                      tstbFilter.Text, "DocNumber", "TrebovanieId", "OrderNumber");
+                }
+                else
+                {
+                    rowFilter = string.Format("[{1}] like '%{0}%'", tstbFilter.Text, "OrderNumber");
+                }
+
                 DataView dv = new DataView(dataDataSet.TrebovaniaView);
                 dv.RowFilter = rowFilter;
                 dgvTrebovania.DataSource = dv;
@@ -128,8 +144,17 @@ namespace Texac.Trebovaniya
         {
             if (e.KeyCode == Keys.Enter)
             {
-                tsbFilter.Checked = true;
+                if (tsbFilter.Checked == true)
+                {
+                    tsbFilter_CheckedChanged(null, null);
+                }
+                else
+                {
+                    tsbFilter.Checked = true;
+                }
             }
         }
+
+
     }
 }
