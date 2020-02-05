@@ -318,6 +318,7 @@
             this.dgvTrebovanieDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTrebovanieDetails.Size = new System.Drawing.Size(881, 317);
             this.dgvTrebovanieDetails.TabIndex = 12;
+            this.dgvTrebovanieDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvTrebovanieDetails_EditingControlShowing);
             // 
             // colTrebovanieDetailId
             // 

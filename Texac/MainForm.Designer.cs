@@ -51,6 +51,7 @@
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.miPlanZagruzki = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,7 +181,8 @@
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miMaterialreport,
             this.miReadyWork,
-            this.miMatZN});
+            this.miMatZN,
+            this.miPlanZagruzki});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
@@ -229,6 +231,13 @@
             this.tabControl1.Size = new System.Drawing.Size(800, 457);
             this.tabControl1.TabIndex = 2;
             // 
+            // miPlanZagruzki
+            // 
+            this.miPlanZagruzki.Name = "miPlanZagruzki";
+            this.miPlanZagruzki.Size = new System.Drawing.Size(238, 22);
+            this.miPlanZagruzki.Text = "План загрузки оборудования";
+            this.miPlanZagruzki.Click += new System.EventHandler(this.miPlanZagruzki_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,6 +283,7 @@
         private System.Windows.Forms.ToolStripMenuItem miTtn;
         private System.Windows.Forms.ToolStripMenuItem miDopZN;
         private System.Windows.Forms.ToolStripMenuItem miMatZN;
+        private System.Windows.Forms.ToolStripMenuItem miPlanZagruzki;
     }
 }
 

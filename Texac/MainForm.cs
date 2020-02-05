@@ -177,5 +177,10 @@ namespace Texac
         {
             openNewTab("Материалы по заказ-нарядам");
         }
+
+        private void miPlanZagruzki_Click(object sender, EventArgs e)
+        {
+            new PlanZagruzki.PlanZagruzkiForm().Show();
+        }
     }
 }

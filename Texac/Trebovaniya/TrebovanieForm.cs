@@ -27,8 +27,6 @@ namespace Texac
             cbCustomer.DataSource = ds.DepartmentsView;
             cbCustomer.ValueMember = "DeptId";
             cbCustomer.DisplayMember = "DeptFullName";
-
-            dgvTrebovanieDetails.EditingControlShowing += DgvTrebovanieDetails_EditingControlShowing;
             dgvTrebovanieDetails.DataError += DgvTrebovanieDetails_DataError;
         }
 
@@ -37,20 +35,19 @@ namespace Texac
             MessageBox.Show("Введено некорректное значение", "Ошибка");
         }
 
-        private void DgvTrebovanieDetails_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+
+        private void dgvTrebovanieDetails_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            DataGridView dgv  = sender as DataGridView;
-            if (sender!=null)
-           {
-                if(dgv.Columns[dgv.CurrentCell.ColumnIndex].HeaderText == "Получено" ||
-                    dgv.Columns[dgv.CurrentCell.ColumnIndex].HeaderText == "Затребовано")
-                e.Control.KeyPress += Control_KeyPress;
-           }
+            e.Control.KeyPress += Control_KeyPress;
         }
 
         private void Control_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == '.')
+            if ((dgvTrebovanieDetails.Columns[dgvTrebovanieDetails.CurrentCell.ColumnIndex].HeaderText == "Получено" ||
+                   dgvTrebovanieDetails.Columns[dgvTrebovanieDetails.CurrentCell.ColumnIndex].HeaderText == "Затребовано"
+                 )
+                 && e.KeyChar == '.'
+               )
             {
                 e.KeyChar = ',';
                 e.Handled = false;
@@ -206,7 +203,6 @@ namespace Texac
                         r.tblTrebovanielId = id;
                     }
                 }
-
             }
         }
 
@@ -214,6 +210,7 @@ namespace Texac
         {
             Close();
         }
+
 
     }
 }
