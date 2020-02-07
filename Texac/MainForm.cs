@@ -7,6 +7,7 @@ using Texac.Employees;
 using Texac.Materials;
 using Texac.Trebovaniya;
 using Texac.Properties;
+using Texac.Ekon;
 
 namespace Texac
 {
@@ -101,6 +102,10 @@ namespace Texac
                 return new IssuedMaterials();
             else if (tabPageName == "Материалы по заказ-нарядам")
                 return new MaterialZN();
+            else if (tabPageName == "О выполнении плана сдачи оснастки и инструментов")
+                return new OsnastkaUserControl();
+
+
             return new Control();
         }
             
@@ -181,6 +186,11 @@ namespace Texac
         private void miPlanZagruzki_Click(object sender, EventArgs e)
         {
             new PlanZagruzki.PlanZagruzkiForm().Show();
+        }
+
+        private void miOsnastka_Click(object sender, EventArgs e)
+        {
+            openNewTab("О выполнении плана сдачи оснастки и инструментов");
         }
     }
 }

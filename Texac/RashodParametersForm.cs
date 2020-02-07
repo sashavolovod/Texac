@@ -14,6 +14,7 @@ namespace Texac
         public RashodParametersForm()
         {
             InitializeComponent();
+
             DateTime now = DateTime.Today;
             now = now.AddMonths(-1);
             DateTime date = new DateTime(now.Year, now.Month, 1);
