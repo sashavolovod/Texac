@@ -9,6 +9,7 @@ namespace Texac.Materials
         public MaterialZN()
         {
             InitializeComponent();
+            tbOrderNumber.Focus();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -22,7 +23,6 @@ namespace Texac.Materials
             Int32.TryParse(orderNumber, out id);
 
             taMaterialZN.FillByOrderId(dataDataSet1.qMaterialZN, id);
-
         }
 
         private void tbOrderNumber_KeyDown(object sender, KeyEventArgs e)

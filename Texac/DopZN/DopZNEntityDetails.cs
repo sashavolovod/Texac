@@ -18,8 +18,6 @@ namespace Texac
         public DopZNEntityDetails() { }
     };
 
-
-
     public class DopZNEntity
     {
         public int orderId { get; set; }
@@ -28,10 +26,17 @@ namespace Texac
         public string detal { get; set; }
         public string izdelie { get; set; }
         public string customer { get; set; }
-        public double amount { get; set; }
+        public string producer { get; set; }
+        public int amount { get; set; }
+        public string employee { get; set; }
+        public string unitName { get; set; }
         public List<DopZNEntityDetails> details;
 
-        public DopZNEntity() { }
+        public DopZNEntity() {
+            details = new List<DopZNEntityDetails>();
+        }
+
+
     };
 
 }

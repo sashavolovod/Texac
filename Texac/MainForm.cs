@@ -105,7 +105,6 @@ namespace Texac
             else if (tabPageName == "О выполнении плана сдачи оснастки и инструментов")
                 return new OsnastkaUserControl();
 
-
             return new Control();
         }
             
@@ -159,14 +158,12 @@ namespace Texac
         private void miIssuedMaterials_Click(object sender, EventArgs e)
         {
             openNewTab("Полученные материалы");
-            
         }
 
         private void miReadyWork_Click(object sender, EventArgs e)
         {
             new frmEndWorkReportParametrs().Show();
         }
-
 
         private void miTtn_Click(object sender, EventArgs e)
         {

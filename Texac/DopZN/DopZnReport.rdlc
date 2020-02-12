@@ -21,7 +21,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Height>0.62646cm</Height>
-        <Width>8.66479cm</Width>
+        <Width>5.72792cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -52,9 +52,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Left>9.61792cm</Left>
+        <Left>7.61855cm</Left>
         <Height>0.62646cm</Height>
-        <Width>11.15188cm</Width>
+        <Width>11.25772cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -73,21 +73,23 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Главный инженер ___________________ И.В. Андросюк</Value>
+                <Value>Главный инженер ___________________ И.В. Андросюк </Value>
                 <Style>
                   <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.97924cm</Top>
-        <Left>9.61791cm</Left>
+        <Left>7.61855cm</Left>
         <Height>0.62646cm</Height>
-        <Width>11.15188cm</Width>
+        <Width>11.25772cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -106,7 +108,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>"_______" __________________ 2019</Value>
+                <Value>"_______" __________________ 2020 </Value>
                 <Style>
                   <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -114,15 +116,15 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Right</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>1.95848cm</Top>
-        <Left>9.61791cm</Left>
+        <Left>7.61855cm</Left>
         <Height>0.62646cm</Height>
-        <Width>11.15188cm</Width>
+        <Width>11.25772cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -141,7 +143,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Дополнение к ЗАКАЗ-НАРЯДУ №</Value>
+                <Value>="Дополнение к ЗАКАЗ-НАРЯДУ №" &amp; First(Fields!orderName.Value, "DopZnEntity")</Value>
                 <Style>
                   <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -149,15 +151,15 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>3.09989cm</Top>
-        <Left>6.66439cm</Left>
+        <Left>0.07627cm</Left>
         <Height>0.62646cm</Height>
-        <Width>6.56167cm</Width>
+        <Width>18.83212cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -186,10 +188,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>4.15823cm</Top>
+        <Top>4.14941cm</Top>
         <Left>0.07627cm</Left>
         <Height>0.62646cm</Height>
-        <Width>1.89146cm</Width>
+        <Width>2.84396cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -218,10 +220,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>4.78469cm</Top>
+        <Top>4.77587cm</Top>
         <Left>0.07627cm</Left>
         <Height>0.62646cm</Height>
-        <Width>2.57938cm</Width>
+        <Width>2.84396cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -253,7 +255,7 @@
         <Top>5.41115cm</Top>
         <Left>0.07627cm</Left>
         <Height>0.62646cm</Height>
-        <Width>2.57937cm</Width>
+        <Width>2.84396cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -273,17 +275,19 @@
             <TextRuns>
               <TextRun>
                 <Value>Заказчик:</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>6.35511cm</Top>
+        <Top>6.09935cm</Top>
         <Left>0.07627cm</Left>
         <Height>0.62646cm</Height>
-        <Width>2.57937cm</Width>
+        <Width>2.84396cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -303,38 +307,7 @@
             <TextRuns>
               <TextRun>
                 <Value>Исполнитель:</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>7.15796cm</Top>
-        <Left>0.07627cm</Left>
-        <Height>0.62646cm</Height>
-        <Width>2.57938cm</Width>
-        <ZIndex>9</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox12">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
                 <Style>
-                  <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -342,12 +315,12 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>3.09989cm</Top>
-        <Left>13.29661cm</Left>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>6.73463cm</Top>
+        <Left>0.07627cm</Left>
         <Height>0.62646cm</Height>
-        <Width>1.74625cm</Width>
-        <ZIndex>10</ZIndex>
+        <Width>2.84396cm</Width>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -365,7 +338,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!osnastka.Value, "DopZnEntity")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -373,11 +346,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>4.21115cm</Top>
-        <Left>2.7262cm</Left>
+        <Top>4.14941cm</Top>
+        <Left>3.09662cm</Left>
         <Height>0.6cm</Height>
-        <Width>9.84567cm</Width>
-        <ZIndex>11</ZIndex>
+        <Width>9.47525cm</Width>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -395,7 +368,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!detal.Value, "DopZnEntity")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -403,11 +376,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>4.81115cm</Top>
-        <Left>2.7262cm</Left>
+        <Top>4.80233cm</Top>
+        <Left>3.09662cm</Left>
         <Height>0.6cm</Height>
-        <Width>9.84567cm</Width>
-        <ZIndex>12</ZIndex>
+        <Width>9.47525cm</Width>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -425,7 +398,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!izdelie.Value, "DopZnEntity")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -434,10 +407,10 @@
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
         <Top>5.43761cm</Top>
-        <Left>2.7262cm</Left>
+        <Left>3.09662cm</Left>
         <Height>0.6cm</Height>
-        <Width>9.84567cm</Width>
-        <ZIndex>13</ZIndex>
+        <Width>9.47525cm</Width>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -455,7 +428,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>=First(Fields!customer.Value, "DopZnEntity")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -463,11 +436,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>6.35511cm</Top>
-        <Left>2.65564cm</Left>
+        <Top>6.10817cm</Top>
+        <Left>3.09662cm</Left>
         <Height>0.6cm</Height>
-        <Width>9.84567cm</Width>
-        <ZIndex>14</ZIndex>
+        <Width>9.47525cm</Width>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -485,7 +458,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Инструментальный цех</Value>
+                <Value>=First(Fields!producer.Value, "DopZnEntity")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -493,41 +466,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>7.15796cm</Top>
-        <Left>2.65564cm</Left>
+        <Top>6.73463cm</Top>
+        <Left>3.09662cm</Left>
         <Height>0.62646cm</Height>
-        <Width>3.87584cm</Width>
-        <ZIndex>15</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox17">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Технолог:</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>7.15796cm</Top>
-        <Left>10.71723cm</Left>
-        <Height>0.62646cm</Height>
-        <Width>1.85464cm</Width>
-        <ZIndex>16</ZIndex>
+        <Width>6.57838cm</Width>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -545,19 +488,21 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>="Технолог: " &amp; First(Fields!employee.Value, "DopZnEntity")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>7.15796cm</Top>
-        <Left>12.60715cm</Left>
+        <Top>6.73463cm</Top>
+        <Left>10.44324cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.60391cm</Width>
-        <ZIndex>17</ZIndex>
+        <Width>4.83463cm</Width>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -575,49 +520,21 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Кол-во:</Value>
+                <Value>= "Количество: " &amp; First(Fields!amount.Value, "DopZnEntity") &amp; " " &amp; First(Fields!unitName.Value, "DopZnEntity")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>4.21115cm</Top>
-        <Left>15.19593cm</Left>
+        <Left>13.42322cm</Left>
         <Height>0.62646cm</Height>
-        <Width>1.61652cm</Width>
-        <ZIndex>18</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox20">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>4.23761cm</Top>
-        <Left>16.81244cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.05621cm</Width>
-        <ZIndex>19</ZIndex>
+        <Width>4.97673cm</Width>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -632,31 +549,31 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.65023cm</Width>
+              <Width>0.8cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.60666cm</Width>
+              <Width>5.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.89266cm</Width>
+              <Width>1.3cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.37862cm</Width>
+              <Width>0.8cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.1563cm</Width>
+              <Width>1.4cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.72574cm</Width>
+              <Width>5.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98531cm</Width>
+              <Width>1.3cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.07125cm</Width>
+              <Width>0.8cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25646cm</Width>
+              <Width>1.4cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -673,7 +590,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -696,11 +615,6 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </LeftBorder>
-                        <RightBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -720,7 +634,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Было</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -776,7 +692,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Стало</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -836,8 +754,25 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Номер позиции</Value>
-                              <Style />
+                              <Value>№</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>п.п.</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -850,19 +785,19 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
                         <LeftBorder>
                           <Color>Black</Color>
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </LeftBorder>
-                        <RightBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
                         <VerticalAlign>Middle</VerticalAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>1pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
@@ -879,7 +814,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Материал</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -931,7 +869,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Кол-во</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -983,7 +924,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Ед. изм.</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1017,8 +961,8 @@
                           <Width>1pt</Width>
                         </RightBorder>
                         <VerticalAlign>Middle</VerticalAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>1pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
@@ -1035,7 +979,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Всего</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1087,7 +1034,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Материал</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1139,7 +1089,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Кол-во</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1191,7 +1144,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Ед. изм.</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1225,8 +1181,8 @@
                           <Width>1pt</Width>
                         </RightBorder>
                         <VerticalAlign>Middle</VerticalAlign>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>1pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
@@ -1243,7 +1199,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Всего</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1292,25 +1251,34 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox25">
+                    <Textbox Name="pos">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Fields!pos.Value</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox25</rd:DefaultName>
+                      <rd:DefaultName>pos</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
                         <BottomBorder>
                           <Color>Black</Color>
                           <Style>Solid</Style>
@@ -1344,7 +1312,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!materialOld.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1393,10 +1363,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!qtyOld.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>qtyOld</rd:DefaultName>
@@ -1442,10 +1416,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!unitNameOld.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>unitNameOld</rd:DefaultName>
@@ -1483,21 +1461,25 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox45">
+                    <Textbox Name="qtyOld1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Fields!qtyOld.Value * First(Fields!amount.Value, "DopZnEntity")</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox45</rd:DefaultName>
+                      <rd:DefaultName>qtyOld1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -1540,7 +1522,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!materialOld.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1589,10 +1573,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!qtyNew.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>qtyNew</rd:DefaultName>
@@ -1638,10 +1626,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!unitNameNew.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>unitNameNew</rd:DefaultName>
@@ -1686,11 +1678,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
-                              <Style />
+                              <Value>=Fields!qtyNew.Value * First(Fields!amount.Value, "DopZnEntity")</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox29</rd:DefaultName>
@@ -1757,11 +1753,11 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DeteilDataSet</DataSetName>
-        <Top>8.59578cm</Top>
+        <Top>7.96078cm</Top>
         <Left>0.07627cm</Left>
         <Height>2.19688cm</Height>
-        <Width>20.72323cm</Width>
-        <ZIndex>20</ZIndex>
+        <Width>18.8cm</Width>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1775,7 +1771,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Без изменения трудоемкости</Value>
+                <Value>Без изменения трудоёмкости</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1783,11 +1779,14 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>11.39458cm</Top>
-        <Left>11.65465cm</Left>
+        <Top>10.44208cm</Top>
+        <Left>11.01965cm</Left>
         <Height>0.62646cm</Height>
-        <Width>8.16264cm</Width>
-        <ZIndex>21</ZIndex>
+        <Width>7.88874cm</Width>
+        <ZIndex>18</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!Trud.Value&lt;&gt;True</Hidden>
+        </Visibility>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1813,11 +1812,14 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>12.12688cm</Top>
-        <Left>11.65465cm</Left>
+        <Top>11.17438cm</Top>
+        <Left>11.01965cm</Left>
         <Height>0.62646cm</Height>
         <Width>4.87932cm</Width>
-        <ZIndex>22</ZIndex>
+        <ZIndex>19</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!Trud.Value&lt;&gt;True</Hidden>
+        </Visibility>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1843,11 +1845,14 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>12.12688cm</Top>
-        <Left>16.67509cm</Left>
+        <Top>11.17438cm</Top>
+        <Left>16.04009cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.80366cm</Width>
-        <ZIndex>23</ZIndex>
+        <Width>2.8683cm</Width>
+        <ZIndex>20</ZIndex>
+        <Visibility>
+          <Hidden>=Parameters!Trud.Value&lt;&gt;True</Hidden>
+        </Visibility>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1858,48 +1863,30 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox28">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>7.18442cm</Top>
-        <Left>6.70787cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.05621cm</Width>
-        <ZIndex>24</ZIndex>
+      <Line Name="Line1">
+        <Top>7.40516cm</Top>
+        <Left>15.33334cm</Left>
+        <Height>0cm</Height>
+        <Width>3.54293cm</Width>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Textbox>
+      </Line>
     </ReportItems>
-    <Height>5.15625in</Height>
+    <Height>4.646in</Height>
     <Style />
   </Body>
-  <Width>8.21083in</Width>
+  <Width>7.46508in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>0.5cm</LeftMargin>
+    <LeftMargin>1.2cm</LeftMargin>
     <RightMargin>0.5cm</RightMargin>
     <TopMargin>1cm</TopMargin>
-    <BottomMargin>1cm</BottomMargin>
+    <BottomMargin>0.5cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
@@ -1969,7 +1956,66 @@
         <rd:ObjectDataSourceType>Texac.DopZNEntityDetails, Texac_, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="DopZnEntity">
+      <Query>
+        <DataSourceName>Texac</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="amount">
+          <DataField>amount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="customer">
+          <DataField>customer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="detal">
+          <DataField>detal</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="employee">
+          <DataField>employee</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="izdelie">
+          <DataField>izdelie</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="orderId">
+          <DataField>orderId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="orderName">
+          <DataField>orderName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="osnastka">
+          <DataField>osnastka</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="producer">
+          <DataField>producer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="unitName">
+          <DataField>unitName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Texac</rd:DataSetName>
+        <rd:TableName>DopZNEntity</rd:TableName>
+        <rd:ObjectDataSourceType>Texac.DopZNEntity, Texac_, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="Trud">
+      <DataType>Boolean</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>8b010909-1152-40fb-91a3-92adec2bf786</rd:ReportID>
 </Report>
