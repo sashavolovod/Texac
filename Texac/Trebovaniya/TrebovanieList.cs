@@ -126,11 +126,11 @@ namespace Texac.Trebovaniya
 
                 DataView dv = new DataView(dataDataSet.TrebovaniaView);
                 dv.RowFilter = rowFilter;
-                dgvTrebovania.DataSource = dv;
+                bsTrebovania.DataSource = dv;
             }
             else
             {
-                dgvTrebovania.DataSource = dataDataSet.TrebovaniaView;
+                bsTrebovania.DataSource = dataDataSet.TrebovaniaView;
             }
         }
 
