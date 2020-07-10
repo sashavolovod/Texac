@@ -91,6 +91,9 @@
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Npgsql">
+      <HintPath>..\..\..\Users\user\Npgsql.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
@@ -176,6 +179,12 @@
     </Compile>
     <Compile Include="Materials\MaterialZN.Designer.cs">
       <DependentUpon>MaterialZN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigratorForm.Designer.cs">
+      <DependentUpon>MigratorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MyControls\MyForm.cs">
       <SubType>Form</SubType>
@@ -276,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Materials\MaterialZN.resx">
       <DependentUpon>MaterialZN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigratorForm.resx">
+      <DependentUpon>MigratorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanZagruzki\PlanZagruzkiForm.resx">
       <DependentUpon>PlanZagruzkiForm.cs</DependentUpon>

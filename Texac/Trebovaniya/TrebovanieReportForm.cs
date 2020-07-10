@@ -7,9 +7,13 @@ namespace Texac
     public partial class TrebovanieReportForm : MyForm
     {
         Int32 trebovanieId;
-        public TrebovanieReportForm(Int32 trebovanieId)
+        string zatreboval;
+        string poluchil;
+        public TrebovanieReportForm(Int32 trebovanieId, string zatreboval, string poluchil)
         {
             this.trebovanieId = trebovanieId;
+            this.zatreboval = zatreboval;
+            this.poluchil = poluchil;
             InitializeComponent();
         }
 
@@ -25,9 +29,15 @@ namespace Texac
             parameters[1] = new ReportParameter("parDocDate", row.DocDate.ToShortDateString());
             parameters[2] = new ReportParameter("parSclad", row.Sclad.ToString());
 
-            parameters[3] = new ReportParameter("parPerson1", "мастер Лосенков К.В.");
-            parameters[4] = new ReportParameter("parPerson2", "Нач. бюро Остапук В.П.");
-            parameters[5] = new ReportParameter("parPerson3", "мастер Лосенков К.В.");
+            if (zatreboval == "")
+                zatreboval = "Нач. бюро Остапук В.П.";
+            if (poluchil == "")
+                poluchil = "мастер Лосенков К.В.";
+
+            parameters[3] = new ReportParameter("parPerson1", poluchil);
+            parameters[4] = new ReportParameter("parPerson2", zatreboval);
+            parameters[5] = new ReportParameter("parPerson3", poluchil);
+
             parameters[6] = new ReportParameter("parId", row.TrebovanieId.ToString());
 
             if(row.IsOrderIdNull())

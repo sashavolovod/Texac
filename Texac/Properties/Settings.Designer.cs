@@ -69,5 +69,29 @@ namespace Texac.Properties {
                 this["TrebovanieLastType"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=172.16.2.114;Port=5432;User Id=volovod;Password=123;Database=texac_dev;")]
+        public string pgConStr {
+            get {
+                return ((string)(this["pgConStr"]));
+            }
+            set {
+                this["pgConStr"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.2.114:8080/")]
+        public string api_path {
+            get {
+                return ((string)(this["api_path"]));
+            }
+            set {
+                this["api_path"] = value;
+            }
+        }
     }
 }

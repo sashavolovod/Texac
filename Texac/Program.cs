@@ -18,15 +18,12 @@ namespace Texac
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-           Application.Run(new MainForm());
+            // Application.Run(new MainForm());
 
-          // Application.Run(new DopZnForm());
-
-
+             Application.Run(new MigratorForm());
 
 
-
-            //Application.Run(new RashodParametersForm());
+           //Application.Run(new RashodParametersForm());
             //Application.Run(new TrebovanieForm(1));
 
             //Application.Run(new AddTrebovaniyaForm());

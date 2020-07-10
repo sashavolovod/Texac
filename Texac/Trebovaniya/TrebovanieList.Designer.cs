@@ -175,7 +175,7 @@
             this.toolStripSeparator2,
             this.actDelTrebovanie});
             this.cmsTrebovaniaDgv.Name = "cmsTrebovaniaDgv";
-            this.cmsTrebovaniaDgv.Size = new System.Drawing.Size(234, 142);
+            this.cmsTrebovaniaDgv.Size = new System.Drawing.Size(234, 120);
             // 
             // miOpenTrebovanie
             // 

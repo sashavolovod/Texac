@@ -2892,7 +2892,7 @@ namespace Texac {
                 this.columnTrebovanieId.AutoIncrementSeed = -1;
                 this.columnTrebovanieId.AutoIncrementStep = -1;
                 this.columnZakazchik.MaxLength = 50;
-                this.columnOrderNumber.MaxLength = 10;
+                this.columnOrderNumber.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3252,7 +3252,7 @@ namespace Texac {
                 this.columnTrebovanieId.AutoIncrementStep = -1;
                 this.columnTrebovanieId.AllowDBNull = false;
                 this.columnTrebovanieId.Unique = true;
-                this.columnOrderNumber.MaxLength = 10;
+                this.columnOrderNumber.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

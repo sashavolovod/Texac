@@ -156,7 +156,7 @@ namespace Texac
         private void btnPrint_Click(object sender, EventArgs e)
         {
             Save();
-            TrebovanieReportForm form = new TrebovanieReportForm(id);
+            TrebovanieReportForm form = new TrebovanieReportForm(id, tbZatreboval.Text, tbPoluchil.Text);
             form.Show();
         }
 
