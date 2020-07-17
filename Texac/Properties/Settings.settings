@@ -23,7 +23,7 @@
       <Value Profile="(Default)">Server=172.16.2.114;Port=5432;User Id=volovod;Password=123;Database=texac_dev;</Value>
     </Setting>
     <Setting Name="api_path" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://172.16.2.114:8080/</Value>
+      <Value Profile="(Default)">http://172.16.2.114:8080</Value>
     </Setting>
   </Settings>
 </SettingsFile>

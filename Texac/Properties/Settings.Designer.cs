@@ -84,7 +84,7 @@ namespace Texac.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.2.114:8080/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.2.114:8080")]
         public string api_path {
             get {
                 return ((string)(this["api_path"]));

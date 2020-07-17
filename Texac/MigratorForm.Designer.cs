@@ -29,19 +29,43 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbLog = new System.Windows.Forms.RichTextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.tbLog = new System.Windows.Forms.RichTextBox();
+            this.btnCopyData = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnCopyData);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 365);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(739, 68);
             this.panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(79, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 33);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "button1";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(219, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 33);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "testREST";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // tbLog
             // 
@@ -55,15 +79,15 @@
             this.tbLog.TabIndex = 1;
             this.tbLog.Text = "";
             // 
-            // button1
+            // btnCopyData
             // 
-            this.button1.Location = new System.Drawing.Point(306, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCopyData.Location = new System.Drawing.Point(350, 23);
+            this.btnCopyData.Name = "btnCopyData";
+            this.btnCopyData.Size = new System.Drawing.Size(114, 33);
+            this.btnCopyData.TabIndex = 0;
+            this.btnCopyData.Text = "CopyData";
+            this.btnCopyData.UseVisualStyleBackColor = true;
+            this.btnCopyData.Click += new System.EventHandler(this.btnCopyData_Click);
             // 
             // MigratorForm
             // 
@@ -84,5 +108,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox tbLog;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCopyData;
     }
 }

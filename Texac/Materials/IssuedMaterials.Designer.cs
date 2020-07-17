@@ -371,7 +371,6 @@
         private System.Windows.Forms.BindingSource bsIssuedMaterialsView;
         private System.Windows.Forms.BindingNavigator issuedMaterialsViewBindingNavigator;
         private System.Windows.Forms.ToolStripButton issuedMaterialsViewBindingNavigatorSaveItem;
-        private dataDataSetTableAdapters.IssuedMaterialsViewTableAdapter issuedMaterialsViewTableAdapter;
         private dataDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
