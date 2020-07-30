@@ -153,8 +153,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dataDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DateTimePickerEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Domain\Employee.cs" />
     <Compile Include="Domain\Master.cs" />
+    <Compile Include="Domain\MaterialCard.cs" />
     <Compile Include="Domain\Order.cs" />
     <Compile Include="DopZN\DopZNEntityDetails.cs" />
     <Compile Include="DopZN\DopZnForm.cs">
@@ -186,6 +190,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialDesign\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialDesign\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Materials\EndWorkReportForm.cs">
@@ -220,6 +230,18 @@
     </Compile>
     <Compile Include="MyControls\MyForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orders\OrderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Orders\OrderControl.Designer.cs">
+      <DependentUpon>OrderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orders\OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orders\OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PlanZagruzki\GrafikEntity.cs" />
     <Compile Include="PlanZagruzki\PlanZagruzkiEntity.cs" />
@@ -308,6 +330,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MaterialDesign\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Materials\EndWorkReportForm.resx">
       <DependentUpon>EndWorkReportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +347,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigratorForm.resx">
       <DependentUpon>MigratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orders\OrderControl.resx">
+      <DependentUpon>OrderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orders\OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanZagruzki\PlanZagruzkiForm.resx">
       <DependentUpon>PlanZagruzkiForm.cs</DependentUpon>
@@ -390,6 +421,10 @@
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\DopZNEntity.datasource" />
     <None Include="Properties\DataSources\DopZNEntityDetails.datasource" />
+    <None Include="Properties\DataSources\Texac.Domain.Detail.datasource" />
+    <None Include="Properties\DataSources\Texac.Domain.Employee.datasource" />
+    <None Include="Properties\DataSources\Texac.Domain.Master.datasource" />
+    <None Include="Properties\DataSources\Texac.Domain.Order.datasource" />
     <None Include="Properties\DataSources\Texac.Ekon.OsnastkaEntity.datasource" />
     <None Include="Properties\DataSources\Texac.PlanZagruzki.GrafikEntity.datasource" />
     <None Include="Properties\DataSources\Texac.PlanZagruzki.PlanZagruzkiEntity.datasource" />

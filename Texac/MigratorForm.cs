@@ -149,7 +149,114 @@ namespace Texac
         private void btnCopyData_Click(object sender, EventArgs e)
         {
             // copyEmployeeTable();
-            copyOrderTable();
+            // copyOrderTable();
+            copyMatCardTable();
+        }
+
+        private void copyMatCardTable()
+        {
+            string sql = "SELECT ID, NППЗаказа, NППДетали, NДеталиОснастки, НаименованиеДетали, Материал, КузнечнаяОперация, РазмерыДетали, Количество, КоличествоДеталей, ФрезОбр, СтрогОбр, ШлифОбр, ВремяФрез, ВремяСтрог, ВремяШлиф, ВесЗаготовки, ВесВсего, ДополнДляЗакНар, ДатаРедактТехн, Склад, КодЕдИзм, CODEMAT, annealing, term, strogterm, ВесДетали, ordered, Материа FROM МатериальнаяКарта WHERE NППЗаказа>=80000";
+
+            OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.connStr);
+
+            conn.Open();
+            OleDbCommand cmd = new OleDbCommand(sql, conn);
+            OleDbDataReader r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                MaterialCard m = new MaterialCard();
+                m.matCardId = r.GetInt32(0);
+                m.orderId = r.GetInt32(1);
+
+                if (r[2] != DBNull.Value)
+                    m.detailNumber = r.GetInt16(2);
+
+                if (r[3] != DBNull.Value)
+                    m.detailTONumber = r.GetString(3);
+
+                if (r[4] != DBNull.Value)
+                    m.detailTOTitle = r.GetString(4);
+
+                if (r[5] != DBNull.Value)
+                    m.materialTitle = r.GetString(5);
+
+                if (r[6] != DBNull.Value)
+                    m.blackSmithOp = r.GetString(6);
+
+                if (r[7] != DBNull.Value)
+                    m.detailSize= r.GetString(7);
+
+                m.blankQty = r.GetFloat(8);
+                m.detailQty = r.GetFloat(9);
+
+                if (r[10] != DBNull.Value)
+                    m.millingOp = r.GetString(10);
+                if (r[11] != DBNull.Value)
+                    m.planerOp = r.GetString(11);
+                if (r[12] != DBNull.Value)
+                    m.grindingOp = r.GetString(12);
+
+                if (r[13] != DBNull.Value)
+                    m.millingTime = r.GetFloat(13);
+
+                if (r[14] != DBNull.Value)
+                    m.planerTime = r.GetFloat(14);
+
+                if (r[15] != DBNull.Value)
+                    m.grindingTime = r.GetFloat(15);
+
+                if (r[16] != DBNull.Value)
+                    m.weight = r.GetFloat(16);
+
+                if (r[17] != DBNull.Value)
+                    m.weightTotal = r.GetFloat(17);
+
+                if (r[18] != DBNull.Value)
+                    m.supplementToOrder = r.GetBoolean(18);
+
+                if (r[19] != DBNull.Value)
+                    m.technologyEditTime = r.GetDateTime(19);
+
+                if (r[20] != DBNull.Value)
+                    m.storeId = r.GetInt16(20);
+
+                if (r[21] != DBNull.Value)
+                    m.unitOfMeasureId = r.GetInt16(21);
+
+                if (r[22] != DBNull.Value)
+                    m.materialCode = r.GetInt32(22);
+
+                if (r[23] != DBNull.Value)
+                    m.annealing = r.GetBoolean(23);
+
+                if (r[24] != DBNull.Value)
+                    m.thermalOp = r.GetString(24);
+
+                if (r[25] != DBNull.Value)
+                    m.planerThermalOp = r.GetString(25);
+
+                if (r[26] != DBNull.Value)
+                    m.detailWeight = r.GetDouble(26);
+
+                if (r[27] != DBNull.Value)
+                    m.ordered = r.GetBoolean(27);
+
+                string json = JsonConvert.SerializeObject(m, Formatting.None, new JsonSerializerSettings
+              {
+                  NullValueHandling = NullValueHandling.Ignore
+              });
+//              MessageBox.Show(json);
+
+                MaterialCard m2 = rest.saveEntity<MaterialCard>(m);
+                if (m2.matCardId < 1)
+                {
+                    break;
+                }
+            }
+            r.Close();
+            cmd.Dispose();
+            conn.Close();
+            MessageBox.Show("Done!");
         }
 
         void copyEmployeeTable()
