@@ -22,9 +22,9 @@ namespace Texac
 
             //Application.Run(new MaterialDesign.MainForm());
 
-            //Application.Run(new MainForm());
+            Application.Run(new MainForm());
 
-            Application.Run(new MigratorForm());
+            //Application.Run(new MigratorForm());
 
 
             //Application.Run(new RashodParametersForm());

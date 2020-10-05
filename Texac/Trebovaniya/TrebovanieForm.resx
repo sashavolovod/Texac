@@ -135,9 +135,6 @@
   <metadata name="ds.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>26, 17</value>
   </metadata>
-  <metadata name="ds.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>26, 17</value>
-  </metadata>
   <metadata name="bsTrebovanieDetails.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>472, 18</value>
   </metadata>
@@ -222,9 +219,6 @@
         nsloJq+enHfAtI4mmUn0QWJm9g8LX2qr0aPjOQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="bnTrebovanieDetails.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>941, 17</value>
-  </metadata>
   <metadata name="ASUPCODE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -295,6 +289,28 @@
         6of/NXyn4TYAH3DKvfJfxWMCGEOFBgVgYAAAvtG/s7kMTpwAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="tsbCheck.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI8SURBVDhPlZJRaFJRAIYNehl7CPIhgqCXikgSeli6KFzd
+        lEXJFpehg+kgsEASsoICAytGBLkoYtVqrqnLMTVXbbnCxZpO1+ZkWqSMZKhrqUOXoi8G9ef0hLVJ2Af/
+        2/2+w733MH5Ts2P/ttq6JmrTQbowEcVsIKtrpJh766ld+zhs8mhlthyTnd16yYrtaht23hzHnk4n2Lcd
+        YHe8xG7FHTSev/7TZDJpuVxuDVH+pqu7Rx7/lsXi8goWvi5jPrIEX/AzHNOzGHz2HA8ePkImk8HQkMXJ
+        5/NriVbGYDDI8/k8stksUqkU4rEYopEIgsEg3k9NwWI2oePaVUhaxTjA5SqIVqZiIBpFKBSC3++HY2IC
+        xqf9UF9R4TCPd5FoZf4VCAQCmPV48HZsDPq+PohELf8XCBYCfp8PbpcLr202KJXKC0QrU03AMzNTfBWV
+        SnW5oGwomYRqA6s7dUu7wpOpdDwebyPRqwt4vV7c0L8A57EfnN4AKLnaRPTKgXA4DN/cXDHwofAn7pte
+        gdJ/wpGBBVBa7/d6QfMJoq8PxAqB1dPE90bgdLlhHLajuf8jmqwRCC3BHw20pJ2oJdYGHJNuHOq042iP
+        F+29DrQN+NA2sgjJcASSc6q7RCuzNpBIJDA4Og76yTRazfOQ2aI4PfoF3dY30Gg06++BTqcrBnK5HNLp
+        NJLJJOLxOGzvXDhj9kFhX0KX1V78HhUDAoFgs1QqZf05sVhc3PGTohaRUm0UCmkWTdMsiqKYJYvB+AUN
+        EDARGCWcWQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="trebovaniaViewTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1104, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>116</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAkAAAAAAAEAIAC7DgAAlgAAAICAAAABACAAKAgBAFEPAABgYAAAAQAgAKiUAAB5FwEASEgAAAEA

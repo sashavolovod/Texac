@@ -148,6 +148,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dataDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dataDataSet1.cs">
+      <DependentUpon>dataDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dataDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

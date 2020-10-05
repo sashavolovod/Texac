@@ -21,7 +21,17 @@ namespace Texac
         {
             this.id = id;
             this.copy = copy;
+
             InitializeComponent();
+
+            DataGridViewColumn colOrderId = new DataGridViewTextBoxColumn();
+
+            colOrderId.DataPropertyName = "OrderId";
+            colOrderId.HeaderText = "NППЗаказа";
+            colOrderId.Name = "colOrderId";
+
+            dgvTrebovanieDetails.Columns.Add(colOrderId);
+
             Text = "Требование " + id;
 
             cbCustomer.DataSource = ds.DepartmentsView;
@@ -73,14 +83,14 @@ namespace Texac
 
                 if (copy == true)
                 {
-                    Texac.dataDataSet tmpDs = new dataDataSet();
+                    Texac.dataDataSet1 tmpDs = new dataDataSet1();
                     taTrebovanie.FillById(tmpDs.Trebovanie, id);
                     taTrebovanieDetails.FillById(tmpDs.TrebovanieDetails, id);
 
                     if(tmpDs.Trebovanie.Rows.Count>0)
                     {
-                        dataDataSet.TrebovanieRow r = (dataDataSet.TrebovanieRow)tmpDs.Trebovanie.Rows[0];
-                        dataDataSet.TrebovanieRow newRow = (dataDataSet.TrebovanieRow)ds.Trebovanie.NewRow();
+                        dataDataSet1.TrebovanieRow r = (dataDataSet1.TrebovanieRow)tmpDs.Trebovanie.Rows[0];
+                        dataDataSet1.TrebovanieRow newRow = (dataDataSet1.TrebovanieRow)ds.Trebovanie.NewRow();
 
                         if(r.IsScladNull())
                         {
@@ -104,8 +114,8 @@ namespace Texac
 
                         for (int i=0; i < tmpDs.TrebovanieDetails.Rows.Count; i++)
                         {
-                            dataDataSet.TrebovanieDetailsRow newDetRow = (dataDataSet.TrebovanieDetailsRow)ds.TrebovanieDetails.NewRow();
-                            dataDataSet.TrebovanieDetailsRow rd = (dataDataSet.TrebovanieDetailsRow)tmpDs.TrebovanieDetails.Rows[i];
+                            dataDataSet1.TrebovanieDetailsRow newDetRow = (dataDataSet1.TrebovanieDetailsRow)ds.TrebovanieDetails.NewRow();
+                            dataDataSet1.TrebovanieDetailsRow rd = (dataDataSet1.TrebovanieDetailsRow)tmpDs.TrebovanieDetails.Rows[i];
                             newDetRow.tblTrebovanielId = newRow.TrebovanieId;
                             try
                             {
@@ -211,6 +221,17 @@ namespace Texac
             Close();
         }
 
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            for(int i=0;  i<dgvTrebovanieDetails.RowCount; i++)
+            {
+                double kol1 = 0.0, kol2 = 0.0;
+                Double.TryParse(dgvTrebovanieDetails.Rows[i].Cells["colKol1"].Value.ToString(), out kol1);
+                Double.TryParse(dgvTrebovanieDetails.Rows[i].Cells["colKol2"].Value.ToString(), out kol2);
 
+                if (kol1>0.0 && kol2==0.0)
+                    dgvTrebovanieDetails.Rows[i].Cells["colKol2"].Value = kol1;
+            }
+        }
     }
 }

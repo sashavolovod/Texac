@@ -12,7 +12,7 @@
 
 namespace Texac {
     
-    
+        
     /// <summary>
     ///Represents a strongly typed in-memory cache of data.
     ///</summary>

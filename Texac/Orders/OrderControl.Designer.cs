@@ -38,6 +38,7 @@
             System.Windows.Forms.Label obozToLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderControl));
             this.tbOrderId = new System.Windows.Forms.TextBox();
+            this.bsOrder = new System.Windows.Forms.BindingSource(this.components);
             this.orderBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -55,10 +56,9 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.cbIncludeInReport = new System.Windows.Forms.CheckBox();
             this.dtReportDate = new DateTimePickerEx();
-            this.orderNumberTextBox = new System.Windows.Forms.TextBox();
+            this.tbOrderNumber = new System.Windows.Forms.TextBox();
             this.orderDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.obozToTextBox = new System.Windows.Forms.TextBox();
-            this.bsOrder = new System.Windows.Forms.BindingSource(this.components);
+            this.tbObozTo = new System.Windows.Forms.TextBox();
             orderFullNumberLabel = new System.Windows.Forms.Label();
             orderIdLabel = new System.Windows.Forms.Label();
             lbIncludeInReport = new System.Windows.Forms.Label();
@@ -66,9 +66,9 @@
             orderNumberLabel = new System.Windows.Forms.Label();
             orderDateLabel = new System.Windows.Forms.Label();
             obozToLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.bsOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnOrder)).BeginInit();
             this.bnOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // orderFullNumberLabel
@@ -142,6 +142,10 @@
             this.tbOrderId.Name = "tbOrderId";
             this.tbOrderId.Size = new System.Drawing.Size(62, 20);
             this.tbOrderId.TabIndex = 9;
+            // 
+            // bsOrder
+            // 
+            this.bsOrder.DataSource = typeof(Texac.Domain.Order);
             // 
             // orderBindingNavigatorSaveItem
             // 
@@ -262,7 +266,7 @@
             this.bnOrder.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnOrder.Name = "bnOrder";
             this.bnOrder.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnOrder.Size = new System.Drawing.Size(1011, 25);
+            this.bnOrder.Size = new System.Drawing.Size(975, 25);
             this.bnOrder.TabIndex = 7;
             this.bnOrder.Text = "bindingNavigator1";
             // 
@@ -277,9 +281,9 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 561);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 529);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1011, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(975, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -300,14 +304,15 @@
             this.dtReportDate.Name = "dtReportDate";
             this.dtReportDate.Size = new System.Drawing.Size(100, 20);
             this.dtReportDate.TabIndex = 13;
+            this.dtReportDate.Value = new System.DateTime(2020, 8, 14, 11, 54, 42, 988);
             // 
-            // orderNumberTextBox
+            // tbOrderNumber
             // 
-            this.orderNumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrder, "orderNumber", true));
-            this.orderNumberTextBox.Location = new System.Drawing.Point(15, 109);
-            this.orderNumberTextBox.Name = "orderNumberTextBox";
-            this.orderNumberTextBox.Size = new System.Drawing.Size(72, 20);
-            this.orderNumberTextBox.TabIndex = 14;
+            this.tbOrderNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrder, "orderNumber", true));
+            this.tbOrderNumber.Location = new System.Drawing.Point(15, 109);
+            this.tbOrderNumber.Name = "tbOrderNumber";
+            this.tbOrderNumber.Size = new System.Drawing.Size(72, 20);
+            this.tbOrderNumber.TabIndex = 14;
             // 
             // orderDateDateTimePicker
             // 
@@ -318,28 +323,24 @@
             this.orderDateDateTimePicker.Size = new System.Drawing.Size(105, 20);
             this.orderDateDateTimePicker.TabIndex = 15;
             // 
-            // obozToTextBox
+            // tbObozTo
             // 
-            this.obozToTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrder, "obozTo", true));
-            this.obozToTextBox.Location = new System.Drawing.Point(204, 109);
-            this.obozToTextBox.Name = "obozToTextBox";
-            this.obozToTextBox.Size = new System.Drawing.Size(173, 20);
-            this.obozToTextBox.TabIndex = 16;
-            // 
-            // bsOrder
-            // 
-            this.bsOrder.DataSource = typeof(Texac.Domain.Order);
+            this.tbObozTo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrder, "obozTo", true));
+            this.tbObozTo.Location = new System.Drawing.Point(204, 109);
+            this.tbObozTo.Name = "tbObozTo";
+            this.tbObozTo.Size = new System.Drawing.Size(173, 20);
+            this.tbObozTo.TabIndex = 16;
             // 
             // OrderControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(obozToLabel);
-            this.Controls.Add(this.obozToTextBox);
+            this.Controls.Add(this.tbObozTo);
             this.Controls.Add(orderDateLabel);
             this.Controls.Add(this.orderDateDateTimePicker);
             this.Controls.Add(orderNumberLabel);
-            this.Controls.Add(this.orderNumberTextBox);
+            this.Controls.Add(this.tbOrderNumber);
             this.Controls.Add(reportDateLabel);
             this.Controls.Add(this.dtReportDate);
             this.Controls.Add(lbIncludeInReport);
@@ -351,11 +352,11 @@
             this.Controls.Add(this.bnOrder);
             this.Controls.Add(this.statusStrip1);
             this.Name = "OrderControl";
-            this.Size = new System.Drawing.Size(1011, 583);
+            this.Size = new System.Drawing.Size(975, 551);
+            ((System.ComponentModel.ISupportInitialize)(this.bsOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bnOrder)).EndInit();
             this.bnOrder.ResumeLayout(false);
             this.bnOrder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsOrder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,8 +383,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.CheckBox cbIncludeInReport;
         private DateTimePickerEx dtReportDate;
-        private System.Windows.Forms.TextBox orderNumberTextBox;
+        private System.Windows.Forms.TextBox tbOrderNumber;
         private System.Windows.Forms.DateTimePicker orderDateDateTimePicker;
-        private System.Windows.Forms.TextBox obozToTextBox;
+        private System.Windows.Forms.TextBox tbObozTo;
     }
 }

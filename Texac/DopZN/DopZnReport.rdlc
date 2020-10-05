@@ -555,10 +555,10 @@
               <Width>5.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.3cm</Width>
+              <Width>0.8cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.8cm</Width>
+              <Width>1.3cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.4cm</Width>
@@ -567,10 +567,10 @@
               <Width>5.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.3cm</Width>
+              <Width>0.8cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.8cm</Width>
+              <Width>1.3cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.4cm</Width>
@@ -868,7 +868,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Кол-во</Value>
+                              <Value>Ед. изм.</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -923,7 +923,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ед. изм.</Value>
+                              <Value>Кол-во</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1088,7 +1088,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Кол-во</Value>
+                              <Value>Ед. изм.</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1143,7 +1143,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ед. изм.</Value>
+                              <Value>Кол-во</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -1362,7 +1362,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!qtyOld.Value</Value>
+                              <Value>=Fields!unitNameOld.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -1415,7 +1415,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unitNameOld.Value</Value>
+                              <Value>=Fields!qtyOld.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -1572,7 +1572,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!qtyNew.Value</Value>
+                              <Value>=Fields!unitNameNew.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -1625,7 +1625,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!unitNameNew.Value</Value>
+                              <Value>=Fields!qtyNew.Value</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>

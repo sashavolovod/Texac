@@ -34,16 +34,16 @@
             System.Windows.Forms.Label docDateLabel;
             System.Windows.Forms.Label docNumberLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrebovanieForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bsTrebovanie = new System.Windows.Forms.BindingSource(this.components);
-            this.ds = new Texac.dataDataSet();
+            this.ds = new Texac.dataDataSet1();
             this.bsTrebovanieDetails = new System.Windows.Forms.BindingSource(this.components);
-            this.taTrebovanie = new Texac.dataDataSetTableAdapters.TrebovanieTableAdapter();
-            this.tableAdapterManager = new Texac.dataDataSetTableAdapters.TableAdapterManager();
-            this.taTrebovanieDetails = new Texac.dataDataSetTableAdapters.TrebovanieDetailsTableAdapter();
-            this.taDepartmentsView = new Texac.dataDataSetTableAdapters.DepartmentsViewTableAdapter();
+            this.taTrebovanie = new Texac.dataDataSet1TableAdapters.TrebovanieTableAdapter();
+            this.tableAdapterManager = new Texac.dataDataSet1TableAdapters.TableAdapterManager();
+            this.taTrebovanieDetails = new Texac.dataDataSet1TableAdapters.TrebovanieDetailsTableAdapter();
+            this.taDepartmentsView = new Texac.dataDataSet1TableAdapters.DepartmentsViewTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbPoluchil = new System.Windows.Forms.TextBox();
             this.tbZatreboval = new System.Windows.Forms.TextBox();
@@ -80,6 +80,8 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbCheck = new System.Windows.Forms.ToolStripButton();
+            this.trebovaniaViewTableAdapter1 = new Texac.dataDataSet1TableAdapters.TrebovaniaViewTableAdapter();
             nЦехаLabel = new System.Windows.Forms.Label();
             scladLabel = new System.Windows.Forms.Label();
             docDateLabel = new System.Windows.Forms.Label();
@@ -138,7 +140,7 @@
             // 
             // ds
             // 
-            this.ds.DataSetName = "dataDataSet";
+            this.ds.DataSetName = "dataDataSet1";
             this.ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bsTrebovanieDetails
@@ -153,10 +155,9 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.MaterialReportDetailsTableAdapter = null;
             this.tableAdapterManager.TrebovanieDetailsTableAdapter = this.taTrebovanieDetails;
             this.tableAdapterManager.TrebovanieTableAdapter = this.taTrebovanie;
-            this.tableAdapterManager.UpdateOrder = Texac.dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = Texac.dataDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ВидыПрофессиийTableAdapter = null;
             this.tableAdapterManager.РаботникиЦехаTableAdapter = null;
             // 
@@ -226,7 +227,7 @@
             this.cbCustomer.FormattingEnabled = true;
             this.cbCustomer.Location = new System.Drawing.Point(542, 10);
             this.cbCustomer.Name = "cbCustomer";
-            this.cbCustomer.Size = new System.Drawing.Size(266, 21);
+            this.cbCustomer.Size = new System.Drawing.Size(201, 21);
             this.cbCustomer.TabIndex = 20;
             // 
             // scladTextBox
@@ -322,17 +323,17 @@
             // 
             this.dgvTrebovanieDetails.AllowUserToAddRows = false;
             this.dgvTrebovanieDetails.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvTrebovanieDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvTrebovanieDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTrebovanieDetails.AutoGenerateColumns = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTrebovanieDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTrebovanieDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTrebovanieDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTrebovanieDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTrebovanieDetailId,
@@ -348,30 +349,30 @@
             this.dgvTrebovanieDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTrebovanieDetails.Location = new System.Drawing.Point(0, 25);
             this.dgvTrebovanieDetails.Name = "dgvTrebovanieDetails";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTrebovanieDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTrebovanieDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTrebovanieDetails.Size = new System.Drawing.Size(881, 279);
             this.dgvTrebovanieDetails.TabIndex = 12;
             this.dgvTrebovanieDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvTrebovanieDetails_EditingControlShowing);
             // 
             // colTrebovanieDetailId
             // 
-            this.colTrebovanieDetailId.DataPropertyName = "tblTrebovanieDetailId";
-            this.colTrebovanieDetailId.HeaderText = "tblTrebovanieDetailId";
+            this.colTrebovanieDetailId.DataPropertyName = "TrebovanieDetailId";
+            this.colTrebovanieDetailId.HeaderText = "TrebovanieDetailId";
             this.colTrebovanieDetailId.Name = "colTrebovanieDetailId";
             this.colTrebovanieDetailId.Visible = false;
             this.colTrebovanieDetailId.Width = 60;
             // 
             // colTrebovanielId
             // 
-            this.colTrebovanielId.DataPropertyName = "tblTrebovanielId";
-            this.colTrebovanielId.HeaderText = "tblTrebovanielId";
+            this.colTrebovanielId.DataPropertyName = "TrebovanielId";
+            this.colTrebovanielId.HeaderText = "TrebovanielId";
             this.colTrebovanielId.Name = "colTrebovanielId";
             this.colTrebovanielId.Visible = false;
             // 
@@ -438,7 +439,8 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.tsbCheck});
             this.bnTrebovanieDetails.Location = new System.Drawing.Point(0, 0);
             this.bnTrebovanieDetails.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bnTrebovanieDetails.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -535,6 +537,22 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // tsbCheck
+            // 
+            this.tsbCheck.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbCheck.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbCheck.Image = ((System.Drawing.Image)(resources.GetObject("tsbCheck.Image")));
+            this.tsbCheck.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCheck.Name = "tsbCheck";
+            this.tsbCheck.Size = new System.Drawing.Size(23, 22);
+            this.tsbCheck.Text = "toolStripButton1";
+            this.tsbCheck.ToolTipText = "Ввести полученные материалы";
+            this.tsbCheck.Click += new System.EventHandler(this.btnCheck_Click);
+            // 
+            // trebovaniaViewTableAdapter1
+            // 
+            this.trebovaniaViewTableAdapter1.ClearBeforeFill = true;
+            // 
             // TrebovanieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,12 +584,12 @@
 
         #endregion
         private System.Windows.Forms.BindingSource bsTrebovanie;
-        private dataDataSetTableAdapters.TrebovanieTableAdapter taTrebovanie;
-        private dataDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private dataDataSet ds;
+        private dataDataSet1TableAdapters.TrebovanieTableAdapter taTrebovanie;
+        private dataDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private dataDataSet1 ds;
         private System.Windows.Forms.BindingSource bsTrebovanieDetails;
-        private dataDataSetTableAdapters.TrebovanieDetailsTableAdapter taTrebovanieDetails;
-        private dataDataSetTableAdapters.DepartmentsViewTableAdapter taDepartmentsView;
+        private dataDataSet1TableAdapters.TrebovanieDetailsTableAdapter taTrebovanieDetails;
+        private dataDataSet1TableAdapters.DepartmentsViewTableAdapter taDepartmentsView;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbCustomer;
         private System.Windows.Forms.TextBox scladTextBox;
@@ -608,5 +626,7 @@
         private System.Windows.Forms.TextBox tbZatreboval;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripButton tsbCheck;
+        private dataDataSet1TableAdapters.TrebovaniaViewTableAdapter trebovaniaViewTableAdapter1;
     }
 }

@@ -96,7 +96,7 @@
             this.dgvTrebovaniya.Location = new System.Drawing.Point(0, 62);
             this.dgvTrebovaniya.Name = "dgvTrebovaniya";
             this.dgvTrebovaniya.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTrebovaniya.Size = new System.Drawing.Size(818, 496);
+            this.dgvTrebovaniya.Size = new System.Drawing.Size(859, 427);
             this.dgvTrebovaniya.TabIndex = 10;
             // 
             // dataGridViewTextBoxColumn7
@@ -196,7 +196,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(818, 62);
+            this.panel1.Size = new System.Drawing.Size(859, 62);
             this.panel1.TabIndex = 11;
             // 
             // btnCreate
@@ -287,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 558);
+            this.ClientSize = new System.Drawing.Size(859, 489);
             this.Controls.Add(this.dgvTrebovaniya);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

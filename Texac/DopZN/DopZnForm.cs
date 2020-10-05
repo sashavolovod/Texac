@@ -44,6 +44,7 @@ namespace Texac
             dopZn.details.Clear();
 
             dataDataSet1.qMaterialZNDataTable dt = (dataDataSet1.qMaterialZNDataTable)dataDataSet1.Tables["qMaterialZN"];
+            int reportRowCounter = 1;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 string newMaterialName = dt.Rows[i]["Материал"].ToString();
@@ -69,7 +70,8 @@ namespace Texac
                     if (oldMaterialName != newMaterialName || oldUnitName != newUnitName)
                     {
                         DopZNEntityDetails d = new DopZNEntityDetails();
-                        d.pos = i + 1;
+                        //d.pos = i + 1;
+                        d.pos = reportRowCounter++;
                         d.materialOld = oldMaterialName;
                         d.qtyOld = oldQty;
                         d.unitNameOld = oldUnitName;
@@ -79,7 +81,8 @@ namespace Texac
                         dopZn.details.Add(d);
 
                         d = new DopZNEntityDetails();
-                        d.pos = i + 1;
+                        //d.pos = i + 1;
+                        d.pos = reportRowCounter++;
                         d.materialOld = newMaterialName;
                         d.qtyOld = 0;
                         d.unitNameOld = newUnitName;
@@ -92,7 +95,8 @@ namespace Texac
                     else if (newQty != oldQty)
                     {
                         DopZNEntityDetails d = new DopZNEntityDetails();
-                        d.pos = i + 1;
+                        //d.pos = i + 1;
+                        d.pos = reportRowCounter++;
                         d.materialOld = oldMaterialName;
                         d.qtyOld = oldQty;
                         d.unitNameOld = oldUnitName;
@@ -105,7 +109,8 @@ namespace Texac
                 else // если новая строка добавлена
                 {
                     DopZNEntityDetails d = new DopZNEntityDetails();
-                    d.pos = i + 1;
+                    //d.pos = i + 1;
+                    d.pos = reportRowCounter++;
                     d.materialOld = newMaterialName;
                     d.qtyOld = 0;
                     d.unitNameOld = newUnitName;

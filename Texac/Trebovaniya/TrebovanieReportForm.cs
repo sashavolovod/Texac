@@ -32,7 +32,7 @@ namespace Texac
             if (zatreboval == "")
                 zatreboval = "Нач. бюро Остапук В.П.";
             if (poluchil == "")
-                poluchil = "мастер Лосенков К.В.";
+                poluchil = "мастер Бацук А.Г.";
 
             parameters[3] = new ReportParameter("parPerson1", poluchil);
             parameters[4] = new ReportParameter("parPerson2", zatreboval);
