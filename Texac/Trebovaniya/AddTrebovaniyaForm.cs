@@ -66,19 +66,16 @@ namespace Texac.Trebovaniya
             int linePerDoc=0;
             string prevMaterialName = "";
 
-            Cursor = Cursors.WaitCursor;
-
             List<dataDataSet.AddTrebovaniyaViewRow> rows = new List<dataDataSet.AddTrebovaniyaViewRow>();
-
-
             if (dgvTrebovaniya.Rows.Count == 0)
             {
                 MessageBox.Show("Нет материалов для формирования требований", "Внимание");
                 return;
             }
 
-            dataDataSet newds = new dataDataSet();
-            dataDataSet.TrebovanieRow r = (dataDataSet.TrebovanieRow)newds.Trebovanie.NewRow();
+            Cursor = Cursors.WaitCursor;
+            dataDataSet1 newds = new dataDataSet1();
+            dataDataSet1.TrebovanieRow r = (dataDataSet1.TrebovanieRow)newds.Trebovanie.NewRow();
             /*
                         // если выделено больше 1 строки, печатаем выделенные
                         if (dgvTrebovaniya.SelectedRows.Count > 1)
@@ -105,8 +102,8 @@ namespace Texac.Trebovaniya
             */
             for (int i = 0; i < dgvTrebovaniya.SelectedRows.Count; i++)
             {
-                dataDataSet.AddTrebovaniyaViewRow row = (dataDataSet.AddTrebovaniyaViewRow)((DataRowView)dgvTrebovaniya.SelectedRows[i].DataBoundItem).Row;
-                dataDataSet.TrebovanieDetailsRow d = (dataDataSet.TrebovanieDetailsRow)newds.TrebovanieDetails.NewRow();
+                dataDataSet1.AddTrebovaniyaViewRow row = (dataDataSet1.AddTrebovaniyaViewRow)((DataRowView)dgvTrebovaniya.SelectedRows[i].DataBoundItem).Row;
+                dataDataSet1.TrebovanieDetailsRow d = (dataDataSet1.TrebovanieDetailsRow)newds.TrebovanieDetails.NewRow();
                 if (row.IsMaterialNameNull())
                 {
                     MessageBox.Show("Не заполнено название материала", "Внимание");
@@ -119,7 +116,7 @@ namespace Texac.Trebovaniya
                 if (prevCustomerNumber!=customerNumber || prevScladNumber!=scladNumber || linePerDoc>7)
                 {
                     linePerDoc = 0;
-                    r = (dataDataSet.TrebovanieRow)newds.Trebovanie.NewRow();
+                    r = (dataDataSet1.TrebovanieRow)newds.Trebovanie.NewRow();
 
                     if (Int32.TryParse(tbTrebovanieNumber.Text, out docNumber))
                     {
@@ -143,11 +140,10 @@ namespace Texac.Trebovaniya
 
                     prevScladNumber = scladNumber;
                     prevCustomerNumber = customerNumber;
-
                 }
 
                 d.SetParentRow(r);
-
+                d.OrderId = row.OrderId;
                 d.MatCartId = row.MatCartId;
 
                 if (row.IsMaterialCodeNull() == false)
@@ -158,6 +154,8 @@ namespace Texac.Trebovaniya
                 d.Ed = row.Ed;
                 d.Kol1 = row.Qty;
                 d.Kol2 = 0.0;
+
+
 
                 if(row.IsASUPCODENull()==false)
                     d.ASUPCODE = row.ASUPCODE;

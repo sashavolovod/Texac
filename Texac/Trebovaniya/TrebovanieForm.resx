@@ -292,24 +292,24 @@
   <data name="tsbCheck.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI8SURBVDhPlZJRaFJRAIYNehl7CPIhgqCXikgSeli6KFzd
-        lEXJFpehg+kgsEASsoICAytGBLkoYtVqrqnLMTVXbbnCxZpO1+ZkWqSMZKhrqUOXoi8G9ef0hLVJ2Af/
-        2/2+w733MH5Ts2P/ttq6JmrTQbowEcVsIKtrpJh766ld+zhs8mhlthyTnd16yYrtaht23hzHnk4n2Lcd
-        YHe8xG7FHTSev/7TZDJpuVxuDVH+pqu7Rx7/lsXi8goWvi5jPrIEX/AzHNOzGHz2HA8ePkImk8HQkMXJ
-        5/NriVbGYDDI8/k8stksUqkU4rEYopEIgsEg3k9NwWI2oePaVUhaxTjA5SqIVqZiIBpFKBSC3++HY2IC
-        xqf9UF9R4TCPd5FoZf4VCAQCmPV48HZsDPq+PohELf8XCBYCfp8PbpcLr202KJXKC0QrU03AMzNTfBWV
-        SnW5oGwomYRqA6s7dUu7wpOpdDwebyPRqwt4vV7c0L8A57EfnN4AKLnaRPTKgXA4DN/cXDHwofAn7pte
-        gdJ/wpGBBVBa7/d6QfMJoq8PxAqB1dPE90bgdLlhHLajuf8jmqwRCC3BHw20pJ2oJdYGHJNuHOq042iP
-        F+29DrQN+NA2sgjJcASSc6q7RCuzNpBIJDA4Og76yTRazfOQ2aI4PfoF3dY30Gg06++BTqcrBnK5HNLp
-        NJLJJOLxOGzvXDhj9kFhX0KX1V78HhUDAoFgs1QqZf05sVhc3PGTohaRUm0UCmkWTdMsiqKYJYvB+AUN
-        EDARGCWcWQAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI9SURBVDhPlZJRaFJRAIYNehl7CPIhgqCXikgSeli6KFzd
+        lEUbW1yGDqajBwskISsouIENRgS5KGLVaq6pyzE1V225wsWaS9fmZFqkjGSoa6lDl6IvBvXn9IS1SdgH
+        /9v9vsO997B+U7Xr4I7qmiZqy2E6PzHFriOrqafY+2upPQd4XPJoebadkJ/bftmKnWobdt+YwL6uKXBv
+        OcDtfIG9ytuov9Dx02Qyafl8fhVR/qa7p1cR+5bB0soqFr+uYCG8DG/gMxwzcxh6+gz3HzxEOp3G8LBl
+        SigUVhOthMFgUORyOWQyGSSTScSiUUTCYQQCAbyfnobFbEJnxzVIWyU4xOcriVaibCASQTAYhM/ng2Ny
+        EsYnA1BfZXBUILhEtBL/Cvj9fsy53XgzPg59fz/E4pb/CwTyAZ/XC5fTiVc2G1Qq1UWilagk4J6dLbwK
+        wzBX8sqmokmoNLC20ze1qwI5oxMIBJuJXlnA4/Hguv45eI984PX5QSnUJqKXD4RCIXjn5wuBD/k/cc/0
+        EpT+E44NLoLSer7XipobiL4xEM0H1k6T3B3FlNMF44gdzQMf0WQNo8Hi/1FHS9uJWmR9wPHOhSNddhzv
+        9aC9z4G2QS/aRpcgHQlDep65Q7QS6wPxeBxDYxOgH8+g1bwAuS2CM2Nf0GN9DY1Gs/Ee6HS6QiCbzSKV
+        SiGRSCAWi8H21omzZi+U9mV0W+2F71E2IBKJtspkMs6fk0gkhZ08JW4Rq9TGxkaaQ9M0h6IodtFisX4B
+        BXswDdZvnw8AAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="trebovaniaViewTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1104, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>116</value>
+    <value>92</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

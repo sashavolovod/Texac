@@ -73,7 +73,7 @@ namespace Texac
             {
                 taTrebovanie.FillById(ds.Trebovanie, id);
                 taTrebovanieDetails.FillById(ds.TrebovanieDetails, id);
-                dataDataSet.TrebovanieRow r = (dataDataSet.TrebovanieRow)ds.Trebovanie.Rows[0];
+                dataDataSet1.TrebovanieRow r = (dataDataSet1.TrebovanieRow)ds.Trebovanie.Rows[0];
                 cbCustomer.SelectedValue = r.NЦеха;
             }
             else
@@ -139,6 +139,9 @@ namespace Texac
 
                                 if(rd.IsMaterialCodeNull()==false)
                                     newDetRow.MaterialCode = rd.MaterialCode;
+
+                                if (rd.IsOrderIdNull() == false)
+                                    newDetRow.OrderId = rd.OrderId;
 
                                 ds.TrebovanieDetails.AddTrebovanieDetailsRow(newDetRow);
                             }

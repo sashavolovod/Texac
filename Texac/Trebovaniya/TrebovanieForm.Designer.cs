@@ -59,8 +59,6 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvTrebovanieDetails = new System.Windows.Forms.DataGridView();
-            this.colTrebovanieDetailId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrebovanielId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMatCartId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaterialCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ASUPCODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -336,8 +334,6 @@
             this.dgvTrebovanieDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTrebovanieDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTrebovanieDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colTrebovanieDetailId,
-            this.colTrebovanielId,
             this.colMatCartId,
             this.colMaterialCode,
             this.ASUPCODE,
@@ -360,21 +356,6 @@
             this.dgvTrebovanieDetails.Size = new System.Drawing.Size(881, 279);
             this.dgvTrebovanieDetails.TabIndex = 12;
             this.dgvTrebovanieDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvTrebovanieDetails_EditingControlShowing);
-            // 
-            // colTrebovanieDetailId
-            // 
-            this.colTrebovanieDetailId.DataPropertyName = "TrebovanieDetailId";
-            this.colTrebovanieDetailId.HeaderText = "TrebovanieDetailId";
-            this.colTrebovanieDetailId.Name = "colTrebovanieDetailId";
-            this.colTrebovanieDetailId.Visible = false;
-            this.colTrebovanieDetailId.Width = 60;
-            // 
-            // colTrebovanielId
-            // 
-            this.colTrebovanielId.DataPropertyName = "TrebovanielId";
-            this.colTrebovanielId.HeaderText = "TrebovanielId";
-            this.colTrebovanielId.Name = "colTrebovanielId";
-            this.colTrebovanielId.Visible = false;
             // 
             // colMatCartId
             // 

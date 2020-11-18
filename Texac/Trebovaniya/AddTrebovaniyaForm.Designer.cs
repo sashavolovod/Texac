@@ -44,7 +44,7 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsTrebovaniyaView = new System.Windows.Forms.BindingSource(this.components);
-            this.ds = new Texac.dataDataSet();
+            this.ds = new Texac.dataDataSet1();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCreate = new System.Windows.Forms.Button();
             this.dtpTrebovanieDate = new System.Windows.Forms.DateTimePicker();
@@ -53,10 +53,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnOrderGroup = new System.Windows.Forms.Button();
             this.btnOneOrder = new System.Windows.Forms.Button();
-            this.taTrebovaniyaView = new Texac.dataDataSetTableAdapters.AddTrebovaniyaViewTableAdapter();
-            this.tam = new Texac.dataDataSetTableAdapters.TableAdapterManager();
-            this.taTrebovanieDetails = new Texac.dataDataSetTableAdapters.TrebovanieDetailsTableAdapter();
-            this.taTrebovanie = new Texac.dataDataSetTableAdapters.TrebovanieTableAdapter();
+            this.taTrebovaniyaView = new Texac.dataDataSet1TableAdapters.AddTrebovaniyaViewTableAdapter();
+            this.tam = new Texac.dataDataSet1TableAdapters.TableAdapterManager();
+            this.taTrebovanieDetails = new Texac.dataDataSet1TableAdapters.TrebovanieDetailsTableAdapter();
+            this.taTrebovanie = new Texac.dataDataSet1TableAdapters.TrebovanieTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrebovaniya)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrebovaniyaView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
@@ -271,7 +271,7 @@
             this.tam.MaterialReportDetailsTableAdapter = null;
             this.tam.TrebovanieDetailsTableAdapter = this.taTrebovanieDetails;
             this.tam.TrebovanieTableAdapter = this.taTrebovanie;
-            this.tam.UpdateOrder = Texac.dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tam.UpdateOrder = Texac.dataDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tam.ВидыПрофессиийTableAdapter = null;
             this.tam.РаботникиЦехаTableAdapter = null;
             // 
@@ -305,9 +305,9 @@
         }
 
         #endregion
-        private dataDataSet ds;
+        private dataDataSet1 ds;
         private System.Windows.Forms.BindingSource bsTrebovaniyaView;
-        private dataDataSetTableAdapters.AddTrebovaniyaViewTableAdapter taTrebovaniyaView;
+        private dataDataSet1TableAdapters.AddTrebovaniyaViewTableAdapter taTrebovaniyaView;
         private System.Windows.Forms.DataGridView dgvTrebovaniya;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnOneOrder;
@@ -317,9 +317,9 @@
         private System.Windows.Forms.TextBox tbTrebovanieNumber;
         private System.Windows.Forms.DateTimePicker dtpTrebovanieDate;
         private System.Windows.Forms.Button btnCreate;
-        private dataDataSetTableAdapters.TableAdapterManager tam;
-        private dataDataSetTableAdapters.TrebovanieDetailsTableAdapter taTrebovanieDetails;
-        private dataDataSetTableAdapters.TrebovanieTableAdapter taTrebovanie;
+        private dataDataSet1TableAdapters.TableAdapterManager tam;
+        private dataDataSet1TableAdapters.TrebovanieDetailsTableAdapter taTrebovanieDetails;
+        private dataDataSet1TableAdapters.TrebovanieTableAdapter taTrebovanie;
         private System.Windows.Forms.DataGridViewTextBoxColumn ASUPCODE;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
