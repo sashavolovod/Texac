@@ -49,10 +49,11 @@
             this.miReadyWork = new System.Windows.Forms.ToolStripMenuItem();
             this.miMatZN = new System.Windows.Forms.ToolStripMenuItem();
             this.miPlanZagruzki = new System.Windows.Forms.ToolStripMenuItem();
+            this.miOsnastka = new System.Windows.Forms.ToolStripMenuItem();
             this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.miOsnastka = new System.Windows.Forms.ToolStripMenuItem();
+            this.miEqupmentByTO = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,7 +185,8 @@
             this.miReadyWork,
             this.miMatZN,
             this.miPlanZagruzki,
-            this.miOsnastka});
+            this.miOsnastka,
+            this.miEqupmentByTO});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
@@ -217,6 +219,13 @@
             this.miPlanZagruzki.Text = "План загрузки оборудования";
             this.miPlanZagruzki.Click += new System.EventHandler(this.miPlanZagruzki_Click);
             // 
+            // miOsnastka
+            // 
+            this.miOsnastka.Name = "miOsnastka";
+            this.miOsnastka.Size = new System.Drawing.Size(371, 22);
+            this.miOsnastka.Text = "О выполнении плана сдачи оснастки и инструментов";
+            this.miOsnastka.Click += new System.EventHandler(this.miOsnastka_Click);
+            // 
             // miHelp
             // 
             this.miHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -240,12 +249,12 @@
             this.tabControl1.Size = new System.Drawing.Size(800, 457);
             this.tabControl1.TabIndex = 2;
             // 
-            // miOsnastka
+            // miEqupmentByTO
             // 
-            this.miOsnastka.Name = "miOsnastka";
-            this.miOsnastka.Size = new System.Drawing.Size(371, 22);
-            this.miOsnastka.Text = "О выполнении плана сдачи оснастки и инструментов";
-            this.miOsnastka.Click += new System.EventHandler(this.miOsnastka_Click);
+            this.miEqupmentByTO.Name = "miEqupmentByTO";
+            this.miEqupmentByTO.Size = new System.Drawing.Size(371, 22);
+            this.miEqupmentByTO.Text = "Расчет загрузки оборудования по ТО";
+            this.miEqupmentByTO.Click += new System.EventHandler(this.miEqupmentByTO_Click);
             // 
             // MainForm
             // 
@@ -294,6 +303,7 @@
         private System.Windows.Forms.ToolStripMenuItem miMatZN;
         private System.Windows.Forms.ToolStripMenuItem miPlanZagruzki;
         private System.Windows.Forms.ToolStripMenuItem miOsnastka;
+        private System.Windows.Forms.ToolStripMenuItem miEqupmentByTO;
     }
 }
 

@@ -189,5 +189,10 @@ namespace Texac
         {
             openNewTab("О выполнении плана сдачи оснастки и инструментов");
         }
+
+        private void miEqupmentByTO_Click(object sender, EventArgs e)
+        {
+            new Analize.AnalizeForm().Show();
+        }
     }
 }

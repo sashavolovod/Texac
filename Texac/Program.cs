@@ -20,7 +20,7 @@ namespace Texac
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new MaterialDesign.MainForm());
+            // Application.Run(new MaterialDesign.MainForm());
 
             Application.Run(new MainForm());
 
@@ -33,6 +33,8 @@ namespace Texac
             //Application.Run(new AddTrebovaniyaForm());
 
             //openOrderForm();
+
+            //Application.Run(new Analize.AnalizeForm());
         }
 
         static void openOrderForm()

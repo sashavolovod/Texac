@@ -140,6 +140,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analize\AnalizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analize\AnalizeForm.Designer.cs">
+      <DependentUpon>AnalizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analize\EqupmentByTOEntity.cs" />
     <Compile Include="dataDataSet.cs">
       <DependentUpon>dataDataSet.xsd</DependentUpon>
     </Compile>
@@ -195,11 +202,23 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainFormEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFormEx.Designer.cs">
+      <DependentUpon>MainFormEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="MaterialDesign\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MaterialDesign\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialDesign\MainFormOld.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialDesign\MainFormOld.Designer.cs">
+      <DependentUpon>MainFormOld.cs</DependentUpon>
     </Compile>
     <Compile Include="Materials\EndWorkReportForm.cs">
       <SubType>Form</SubType>
@@ -317,6 +336,9 @@
     <Compile Include="TTN\TtnList.Designer.cs">
       <DependentUpon>TtnList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Analize\AnalizeForm.resx">
+      <DependentUpon>AnalizeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DopZN\DopZnForm.resx">
       <DependentUpon>DopZnForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,8 +355,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainFormEx.resx">
+      <DependentUpon>MainFormEx.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MaterialDesign\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialDesign\MainFormOld.resx">
+      <DependentUpon>MainFormOld.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials\EndWorkReportForm.resx">
       <DependentUpon>EndWorkReportForm.cs</DependentUpon>
@@ -424,6 +452,7 @@
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\DopZNEntity.datasource" />
     <None Include="Properties\DataSources\DopZNEntityDetails.datasource" />
+    <None Include="Properties\DataSources\Texac.Analize.EqupmentByTOEntity.datasource" />
     <None Include="Properties\DataSources\Texac.Domain.Detail.datasource" />
     <None Include="Properties\DataSources\Texac.Domain.Employee.datasource" />
     <None Include="Properties\DataSources\Texac.Domain.Master.datasource" />
