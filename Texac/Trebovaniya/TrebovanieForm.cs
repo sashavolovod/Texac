@@ -8,21 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace Texac
 {
-    
+
     public partial class TrebovanieForm : MyForm
     {
         private Int32 id;
         private bool isNewDoc = false;
         private bool copy = false;
+        Dictionary<int, List<OrderNumberEntity>> orderByYear;
 
-        public TrebovanieForm(Int32 id, bool copy)
+        public TrebovanieForm(Int32 id, bool copy, Dictionary<int, List<OrderNumberEntity>> orderByYear)
         {
             this.id = id;
             this.copy = copy;
+            this.orderByYear = orderByYear;
 
             InitializeComponent();
+
+            LoadData();
 
             DataGridViewColumn colOrderId = new DataGridViewTextBoxColumn();
 
@@ -33,10 +38,52 @@ namespace Texac
             dgvTrebovanieDetails.Columns.Add(colOrderId);
 
             Text = "Требование " + id;
-
             cbCustomer.DataSource = ds.DepartmentsView;
             cbCustomer.ValueMember = "DeptId";
             cbCustomer.DisplayMember = "DeptFullName";
+
+            //AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+            List<String> collection = new List<String>();
+            collection.Add("ТМЦ под  отчет");
+            collection.Add("Автопогрузчики. Запчасти и прочие материалы");
+            collection.Add("Грузовые авто. Запчасти и прочие материалы");
+            collection.Add("Легковые авто. Запчасти и прочие материалы");
+            collection.Add("Спецмашины. Запчасти и прочие материалы");
+            collection.Add("Запчасти для гарантийного ремонта");
+            collection.Add("Запчасти для замены брака");
+            collection.Add("Канцелярские расходы");
+            collection.Add("Моющие средства");
+            collection.Add("Охрана окружающей среды");
+            collection.Add("Перемещение груза внутри предприятия");
+            collection.Add("Санитарно-гигиенические расходы");
+            collection.Add("Содержание складов готовой продукции");
+            collection.Add("Уборка территории, помещений");
+            collection.Add("Упаковка продукции");
+            collection.Add("Содержание зданий, сооружений");
+            collection.Add("Капитальный ремонт зданий, сооружений");
+            collection.Add("Текущий ремонт зданий, сооружений");
+            collection.Add("Содержание оборудования");
+            collection.Add("Текущий ремонт оборудования");
+            collection.Add("Капитальный ремонт оборудования");
+            collection.Add("Содержание инвентаря и прочие");
+            collection.Add("Текущий ремонт инвентаря и прочие");
+            collection.Add("Содержание вычислительной техники");
+            collection.Add("Охрана труда");
+            collection.Add("Материалы на испытание");
+            collection.Add("Озеленение и благоустройство");
+            collection.Add("Сырьё и материалы заказ №");
+            collection.Add("Основные средства");
+            collection.Add("Материалы, принятые в переработку");
+            collection.Add("Заказ-наряд №");
+            collection.Add("Грузовые авто. Запчасти и прочие материалы");
+
+            cbOsnovanie.DataSource = collection;
+            //cbOsnovanie.AutoCompleteCustomSource = collection;
+            //cbOsnovanie.AutoCompleteMode = AutoCompleteMode.Append;
+            //            cbOsnovanie.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            cbOsnovanie.DataSource = collection;
+
+
             dgvTrebovanieDetails.DataError += DgvTrebovanieDetails_DataError;
         }
 
@@ -44,7 +91,6 @@ namespace Texac
         {
             MessageBox.Show("Введено некорректное значение", "Ошибка");
         }
-
 
         private void dgvTrebovanieDetails_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -64,7 +110,7 @@ namespace Texac
             }
         }
 
-        private void TrebovanieForm_Load(object sender, EventArgs e)
+        private void LoadData()
         {
             Cursor.Current = Cursors.WaitCursor;
             taDepartmentsView.Fill(ds.DepartmentsView);
@@ -74,13 +120,13 @@ namespace Texac
                 taTrebovanie.FillById(ds.Trebovanie, id);
                 taTrebovanieDetails.FillById(ds.TrebovanieDetails, id);
                 dataDataSet1.TrebovanieRow r = (dataDataSet1.TrebovanieRow)ds.Trebovanie.Rows[0];
-                cbCustomer.SelectedValue = r.NЦеха;
+                if (r.IsNЦехаNull() == false)
+                    cbCustomer.SelectedValue = r.NЦеха;
             }
             else
             {
                 taTrebovanie.Adapter.RowUpdated += Adapter_RowUpdated;
                 isNewDoc = true;
-
                 if (copy == true)
                 {
                     Texac.dataDataSet1 tmpDs = new dataDataSet1();
@@ -150,54 +196,116 @@ namespace Texac
                                 MessageBox.Show(ex.ToString());
                             }
                         }
-                    }
-                    
+                   }
                 }
                 else
                 {
                     bsTrebovanie.AddNew();
-                    cbCustomer.SelectedIndex = -1;
-                }
-                
-                dtpDocDate.Value = DateTime.Now;
+                    cbCustomer.SelectedValue = 70; // ИнЦ по умолчанию для новых
+                    dataDataSet1.TrebovanieRow nr = (dataDataSet1.TrebovanieRow)((DataRowView)bsTrebovanie.Current).Row;
+                    nr.DocDate = DateTime.Now;
+
+
+                }  //  end if (copy == true) 
+
                 int docNumber = Properties.Settings.Default.TrebovanieLastNumber;
-                tbTrebovanieNumber.Text = (++docNumber).ToString();
+                dataDataSet1.TrebovanieRow addedRow = (dataDataSet1.TrebovanieRow)((DataRowView)bsTrebovanie.Current).Row;
+                addedRow.DocDate = DateTime.Now; 
+                addedRow.DocNumber = ++docNumber;
             }
             Cursor.Current = Cursors.Default;
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            Save();
-            TrebovanieReportForm form = new TrebovanieReportForm(id, tbZatreboval.Text, tbPoluchil.Text);
-            form.Show();
+            if (Save())
+            {
+                TrebovanieReportForm form = new TrebovanieReportForm(id, tbCustomer.Text, tbRecipient.Text);
+                form.Show();
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Save();
-            Close();
+            
+            if(Save())
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+
+            }
+                
         }
 
-        private void Save()
+        private bool Save()
         {
+            int sclad;
             Validate();
             bsTrebovanie.EndEdit();
             bsTrebovanieDetails.EndEdit();
+            Int32 docNumber;
+
+            if (Int32.TryParse(tbTrebovanieNumber.Text, out docNumber) == false)
+            {
+                MessageBox.Show("Поле '№' не заполнено или содержит некоректное значение", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (Int32.TryParse(scladTextBox.Text.Trim(), out sclad) == false)
+            {
+                MessageBox.Show("Поле 'Номер склада' обязательно для заполнения", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if(dtpDocDate.Value == null)
+            {
+                MessageBox.Show("Дата требования не заполнена", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (cbOsnovanie.Text.Length == 0)
+            {
+                if (MessageBox.Show("Поле 'Основание отпуска' не заполнено. Продожить?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    == DialogResult.No)
+                    return false;
+            }
+
+            dataDataSet1.TrebovanieRow r = (dataDataSet1.TrebovanieRow)((DataRowView)bsTrebovanie.Current).Row;
+            int year = r.DocDate.Year;
+
+            if (orderByYear.ContainsKey(year) == false)
+                orderByYear[year] = new List<OrderNumberEntity>();
+
+
+           
+            // количество номеров в этом году
+            List<OrderNumberEntity> list = orderByYear[year].FindAll(i => i.num == r.DocNumber);
+
+            // если требование с таким номером уже есть
+            if (list.Count > 1 || (list.Count==1 && list[0].id!=r.TrebovanieId))
+            {
+                if (MessageBox.Show("Требование с таким номером уже существует. Продолжить?", "Внимание", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                    return false;
+            }
 
             if (isNewDoc)
             {
                 taTrebovanie.Update(ds.Trebovanie);
-                dataDataSet.TrebovanieRow r = (dataDataSet.TrebovanieRow)ds.Trebovanie.Rows[0];
+                dataDataSet1.TrebovanieRow row = (dataDataSet1.TrebovanieRow)ds.Trebovanie.Rows[0];
                 taTrebovanieDetails.Update(ds.TrebovanieDetails);
-                Properties.Settings.Default.TrebovanieLastNumber = r.DocNumber;
+                Properties.Settings.Default.TrebovanieLastNumber = row.DocNumber;
                 Properties.Settings.Default.Save();
+                orderByYear[year].Add(new OrderNumberEntity(r.TrebovanieId, r.DocNumber));
+                isNewDoc = false;
             }
             else
             {
                 tableAdapterManager.UpdateAll(this.ds);
+                
             }
             ds.AcceptChanges();
+
+            return true;
         }
         private void Adapter_RowUpdated(object sender, System.Data.OleDb.OleDbRowUpdatedEventArgs e)
         {
@@ -210,7 +318,9 @@ namespace Texac
 
                 for (int i = 0; i < ds.TrebovanieDetails.Rows.Count; i++)
                 {
-                    dataDataSet.TrebovanieDetailsRow r = (dataDataSet.TrebovanieDetailsRow)ds.TrebovanieDetails.Rows[i];
+                    object row = ds.TrebovanieDetails.Rows[i];
+
+                    dataDataSet1.TrebovanieDetailsRow r = (dataDataSet1.TrebovanieDetailsRow) row;
                     if (r.tblTrebovanieDetailId < 0)
                     {
                         r.tblTrebovanielId = id;

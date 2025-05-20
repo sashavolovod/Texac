@@ -26,8 +26,8 @@ namespace Texac.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\projects\\Texac\\data.mdb;User ID=В" +
-            "оловод;Jet OLEDB:System database=C:\\projects\\Texac\\system.mdw")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\TEXAC\\data.mdb;User ID=Воловод;Je" +
+            "t OLEDB:System database=c:\\texac\\system.mdw")]
         public string connStr {
             get {
                 return ((string)(this["connStr"]));
@@ -84,13 +84,36 @@ namespace Texac.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.2.114:8080")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.2.114:8080/api")]
         public string api_path {
             get {
                 return ((string)(this["api_path"]));
             }
             set {
                 this["api_path"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int StartOrderNumber {
+            get {
+                return ((int)(this["StartOrderNumber"]));
+            }
+            set {
+                this["StartOrderNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=z:\\Tceh\\data.mdb;User ID=Воловод;Jet" +
+            " OLEDB:System database=z:\\Tceh\\Texac\\system.mdw")]
+        public string connStr2 {
+            get {
+                return ((string)(this["connStr2"]));
             }
         }
     }

@@ -52,8 +52,15 @@ namespace Texac.Ekon
                     string name = reader.GetString(2);
                     string obozTO = reader.GetString(3);
                     double amount = reader.GetInt32(4);
-                    double? normaV = reader.GetDouble(5);
-                    double? normaT = reader.GetDouble(6);
+
+                    double? normaV = null;
+                    if (DBNull.Value != reader[5])
+                        normaV = reader.GetDouble(5);
+
+                    double? normaT = null;
+                    if (DBNull.Value != reader[6])
+                        normaT = reader.GetDouble(6);
+
                     int kodTO = reader.GetInt16(7);
                     list.Add(new OsnastkaEntity(id, number, name, obozTO, amount, normaV, normaT, kodTO));
                 }
@@ -86,8 +93,8 @@ namespace Texac.Ekon
                     double? normaV = null;
                     if (DBNull.Value != reader[5])
                          normaV = reader.GetDouble(5);
-                    double? normaT = null;
 
+                    double? normaT = null;
                     if (DBNull.Value != reader[6])
                         normaT = reader.GetDouble(6);
 

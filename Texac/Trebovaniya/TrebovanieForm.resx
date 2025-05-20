@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="nЦехаLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
   <metadata name="scladLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
@@ -129,26 +126,23 @@
   <metadata name="docNumberLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <metadata name="nЦехаLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="workshopCodeLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="bsTrebovanieDetails.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>472, 18</value>
+  </metadata>
   <metadata name="bsTrebovanie.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>78, 19</value>
   </metadata>
   <metadata name="ds.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>26, 17</value>
   </metadata>
-  <metadata name="bsTrebovanieDetails.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>472, 18</value>
-  </metadata>
-  <metadata name="taTrebovanie.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>189, 19</value>
-  </metadata>
-  <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>305, 18</value>
-  </metadata>
-  <metadata name="taTrebovanieDetails.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>623, 17</value>
-  </metadata>
-  <metadata name="taDepartmentsView.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>782, 17</value>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1104, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnCancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -292,24 +286,33 @@
   <data name="tsbCheck.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI9SURBVDhPlZJRaFJRAIYNehl7CPIhgqCXikgSeli6KFzd
-        lEUbW1yGDqajBwskISsouIENRgS5KGLVaq6pyzE1V225wsWaS9fmZFqkjGSoa6lDl6IvBvXn9IS1SdgH
-        /9v9vsO997B+U7Xr4I7qmiZqy2E6PzHFriOrqafY+2upPQd4XPJoebadkJ/bftmKnWobdt+YwL6uKXBv
-        OcDtfIG9ytuov9Dx02Qyafl8fhVR/qa7p1cR+5bB0soqFr+uYCG8DG/gMxwzcxh6+gz3HzxEOp3G8LBl
-        SigUVhOthMFgUORyOWQyGSSTScSiUUTCYQQCAbyfnobFbEJnxzVIWyU4xOcriVaibCASQTAYhM/ng2Ny
-        EsYnA1BfZXBUILhEtBL/Cvj9fsy53XgzPg59fz/E4pb/CwTyAZ/XC5fTiVc2G1Qq1UWilagk4J6dLbwK
-        wzBX8sqmokmoNLC20ze1qwI5oxMIBJuJXlnA4/Hguv45eI984PX5QSnUJqKXD4RCIXjn5wuBD/k/cc/0
-        EpT+E44NLoLSer7XipobiL4xEM0H1k6T3B3FlNMF44gdzQMf0WQNo8Hi/1FHS9uJWmR9wPHOhSNddhzv
-        9aC9z4G2QS/aRpcgHQlDep65Q7QS6wPxeBxDYxOgH8+g1bwAuS2CM2Nf0GN9DY1Gs/Ee6HS6QiCbzSKV
-        SiGRSCAWi8H21omzZi+U9mV0W+2F71E2IBKJtspkMs6fk0gkhZ08JW4Rq9TGxkaaQ9M0h6IodtFisX4B
-        BXswDdZvnw8AAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI8SURBVDhPlZJRaFJRAIYNehl7CPIhgqCXikgSeli6KO7q
+        pixqbHEZOpiOHiyQhKygwMCCEUEuili1mmvqckzNVVuucGFz6dqcTIuUkQx1LXXoUvTFoP6cnrA2Cfvg
+        f7vfd7j3HtZvanbs31Zb10xvOsgUJqLZDWR1jTR7bz29ax+PSx6tzJZjsrNbL1mxXW3DzhsO7OmaBPeW
+        E9zOF9ituI3G8+qfJpNJy+fza4jyN909vfL4tywWl1ew8HUZ85El+IKf4ZyexdDTZ7j/4CEymQyGhy2T
+        AoGglmhlDAaDPJ/PI5vNIpVKIR6LIRqJIBgM4v3UFCxmEzqvXYWkTYwDfL6CaGUqBqJRhEIh+P1+OCcm
+        YHwyAPUVFQ5T1EWilflXIBAIYNbjwZvxcej7+yEStf5fIFgI+H0+uF0uvLLZoFQqLxCtTDUBz8xM8VVU
+        KtXlgrKhZBKqDazu1E3tCiVT6SiK2kj06gJerxfX9c/Be+QHry8AWq42Eb1yIBwOwzc3Vwx8KPyJe6aX
+        oPWfcGRwAbTW+71e2HKC6OsDsUJg9TTx3VFMutwwjtjRMvARzdYIKIvjRwMj6SBqibUB5zs3DnXZcbTX
+        i44+J9oHfWgfXYRkJALJOdUdopVZG0gkEhgac4B5PI028zxktihOj31Bj/U1NBrN+nug0+mKgVwuh3Q6
+        jWQyiXg8DttbF86YfVDYl9BttRe/R8WAUCjcLJVKOX9OLBYXd/ykqFWkVBubmhgOwzAcmqbZJYvF+gXY
+        Ei/nXQ3ukQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="trebovaniaViewTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1104, 17</value>
+  <metadata name="taTrebovanie.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>189, 19</value>
+  </metadata>
+  <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>305, 18</value>
+  </metadata>
+  <metadata name="taTrebovanieDetails.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>623, 17</value>
+  </metadata>
+  <metadata name="taDepartmentsView.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>782, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>92</value>
+    <value>69</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

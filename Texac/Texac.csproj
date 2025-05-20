@@ -25,8 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -94,6 +94,18 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlRenderer.WinForms, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.WinForms.1.5.0.6\lib\net45\HtmlRenderer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Markdig, Version=0.30.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Markdig.0.30.0\lib\net452\Markdig.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -103,10 +115,31 @@
     <Reference Include="Npgsql">
       <HintPath>..\..\..\Users\user\Npgsql.dll</HintPath>
     </Reference>
+    <Reference Include="Renci.SshNet, Version=2020.0.2.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2020.0.2\lib\net40\Renci.SshNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -125,7 +158,9 @@
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -140,6 +175,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBoxForm.Designer.cs">
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FileVersionChecker.cs" />
     <Compile Include="Analize\AnalizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +189,13 @@
       <DependentUpon>AnalizeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Analize\EqupmentByTOEntity.cs" />
+    <Compile Include="Analize\OrderEntity.cs" />
+    <Compile Include="Common\ComboBoxEntity.cs" />
+    <Compile Include="Common\NullableBindingDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\OrderEntity.cs" />
+    <Compile Include="Common\RusNumber.cs" />
     <Compile Include="dataDataSet.cs">
       <DependentUpon>dataDataSet.xsd</DependentUpon>
     </Compile>
@@ -166,10 +215,12 @@
     <Compile Include="DateTimePickerEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Domain\BaseEntity.cs" />
     <Compile Include="Domain\Employee.cs" />
     <Compile Include="Domain\Master.cs" />
     <Compile Include="Domain\MaterialCard.cs" />
     <Compile Include="Domain\Order.cs" />
+    <Compile Include="Domain\ToTypes.cs" />
     <Compile Include="DopZN\DopZNEntityDetails.cs" />
     <Compile Include="DopZN\DopZnForm.cs">
       <SubType>Form</SubType>
@@ -196,6 +247,13 @@
     <Compile Include="Employees\EmployeeList.Designer.cs">
       <DependentUpon>EmployeeList.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocksmithOperations\LocksmithOperationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LocksmithOperations\LocksmithOperationControl.Designer.cs">
+      <DependentUpon>LocksmithOperationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocksmithOperations\LocksmithOperationView.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +311,19 @@
     <Compile Include="MyControls\MyForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MyUIComponents\MyEntityListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ollama\MarkdownViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ollama\OllamaApi.cs" />
+    <Compile Include="Ollama\OllamaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ollama\OllamaControl.Designer.cs">
+      <DependentUpon>OllamaControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Orders\OrderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -265,6 +336,13 @@
     <Compile Include="Orders\OrderForm.Designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlanOrders\PlanOrdersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PlanOrders\PlanOrdersControl.Designer.cs">
+      <DependentUpon>PlanOrdersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanOrders\ToEntity.cs" />
     <Compile Include="PlanZagruzki\GrafikEntity.cs" />
     <Compile Include="PlanZagruzki\PlanZagruzkiEntity.cs" />
     <Compile Include="PlanZagruzki\PlanZagruzkiForm.cs">
@@ -280,6 +358,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="PsnHistory\PsnEntity.cs" />
+    <Compile Include="PsnHistory\PsnListControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PsnHistory\PsnListControl.Designer.cs">
+      <DependentUpon>PsnListControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="RashodForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +379,42 @@
     </Compile>
     <Compile Include="RestClient\EntityPath.cs" />
     <Compile Include="RestClient\RestClientTest.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="TempForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TempForm.Designer.cs">
+      <DependentUpon>TempForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\EditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Temp\EditControl.Designer.cs">
+      <DependentUpon>EditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\EditPane.cs" />
+    <Compile Include="Temp\EmployeeEntity.cs" />
+    <Compile Include="Temp\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SortableBindingList.cs" />
+    <Compile Include="Trebovaniya\MaterialAvailabilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trebovaniya\MaterialAvailabilityForm.Designer.cs">
+      <DependentUpon>MaterialAvailabilityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trebovaniya\MaterialDTO.cs" />
+    <Compile Include="Trebovaniya\OrderNumberEntity.cs" />
     <Compile Include="Trebovaniya\TrebovanieForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,60 +451,98 @@
     <Compile Include="Trebovaniya\OrderTypeForm.Designer.cs">
       <DependentUpon>OrderTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TTN\DeliveryNoteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TTN\DeliveryNoteControl.Designer.cs">
+      <DependentUpon>DeliveryNoteControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTN\DeliveryNoteEntity.cs" />
+    <Compile Include="TTN\InputOrderNumberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTN\InputOrderNumberForm.Designer.cs">
+      <DependentUpon>InputOrderNumberForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TTN\TtnList.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TTN\TtnList.Designer.cs">
       <DependentUpon>TtnList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutBoxForm.resx">
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Analize\AnalizeForm.resx">
       <DependentUpon>AnalizeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DopZN\DopZnForm.resx">
       <DependentUpon>DopZnForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DopZN\DopZnReport.rdlc" />
     <EmbeddedResource Include="DopZN\DopZnReportForm.resx">
       <DependentUpon>DopZnReportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Ekon\OsnastkaUserControl.resx">
       <DependentUpon>OsnastkaUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Employees\EmployeeList.resx">
       <DependentUpon>EmployeeList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocksmithOperations\LocksmithOperationControl.resx">
+      <DependentUpon>LocksmithOperationControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFormEx.resx">
       <DependentUpon>MainFormEx.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialDesign\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialDesign\MainFormOld.resx">
       <DependentUpon>MainFormOld.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials\EndWorkReportForm.resx">
       <DependentUpon>EndWorkReportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials\EndWorkReportParametrsForm.resx">
       <DependentUpon>EndWorkReportParametrsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials\IssuedMaterials.resx">
       <DependentUpon>IssuedMaterials.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Materials\MaterialZN.resx">
       <DependentUpon>MaterialZN.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MigratorForm.resx">
       <DependentUpon>MigratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ollama\OllamaControl.resx">
+      <DependentUpon>OllamaControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Orders\OrderControl.resx">
       <DependentUpon>OrderControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Orders\OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanOrders\PlanOrdersControl.resx">
+      <DependentUpon>PlanOrdersControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanZagruzki\PlanZagruzkiForm.resx">
       <DependentUpon>PlanZagruzkiForm.cs</DependentUpon>
@@ -392,6 +551,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PsnHistory\PsnListControl.resx">
+      <DependentUpon>PsnListControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RashodForm.resx">
       <DependentUpon>RashodForm.cs</DependentUpon>
@@ -403,6 +565,21 @@
     <EmbeddedResource Include="Reports\RashodMaterialov.rdlc" />
     <EmbeddedResource Include="Reports\Trebovanie.rdlc" />
     <EmbeddedResource Include="Reports\TTN.rdlc" />
+    <EmbeddedResource Include="TempForm.resx">
+      <DependentUpon>TempForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\EditControl.resx">
+      <DependentUpon>EditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trebovaniya\MaterialAvailabilityForm.resx">
+      <DependentUpon>MaterialAvailabilityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trebovaniya\TrebovanieForm.resx">
       <DependentUpon>TrebovanieForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,6 +598,12 @@
     <EmbeddedResource Include="Trebovaniya\OrderTypeForm.resx">
       <DependentUpon>OrderTypeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TTN\DeliveryNoteControl.resx">
+      <DependentUpon>DeliveryNoteControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTN\InputOrderNumberForm.resx">
+      <DependentUpon>InputOrderNumberForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TTN\TtnList.resx">
       <DependentUpon>TtnList.cs</DependentUpon>
     </EmbeddedResource>
@@ -430,7 +613,7 @@
     <None Include="dataDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>dataDataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>dataDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="dataDataSet.xss">
       <DependentUpon>dataDataSet.xsd</DependentUpon>
@@ -458,8 +641,12 @@
     <None Include="Properties\DataSources\Texac.Domain.Master.datasource" />
     <None Include="Properties\DataSources\Texac.Domain.Order.datasource" />
     <None Include="Properties\DataSources\Texac.Ekon.OsnastkaEntity.datasource" />
+    <None Include="Properties\DataSources\Texac.LocksmithOperations.LocksmithOperationView.datasource" />
     <None Include="Properties\DataSources\Texac.PlanZagruzki.GrafikEntity.datasource" />
     <None Include="Properties\DataSources\Texac.PlanZagruzki.PlanZagruzkiEntity.datasource" />
+    <None Include="Properties\DataSources\Texac.PsnHistory.PsnEntity.datasource" />
+    <None Include="Properties\DataSources\Texac.Temp.EmployeeEntity.datasource" />
+    <None Include="Properties\DataSources\Texac.TTN.DeliveryNotePositionEntity.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -550,7 +737,27 @@
   <ItemGroup>
     <None Include="images\dopZn.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="images\pdo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hopstarter-Sleek-Xp-Basic-Ok.16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Joker-Design-Android-Document.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1383136876_agt_print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1383137606_gear_wheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1383137292_apply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1383133237_33.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

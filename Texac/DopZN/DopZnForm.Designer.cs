@@ -57,14 +57,15 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dgvMaterialZN = new System.Windows.Forms.DataGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.taMaterialZN = new Texac.dataDataSet1TableAdapters.qMaterialZNTableAdapter();
+            this.tableAdapterManager = new Texac.dataDataSet1TableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMassaRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMassa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.taMaterialZN = new Texac.dataDataSet1TableAdapters.qMaterialZNTableAdapter();
-            this.tableAdapterManager = new Texac.dataDataSet1TableAdapters.TableAdapterManager();
+            this.CardNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qMaterialZNBindingNavigator)).BeginInit();
             this.qMaterialZNBindingNavigator.SuspendLayout();
@@ -310,7 +311,8 @@
             this.dataGridViewTextBoxColumn1,
             this.colMassaRO,
             this.dataGridViewTextBoxColumn4,
-            this.colMassa});
+            this.colMassa,
+            this.CardNum});
             this.dgvMaterialZN.DataSource = this.bsMaterialZN;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
@@ -327,6 +329,29 @@
             this.dgvMaterialZN.TabIndex = 4;
             this.dgvMaterialZN.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterialZN_CellEndEdit);
             this.dgvMaterialZN.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.qMaterialZNDataGridView_CellPainting);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 521);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1087, 22);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // taMaterialZN
+            // 
+            this.taMaterialZN.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.MaterialReportDetailsTableAdapter = null;
+            this.tableAdapterManager.TrebovanieDetailsTableAdapter = null;
+            this.tableAdapterManager.TrebovanieTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Texac.dataDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ВидыПрофессиийTableAdapter = null;
+            this.tableAdapterManager.РаботникиЦехаTableAdapter = null;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -368,27 +393,12 @@
             this.colMassa.Name = "colMassa";
             this.colMassa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // statusStrip1
+            // CardNum
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 521);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1087, 22);
-            this.statusStrip1.TabIndex = 5;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // taMaterialZN
-            // 
-            this.taMaterialZN.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.TrebovanieDetailsTableAdapter = null;
-            this.tableAdapterManager.TrebovanieTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Texac.dataDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ВидыПрофессиийTableAdapter = null;
-            this.tableAdapterManager.РаботникиЦехаTableAdapter = null;
+            this.CardNum.DataPropertyName = "CardNum";
+            this.CardNum.HeaderText = "Номер карточки";
+            this.CardNum.Name = "CardNum";
+            this.CardNum.Width = 150;
             // 
             // DopZnForm
             // 
@@ -441,12 +451,13 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView dgvMaterialZN;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.CheckBox cbPrud;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMassaRO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMassa;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.CheckBox cbPrud;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMassa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CardNum;
     }
 }

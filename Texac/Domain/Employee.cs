@@ -7,12 +7,12 @@ using Texac.RestClient;
 
 namespace Texac.Domain
 {
-    [EntityPath("employee")]
-    public class Employee
+    [EntityPath("employees")]
+    public class Employee : BaseEntity
     {
         public long employeeId { get; set; }
-        public int nTabelnyj { get; set; }
-        public long deptId { get; set; }
+        public int employeeNo { get; set; }
+        public long? deptId { get; set; }
         public String zveno { get; set; }
         public String firstName { get; set; }
         public String secondName { get; set; }

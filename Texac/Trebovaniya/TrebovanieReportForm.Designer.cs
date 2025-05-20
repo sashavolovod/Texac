@@ -32,10 +32,10 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrebovanieReportForm));
             this.bsTrebovanieDetails = new System.Windows.Forms.BindingSource(this.components);
-            this.ds = new Texac.dataDataSet();
+            this.ds = new Texac.dataDataSet1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.taTrebovanieDetails = new Texac.dataDataSetTableAdapters.TrebovanieDetailsTableAdapter();
-            this.taTrebovanie = new Texac.dataDataSetTableAdapters.TrebovanieTableAdapter();
+            this.taTrebovanieDetails = new Texac.dataDataSet1TableAdapters.TrebovanieDetailsTableAdapter();
+            this.taTrebovanie = new Texac.dataDataSet1TableAdapters.TrebovanieTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrebovanieDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds)).BeginInit();
             this.SuspendLayout();
@@ -91,8 +91,8 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource bsTrebovanieDetails;
-        private dataDataSet ds;
-        private dataDataSetTableAdapters.TrebovanieDetailsTableAdapter taTrebovanieDetails;
-        private dataDataSetTableAdapters.TrebovanieTableAdapter taTrebovanie;
+        private dataDataSet1 ds;
+        private dataDataSet1TableAdapters.TrebovanieDetailsTableAdapter taTrebovanieDetails;
+        private dataDataSet1TableAdapters.TrebovanieTableAdapter taTrebovanie;
     }
 }

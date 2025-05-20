@@ -20,6 +20,7 @@ namespace Texac.Analize
                 return;
             }
 
+            //string queryString = "SELECT [NППЗаказа], [ФактДатаИзготовления], [NЗаказаЗавода] FROM Заказы WHERE [ОбозначениеТО]=?";
             string queryString = "SELECT [NППЗаказа], [ФактДатаИзготовления] FROM Заказы WHERE [ОбозначениеТО]=?";
             using (OleDbConnection connection = new OleDbConnection(Texac.Properties.Settings.Default.connStr))
             {
@@ -29,10 +30,20 @@ namespace Texac.Analize
                 OleDbDataReader reader = command.ExecuteReader();
 
                 DateTime lastDate = new DateTime();
+
                 tbOrderNumbers.Text = "";
+               // List<OrderEntity> orderList = new List<OrderEntity>();
+
                 while (reader.Read())
                 {
+                    /*
+                    if (DBNull.Value != reader[1])
+                    {
+                        orderList.Add(new OrderEntity(reader.GetInt32(0), reader.GetString(2), reader.GetDateTime(1)));
 
+                    }
+                    */
+                    
                     if (DBNull.Value != reader[1])
                     {
                         int orderId = reader.GetInt32(0);
@@ -53,6 +64,40 @@ namespace Texac.Analize
                     }
                 }
                 reader.Close();
+                /*
+                // поиск последнего 23 или 208 заказа
+                int startIndex=0;
+                for(int i = 0; i < orderList.Count; i++)
+                {
+                    if(
+                        (orderList[i].orderNumber.StartsWith("23-") || orderList[i].orderNumber.StartsWith("208"))
+
+                        && !(orderList[i].orderNumber.Contains(".") || 
+                             orderList[i].orderNumber.Contains(",") || 
+                             orderList[i].orderNumber.Contains(" ")
+                            )
+
+                        )
+                        startIndex = i;
+                }
+                /*
+                for(int i=startIndex; i < orderList.Count; i++)
+                {
+                    if (lastDate.Year == 1)
+                    {
+                        lastDate = orderList[i].orderDate;
+                        tbOrderNumbers.Text += orderList[i].orderId.ToString();
+                    }
+                    else
+                    {
+                        if (orderList[i].orderDate < lastDate)
+                        {
+                            tbOrderNumbers.Text += " ";
+                            tbOrderNumbers.Text += orderList[i].orderId.ToString();
+                        }
+                    }
+                }
+                */
             }
         }
 
@@ -70,7 +115,7 @@ namespace Texac.Analize
             string queryString = " SELECT [Операция], Sum([НормаВремени]*[КоличОкончРаб]) AS [Затрачено часов] FROM [ВыполнениеЗаказа] " +
                                  " WHERE [NППЗаказа] " + orders +
                                  " GROUP BY [Операция] " +
-                                 " HAVING  [Операция] In (\"К.р.с.\", \"К.р.с.(Mikr.)\",\"HAAS\", \"Гор.раст.\",\"Гор.р(MAF45)\",\"Hauser\",\"Hauser(партия)\",\"Micromat\",\"Micromat(партия)\",\"Micron скор.\",\"Hermle\",\"ЭЭВ\",\"ЭЭП\",\"ЭЭП(супер)\") " +
+                                 " HAVING  [Операция] In (\"Коорд.шл.\",\"Опт.шл.\",\"К.р.с.\", \"К.р.с.(Mikr.)\",\"HAAS\", \"Гор.раст.\",\"Гор.р(MAF45)\",\"Hauser\",\"Hauser(партия)\",\"Micromat\",\"Micromat(партия)\",\"Micron скор.\",\"Hermle\",\"ЭЭВ\",\"ЭЭП\",\"ЭЭП(супер)\") " +
                                  " ORDER BY [Операция]";
 
 
@@ -83,18 +128,47 @@ namespace Texac.Analize
                 connection.Open();
                 OleDbDataReader reader = command.ExecuteReader();
 
+                Dictionary<string, EqupmentByTOEntity> dict = new Dictionary<string, EqupmentByTOEntity>();
+
+                dict.Add("Коорд.шл.", new EqupmentByTOEntity("Коорд.шл.", 0.0));
+                dict.Add("Опт.шл.", new EqupmentByTOEntity("Опт.шл.", 0.0));
+                dict.Add("К.р.с.", new EqupmentByTOEntity("К.р.с.", 0.0));
+                dict.Add("К.р.с.(Mikr.)", new EqupmentByTOEntity("К.р.с.(Mikr.)", 0.0));
+                dict.Add("HAAS", new EqupmentByTOEntity("HAAS", 0.0));
+                dict.Add("Гор.раст.", new EqupmentByTOEntity("Гор.раст.", 0.0));
+                dict.Add("Гор.р(MAF45)", new EqupmentByTOEntity("Гор.р(MAF45)", 0.0));
+                dict.Add("Hauser", new EqupmentByTOEntity("Hauser", 0.0));
+                dict.Add("Hauser(партия)", new EqupmentByTOEntity("Hauser(партия)", 0.0));
+                dict.Add("Micromat", new EqupmentByTOEntity("Micromat", 0.0));
+                dict.Add("Micromat(партия)", new EqupmentByTOEntity("Micromat(партия)", 0.0));
+                dict.Add("Micron скор.", new EqupmentByTOEntity("Micron скор.", 0.0));
+                dict.Add("Hermle", new EqupmentByTOEntity("Hermle", 0.0));
+                dict.Add("ЭЭВ", new EqupmentByTOEntity("ЭЭВ", 0.0));
+                dict.Add("ЭЭП", new EqupmentByTOEntity("ЭЭП", 0.0));
+                dict.Add("ЭЭП(супер)", new EqupmentByTOEntity("ЭЭП(супер)", 0.0));
+
                 while (reader.Read())
                 {
                     if (DBNull.Value != reader[1])
                     {
                         string op = reader.GetString(0);
                         double h = reader.GetDouble(1);
-                        list.Add(new EqupmentByTOEntity(op, h));
+                        dict[op].hours = h;
                     }
                 }
                 reader.Close();
 
+
+                foreach (KeyValuePair<string, EqupmentByTOEntity> entry in dict)
+                {
+                    list.Add(entry.Value);
+                }
+
+
                 bsEqupmentByTO.DataSource = list;
+
+
+                // bsEqupmentByTO.DataSource = dict;
             }
             Cursor = Cursors.Default;
 
@@ -127,6 +201,14 @@ namespace Texac.Analize
 
             tbNaimTO.AutoCompleteCustomSource = collection;
             Cursor = Cursors.Default;
+        }
+
+        private void tbNaimTO_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnFindOrderNumbers_Click(null, null);
+            }
         }
     }
 }

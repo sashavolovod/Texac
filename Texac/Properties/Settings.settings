@@ -5,10 +5,10 @@
     <Setting Name="connStr" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\projects\Texac\data.mdb;User ID=Воловод;Jet OLEDB:System database=C:\projects\Texac\system.mdw&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\TEXAC\data.mdb;User ID=Воловод;Jet OLEDB:System database=c:\texac\system.mdw&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\projects\Texac\data.mdb;User ID=Воловод;Jet OLEDB:System database=C:\projects\Texac\system.mdw</Value>
+      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\TEXAC\data.mdb;User ID=Воловод;Jet OLEDB:System database=c:\texac\system.mdw</Value>
     </Setting>
     <Setting Name="TrebovanieLastOrderId" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -23,7 +23,17 @@
       <Value Profile="(Default)">Server=172.16.2.114;Port=5432;User Id=volovod;Password=123;Database=texac_dev;</Value>
     </Setting>
     <Setting Name="api_path" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://172.16.2.114:8080</Value>
+      <Value Profile="(Default)">http://172.16.2.114:8080/api</Value>
+    </Setting>
+    <Setting Name="StartOrderNumber" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="connStr2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=z:\Tceh\data.mdb;User ID=Воловод;Jet OLEDB:System database=z:\Tceh\Texac\system.mdw&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=z:\Tceh\data.mdb;User ID=Воловод;Jet OLEDB:System database=z:\Tceh\Texac\system.mdw</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -14,7 +14,8 @@ namespace Texac
         public double? qtyNew { get; set; }
         public string unitNameOld { get; set; }
         public string unitNameNew { get; set; }
-
+        public string cardNumOld { get; set; }
+        public string cardNumNew { get; set; }
         public DopZNEntityDetails() { }
     };
 

@@ -113,11 +113,7 @@ namespace Texac
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
-
-
             outToLog(DateTime.Now + " " + " - test REST");
-
 
             Master m = new Domain.Master
             {
@@ -148,9 +144,12 @@ namespace Texac
 
         private void btnCopyData_Click(object sender, EventArgs e)
         {
+             updateEmployeesTableOnPg();
+
             // copyEmployeeTable();
             // copyOrderTable();
-            copyMatCardTable();
+            // copyMatCardTable();
+            MessageBox.Show("done!");
         }
 
         private void copyMatCardTable()
@@ -259,9 +258,11 @@ namespace Texac
             MessageBox.Show("Done!");
         }
 
-        void copyEmployeeTable()
+        Dictionary<long, Employee> getEmployeeHashmapFromAccessDb()
         {
-            string sql = "SELECT id, NТабельный, Подразделение, Звено, Имя, Фамилия, ФИО, ПрофессияДолжность, Разряд, Операция, ВыполняемыеОперации, ДатаНайма, Работает, Категория, Адрес, ДомашнийТелефон, ДатаРождения, МестоРождения, МестоУчебы, ГодОкУЗ, Факультет, Специальность, ПредМР, Примечания, УслТруда, КТУ, WORKERSUM, UserLogin, Руководитель, PassportSeria, RealAdress, FamilyStatus, PassportNumber, PassportDate, PassportOffice, PersonalNumber, MobilePhoneZone, MobilePhone, Profession1, Profession2, Profession3, Profession4, Profession5, Profession6, Rost, Razmer, RazmerObuvi, ПрофессияСИЗ, КодРазмера, Sex FROM РаботникиЦеха";// where NТабельный=11980";
+
+            Dictionary<long, Employee> emps = new Dictionary<long, Employee>();
+            string sql = "SELECT id, NТабельный, Подразделение, Звено, Имя, Фамилия, ФИО, ПрофессияДолжность, Разряд, Операция, ВыполняемыеОперации, ДатаНайма, Работает, Категория, Адрес, ДомашнийТелефон, ДатаРождения, МестоРождения, МестоУчебы, ГодОкУЗ, Факультет, Специальность, ПредМР, Примечания, УслТруда, КТУ, WORKERSUM, UserLogin, Руководитель, PassportSeria, RealAdress, FamilyStatus, PassportNumber, PassportDate, PassportOffice, PersonalNumber, MobilePhoneZone, MobilePhone, Profession1, Profession2, Profession3, Profession4, Profession5, Profession6, Rost, Razmer, RazmerObuvi, ПрофессияСИЗ, КодРазмера, Sex FROM РаботникиЦеха"; // where NТабельный=11980";
 
             OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.connStr);
 
@@ -272,7 +273,7 @@ namespace Texac
             {
                 Employee emp = new Employee();
                 emp.employeeId = r.GetInt32(0);
-                emp.nTabelnyj = r.GetInt32(1);
+                emp.employeeNo = r.GetInt32(1);
                 emp.deptId = r.GetInt16(2);
                 if (r[3] != DBNull.Value)
                     emp.zveno = r.GetString(3);
@@ -362,33 +363,92 @@ namespace Texac
                     emp.clothingSizeTypeId = r.GetByte(48);
                 if (r[49] != DBNull.Value)
                     emp.gender = r.GetString(49);
-
-                /*
-              string json = JsonConvert.SerializeObject(emp, Formatting.None, new JsonSerializerSettings
-              {
-                  NullValueHandling = NullValueHandling.Ignore
-              });
-              MessageBox.Show(json);
-              */
-
-                Employee emp2 = rest.saveEntity<Employee>(emp);
-
+                emps.Add(emp.employeeId, emp);
             }
             r.Close();
             cmd.Dispose();
             conn.Close();
-            MessageBox.Show("Done!");
+            return emps;
+        }
+
+        Dictionary<long, Employee> getEmployeeHashmapFromPgDb()
+        {
+            Dictionary<long, Employee> empsPg = new Dictionary<long, Employee>();
+            List<Employee> employeesList = rest.getEntytyList<Employee>();
+
+            foreach (Employee emp in employeesList)
+                empsPg.Add(emp.employeeId, emp);
+
+            return empsPg;
+        }
+
+
+        // обновление информации из Access в Postgresql
+        void updateEmployeesTableOnPg()
+        {
+            Dictionary<long, Employee> empsAccess, empsPg;
+
+            // получим записи с Access
+            empsAccess = getEmployeeHashmapFromAccessDb();
+
+            // получим записи с Postgresql
+            empsPg = getEmployeeHashmapFromPgDb();
+
+            JsonSerializerSettings settings = new JsonSerializerSettings
+            {
+                DateTimeZoneHandling = DateTimeZoneHandling.Utc
+            };
+
+            // пройдем по всем записям из Access
+            foreach (KeyValuePair<long, Employee> entry in empsAccess)
+            {
+                // если запись новая -- добавляем ее
+                if (empsPg.ContainsKey(entry.Key) == false) 
+                    rest.saveEntity(entry.Value);
+                // иначе, если запись не совпадает с имеющейся в postgresql -- сохраняем ее в Postgresql
+                else
+                {
+                    Employee emp = empsPg[entry.Key];
+                    emp.created = null;
+                    emp.modified = null;
+                    emp.ownerId = 0;
+                    string empPgStr = JsonConvert.SerializeObject(emp, Formatting.None, settings);
+                    string empAccessStr = JsonConvert.SerializeObject(entry.Value, Formatting.None, settings);
+
+                    // сравниваем json представление объектов
+                    if (empPgStr != empAccessStr)
+                    {
+                        rest.saveEntity(entry.Value);
+                    }
+                }
+            }
         }
 
         void copyOrderTable()
         {
-            string sql = "SELECT NППЗаказа, NЗаказаЗавода, NЗаказа, ГрафикN, ВидГрафика, ОснованиеЗаказа, ДатаПолученияЗаказа, ОбозначениеТО, КодТО, NИзделия, NДетали, Кол_во, ФКол_во, Заказчик, ПланДатаИзготовления, КодПриоритета, ПланТП, ДатаТП, ДатаПоступленияЦех, ФактДатаИзготовления, ПланТрудоемкость, ЦехИсполнитель, Отчет, ДатаОтчета, Технолог, Слесарь, СодержаниеЗаявки, ФактТрудоемкость, NНакладной, NАкта, СкладПолуч, НеодноврВыпЗак, Конструктор, p_unit, pause, OrderCards, Life, Lifeday, ObjectType, Quckly, MaterialDate, Запчасть, Стойкость, Доп_заказ, TNVED, PriceDate, PeoDate, OtizDate FROM Заказы";// where NППЗаказа=1";
+            string sql;
+            OleDbCommand cmd;
+            OleDbDataReader r;
+            Dictionary<string, int> designers = new Dictionary<string, int>();
 
             OleDbConnection conn = new OleDbConnection(Properties.Settings.Default.connStr);
-
             conn.Open();
-            OleDbCommand cmd = new OleDbCommand(sql, conn);
-            OleDbDataReader r = cmd.ExecuteReader();
+            sql = "select id, designer from designers";
+            cmd = new OleDbCommand(sql, conn);
+            r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                int id = r.GetInt32(0);
+                string designerName = r.GetString(1).Trim();
+                if (designers.ContainsKey(designerName)==false)
+                    designers.Add(designerName, id);
+            }
+            r.Close();
+            cmd.Dispose();
+            
+            sql = "SELECT NППЗаказа, NЗаказаЗавода, NЗаказа, ГрафикN, ВидГрафика, ОснованиеЗаказа, ДатаПолученияЗаказа, ОбозначениеТО, КодТО, NИзделия, NДетали, Кол_во, ФКол_во, Заказчик, ПланДатаИзготовления, КодПриоритета, ПланТП, ДатаТП, ДатаПоступленияЦех, ФактДатаИзготовления, ПланТрудоемкость, ЦехИсполнитель, Отчет, ДатаОтчета, Технолог, Слесарь, СодержаниеЗаявки, ФактТрудоемкость, NНакладной, NАкта, СкладПолуч, НеодноврВыпЗак, Конструктор, p_unit, pause, OrderCards, Life, Lifeday, ObjectType, Quckly, MaterialDate, Запчасть, Стойкость, Доп_заказ, TNVED, PriceDate, PeoDate, OtizDate, Weight FROM Заказы";// where NППЗаказа=1";
+            cmd = new OleDbCommand(sql, conn);
+            r = cmd.ExecuteReader();
             while (r.Read())
             {
                 Order o = new Order();
@@ -412,11 +472,11 @@ namespace Texac
                     o.obozTo = r.GetString(7);
 
                 if (r[8] != DBNull.Value)
-                    o.kodTO = r.GetInt16(8);
+                    o.codeTo = r.GetInt16(8);
 
-                o.productNumber = r.GetString(9);
+                o.itemNo = r.GetString(9);
 
-                o.partNumber = r.GetString(10);
+                o.detailNo = r.GetString(10);
 
                 if (r[11] != DBNull.Value)
                     o.qty = r.GetInt32(11);
@@ -446,7 +506,7 @@ namespace Texac
                     o.factReadyDate= r.GetDateTime(19);
 
                 if (r[20] != DBNull.Value)
-                   o.planLabourIntensity = r.GetDouble(20);
+                   o.planNv = r.GetDouble(20);
 
                 if (r[21] != DBNull.Value)
                     o.performerShop = r.GetInt32(21);
@@ -458,7 +518,7 @@ namespace Texac
                     o.reportDate = r.GetDateTime(23);
 
                 if (r[24] != DBNull.Value)
-                    o.technologistId = r.GetInt32(24);
+                    o.techEmpId = r.GetInt32(24);
 
                 if (r[25] != DBNull.Value)
                     o.locksmithId = r.GetInt32(25);
@@ -467,7 +527,7 @@ namespace Texac
                     o.orderNote = r.GetString(26);
 
                 if (r[27] != DBNull.Value)
-                    o.factLabourIntensity = r.GetDouble(27);
+                    o.factNv = r.GetDouble(27);
 
                 if (r[28] != DBNull.Value)
                     o.consignmentNote = r.GetString(28);
@@ -482,10 +542,23 @@ namespace Texac
                     o.anotherTimeReady = r.GetBoolean(31);
 
                 if (r[32] != DBNull.Value)
-                    o.designerId = -1; //// !!!!!!!!!!!!  r.GetInt32(32);
+                {
+                    string name = r.GetString(32).Trim();
+                    if (designers.ContainsKey(name))
+                        o.designerId = designers[name];
+                    else
+                        MessageBox.Show(o.orderId.ToString() + "  " + name);
+                }
 
                 if (r[33] != DBNull.Value)
-                    o.unitOfMeasureId = -1;/// r.GetInt32(33);
+                {
+                    string unitTitle = r.GetString(33);
+                    if(unitTitle== "компл.")
+                        o.unitTypeId = 2;
+                    else
+                        o.unitTypeId = 1;
+                }
+
 
                 if (r[34] != DBNull.Value)
                     o.stopped = r.GetBoolean(34);
@@ -528,30 +601,14 @@ namespace Texac
 
                 if (r[47] != DBNull.Value)
                     o.otizDate = r.GetDateTime(47);
-                /*
 
-                string json = JsonConvert.SerializeObject(o, Formatting.None, new JsonSerializerSettings
-                {
-                    NullValueHandling = NullValueHandling.Ignore
-                });
-
-    */
-
-                Order o2 = rest.saveEntity<Order>(o);
-                if (o2.orderId < 1)
-                {
-                    break; 
-                }
-
-//                MessageBox.Show(json);
-
+                if (r[48] != DBNull.Value)
+                    o.weight = r.GetInt32(48);
             }
 
             r.Close();
             cmd.Dispose();
             conn.Close();
-            MessageBox.Show("Done!");
-
         }
     }
 }

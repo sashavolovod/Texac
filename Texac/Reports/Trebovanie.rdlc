@@ -9,17 +9,21 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Предприятие</Value>
-                <Style />
+                <Value>(предприятие, организация)</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Left>0.3175cm</Left>
+        <Top>0.635cm</Top>
         <Height>0.6cm</Height>
-        <Width>2.84396cm</Width>
+        <Width>5.50162cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -38,16 +42,17 @@
             <TextRuns>
               <TextRun>
                 <Value>       СП ОАО "Брестгазоаппарат"</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Left>3.26729cm</Left>
         <Height>0.6cm</Height>
-        <Width>14.20641cm</Width>
+        <Width>5.50162cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -64,37 +69,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox3">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Требование №</Value>
-                <Style>
-                  <FontFamily>Times New Roman</FontFamily>
-                  <FontSize>14pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Right</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.04938cm</Top>
-        <Left>0.3175cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.56375cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox4">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -102,33 +76,29 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!parDocNumber.Value</Value>
+                <Value>="ТРЕБОВАНИЕ №" &amp; Parameters!parDocNumber.Value</Value>
                 <Style>
                   <FontFamily>Times New Roman</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.04938cm</Top>
-        <Left>4.91653cm</Left>
+        <Top>1.68438cm</Top>
+        <Left>0.35278cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.5475cm</Width>
-        <ZIndex>3</ZIndex>
+        <Width>6.11125cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
         </Style>
       </Textbox>
       <Textbox Name="Textbox5">
@@ -138,7 +108,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!parDocDate.Value</Value>
+                <Value EvaluationMode="Constant" />
                 <Style>
                   <FontFamily>Times New Roman</FontFamily>
                   <FontSize>11pt</FontSize>
@@ -151,11 +121,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.79049cm</Top>
+        <Top>2.42549cm</Top>
         <Left>1.46198cm</Left>
-        <Height>0.65752cm</Height>
+        <Height>0.40686cm</Height>
         <Width>4.7225cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -178,9 +148,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Через</Value>
+                <Value>Получатель (МОЛ):</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -188,11 +159,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>3.5cm</Top>
-        <Left>0.3175cm</Left>
+        <Top>4.5cm</Top>
+        <Left>0.38806cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.07679cm</Width>
-        <ZIndex>5</ZIndex>
+        <Width>3.78764cm</Width>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -210,32 +181,28 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!parPerson1.Value</Value>
+                <Value>=Parameters!parRecipient.Value</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>3.5cm</Top>
-        <Left>1.50012cm</Left>
+        <Top>4.5cm</Top>
+        <Left>11.01407cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.73186cm</Width>
-        <ZIndex>6</ZIndex>
+        <Width>8.15058cm</Width>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -249,9 +216,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Затребовал</Value>
+                <Value>Затребовал:</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -259,11 +227,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>3.5cm</Top>
-        <Left>5.40837cm</Left>
+        <Top>5.4cm</Top>
+        <Left>0.38528cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.04598cm</Width>
-        <ZIndex>7</ZIndex>
+        <Width>2.20473cm</Width>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -281,32 +249,28 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!parPerson2.Value</Value>
+                <Value>=Parameters!parCustomer.Value</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Left</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>3.5cm</Top>
-        <Left>7.45435cm</Left>
+        <Top>5.4cm</Top>
+        <Left>11.01407cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.73186cm</Width>
-        <ZIndex>8</ZIndex>
+        <Width>8.15058cm</Width>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -320,9 +284,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Разрешил</Value>
+                <Value>Разрешил:</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -330,19 +295,19 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>3.5cm</Top>
-        <Left>11.25676cm</Left>
+        <Top>6.29633cm</Top>
+        <Left>0.38528cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.90486cm</Width>
-        <ZIndex>9</ZIndex>
+        <Width>2.20473cm</Width>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <VerticalAlign>Bottom</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox24">
@@ -354,7 +319,8 @@
               <TextRun>
                 <Value />
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -362,11 +328,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>3.5cm</Top>
-        <Left>13.33801cm</Left>
+        <Top>6.29633cm</Top>
+        <Left>2.69584cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.73186cm</Width>
-        <ZIndex>10</ZIndex>
+        <Width>16.46881cm</Width>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -374,7 +340,7 @@
           <BottomBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>0.75pt</Width>
           </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -688,7 +654,9 @@
                             <TextRun>
                               <Value>Номенк-</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -726,7 +694,9 @@
                             <TextRun>
                               <Value />
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -770,7 +740,9 @@
                             <TextRun>
                               <Value> Един. </Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -813,7 +785,9 @@
                             <TextRun>
                               <Value>Количество</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -860,7 +834,9 @@
                             <TextRun>
                               <Value />
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -904,7 +880,9 @@
                             <TextRun>
                               <Value />
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -948,7 +926,9 @@
                             <TextRun>
                               <Value>Пор. № записи</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -996,7 +976,9 @@
                             <TextRun>
                               <Value>латурный</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1009,7 +991,9 @@
                             <TextRun>
                               <Value>номер</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1045,9 +1029,12 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Название, сорт, размер</Value>
+                              <Value>Материальные ценности 
+(наименорание, сорт, размер, марка)</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1074,8 +1061,6 @@
                         <VerticalAlign>Top</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>3pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1091,7 +1076,9 @@
                             <TextRun>
                               <Value>изме-</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1104,7 +1091,9 @@
                             <TextRun>
                               <Value>рен.</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1147,7 +1136,9 @@
                             <TextRun>
                               <Value>затребо-</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1160,7 +1151,9 @@
                             <TextRun>
                               <Value>вано</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1187,8 +1180,6 @@
                         <VerticalAlign>Top</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1204,7 +1195,9 @@
                             <TextRun>
                               <Value>отпу-</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1217,7 +1210,9 @@
                             <TextRun>
                               <Value>щено</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1244,8 +1239,6 @@
                         <VerticalAlign>Top</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1261,7 +1254,9 @@
                             <TextRun>
                               <Value>Цена</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1305,7 +1300,9 @@
                             <TextRun>
                               <Value>Сумма</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1349,7 +1346,9 @@
                             <TextRun>
                               <Value>по складской</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1362,7 +1361,9 @@
                             <TextRun>
                               <Value>карточке</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1397,7 +1398,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.9cm</Height>
+              <Height>0.60896cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1410,6 +1411,7 @@
                             <TextRun>
                               <Value />
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1446,7 +1448,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Material.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1497,7 +1501,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Ed.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1550,7 +1556,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Kol1.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>times New Roman</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -1604,6 +1612,7 @@
                             <TextRun>
                               <Value />
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1657,6 +1666,7 @@
                             <TextRun>
                               <Value />
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1710,6 +1720,7 @@
                             <TextRun>
                               <Value />
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
@@ -1763,6 +1774,7 @@
                             <TextRun>
                               <Value>=Fields!ASUPCODE.Value</Value>
                               <Style>
+                                <FontFamily>times New Roman</FontFamily>
                                 <Format>0;(0);''</Format>
                               </Style>
                             </TextRun>
@@ -1788,7 +1800,6 @@
                         <PaddingBottom>1pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1824,11 +1835,11 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>4.1984cm</Top>
-        <Left>0.29558cm</Left>
-        <Height>2.12981cm</Height>
+        <Top>8.435cm</Top>
+        <Left>0.38528cm</Left>
+        <Height>1.83877cm</Height>
         <Width>18.90435cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1842,9 +1853,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Отпустил</Value>
+                <Value>Отпустил:</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1852,11 +1864,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>6.63466cm</Top>
-        <Left>2.48404cm</Left>
+        <Top>10.72634cm</Top>
+        <Left>0.38528cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.73435cm</Width>
-        <ZIndex>12</ZIndex>
+        <Width>2.49855cm</Width>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1876,7 +1888,8 @@
               <TextRun>
                 <Value />
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1884,11 +1897,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>6.63466cm</Top>
-        <Left>4.32422cm</Left>
+        <Top>10.72634cm</Top>
+        <Left>3.17796cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.90441cm</Width>
-        <ZIndex>13</ZIndex>
+        <Width>5.35982cm</Width>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1896,7 +1909,7 @@
           <BottomBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>0.75pt</Width>
           </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -1911,9 +1924,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Получил</Value>
+                <Value>Получил:</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1921,52 +1935,15 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>6.63466cm</Top>
-        <Left>8.54997cm</Left>
+        <Top>10.72634cm</Top>
+        <Left>8.76967cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.66311cm</Width>
-        <ZIndex>14</ZIndex>
+        <Width>1.87478cm</Width>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox48">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontSize>9pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>6.63466cm</Top>
-        <Left>10.31372cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.73186cm</Width>
-        <ZIndex>15</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -1980,9 +1957,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!parPerson3.Value</Value>
+                <Value>=Parameters!parRecipient.Value</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1990,84 +1968,15 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>6.59938cm</Top>
-        <Left>14.22197cm</Left>
+        <Top>10.72634cm</Top>
+        <Left>15.94529cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.88512cm</Width>
-        <ZIndex>16</ZIndex>
+        <Width>3.32718cm</Width>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox6">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Вид</Value>
-                <Style>
-                  <FontSize>6pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>операции</Value>
-                <Style>
-                  <FontSize>6pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.07242cm</Top>
-        <Left>8.54997cm</Left>
-        <Height>0.75cm</Height>
-        <Width>2cm</Width>
-        <ZIndex>17</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </Border>
-          <TopBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1.5pt</Width>
-          </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </BottomBorder>
-          <LeftBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1.5pt</Width>
-          </LeftBorder>
-          <RightBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </RightBorder>
-          <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -2083,7 +1992,9 @@
               <TextRun>
                 <Value>Склад</Value>
                 <Style>
-                  <FontSize>6pt</FontSize>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -2093,35 +2004,34 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.07242cm</Top>
-        <Left>10.54997cm</Left>
+        <Top>0.75492cm</Top>
+        <Left>12.27247cm</Left>
         <Height>0.75cm</Height>
-        <Width>2cm</Width>
-        <ZIndex>18</ZIndex>
+        <Width>2.5cm</Width>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>1.5pt</Width>
+            <Width>1pt</Width>
           </TopBorder>
           <BottomBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </LeftBorder>
           <RightBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </RightBorder>
           <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
@@ -2139,7 +2049,9 @@
               <TextRun>
                 <Value>Цех, отдел,</Value>
                 <Style>
-                  <FontSize>6pt</FontSize>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -2152,7 +2064,9 @@
               <TextRun>
                 <Value>объект-получ.</Value>
                 <Style>
-                  <FontSize>6pt</FontSize>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -2162,41 +2076,38 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.07242cm</Top>
-        <Left>12.54997cm</Left>
+        <Top>0.75492cm</Top>
+        <Left>14.77247cm</Left>
         <Height>0.75cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>1.5pt</Width>
+            <Width>1pt</Width>
           </TopBorder>
           <BottomBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </LeftBorder>
           <RightBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </RightBorder>
           <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox9">
@@ -2206,22 +2117,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Шифр</Value>
+                <Value>Шифр затрат</Value>
                 <Style>
-                  <FontSize>6pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>затрат</Value>
-                <Style>
-                  <FontSize>6pt</FontSize>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>7pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -2231,166 +2131,38 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.07242cm</Top>
-        <Left>15.04997cm</Left>
-        <Height>0.75cm</Height>
-        <Width>1.65cm</Width>
-        <ZIndex>20</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </Border>
-          <TopBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1.5pt</Width>
-          </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </BottomBorder>
-          <LeftBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </LeftBorder>
-          <RightBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </RightBorder>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox10">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Контрольная</Value>
-                <Style>
-                  <FontSize>6pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>сумма</Value>
-                <Style>
-                  <FontSize>6pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.07242cm</Top>
-        <Left>16.69997cm</Left>
+        <Top>0.75492cm</Top>
+        <Left>17.27247cm</Left>
         <Height>0.75cm</Height>
         <Width>2cm</Width>
-        <ZIndex>21</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>1.5pt</Width>
+            <Width>1pt</Width>
           </TopBorder>
           <BottomBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </LeftBorder>
           <RightBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>1.5pt</Width>
+            <Width>1pt</Width>
           </RightBorder>
           <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox11">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontSize>6pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.82242cm</Top>
-        <Left>8.54997cm</Left>
-        <Height>0.75cm</Height>
-        <Width>2cm</Width>
-        <ZIndex>22</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </Border>
-          <TopBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1.5pt</Width>
-          </BottomBorder>
-          <LeftBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1.5pt</Width>
-          </LeftBorder>
-          <RightBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </RightBorder>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox12">
@@ -2402,6 +2174,7 @@
               <TextRun>
                 <Value>=Parameters!parSclad.Value</Value>
                 <Style>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2413,35 +2186,34 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.82242cm</Top>
-        <Left>10.54997cm</Left>
-        <Height>0.75cm</Height>
-        <Width>2cm</Width>
-        <ZIndex>23</ZIndex>
+        <Top>1.50492cm</Top>
+        <Left>12.27247cm</Left>
+        <Height>1cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </TopBorder>
           <BottomBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>1.5pt</Width>
+            <Width>1pt</Width>
           </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </LeftBorder>
           <RightBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </RightBorder>
           <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
@@ -2457,8 +2229,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>ИНЦ 122</Value>
+                <Value>=Parameters!parWorkshopCode.Value</Value>
                 <Style>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2470,35 +2243,34 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.82242cm</Top>
-        <Left>12.54997cm</Left>
-        <Height>0.75cm</Height>
+        <Top>1.50492cm</Top>
+        <Left>14.77247cm</Left>
+        <Height>1cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>24</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </TopBorder>
           <BottomBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>1.5pt</Width>
+            <Width>1pt</Width>
           </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </LeftBorder>
           <RightBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </RightBorder>
           <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
@@ -2514,8 +2286,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Parameters!parOrderNumber.Value</Value>
+                <Value>=Parameters!parCostCode.Value</Value>
                 <Style>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2527,91 +2300,34 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.82242cm</Top>
-        <Left>15.04997cm</Left>
-        <Height>0.75cm</Height>
-        <Width>1.65cm</Width>
-        <ZIndex>25</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </Border>
-          <TopBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1.5pt</Width>
-          </BottomBorder>
-          <LeftBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </LeftBorder>
-          <RightBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>0.5pt</Width>
-          </RightBorder>
-          <VerticalAlign>Middle</VerticalAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox15">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontSize>6pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>1.82242cm</Top>
-        <Left>16.69997cm</Left>
-        <Height>0.75cm</Height>
+        <Top>1.50492cm</Top>
+        <Left>17.27247cm</Left>
+        <Height>1cm</Height>
         <Width>2cm</Width>
-        <ZIndex>26</ZIndex>
+        <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
           </Border>
           <TopBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </TopBorder>
           <BottomBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>1.5pt</Width>
+            <Width>1pt</Width>
           </BottomBorder>
           <LeftBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>0.5pt</Width>
+            <Width>1pt</Width>
           </LeftBorder>
           <RightBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>1.5pt</Width>
+            <Width>1pt</Width>
           </RightBorder>
           <VerticalAlign>Middle</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
@@ -2627,9 +2343,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Согласовано</Value>
+                <Value>Согласовано:</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -2637,19 +2354,19 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>2.6244cm</Top>
-        <Left>0.35278cm</Left>
+        <Top>3.5769cm</Top>
+        <Left>0.38806cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.65875cm</Width>
-        <ZIndex>27</ZIndex>
+        <Width>2.49577cm</Width>
+        <ZIndex>21</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <VerticalAlign>Bottom</VerticalAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox26">
@@ -2661,7 +2378,7 @@
               <TextRun>
                 <Value />
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -2671,11 +2388,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>2.6244cm</Top>
-        <Left>3.01153cm</Left>
+        <Top>3.5769cm</Top>
+        <Left>2.95439cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.44877cm</Width>
-        <ZIndex>28</ZIndex>
+        <Width>16.24554cm</Width>
+        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2683,7 +2400,7 @@
           <BottomBorder>
             <Color>Black</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>0.75pt</Width>
           </BottomBorder>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -2700,6 +2417,7 @@
               <TextRun>
                 <Value>=Parameters!parId.Value</Value>
                 <Style>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -2711,10 +2429,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Left>17.65009cm</Left>
+        <Left>17.70301cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.54984cm</Width>
-        <ZIndex>29</ZIndex>
+        <Width>1.49692cm</Width>
+        <ZIndex>23</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2731,6 +2449,7 @@
               <TextRun>
                 <Value>=Parameters!parOrderId.Value</Value>
                 <Style>
+                  <FontFamily>times New Roman</FontFamily>
                   <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
@@ -2741,11 +2460,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>parOrderId</rd:DefaultName>
-        <Top>2.65cm</Top>
-        <Left>15.04997cm</Left>
+        <Top>2.5cm</Top>
+        <Left>17.58997cm</Left>
         <Height>0.6cm</Height>
         <Width>1.65cm</Width>
-        <ZIndex>30</ZIndex>
+        <ZIndex>24</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2753,11 +2472,328 @@
           <VerticalAlign>Middle</VerticalAlign>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox17">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Основание отпуска:</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>6.93161cm</Top>
+        <Left>0.38806cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.69944cm</Width>
+        <ZIndex>25</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox27">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!parOsnovanie.Value</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>6.93161cm</Top>
+        <Left>4.08274cm</Left>
+        <Height>1.327cm</Height>
+        <Width>15.08191cm</Width>
+        <ZIndex>26</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox28">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!parCustomerPost.Value</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>5.4cm</Top>
+        <Left>2.61043cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.42723cm</Width>
+        <ZIndex>27</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox30">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!parRecipientPost.Value</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>4.5cm</Top>
+        <Left>4.1757cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.40958cm</Width>
+        <ZIndex>28</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>4.50992cm</Top>
+        <Left>7.58528cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.42879cm</Width>
+        <ZIndex>29</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>0.75pt</Width>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox48">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!parRecipientPost.Value</Value>
+                <Style>
+                  <FontFamily>times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>10.72634cm</Top>
+        <Left>10.67973cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.72144cm</Width>
+        <ZIndex>30</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox36">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>5.40992cm</Top>
+        <Left>7.03766cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.97641cm</Width>
+        <ZIndex>31</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>0.75pt</Width>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox40">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>10.72634cm</Top>
+        <Left>13.40117cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.47356cm</Width>
+        <ZIndex>32</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>0.75pt</Width>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>(дата)</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>2.87134cm</Top>
+        <Left>1.46198cm</Left>
+        <Height>0.52917cm</Height>
+        <Width>4.7225cm</Width>
+        <ZIndex>33</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Top</VerticalAlign>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2.90562in</Height>
+    <Height>4.50086in</Height>
     <Style />
   </Body>
-  <Width>7.63642in</Width>
+  <Width>7.71378in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -2821,6 +2857,10 @@
           <DataField>ASUPCODE</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="OrderId">
+          <DataField>OrderId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dataDataSet</rd:DataSetName>
@@ -2845,16 +2885,16 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="parPerson1">
+    <ReportParameter Name="parRecipient">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="parPerson2">
+    <ReportParameter Name="parCustomer">
       <DataType>String</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="parPerson3">
-      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="parId">
@@ -2866,8 +2906,35 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="parOrderNumber">
+    <ReportParameter Name="parCostCode">
       <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="parOsnovanie">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="parRecipientPost">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="parCustomerPost">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="parWorkshopCode">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="parDescription">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

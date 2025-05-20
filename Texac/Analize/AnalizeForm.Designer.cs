@@ -92,6 +92,7 @@
             this.tbNaimTO.Name = "tbNaimTO";
             this.tbNaimTO.Size = new System.Drawing.Size(423, 27);
             this.tbNaimTO.TabIndex = 1;
+            this.tbNaimTO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbNaimTO_KeyDown);
             // 
             // tbOrderNumbers
             // 

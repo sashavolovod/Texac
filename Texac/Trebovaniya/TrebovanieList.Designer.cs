@@ -41,16 +41,19 @@
             this.zakazchikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderIdList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PdoDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsTrebovaniaDgv = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.miOpenTrebovanie = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьТребованияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.miCheckAvailability = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьПустоеТребованиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miPdo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.actDelTrebovanie = new System.Windows.Forms.ToolStripMenuItem();
             this.bsTrebovania = new System.Windows.Forms.BindingSource(this.components);
-            this.dataDataSet = new Texac.dataDataSet();
-            this.taTrebovania = new Texac.dataDataSetTableAdapters.TrebovaniaViewTableAdapter();
+            this.dataDataSet = new Texac.dataDataSet1();
             this.bnTrebovania = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -67,7 +70,9 @@
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbAddEmpty = new System.Windows.Forms.ToolStripButton();
-            this.tableAdapterManager = new Texac.dataDataSetTableAdapters.TableAdapterManager();
+            this.tsbCheckAvailability = new System.Windows.Forms.ToolStripButton();
+            this.tableAdapterManager = new Texac.dataDataSet1TableAdapters.TableAdapterManager();
+            this.taTrebovaniaView = new Texac.dataDataSet1TableAdapters.TrebovaniaViewTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrebovania)).BeginInit();
             this.cmsTrebovaniaDgv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsTrebovania)).BeginInit();
@@ -99,7 +104,9 @@
             this.scladDataGridViewTextBoxColumn,
             this.zakazchikDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn,
-            this.OrderNumber});
+            this.OrderNumber,
+            this.OrderIdList,
+            this.PdoDate});
             this.dgvTrebovania.ContextMenuStrip = this.cmsTrebovaniaDgv;
             this.dgvTrebovania.DataSource = this.bsTrebovania;
             this.dgvTrebovania.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -107,7 +114,7 @@
             this.dgvTrebovania.Name = "dgvTrebovania";
             this.dgvTrebovania.ReadOnly = true;
             this.dgvTrebovania.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTrebovania.Size = new System.Drawing.Size(897, 456);
+            this.dgvTrebovania.Size = new System.Drawing.Size(1057, 505);
             this.dgvTrebovania.TabIndex = 7;
             this.dgvTrebovania.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTrebovania_CellDoubleClick);
             this.dgvTrebovania.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvTrebovania_MouseDown);
@@ -165,22 +172,39 @@
             this.OrderNumber.Name = "OrderNumber";
             this.OrderNumber.ReadOnly = true;
             // 
+            // OrderIdList
+            // 
+            this.OrderIdList.DataPropertyName = "OrderIdList";
+            this.OrderIdList.HeaderText = "Содержит заказы";
+            this.OrderIdList.Name = "OrderIdList";
+            this.OrderIdList.ReadOnly = true;
+            this.OrderIdList.Width = 300;
+            // 
+            // PdoDate
+            // 
+            this.PdoDate.DataPropertyName = "PdoDate";
+            this.PdoDate.HeaderText = "Подготовлено для производства";
+            this.PdoDate.Name = "PdoDate";
+            this.PdoDate.ReadOnly = true;
+            // 
             // cmsTrebovaniaDgv
             // 
             this.cmsTrebovaniaDgv.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miOpenTrebovanie,
             this.добавитьТребованияToolStripMenuItem,
             this.miCopy,
+            this.miCheckAvailability,
             this.создатьПустоеТребованиеToolStripMenuItem,
+            this.miPdo,
             this.toolStripSeparator2,
             this.actDelTrebovanie});
             this.cmsTrebovaniaDgv.Name = "cmsTrebovaniaDgv";
-            this.cmsTrebovaniaDgv.Size = new System.Drawing.Size(234, 120);
+            this.cmsTrebovaniaDgv.Size = new System.Drawing.Size(315, 164);
             // 
             // miOpenTrebovanie
             // 
             this.miOpenTrebovanie.Name = "miOpenTrebovanie";
-            this.miOpenTrebovanie.Size = new System.Drawing.Size(233, 22);
+            this.miOpenTrebovanie.Size = new System.Drawing.Size(314, 22);
             this.miOpenTrebovanie.Text = "Открыть";
             this.miOpenTrebovanie.Click += new System.EventHandler(this.miOpenTrebovanie_Click);
             // 
@@ -188,7 +212,7 @@
             // 
             this.добавитьТребованияToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("добавитьТребованияToolStripMenuItem.Image")));
             this.добавитьТребованияToolStripMenuItem.Name = "добавитьТребованияToolStripMenuItem";
-            this.добавитьТребованияToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.добавитьТребованияToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
             this.добавитьТребованияToolStripMenuItem.Text = "Сформировать требования";
             this.добавитьТребованияToolStripMenuItem.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -196,28 +220,45 @@
             // 
             this.miCopy.Image = ((System.Drawing.Image)(resources.GetObject("miCopy.Image")));
             this.miCopy.Name = "miCopy";
-            this.miCopy.Size = new System.Drawing.Size(233, 22);
+            this.miCopy.Size = new System.Drawing.Size(314, 22);
             this.miCopy.Text = "Копировать требование";
             this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
+            // 
+            // miCheckAvailability
+            // 
+            this.miCheckAvailability.Image = global::Texac.Properties.Resources.Hopstarter_Sleek_Xp_Basic_Ok_16;
+            this.miCheckAvailability.Name = "miCheckAvailability";
+            this.miCheckAvailability.Size = new System.Drawing.Size(314, 22);
+            this.miCheckAvailability.Text = "Проверить наличие материалов на складах";
+            this.miCheckAvailability.Click += new System.EventHandler(this.tsbCheckAvailability_Click);
             // 
             // создатьПустоеТребованиеToolStripMenuItem
             // 
             this.создатьПустоеТребованиеToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("создатьПустоеТребованиеToolStripMenuItem.Image")));
             this.создатьПустоеТребованиеToolStripMenuItem.Name = "создатьПустоеТребованиеToolStripMenuItem";
-            this.создатьПустоеТребованиеToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.создатьПустоеТребованиеToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
             this.создатьПустоеТребованиеToolStripMenuItem.Text = "Добавить пустое требование";
             this.создатьПустоеТребованиеToolStripMenuItem.Click += new System.EventHandler(this.tsbAddEmpty_Click);
+            // 
+            // miPdo
+            // 
+            this.miPdo.Image = global::Texac.Properties.Resources.pdo;
+            this.miPdo.Name = "miPdo";
+            this.miPdo.Size = new System.Drawing.Size(314, 22);
+            this.miPdo.Text = "Передать в производство";
+            this.miPdo.ToolTipText = "Подготовить требования для передачи в Производство";
+            this.miPdo.Click += new System.EventHandler(this.miPdo_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(230, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(311, 6);
             // 
             // actDelTrebovanie
             // 
             this.actDelTrebovanie.Image = ((System.Drawing.Image)(resources.GetObject("actDelTrebovanie.Image")));
             this.actDelTrebovanie.Name = "actDelTrebovanie";
-            this.actDelTrebovanie.Size = new System.Drawing.Size(233, 22);
+            this.actDelTrebovanie.Size = new System.Drawing.Size(314, 22);
             this.actDelTrebovanie.Text = "Удалить требование";
             this.actDelTrebovanie.Click += new System.EventHandler(this.actDelTrebovanie_Click);
             // 
@@ -230,10 +271,6 @@
             // 
             this.dataDataSet.DataSetName = "dataDataSet";
             this.dataDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // taTrebovania
-            // 
-            this.taTrebovania.ClearBeforeFill = true;
             // 
             // bnTrebovania
             // 
@@ -257,7 +294,8 @@
             this.bindingNavigatorMoveLastItem1,
             this.bindingNavigatorSeparator5,
             this.btnAdd,
-            this.tsbAddEmpty});
+            this.tsbAddEmpty,
+            this.tsbCheckAvailability});
             this.bnTrebovania.Location = new System.Drawing.Point(0, 0);
             this.bnTrebovania.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.bnTrebovania.MoveLastItem = this.bindingNavigatorMoveLastItem1;
@@ -265,7 +303,7 @@
             this.bnTrebovania.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bnTrebovania.Name = "bnTrebovania";
             this.bnTrebovania.PositionItem = null;
-            this.bnTrebovania.Size = new System.Drawing.Size(897, 25);
+            this.bnTrebovania.Size = new System.Drawing.Size(1057, 25);
             this.bnTrebovania.TabIndex = 6;
             this.bnTrebovania.Text = "bindingNavigator1";
             // 
@@ -323,7 +361,6 @@
             this.tsbFilter.Text = "Фильтр";
             this.tsbFilter.ToolTipText = "Применить фильтр";
             this.tsbFilter.CheckedChanged += new System.EventHandler(this.tsbFilter_CheckedChanged);
-            this.tsbFilter.Click += new System.EventHandler(this.tsbFilter_Click);
             // 
             // tsbDeleteFilter
             // 
@@ -388,6 +425,16 @@
             this.tsbAddEmpty.Text = "Добавить пустое требование";
             this.tsbAddEmpty.Click += new System.EventHandler(this.tsbAddEmpty_Click);
             // 
+            // tsbCheckAvailability
+            // 
+            this.tsbCheckAvailability.Image = global::Texac.Properties.Resources.Hopstarter_Sleek_Xp_Basic_Ok_16;
+            this.tsbCheckAvailability.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCheckAvailability.Name = "tsbCheckAvailability";
+            this.tsbCheckAvailability.Size = new System.Drawing.Size(137, 22);
+            this.tsbCheckAvailability.Text = "Проверить наличие";
+            this.tsbCheckAvailability.ToolTipText = "Проверить наличие материалов на складах";
+            this.tsbCheckAvailability.Click += new System.EventHandler(this.tsbCheckAvailability_Click);
+            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -395,9 +442,13 @@
             this.tableAdapterManager.MaterialReportDetailsTableAdapter = null;
             this.tableAdapterManager.TrebovanieDetailsTableAdapter = null;
             this.tableAdapterManager.TrebovanieTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Texac.dataDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = Texac.dataDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.ВидыПрофессиийTableAdapter = null;
             this.tableAdapterManager.РаботникиЦехаTableAdapter = null;
+            // 
+            // taTrebovaniaView
+            // 
+            this.taTrebovaniaView.ClearBeforeFill = true;
             // 
             // TrebovanieList
             // 
@@ -406,8 +457,7 @@
             this.Controls.Add(this.dgvTrebovania);
             this.Controls.Add(this.bnTrebovania);
             this.Name = "TrebovanieList";
-            this.Size = new System.Drawing.Size(897, 481);
-            this.Load += new System.EventHandler(this.TrebovanieList_Load);
+            this.Size = new System.Drawing.Size(1057, 530);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrebovania)).EndInit();
             this.cmsTrebovaniaDgv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsTrebovania)).EndInit();
@@ -427,9 +477,8 @@
         private System.Windows.Forms.ToolStripMenuItem создатьПустоеТребованиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actDelTrebovanie;
         private System.Windows.Forms.BindingSource bsTrebovania;
-        private dataDataSet dataDataSet;
-        private dataDataSetTableAdapters.TrebovaniaViewTableAdapter taTrebovania;
-        private dataDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private dataDataSet1 dataDataSet;
+        private dataDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ToolStripButton btnAdd;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem1;
@@ -445,6 +494,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripTextBox tstbFilter;
         private System.Windows.Forms.ToolStripButton tsbFilter;
+        private System.Windows.Forms.ToolStripButton tsbDeleteFilter;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripMenuItem miCopy;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private dataDataSet1TableAdapters.TrebovaniaViewTableAdapter taTrebovaniaView;
+        private System.Windows.Forms.ToolStripMenuItem miPdo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDocNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn docDateDataGridViewTextBoxColumn;
@@ -452,9 +507,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn zakazchikDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
-        private System.Windows.Forms.ToolStripButton tsbDeleteFilter;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripMenuItem miCopy;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderIdList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PdoDate;
+        private System.Windows.Forms.ToolStripButton tsbCheckAvailability;
+        private System.Windows.Forms.ToolStripMenuItem miCheckAvailability;
     }
 }

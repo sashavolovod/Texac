@@ -12,7 +12,7 @@
 
 namespace Texac {
     
-        
+    
     /// <summary>
     ///Represents a strongly typed in-memory cache of data.
     ///</summary>
@@ -31,8 +31,6 @@ namespace Texac {
         private РаботникиViewDataTable tableРаботникиView;
         
         private RashodMaterialovViewDataTable tableRashodMaterialovView;
-        
-        private TrebovaniaViewDataTable tableTrebovaniaView;
         
         private TrebovanieDataTable tableTrebovanie;
         
@@ -89,9 +87,6 @@ namespace Texac {
                 }
                 if ((ds.Tables["RashodMaterialovView"] != null)) {
                     base.Tables.Add(new RashodMaterialovViewDataTable(ds.Tables["RashodMaterialovView"]));
-                }
-                if ((ds.Tables["TrebovaniaView"] != null)) {
-                    base.Tables.Add(new TrebovaniaViewDataTable(ds.Tables["TrebovaniaView"]));
                 }
                 if ((ds.Tables["Trebovanie"] != null)) {
                     base.Tables.Add(new TrebovanieDataTable(ds.Tables["Trebovanie"]));
@@ -169,16 +164,6 @@ namespace Texac {
         public RashodMaterialovViewDataTable RashodMaterialovView {
             get {
                 return this.tableRashodMaterialovView;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TrebovaniaViewDataTable TrebovaniaView {
-            get {
-                return this.tableTrebovaniaView;
             }
         }
         
@@ -331,9 +316,6 @@ namespace Texac {
                 if ((ds.Tables["RashodMaterialovView"] != null)) {
                     base.Tables.Add(new RashodMaterialovViewDataTable(ds.Tables["RashodMaterialovView"]));
                 }
-                if ((ds.Tables["TrebovaniaView"] != null)) {
-                    base.Tables.Add(new TrebovaniaViewDataTable(ds.Tables["TrebovaniaView"]));
-                }
                 if ((ds.Tables["Trebovanie"] != null)) {
                     base.Tables.Add(new TrebovanieDataTable(ds.Tables["Trebovanie"]));
                 }
@@ -412,12 +394,6 @@ namespace Texac {
                     this.tableRashodMaterialovView.InitVars();
                 }
             }
-            this.tableTrebovaniaView = ((TrebovaniaViewDataTable)(base.Tables["TrebovaniaView"]));
-            if ((initTable == true)) {
-                if ((this.tableTrebovaniaView != null)) {
-                    this.tableTrebovaniaView.InitVars();
-                }
-            }
             this.tableTrebovanie = ((TrebovanieDataTable)(base.Tables["Trebovanie"]));
             if ((initTable == true)) {
                 if ((this.tableTrebovanie != null)) {
@@ -479,8 +455,6 @@ namespace Texac {
             base.Tables.Add(this.tableРаботникиView);
             this.tableRashodMaterialovView = new RashodMaterialovViewDataTable();
             base.Tables.Add(this.tableRashodMaterialovView);
-            this.tableTrebovaniaView = new TrebovaniaViewDataTable();
-            base.Tables.Add(this.tableTrebovaniaView);
             this.tableTrebovanie = new TrebovanieDataTable();
             base.Tables.Add(this.tableTrebovanie);
             this.tableTrebovanieDetails = new TrebovanieDetailsDataTable();
@@ -522,12 +496,6 @@ namespace Texac {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeRashodMaterialovView() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeTrebovaniaView() {
             return false;
         }
         
@@ -639,9 +607,6 @@ namespace Texac {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void RashodMaterialovViewRowChangeEventHandler(object sender, RashodMaterialovViewRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void TrebovaniaViewRowChangeEventHandler(object sender, TrebovaniaViewRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void TrebovanieRowChangeEventHandler(object sender, TrebovanieRowChangeEvent e);
@@ -2688,342 +2653,6 @@ namespace Texac {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TrebovaniaViewDataTable : global::System.Data.TypedTableBase<TrebovaniaViewRow> {
-            
-            private global::System.Data.DataColumn columnTrebovanieId;
-            
-            private global::System.Data.DataColumn columnDocNumber;
-            
-            private global::System.Data.DataColumn columnDocDate;
-            
-            private global::System.Data.DataColumn columnSclad;
-            
-            private global::System.Data.DataColumn columnZakazchik;
-            
-            private global::System.Data.DataColumn columnStatus;
-            
-            private global::System.Data.DataColumn columnOrderNumber;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TrebovaniaViewDataTable() {
-                this.TableName = "TrebovaniaView";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal TrebovaniaViewDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected TrebovaniaViewDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TrebovanieIdColumn {
-                get {
-                    return this.columnTrebovanieId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DocNumberColumn {
-                get {
-                    return this.columnDocNumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DocDateColumn {
-                get {
-                    return this.columnDocDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ScladColumn {
-                get {
-                    return this.columnSclad;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ZakazchikColumn {
-                get {
-                    return this.columnZakazchik;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StatusColumn {
-                get {
-                    return this.columnStatus;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OrderNumberColumn {
-                get {
-                    return this.columnOrderNumber;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TrebovaniaViewRow this[int index] {
-                get {
-                    return ((TrebovaniaViewRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TrebovaniaViewRowChangeEventHandler TrebovaniaViewRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TrebovaniaViewRowChangeEventHandler TrebovaniaViewRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TrebovaniaViewRowChangeEventHandler TrebovaniaViewRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TrebovaniaViewRowChangeEventHandler TrebovaniaViewRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddTrebovaniaViewRow(TrebovaniaViewRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TrebovaniaViewRow AddTrebovaniaViewRow(int DocNumber, System.DateTime DocDate, int Sclad, string Zakazchik, int Status, string OrderNumber) {
-                TrebovaniaViewRow rowTrebovaniaViewRow = ((TrebovaniaViewRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        DocNumber,
-                        DocDate,
-                        Sclad,
-                        Zakazchik,
-                        Status,
-                        OrderNumber};
-                rowTrebovaniaViewRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTrebovaniaViewRow);
-                return rowTrebovaniaViewRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                TrebovaniaViewDataTable cln = ((TrebovaniaViewDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new TrebovaniaViewDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnTrebovanieId = base.Columns["TrebovanieId"];
-                this.columnDocNumber = base.Columns["DocNumber"];
-                this.columnDocDate = base.Columns["DocDate"];
-                this.columnSclad = base.Columns["Sclad"];
-                this.columnZakazchik = base.Columns["Zakazchik"];
-                this.columnStatus = base.Columns["Status"];
-                this.columnOrderNumber = base.Columns["OrderNumber"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnTrebovanieId = new global::System.Data.DataColumn("TrebovanieId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTrebovanieId);
-                this.columnDocNumber = new global::System.Data.DataColumn("DocNumber", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDocNumber);
-                this.columnDocDate = new global::System.Data.DataColumn("DocDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDocDate);
-                this.columnSclad = new global::System.Data.DataColumn("Sclad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSclad);
-                this.columnZakazchik = new global::System.Data.DataColumn("Zakazchik", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnZakazchik);
-                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStatus);
-                this.columnOrderNumber = new global::System.Data.DataColumn("OrderNumber", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrderNumber);
-                this.columnTrebovanieId.AutoIncrement = true;
-                this.columnTrebovanieId.AutoIncrementSeed = -1;
-                this.columnTrebovanieId.AutoIncrementStep = -1;
-                this.columnZakazchik.MaxLength = 50;
-                this.columnOrderNumber.MaxLength = 20;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TrebovaniaViewRow NewTrebovaniaViewRow() {
-                return ((TrebovaniaViewRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TrebovaniaViewRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(TrebovaniaViewRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.TrebovaniaViewRowChanged != null)) {
-                    this.TrebovaniaViewRowChanged(this, new TrebovaniaViewRowChangeEvent(((TrebovaniaViewRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.TrebovaniaViewRowChanging != null)) {
-                    this.TrebovaniaViewRowChanging(this, new TrebovaniaViewRowChangeEvent(((TrebovaniaViewRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.TrebovaniaViewRowDeleted != null)) {
-                    this.TrebovaniaViewRowDeleted(this, new TrebovaniaViewRowChangeEvent(((TrebovaniaViewRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.TrebovaniaViewRowDeleting != null)) {
-                    this.TrebovaniaViewRowDeleting(this, new TrebovaniaViewRowChangeEvent(((TrebovaniaViewRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveTrebovaniaViewRow(TrebovaniaViewRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dataDataSet ds = new dataDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TrebovaniaViewDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class TrebovanieDataTable : global::System.Data.TypedTableBase<TrebovanieRow> {
             
             private global::System.Data.DataColumn columnTrebovanieId;
@@ -3041,6 +2670,8 @@ namespace Texac {
             private global::System.Data.DataColumn columnOrderId;
             
             private global::System.Data.DataColumn columnOrderNumber;
+            
+            private global::System.Data.DataColumn columnOsnovanie;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3141,6 +2772,14 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OsnovanieColumn {
+                get {
+                    return this.columnOsnovanie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3176,7 +2815,7 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TrebovanieRow AddTrebovanieRow(int DocNumber, System.DateTime DocDate, int Sclad, int NЦеха, int Status, int OrderId, string OrderNumber) {
+            public TrebovanieRow AddTrebovanieRow(int DocNumber, System.DateTime DocDate, int Sclad, int NЦеха, int Status, int OrderId, string OrderNumber, string Osnovanie) {
                 TrebovanieRow rowTrebovanieRow = ((TrebovanieRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3186,7 +2825,8 @@ namespace Texac {
                         NЦеха,
                         Status,
                         OrderId,
-                        OrderNumber};
+                        OrderNumber,
+                        Osnovanie};
                 rowTrebovanieRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTrebovanieRow);
                 return rowTrebovanieRow;
@@ -3224,6 +2864,7 @@ namespace Texac {
                 this.columnStatus = base.Columns["Status"];
                 this.columnOrderId = base.Columns["OrderId"];
                 this.columnOrderNumber = base.Columns["OrderNumber"];
+                this.columnOsnovanie = base.Columns["Osnovanie"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3245,6 +2886,8 @@ namespace Texac {
                 base.Columns.Add(this.columnOrderId);
                 this.columnOrderNumber = new global::System.Data.DataColumn("OrderNumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOrderNumber);
+                this.columnOsnovanie = new global::System.Data.DataColumn("Osnovanie", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOsnovanie);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTrebovanieId}, true));
                 this.columnTrebovanieId.AutoIncrement = true;
@@ -3253,6 +2896,7 @@ namespace Texac {
                 this.columnTrebovanieId.AllowDBNull = false;
                 this.columnTrebovanieId.Unique = true;
                 this.columnOrderNumber.MaxLength = 20;
+                this.columnOsnovanie.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3404,6 +3048,8 @@ namespace Texac {
             
             private global::System.Data.DataColumn columnASUPCODE;
             
+            private global::System.Data.DataColumn columnOrderId;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TrebovanieDetailsDataTable() {
@@ -3511,6 +3157,14 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OrderIdColumn {
+                get {
+                    return this.columnOrderId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3546,7 +3200,7 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TrebovanieDetailsRow AddTrebovanieDetailsRow(TrebovanieRow parentTrebovanieRowBytblTrebovanietblTrebovanieDetails, int MatCartId, int MaterialCode, string Material, string Ed, double Kol1, double Kol2, int ASUPCODE) {
+            public TrebovanieDetailsRow AddTrebovanieDetailsRow(TrebovanieRow parentTrebovanieRowBytblTrebovanietblTrebovanieDetails, int MatCartId, int MaterialCode, string Material, string Ed, double Kol1, double Kol2, int ASUPCODE, int OrderId) {
                 TrebovanieDetailsRow rowTrebovanieDetailsRow = ((TrebovanieDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3557,7 +3211,8 @@ namespace Texac {
                         Ed,
                         Kol1,
                         Kol2,
-                        ASUPCODE};
+                        ASUPCODE,
+                        OrderId};
                 if ((parentTrebovanieRowBytblTrebovanietblTrebovanieDetails != null)) {
                     columnValuesArray[1] = parentTrebovanieRowBytblTrebovanietblTrebovanieDetails[0];
                 }
@@ -3599,6 +3254,7 @@ namespace Texac {
                 this.columnKol1 = base.Columns["Kol1"];
                 this.columnKol2 = base.Columns["Kol2"];
                 this.columnASUPCODE = base.Columns["ASUPCODE"];
+                this.columnOrderId = base.Columns["OrderId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3622,6 +3278,8 @@ namespace Texac {
                 base.Columns.Add(this.columnKol2);
                 this.columnASUPCODE = new global::System.Data.DataColumn("ASUPCODE", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnASUPCODE);
+                this.columnOrderId = new global::System.Data.DataColumn("OrderId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrderId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columntblTrebovanieDetailId}, true));
                 this.columntblTrebovanieDetailId.AutoIncrement = true;
@@ -4040,7 +3698,7 @@ namespace Texac {
                 this.columnEd.MaxLength = 6;
                 this.columnSclad.MaxLength = 50;
                 this.columnOrderType.MaxLength = 17;
-                this.columnOrderNumber.MaxLength = 17;
+                this.columnOrderNumber.MaxLength = 20;
                 this.columnASUPCODE.DefaultValue = ((int)(0));
             }
             
@@ -7669,217 +7327,6 @@ namespace Texac {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TrebovaniaViewRow : global::System.Data.DataRow {
-            
-            private TrebovaniaViewDataTable tableTrebovaniaView;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal TrebovaniaViewRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableTrebovaniaView = ((TrebovaniaViewDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int TrebovanieId {
-                get {
-                    try {
-                        return ((int)(this[this.tableTrebovaniaView.TrebovanieIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TrebovanieId\' in table \'TrebovaniaView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTrebovaniaView.TrebovanieIdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int DocNumber {
-                get {
-                    try {
-                        return ((int)(this[this.tableTrebovaniaView.DocNumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DocNumber\' in table \'TrebovaniaView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTrebovaniaView.DocNumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime DocDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableTrebovaniaView.DocDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DocDate\' in table \'TrebovaniaView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTrebovaniaView.DocDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Sclad {
-                get {
-                    try {
-                        return ((int)(this[this.tableTrebovaniaView.ScladColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Sclad\' in table \'TrebovaniaView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTrebovaniaView.ScladColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Zakazchik {
-                get {
-                    try {
-                        return ((string)(this[this.tableTrebovaniaView.ZakazchikColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Zakazchik\' in table \'TrebovaniaView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTrebovaniaView.ZakazchikColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Status {
-                get {
-                    try {
-                        return ((int)(this[this.tableTrebovaniaView.StatusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'TrebovaniaView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTrebovaniaView.StatusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OrderNumber {
-                get {
-                    try {
-                        return ((string)(this[this.tableTrebovaniaView.OrderNumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OrderNumber\' in table \'TrebovaniaView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTrebovaniaView.OrderNumberColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTrebovanieIdNull() {
-                return this.IsNull(this.tableTrebovaniaView.TrebovanieIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTrebovanieIdNull() {
-                this[this.tableTrebovaniaView.TrebovanieIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDocNumberNull() {
-                return this.IsNull(this.tableTrebovaniaView.DocNumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDocNumberNull() {
-                this[this.tableTrebovaniaView.DocNumberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDocDateNull() {
-                return this.IsNull(this.tableTrebovaniaView.DocDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDocDateNull() {
-                this[this.tableTrebovaniaView.DocDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsScladNull() {
-                return this.IsNull(this.tableTrebovaniaView.ScladColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetScladNull() {
-                this[this.tableTrebovaniaView.ScladColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsZakazchikNull() {
-                return this.IsNull(this.tableTrebovaniaView.ZakazchikColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetZakazchikNull() {
-                this[this.tableTrebovaniaView.ZakazchikColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStatusNull() {
-                return this.IsNull(this.tableTrebovaniaView.StatusColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStatusNull() {
-                this[this.tableTrebovaniaView.StatusColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOrderNumberNull() {
-                return this.IsNull(this.tableTrebovaniaView.OrderNumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOrderNumberNull() {
-                this[this.tableTrebovaniaView.OrderNumberColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class TrebovanieRow : global::System.Data.DataRow {
             
             private TrebovanieDataTable tableTrebovanie;
@@ -8016,6 +7463,22 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Osnovanie {
+                get {
+                    if (this.IsOsnovanieNull()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableTrebovanie.OsnovanieColumn]));
+                    }
+                }
+                set {
+                    this[this.tableTrebovanie.OsnovanieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDocNumberNull() {
                 return this.IsNull(this.tableTrebovanie.DocNumberColumn);
             }
@@ -8096,6 +7559,18 @@ namespace Texac {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetOrderNumberNull() {
                 this[this.tableTrebovanie.OrderNumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOsnovanieNull() {
+                return this.IsNull(this.tableTrebovanie.OsnovanieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOsnovanieNull() {
+                this[this.tableTrebovanie.OsnovanieColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8265,7 +7740,23 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TrebovanieRow tblTrebovanieRow {
+            public int OrderId {
+                get {
+                    try {
+                        return ((int)(this[this.tableTrebovanieDetails.OrderIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OrderId\' in table \'TrebovanieDetails\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTrebovanieDetails.OrderIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TrebovanieRow TrebovanieRow {
                 get {
                     return ((TrebovanieRow)(this.GetParentRow(this.Table.ParentRelations["tblTrebovanietblTrebovanieDetails"])));
                 }
@@ -8368,6 +7859,18 @@ namespace Texac {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetASUPCODENull() {
                 this[this.tableTrebovanieDetails.ASUPCODEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOrderIdNull() {
+                return this.IsNull(this.tableTrebovanieDetails.OrderIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOrderIdNull() {
+                this[this.tableTrebovanieDetails.OrderIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9938,40 +9441,6 @@ namespace Texac {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public RashodMaterialovViewRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class TrebovaniaViewRowChangeEvent : global::System.EventArgs {
-            
-            private TrebovaniaViewRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TrebovaniaViewRowChangeEvent(TrebovaniaViewRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TrebovaniaViewRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -13226,180 +12695,6 @@ ORDER BY НаименованиеЦеха";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class TrebovaniaViewTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
-        
-        private global::System.Data.OleDb.OleDbConnection _connection;
-        
-        private global::System.Data.OleDb.OleDbTransaction _transaction;
-        
-        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public TrebovaniaViewTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.OleDb.OleDbConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.OleDb.OleDbTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "TrebovaniaView";
-            tableMapping.ColumnMappings.Add("TrebovanieId", "TrebovanieId");
-            tableMapping.ColumnMappings.Add("DocNumber", "DocNumber");
-            tableMapping.ColumnMappings.Add("DocDate", "DocDate");
-            tableMapping.ColumnMappings.Add("Sclad", "Sclad");
-            tableMapping.ColumnMappings.Add("Zakazchik", "Zakazchik");
-            tableMapping.ColumnMappings.Add("Status", "Status");
-            tableMapping.ColumnMappings.Add("OrderNumber", "OrderNumber");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Texac.Properties.Settings.Default.connStr;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
-            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TrebovanieId, DocNumber, DocDate, Sclad, Zakazchik, Status, OrderNumber FR" +
-                "OM TrebovaniaView ORDER BY TrebovanieId DESC";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dataDataSet.TrebovaniaViewDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dataDataSet.TrebovaniaViewDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            dataDataSet.TrebovaniaViewDataTable dataTable = new dataDataSet.TrebovaniaViewDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class TrebovanieTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
@@ -13520,6 +12815,7 @@ ORDER BY НаименованиеЦеха";
             tableMapping.ColumnMappings.Add("Status", "Status");
             tableMapping.ColumnMappings.Add("OrderId", "OrderId");
             tableMapping.ColumnMappings.Add("OrderNumber", "OrderNumber");
+            tableMapping.ColumnMappings.Add("Osnovanie", "Osnovanie");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -14063,10 +13359,11 @@ ORDER BY НаименованиеЦеха";
             tableMapping.ColumnMappings.Add("Kol1", "Kol1");
             tableMapping.ColumnMappings.Add("Kol2", "Kol2");
             tableMapping.ColumnMappings.Add("ASUPCODE", "ASUPCODE");
+            tableMapping.ColumnMappings.Add("OrderId", "OrderId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `tblTrebovanieDetails` WHERE ((`tblTrebovanieDetailId` = ?) AND ((? = 1 AND `tblTrebovanielId` IS NULL) OR (`tblTrebovanielId` = ?)) AND ((? = 1 AND `MatCartId` IS NULL) OR (`MatCartId` = ?)) AND ((? = 1 AND `MaterialCode` IS NULL) OR (`MaterialCode` = ?)) AND ((? = 1 AND `Material` IS NULL) OR (`Material` = ?)) AND ((? = 1 AND `Ed` IS NULL) OR (`Ed` = ?)) AND ((? = 1 AND `Kol1` IS NULL) OR (`Kol1` = ?)) AND ((? = 1 AND `Kol2` IS NULL) OR (`Kol2` = ?)) AND ((? = 1 AND `ASUPCODE` IS NULL) OR (`ASUPCODE` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `tblTrebovanieDetails` WHERE ((`tblTrebovanieDetailId` = ?) AND ((? = 1 AND `tblTrebovanielId` IS NULL) OR (`tblTrebovanielId` = ?)) AND ((? = 1 AND `MatCartId` IS NULL) OR (`MatCartId` = ?)) AND ((? = 1 AND `MaterialCode` IS NULL) OR (`MaterialCode` = ?)) AND ((? = 1 AND `Material` IS NULL) OR (`Material` = ?)) AND ((? = 1 AND `Ed` IS NULL) OR (`Ed` = ?)) AND ((? = 1 AND `Kol1` IS NULL) OR (`Kol1` = ?)) AND ((? = 1 AND `Kol2` IS NULL) OR (`Kol2` = ?)) AND ((? = 1 AND `ASUPCODE` IS NULL) OR (`ASUPCODE` = ?)) AND ((? = 1 AND `OrderId` IS NULL) OR (`OrderId` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_tblTrebovanieDetailId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanieDetailId", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Original, true, null));
@@ -14085,11 +13382,13 @@ ORDER BY НаименованиеЦеха";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Kol2", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol2", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_OrderId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "OrderId", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_OrderId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "OrderId", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `tblTrebovanieDetails` (`tblTrebovanielId`, `MatCartId`, `MaterialCod" +
-                "e`, `Material`, `Ed`, `Kol1`, `Kol2`, `ASUPCODE`) VALUES (?, ?, ?, ?, ?, ?, ?, ?" +
-                ")";
+                "e`, `Material`, `Ed`, `Kol1`, `Kol2`, `ASUPCODE`, `OrderId`) VALUES (?, ?, ?, ?," +
+                " ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MatCartId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MatCartId", global::System.Data.DataRowVersion.Current, false, null));
@@ -14099,9 +13398,10 @@ ORDER BY НаименованиеЦеха";
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Kol1", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol1", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Kol2", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol2", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("OrderId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "OrderId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `tblTrebovanieDetails` SET `tblTrebovanielId` = ?, `MatCartId` = ?, `MaterialCode` = ?, `Material` = ?, `Ed` = ?, `Kol1` = ?, `Kol2` = ?, `ASUPCODE` = ? WHERE ((`tblTrebovanieDetailId` = ?) AND ((? = 1 AND `tblTrebovanielId` IS NULL) OR (`tblTrebovanielId` = ?)) AND ((? = 1 AND `MatCartId` IS NULL) OR (`MatCartId` = ?)) AND ((? = 1 AND `MaterialCode` IS NULL) OR (`MaterialCode` = ?)) AND ((? = 1 AND `Material` IS NULL) OR (`Material` = ?)) AND ((? = 1 AND `Ed` IS NULL) OR (`Ed` = ?)) AND ((? = 1 AND `Kol1` IS NULL) OR (`Kol1` = ?)) AND ((? = 1 AND `Kol2` IS NULL) OR (`Kol2` = ?)) AND ((? = 1 AND `ASUPCODE` IS NULL) OR (`ASUPCODE` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `tblTrebovanieDetails` SET `tblTrebovanielId` = ?, `MatCartId` = ?, `MaterialCode` = ?, `Material` = ?, `Ed` = ?, `Kol1` = ?, `Kol2` = ?, `ASUPCODE` = ?, `OrderId` = ? WHERE ((`tblTrebovanieDetailId` = ?) AND ((? = 1 AND `tblTrebovanielId` IS NULL) OR (`tblTrebovanielId` = ?)) AND ((? = 1 AND `MatCartId` IS NULL) OR (`MatCartId` = ?)) AND ((? = 1 AND `MaterialCode` IS NULL) OR (`MaterialCode` = ?)) AND ((? = 1 AND `Material` IS NULL) OR (`Material` = ?)) AND ((? = 1 AND `Ed` IS NULL) OR (`Ed` = ?)) AND ((? = 1 AND `Kol1` IS NULL) OR (`Kol1` = ?)) AND ((? = 1 AND `Kol2` IS NULL) OR (`Kol2` = ?)) AND ((? = 1 AND `ASUPCODE` IS NULL) OR (`ASUPCODE` = ?)) AND ((? = 1 AND `OrderId` IS NULL) OR (`OrderId` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("MatCartId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "MatCartId", global::System.Data.DataRowVersion.Current, false, null));
@@ -14111,6 +13411,7 @@ ORDER BY НаименованиеЦеха";
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Kol1", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol1", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Kol2", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol2", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("OrderId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "OrderId", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_tblTrebovanieDetailId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanieDetailId", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Original, false, null));
@@ -14128,6 +13429,8 @@ ORDER BY НаименованиеЦеха";
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Kol2", global::System.Data.OleDb.OleDbType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Kol2", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ASUPCODE", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ASUPCODE", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_OrderId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "OrderId", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_OrderId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "OrderId", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14144,15 +13447,16 @@ ORDER BY НаименованиеЦеха";
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        tblTrebovanieDetailId, tblTrebovanielId, MatCartId, MaterialCode, M" +
-                "aterial, Ed, Kol1, Kol2, ASUPCODE\r\nFROM            tblTrebovanieDetails";
+                "aterial, Ed, Kol1, Kol2, ASUPCODE, OrderId\r\nFROM            tblTrebovanieDetails" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT ASUPCODE, Ed, Kol1, Kol2, MatCartId, Material, MaterialCode, tblTrebovanie" +
-                "DetailId, tblTrebovanielId FROM tblTrebovanieDetails WHERE (tblTrebovanielId = ?" +
-                ")";
+            this._commandCollection[1].CommandText = "SELECT ASUPCODE, Ed, Kol1, Kol2, MatCartId, Material, MaterialCode, OrderId, tblT" +
+                "rebovanieDetailId, tblTrebovanielId FROM tblTrebovanieDetails WHERE (tblTrebovan" +
+                "ielId = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("TrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("tblTrebovanielId", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "tblTrebovanielId", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        Material, Ed, SUM(Kol1) AS Kol1, SUM(Kol2) AS Kol2, ASUPCODE\r\nFROM " +
@@ -14190,10 +13494,10 @@ ORDER BY НаименованиеЦеха";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillById(dataDataSet.TrebovanieDetailsDataTable dataTable, global::System.Nullable<int> TrebovanielId) {
+        public virtual int FillById(dataDataSet.TrebovanieDetailsDataTable dataTable, global::System.Nullable<int> tblTrebovanielId) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((TrebovanielId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TrebovanielId.Value));
+            if ((tblTrebovanielId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(tblTrebovanielId.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -14257,7 +13561,7 @@ ORDER BY НаименованиеЦеха";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_tblTrebovanieDetailId, global::System.Nullable<int> Original_tblTrebovanielId, global::System.Nullable<int> Original_MatCartId, global::System.Nullable<int> Original_MaterialCode, string Original_Material, string Original_Ed, global::System.Nullable<double> Original_Kol1, global::System.Nullable<double> Original_Kol2, global::System.Nullable<int> Original_ASUPCODE) {
+        public virtual int Delete(int Original_tblTrebovanieDetailId, global::System.Nullable<int> Original_tblTrebovanielId, global::System.Nullable<int> Original_MatCartId, global::System.Nullable<int> Original_MaterialCode, string Original_Material, string Original_Ed, global::System.Nullable<double> Original_Kol1, global::System.Nullable<double> Original_Kol2, global::System.Nullable<int> Original_ASUPCODE, global::System.Nullable<int> Original_OrderId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_tblTrebovanieDetailId));
             if ((Original_tblTrebovanielId.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -14323,6 +13627,14 @@ ORDER BY НаименованиеЦеха";
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
+            if ((Original_OrderId.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((int)(Original_OrderId.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14343,7 +13655,7 @@ ORDER BY НаименованиеЦеха";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> tblTrebovanielId, global::System.Nullable<int> MatCartId, global::System.Nullable<int> MaterialCode, string Material, string Ed, global::System.Nullable<double> Kol1, global::System.Nullable<double> Kol2, global::System.Nullable<int> ASUPCODE) {
+        public virtual int Insert(global::System.Nullable<int> tblTrebovanielId, global::System.Nullable<int> MatCartId, global::System.Nullable<int> MaterialCode, string Material, string Ed, global::System.Nullable<double> Kol1, global::System.Nullable<double> Kol2, global::System.Nullable<int> ASUPCODE, global::System.Nullable<int> OrderId) {
             if ((tblTrebovanielId.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(tblTrebovanielId.Value));
             }
@@ -14392,6 +13704,12 @@ ORDER BY НаименованиеЦеха";
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
+            if ((OrderId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(OrderId.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -14421,6 +13739,7 @@ ORDER BY НаименованиеЦеха";
                     global::System.Nullable<double> Kol1, 
                     global::System.Nullable<double> Kol2, 
                     global::System.Nullable<int> ASUPCODE, 
+                    global::System.Nullable<int> OrderId, 
                     int Original_tblTrebovanieDetailId, 
                     global::System.Nullable<int> Original_tblTrebovanielId, 
                     global::System.Nullable<int> Original_MatCartId, 
@@ -14429,7 +13748,8 @@ ORDER BY НаименованиеЦеха";
                     string Original_Ed, 
                     global::System.Nullable<double> Original_Kol1, 
                     global::System.Nullable<double> Original_Kol2, 
-                    global::System.Nullable<int> Original_ASUPCODE) {
+                    global::System.Nullable<int> Original_ASUPCODE, 
+                    global::System.Nullable<int> Original_OrderId) {
             if ((tblTrebovanielId.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(tblTrebovanielId.Value));
             }
@@ -14478,70 +13798,84 @@ ORDER BY НаименованиеЦеха";
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_tblTrebovanieDetailId));
-            if ((Original_tblTrebovanielId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_tblTrebovanielId.Value));
+            if ((OrderId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(OrderId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_tblTrebovanieDetailId));
+            if ((Original_tblTrebovanielId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_tblTrebovanielId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_MatCartId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_MatCartId.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_MatCartId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_MaterialCode.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_MaterialCode.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_MaterialCode.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((Original_Material == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Material));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Material));
             }
             if ((Original_Ed == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Ed));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Ed));
             }
             if ((Original_Kol1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((double)(Original_Kol1.Value));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(Original_Kol1.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             if ((Original_Kol2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((double)(Original_Kol2.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((double)(Original_Kol2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             if ((Original_ASUPCODE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_ASUPCODE.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_ASUPCODE.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((Original_OrderId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_OrderId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 

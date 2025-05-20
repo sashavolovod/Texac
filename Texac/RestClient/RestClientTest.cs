@@ -18,16 +18,15 @@ namespace Texac.RestClient
         {
             using (var httpClient = new HttpClient())
             {
-
                 try
                 {
                     var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-                    var res = httpClient.PostAsync(url, stringContent).Result;
+                    HttpResponseMessage res = httpClient.PostAsync(url, stringContent).Result;
                     return res.Content.ReadAsStringAsync().Result;
 
                 } catch (Exception e)
                 {
-                    //    MessageBox.Show(e.Message);
+                    MessageBox.Show(e.Message);
                     return "{}";
                 }
             }
@@ -49,11 +48,20 @@ namespace Texac.RestClient
         {
             using (var httpClient = new HttpClient())
             {
-                var response = httpClient.GetStringAsync(new Uri(url)).Result;
-                return response;
-            }
-        }
+                
+                try
+                {
+                    Uri uri = new Uri(url);
+                    var response = httpClient.GetStringAsync(uri).Result;
+                    return response;
 
+                } catch(Exception ex)
+                {
+                    var t = ex.Message;
+                }
+            }
+            return "";
+        }
 
         protected string getApiEntityPath(Type type)
         {

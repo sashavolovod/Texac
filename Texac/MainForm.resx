@@ -139,7 +139,7 @@
   <data name="miDopZN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAABHxSURBVGhDzVoHVJTXEr7/FpYOslQB6U2QJiC9CIKwgIJI
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAABHxSURBVGhDzVoHVJTXEr7/FpYOslQB6U2QJiC9CIKwgIJI
         kSYoVtQo2EUUG0YFRIwtsSVPU4w1JGJJRI0lVl40iRqjUSNEnzVGwRi/N/fXEI2SePLi8d1zviMsu/PP
         d2fuzDd3Za9s9Wc2LJ/lSwcLC7RHqm/THa1Rr1Eor2OZrIRFM2d6hxpBEN/7f7N6Myk5HiMbIlnXfob+
         vYgNHZH9RTAmNPbAjJtpGPd9IlJ2dIFyvM5V1p31o0/oEyTiZ1/5Gsj85IWSWpv5hui53xvDL0dj8p0k
@@ -220,6 +220,6 @@
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>32</value>
+    <value>64</value>
   </metadata>
 </root>

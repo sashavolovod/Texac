@@ -4,10 +4,13 @@ using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
+
 namespace Texac.Trebovaniya
 {
+    
     public partial class AddTrebovaniyaForm : MyForm
     {
+        const int MAX_LINE_PER_DOC = 20;
         private bool oneOrder = false;
         public Int32 orderId;
         public DateTime startDate;
@@ -21,7 +24,6 @@ namespace Texac.Trebovaniya
             colMatCartId.Visible = false;
         }
 
-      
         private void btnOneOrder_Click(object sender, EventArgs e)
         {
             oneOrder = true;
@@ -46,13 +48,11 @@ namespace Texac.Trebovaniya
                 Cursor.Current = Cursors.Default;
                 dgvTrebovaniya.Focus();
             }
-
         }
 
         private void AddTrebovaniyaForm_Load(object sender, EventArgs e)
         {
             tbTrebovanieNumber.Text = Properties.Settings.Default.TrebovanieLastNumber.ToString();
-
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -76,30 +76,7 @@ namespace Texac.Trebovaniya
             Cursor = Cursors.WaitCursor;
             dataDataSet1 newds = new dataDataSet1();
             dataDataSet1.TrebovanieRow r = (dataDataSet1.TrebovanieRow)newds.Trebovanie.NewRow();
-            /*
-                        // если выделено больше 1 строки, печатаем выделенные
-                        if (dgvTrebovaniya.SelectedRows.Count > 1)
-                        {
-                            for (int i = 0; i < dgvTrebovaniya.SelectedRows.Count; i++)
-                            {
-                                dataDataSet.AddTrebovaniyaViewRow row = (dataDataSet.AddTrebovaniyaViewRow)((DataRowView)dgvTrebovaniya.SelectedRows[i].DataBoundItem).Row;
-                                rows.Add(row);
-                            }
-                        }
-                        else // иначе все строки
-                        {
-                            for (int i = 0; i < dgvTrebovaniya.Rows.Count; i++)
-                            {
-                                dataDataSet.AddTrebovaniyaViewRow row = (dataDataSet.AddTrebovaniyaViewRow)((DataRowView)dgvTrebovaniya.Rows[i].DataBoundItem).Row;
-                                rows.Add(row);
-                            }
-                        }
-
-                        for (int i = 0; i < rows.Count; i++)
-                        {
-
-                            dataDataSet.AddTrebovaniyaViewRow row = rows[i];
-            */
+            
             for (int i = 0; i < dgvTrebovaniya.SelectedRows.Count; i++)
             {
                 dataDataSet1.AddTrebovaniyaViewRow row = (dataDataSet1.AddTrebovaniyaViewRow)((DataRowView)dgvTrebovaniya.SelectedRows[i].DataBoundItem).Row;
@@ -113,7 +90,7 @@ namespace Texac.Trebovaniya
                 if (Int32.TryParse(row.Sclad, out scladNumber)) { } ;
                 customerNumber = row.Customer;
 
-                if (prevCustomerNumber!=customerNumber || prevScladNumber!=scladNumber || linePerDoc>7)
+                if (prevCustomerNumber!=customerNumber || prevScladNumber!=scladNumber || linePerDoc > MAX_LINE_PER_DOC)
                 {
                     linePerDoc = 0;
                     r = (dataDataSet1.TrebovanieRow)newds.Trebovanie.NewRow();
@@ -127,7 +104,34 @@ namespace Texac.Trebovaniya
                     r.DocDate = dtpTrebovanieDate.Value;
                     r.Status = 0;
                     r.NЦеха = row.Customer;
-                    if(oneOrder==true)
+                    r.Osnovanie = "";
+                    r.Recipient = "Коцуба С.Ф.";
+                    r.RecipientPost = "Мастер";
+                    r.Customer = "Остапук В.П.";
+                    r.CustomerPost = "Начальник бюро";
+                    r.WorkshopCode = "ИнЦ_122";
+
+                    // заполняем поле "Шифр затрат"
+                    if (row.IsOrderNumberNull() || row.OrderNumber.StartsWith("24/5"))
+                    {
+                        if (r.IsNЦехаNull() == false)
+                        {
+                            if (r.NЦеха == 70)
+                                r.CostCode = "23/1";
+                            else
+                                r.CostCode = "25";
+                        }
+                        else
+                            r.CostCode = "";
+                    }
+                    else
+                    {
+                        r.CostCode = "10";
+                        r.Osnovanie = "Сырьё и материалы заказ №";
+                        r.Description =  row.OrderNumber;
+                    }
+
+                    if (oneOrder==true)
                     {
                         r.OrderId = row.OrderId;
                         r.OrderNumber = row.OrderNumber;
@@ -151,11 +155,12 @@ namespace Texac.Trebovaniya
 
                 d.Material = row.MaterialName;
 
-                d.Ed = row.Ed;
-                d.Kol1 = row.Qty;
+                if(row.IsEdNull() == false)
+                    d.Ed = row.Ed;
+
+                if(row.IsQtyNull()==false)
+                    d.Kol1 = row.Qty;
                 d.Kol2 = 0.0;
-
-
 
                 if(row.IsASUPCODENull()==false)
                     d.ASUPCODE = row.ASUPCODE;

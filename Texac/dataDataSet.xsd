@@ -505,28 +505,6 @@ ORDER BY НаименованиеЦеха</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TrebovaniaViewTableAdapter" GeneratorDataComponentClassName="TrebovaniaViewTableAdapter" Name="TrebovaniaView" UserDataComponentName="TrebovaniaViewTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="connStr (Settings)" DbObjectName="TrebovaniaView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT TrebovanieId, DocNumber, DocDate, Sclad, Zakazchik, Status, OrderNumber FROM TrebovaniaView ORDER BY TrebovanieId DESC</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="TrebovanieId" DataSetColumn="TrebovanieId" />
-              <Mapping SourceColumn="DocNumber" DataSetColumn="DocNumber" />
-              <Mapping SourceColumn="DocDate" DataSetColumn="DocDate" />
-              <Mapping SourceColumn="Sclad" DataSetColumn="Sclad" />
-              <Mapping SourceColumn="Zakazchik" DataSetColumn="Zakazchik" />
-              <Mapping SourceColumn="Status" DataSetColumn="Status" />
-              <Mapping SourceColumn="OrderNumber" DataSetColumn="OrderNumber" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TrebovanieTableAdapter" GeneratorDataComponentClassName="TrebovanieTableAdapter" Name="Trebovanie" UserDataComponentName="TrebovanieTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="connStr (Settings)" DbObjectName="tblTrebovanie" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -612,6 +590,7 @@ ORDER BY НаименованиеЦеха</CommandText>
               <Mapping SourceColumn="Status" DataSetColumn="Status" />
               <Mapping SourceColumn="OrderId" DataSetColumn="OrderId" />
               <Mapping SourceColumn="OrderNumber" DataSetColumn="OrderNumber" />
+              <Mapping SourceColumn="Osnovanie" DataSetColumn="Osnovanie" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="connStr (Settings)" DbObjectName="tblTrebovanie" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillById" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillById">
@@ -1436,31 +1415,6 @@ ORDER BY NЗаказаЗавода</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TrebovaniaView" msprop:Generator_TableClassName="TrebovaniaViewDataTable" msprop:Generator_TableVarName="tableTrebovaniaView" msprop:Generator_TablePropName="TrebovaniaView" msprop:Generator_RowDeletingName="TrebovaniaViewRowDeleting" msprop:Generator_RowChangingName="TrebovaniaViewRowChanging" msprop:Generator_RowEvHandlerName="TrebovaniaViewRowChangeEventHandler" msprop:Generator_RowDeletedName="TrebovaniaViewRowDeleted" msprop:Generator_UserTableName="TrebovaniaView" msprop:Generator_RowChangedName="TrebovaniaViewRowChanged" msprop:Generator_RowEvArgName="TrebovaniaViewRowChangeEvent" msprop:Generator_RowClassName="TrebovaniaViewRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="TrebovanieId" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTrebovanieId" msprop:Generator_ColumnPropNameInRow="TrebovanieId" msprop:Generator_ColumnPropNameInTable="TrebovanieIdColumn" msprop:Generator_UserColumnName="TrebovanieId" type="xs:int" minOccurs="0" />
-              <xs:element name="DocNumber" msprop:Generator_ColumnVarNameInTable="columnDocNumber" msprop:Generator_ColumnPropNameInRow="DocNumber" msprop:Generator_ColumnPropNameInTable="DocNumberColumn" msprop:Generator_UserColumnName="DocNumber" type="xs:int" minOccurs="0" />
-              <xs:element name="DocDate" msprop:Generator_ColumnVarNameInTable="columnDocDate" msprop:Generator_ColumnPropNameInRow="DocDate" msprop:Generator_ColumnPropNameInTable="DocDateColumn" msprop:Generator_UserColumnName="DocDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Sclad" msprop:Generator_ColumnVarNameInTable="columnSclad" msprop:Generator_ColumnPropNameInRow="Sclad" msprop:Generator_ColumnPropNameInTable="ScladColumn" msprop:Generator_UserColumnName="Sclad" type="xs:int" minOccurs="0" />
-              <xs:element name="Zakazchik" msprop:Generator_ColumnVarNameInTable="columnZakazchik" msprop:Generator_ColumnPropNameInRow="Zakazchik" msprop:Generator_ColumnPropNameInTable="ZakazchikColumn" msprop:Generator_UserColumnName="Zakazchik" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:int" minOccurs="0" />
-              <xs:element name="OrderNumber" msprop:Generator_ColumnVarNameInTable="columnOrderNumber" msprop:Generator_ColumnPropNameInRow="OrderNumber" msprop:Generator_ColumnPropNameInTable="OrderNumberColumn" msprop:Generator_UserColumnName="OrderNumber" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="Trebovanie" msprop:Generator_TableClassName="TrebovanieDataTable" msprop:Generator_TableVarName="tableTrebovanie" msprop:Generator_TablePropName="Trebovanie" msprop:Generator_RowDeletingName="TrebovanieRowDeleting" msprop:Generator_RowChangingName="TrebovanieRowChanging" msprop:Generator_RowEvHandlerName="TrebovanieRowChangeEventHandler" msprop:Generator_RowDeletedName="TrebovanieRowDeleted" msprop:Generator_UserTableName="Trebovanie" msprop:Generator_RowChangedName="TrebovanieRowChanged" msprop:Generator_RowEvArgName="TrebovanieRowChangeEvent" msprop:Generator_RowClassName="TrebovanieRow">
           <xs:complexType>
             <xs:sequence>
@@ -1475,6 +1429,13 @@ ORDER BY NЗаказаЗавода</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Osnovanie" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Osnovanie" msprop:Generator_ColumnVarNameInTable="columnOsnovanie" msprop:Generator_ColumnPropNameInTable="OsnovanieColumn" msprop:Generator_UserColumnName="Osnovanie" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

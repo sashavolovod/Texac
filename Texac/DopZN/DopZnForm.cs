@@ -44,14 +44,21 @@ namespace Texac
             dopZn.details.Clear();
 
             dataDataSet1.qMaterialZNDataTable dt = (dataDataSet1.qMaterialZNDataTable)dataDataSet1.Tables["qMaterialZN"];
+            
             int reportRowCounter = 1;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
+                // dataDataSet1.qMaterialZNRow r = dt[i];
+
+
                 string newMaterialName = dt.Rows[i]["Материал"].ToString();
                 string oldMaterialName = "";
 
                 string newUnitName = dt.Rows[i]["ЕдИзм"].ToString();
                 string oldUnitName = "";
+
+                string newCardNum = dt.Rows[i]["CardNum"].ToString();
+                string oldCardNum = "";
 
                 double newQty = 0;
                 string newQtyStr = dgvMaterialZN.Rows[i].Cells["colMassa"].Value.ToString();
@@ -64,29 +71,36 @@ namespace Texac
                 {
                     oldMaterialName = dt.Rows[i]["Материал", DataRowVersion.Original].ToString();
                     oldUnitName = dt.Rows[i]["ЕдИзм", DataRowVersion.Original].ToString();
+                    oldCardNum = dt.Rows[i]["CardNum", DataRowVersion.Original].ToString();
                     Double.TryParse(dt.Rows[i]["масса", DataRowVersion.Original].ToString(), out oldQty);
 
                     // если изменилось название материала или единица измерения 
-                    if (oldMaterialName != newMaterialName || oldUnitName != newUnitName)
+                    if (oldMaterialName != newMaterialName || oldUnitName != newUnitName || oldCardNum != newCardNum)
                     {
                         DopZNEntityDetails d = new DopZNEntityDetails();
                         //d.pos = i + 1;
                         d.pos = reportRowCounter++;
                         d.materialOld = oldMaterialName;
+                        d.cardNumOld = oldCardNum;
                         d.qtyOld = oldQty;
                         d.unitNameOld = oldUnitName;
+
                         d.materialNew = oldMaterialName;
+                        d.cardNumNew = oldCardNum;
                         d.qtyNew = 0;
                         d.unitNameNew = oldUnitName;
+                        
                         dopZn.details.Add(d);
 
                         d = new DopZNEntityDetails();
                         //d.pos = i + 1;
                         d.pos = reportRowCounter++;
                         d.materialOld = newMaterialName;
+                        d.cardNumOld = newCardNum;
                         d.qtyOld = 0;
                         d.unitNameOld = newUnitName;
                         d.materialNew = newMaterialName;
+                        d.cardNumNew = newCardNum;
                         d.qtyNew = newQty;
                         d.unitNameNew = newUnitName;
                         dopZn.details.Add(d);
@@ -98,9 +112,11 @@ namespace Texac
                         //d.pos = i + 1;
                         d.pos = reportRowCounter++;
                         d.materialOld = oldMaterialName;
+                        d.cardNumOld = oldCardNum;
                         d.qtyOld = oldQty;
                         d.unitNameOld = oldUnitName;
                         d.materialNew = newMaterialName;
+                        d.cardNumNew = newCardNum;
                         d.qtyNew = newQty;
                         d.unitNameNew = newUnitName;
                         dopZn.details.Add(d);
@@ -112,10 +128,12 @@ namespace Texac
                     //d.pos = i + 1;
                     d.pos = reportRowCounter++;
                     d.materialOld = newMaterialName;
+                    d.cardNumOld = newCardNum;
                     d.qtyOld = 0;
                     d.unitNameOld = newUnitName;
 
                     d.materialNew = newMaterialName;
+                    d.cardNumNew = newCardNum;
                     d.qtyNew = newQty;
                     d.unitNameNew = newUnitName;
 

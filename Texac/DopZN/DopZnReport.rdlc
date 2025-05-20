@@ -108,7 +108,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>"_______" __________________ 2020 </Value>
+                <Value>= " _______ __________________" &amp; Year(Now())</Value>
                 <Style>
                   <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -306,7 +306,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Исполнитель:</Value>
+                <Value>Изготовитель:</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -458,7 +458,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!producer.Value, "DopZnEntity")</Value>
+                <Value>=First(Fields!producer.Value, "DopZnEntity") &amp; " " &amp; First(Fields!orderId.Value, "DopZnEntity")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1311,7 +1311,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!materialOld.Value</Value>
+                              <Value>=Fields!materialOld.Value &amp; IIf((Fields!cardNumOld.Value ="" or Fields!cardNumOld.Value ="0")=False," (" &amp; Fields!cardNumOld.Value &amp; ")","")</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -1521,7 +1521,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!materialOld.Value</Value>
+                              <Value>=Fields!materialOld.Value &amp; IIf((Fields!cardNumOld.Value ="" or Fields!cardNumOld.Value ="0")=False," (" &amp; Fields!cardNumOld.Value &amp; ")","")</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
                               </Style>
@@ -1561,6 +1561,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1681,6 +1682,7 @@
                               <Value>=Fields!qtyNew.Value * First(Fields!amount.Value, "DopZnEntity")</Value>
                               <Style>
                                 <FontSize>9pt</FontSize>
+                                <Format>0.00</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1694,26 +1696,6 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1837,7 +1819,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>О.М. Млынчик</Value>
+                <Value>П.Ю. Панков</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -1921,6 +1903,14 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
+        <Field Name="cardNumNew">
+          <DataField>cardNumNew</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cardNumOld">
+          <DataField>cardNumOld</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="materialNew">
           <DataField>materialNew</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1953,7 +1943,7 @@
       <rd:DataSetInfo>
         <rd:DataSetName>Texac</rd:DataSetName>
         <rd:TableName>DopZNEntityDetails</rd:TableName>
-        <rd:ObjectDataSourceType>Texac.DopZNEntityDetails, Texac_, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>Texac.DopZNEntityDetails, Texac_, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
     <DataSet Name="DopZnEntity">

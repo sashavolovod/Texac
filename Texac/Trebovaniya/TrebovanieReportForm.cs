@@ -22,56 +22,75 @@ namespace Texac
             taTrebovanie.FillById(ds.Trebovanie, trebovanieId);
             taTrebovanieDetails.FillById(ds.TrebovanieDetails, trebovanieId);
 
-            dataDataSet.TrebovanieRow row = (dataDataSet.TrebovanieRow)ds.Trebovanie.Rows[0];
+            dataDataSet1.TrebovanieRow row = (dataDataSet1.TrebovanieRow)ds.Trebovanie.Rows[0];
             
-            ReportParameter[] parameters = new ReportParameter[9];
+            ReportParameter[] parameters = new ReportParameter[13];
             parameters[0] = new ReportParameter("parDocNumber", row.DocNumber.ToString());
             parameters[1] = new ReportParameter("parDocDate", row.DocDate.ToShortDateString());
             parameters[2] = new ReportParameter("parSclad", row.Sclad.ToString());
 
-            if (zatreboval == "")
-                zatreboval = "Нач. бюро Остапук В.П.";
-            if (poluchil == "")
-                poluchil = "мастер Бацук А.Г.";
+            if(row.IsRecipientNull())
+                parameters[3] = new ReportParameter("parRecipient", "");
+            else
+                parameters[3] = new ReportParameter("parRecipient", row.Recipient);
 
-            parameters[3] = new ReportParameter("parPerson1", poluchil);
-            parameters[4] = new ReportParameter("parPerson2", zatreboval);
-            parameters[5] = new ReportParameter("parPerson3", poluchil);
+            if(row.IsCustomerNull())
+                parameters[4] = new ReportParameter("parCustomer", "");
+            else
+                parameters[4] = new ReportParameter("parCustomer", row.Customer);
 
-            parameters[6] = new ReportParameter("parId", row.TrebovanieId.ToString());
+            parameters[5] = new ReportParameter("parId", row.TrebovanieId.ToString());
 
             if(row.IsOrderIdNull())
-                parameters[7] = new ReportParameter("parOrderId", "");
+                parameters[6] = new ReportParameter("parOrderId", "");
             else
-                parameters[7] = new ReportParameter("parOrderId", row.OrderId.ToString());
+                parameters[6] = new ReportParameter("parOrderId", row.OrderId.ToString());
 
-            if (row.IsOrderNumberNull())
+            if(row.IsCostCodeNull())
+                parameters[7] = new ReportParameter("parCostCode", "");
+            else
+                parameters[7] = new ReportParameter("parCostCode", row.CostCode);
+
+            if (row.IsOsnovanieNull())
+                parameters[8] = new ReportParameter("parOsnovanie", "");
+            else
             {
-                if (row.IsNЦехаNull() == false)
-                {
-                    if (row.NЦеха == 70)
-                        parameters[8] = new ReportParameter("parOrderNumber", "23/1");
-                    else
-                        parameters[8] = new ReportParameter("parOrderNumber", "25");
-                } else
-                    parameters[8] = new ReportParameter("parOrderNumber", "");
+                if(row.IsDescriptionNull())
+                    parameters[8] = new ReportParameter("parOsnovanie", row.Osnovanie);
+                else
+                    parameters[8] = new ReportParameter("parOsnovanie", row.Osnovanie + ", " + row.Description);
             }
+
+            if (row.IsRecipientPostNull())
+                parameters[9] = new ReportParameter("parRecipientPost", "");
             else
-                parameters[8] = new ReportParameter("parOrderNumber", row.OrderNumber);
+                parameters[9] = new ReportParameter("parRecipientPost", row.RecipientPost);
 
-            this.reportViewer1.LocalReport.SetParameters(parameters);
+            if (row.IsCustomerPostNull())
+                parameters[10] = new ReportParameter("parCustomerPost", "");
+            else
+                parameters[10] = new ReportParameter("parCustomerPost", row.CustomerPost);
 
+            if (row.IsWorkshopCodeNull())
+                parameters[11] = new ReportParameter("parWorkshopCode", "");
+            else
+                parameters[11] = new ReportParameter("parWorkshopCode", row.WorkshopCode);
+
+            if (row.IsDescriptionNull())
+                parameters[12] = new ReportParameter("parDescription", "");
+            else
+                parameters[12] = new ReportParameter("parDescription", row.Description);
+
+            reportViewer1.LocalReport.SetParameters(parameters);
             taTrebovanieDetails.FillByIdWithGroup(ds.TrebovanieDetails, trebovanieId);
-
+            /*
             int c = ds.TrebovanieDetails.Rows.Count;
-            
             while (c < 8)
             {
-                //dataDataSet.TrebovanieDetailsRow r = (dataDataSet.TrebovanieDetailsRow)ds.TrebovanieDetails.NewRow();
-                ds.TrebovanieDetails.AddTrebovanieDetailsRow((dataDataSet.TrebovanieDetailsRow)ds.TrebovanieDetails.NewRow());
+                ds.TrebovanieDetails.AddTrebovanieDetailsRow((dataDataSet1.TrebovanieDetailsRow)ds.TrebovanieDetails.NewRow());
                 c++;
             }
-
+            */
             reportViewer1.RefreshReport();
         }
     }
