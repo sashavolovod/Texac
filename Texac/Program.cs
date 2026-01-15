@@ -21,18 +21,45 @@ namespace Texac
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             try
             {
                 // проверка обновления программы
-               // if (Environment.MachineName.Equals("WIN7X64") == false)
-               //     getUpdate();
+                // if (Environment.MachineName.Equals("WIN7X64") == false)
+                //     getUpdate();
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new MainForm());
-            } catch (Exception ex)
+
+                // Проверка параметров командной строки
+                if (args.Length > 0)
+                {
+                    string formName = args[0].ToLower();
+                    switch (formName)
+                    {
+                        case "request_form":
+                            if(args.Length > 1)
+                            {
+                                int id;
+                                if(Int32.TryParse(args[1], out id))
+                                {
+                                    var requestForm = new Request.RequestForm(id);
+                                    requestForm.StartPosition = FormStartPosition.CenterScreen;
+                                    requestForm.ShowDialog();
+                                }
+
+                            }
+                            break;
+                    }
+
+                }
+                else {
+                    Application.Run(new MainForm());
+                    //Application.Run(new TTN.ToolingHandoverNoteForm());
+                }
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

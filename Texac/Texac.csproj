@@ -191,6 +191,7 @@
     <Compile Include="Analize\EqupmentByTOEntity.cs" />
     <Compile Include="Analize\OrderEntity.cs" />
     <Compile Include="Common\ComboBoxEntity.cs" />
+    <Compile Include="Common\DomainControllerTime.cs" />
     <Compile Include="Common\NullableBindingDateTimePicker.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -377,6 +378,20 @@
     <Compile Include="RashodParametersForm.Designer.cs">
       <DependentUpon>RashodParametersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Request\DbHelper.cs" />
+    <Compile Include="Request\RequestEntity.cs" />
+    <Compile Include="Request\RequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Request\RequestForm.Designer.cs">
+      <DependentUpon>RequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Request\RequestReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Request\RequestReportForm.Designer.cs">
+      <DependentUpon>RequestReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RestClient\EntityPath.cs" />
     <Compile Include="RestClient\RestClientTest.cs" />
     <Compile Include="Settings.cs" />
@@ -463,6 +478,19 @@
     </Compile>
     <Compile Include="TTN\InputOrderNumberForm.Designer.cs">
       <DependentUpon>InputOrderNumberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTN\PsnEntityDTO.cs" />
+    <Compile Include="TTN\ToolingHandoverNoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTN\ToolingHandoverNoteForm.Designer.cs">
+      <DependentUpon>ToolingHandoverNoteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTN\ToolingHandoverNoteReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTN\ToolingHandoverNoteReportForm.Designer.cs">
+      <DependentUpon>ToolingHandoverNoteReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TTN\TtnList.cs">
       <SubType>UserControl</SubType>
@@ -565,6 +593,13 @@
     <EmbeddedResource Include="Reports\RashodMaterialov.rdlc" />
     <EmbeddedResource Include="Reports\Trebovanie.rdlc" />
     <EmbeddedResource Include="Reports\TTN.rdlc" />
+    <EmbeddedResource Include="Request\RequestForm.resx">
+      <DependentUpon>RequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Request\RequestReport.rdlc" />
+    <EmbeddedResource Include="Request\RequestReportForm.resx">
+      <DependentUpon>RequestReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TempForm.resx">
       <DependentUpon>TempForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -603,6 +638,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TTN\InputOrderNumberForm.resx">
       <DependentUpon>InputOrderNumberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTN\ToolingHandoverNoteForm.resx">
+      <DependentUpon>ToolingHandoverNoteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTN\ToolingHandoverNoteReport.rdlc" />
+    <EmbeddedResource Include="TTN\ToolingHandoverNoteReportForm.resx">
+      <DependentUpon>ToolingHandoverNoteReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TTN\TtnList.resx">
       <DependentUpon>TtnList.cs</DependentUpon>
@@ -645,6 +687,7 @@
     <None Include="Properties\DataSources\Texac.PlanZagruzki.GrafikEntity.datasource" />
     <None Include="Properties\DataSources\Texac.PlanZagruzki.PlanZagruzkiEntity.datasource" />
     <None Include="Properties\DataSources\Texac.PsnHistory.PsnEntity.datasource" />
+    <None Include="Properties\DataSources\Texac.Request.RequestEntity.datasource" />
     <None Include="Properties\DataSources\Texac.Temp.EmployeeEntity.datasource" />
     <None Include="Properties\DataSources\Texac.TTN.DeliveryNotePositionEntity.datasource" />
     <None Include="Properties\Settings.settings">

@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlanOrdersControl));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.chSparePart = new System.Windows.Forms.CheckBox();
             this.tbStartOrderNumber = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cbProducerShop = new System.Windows.Forms.ComboBox();
@@ -78,8 +80,6 @@
             this.tsbCopy = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.myToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.chSparePart = new System.Windows.Forms.CheckBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -118,6 +118,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1200, 196);
             this.panel1.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(379, 150);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 17);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Запчасть:";
+            this.myToolTip.SetToolTip(this.label12, "Цех исполнителя");
+            // 
+            // chSparePart
+            // 
+            this.chSparePart.AutoSize = true;
+            this.chSparePart.Checked = true;
+            this.chSparePart.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chSparePart.Location = new System.Drawing.Point(470, 152);
+            this.chSparePart.Name = "chSparePart";
+            this.chSparePart.Size = new System.Drawing.Size(15, 14);
+            this.chSparePart.TabIndex = 12;
+            this.chSparePart.UseVisualStyleBackColor = true;
             // 
             // tbStartOrderNumber
             // 
@@ -297,9 +318,9 @@
             this.tbOrderType.Name = "tbOrderType";
             this.tbOrderType.Size = new System.Drawing.Size(64, 25);
             this.tbOrderType.TabIndex = 1;
-            this.tbOrderType.Text = "208";
+            this.tbOrderType.Text = "208/";
             this.tbOrderType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.myToolTip.SetToolTip(this.tbOrderType, "Номер заказа завода (например: 24/5, 208, 233 и т.п.)");
+            this.myToolTip.SetToolTip(this.tbOrderType, "Номер заказа завода (например: 24/5, 208/, 233/, 23- и т.п.)");
             // 
             // label2
             // 
@@ -524,27 +545,6 @@
             this.tsbPaste.Size = new System.Drawing.Size(139, 22);
             this.tsbPaste.Text = "Вставить";
             this.tsbPaste.Click += new System.EventHandler(this.tsbPaste_Click);
-            // 
-            // chSparePart
-            // 
-            this.chSparePart.AutoSize = true;
-            this.chSparePart.Checked = true;
-            this.chSparePart.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chSparePart.Location = new System.Drawing.Point(470, 152);
-            this.chSparePart.Name = "chSparePart";
-            this.chSparePart.Size = new System.Drawing.Size(15, 14);
-            this.chSparePart.TabIndex = 12;
-            this.chSparePart.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(379, 150);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 17);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Запчасть:";
-            this.myToolTip.SetToolTip(this.label12, "Цех исполнителя");
             // 
             // PlanOrdersControl
             // 

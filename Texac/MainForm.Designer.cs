@@ -47,6 +47,7 @@
             this.miTtn = new System.Windows.Forms.ToolStripMenuItem();
             this.miDopZN = new System.Windows.Forms.ToolStripMenuItem();
             this.miDeliveryNote = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbRequest = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miMaterialreport = new System.Windows.Forms.ToolStripMenuItem();
             this.miReadyWork = new System.Windows.Forms.ToolStripMenuItem();
@@ -167,7 +168,8 @@
             this.miIssuedMaterials,
             this.miTtn,
             this.miDopZN,
-            this.miDeliveryNote});
+            this.miDeliveryNote,
+            this.tsbRequest});
             this.miDocs.Name = "miDocs";
             this.miDocs.Size = new System.Drawing.Size(82, 20);
             this.miDocs.Text = "Документы";
@@ -208,6 +210,14 @@
             this.miDeliveryNote.Size = new System.Drawing.Size(228, 22);
             this.miDeliveryNote.Text = "Накладная (сдача оснастки)";
             this.miDeliveryNote.Click += new System.EventHandler(this.miDeliveryNote_Click);
+            // 
+            // tsbRequest
+            // 
+            this.tsbRequest.Name = "tsbRequest";
+            this.tsbRequest.Size = new System.Drawing.Size(228, 22);
+            this.tsbRequest.Text = "Заявка";
+            this.tsbRequest.ToolTipText = "Создание заявки";
+            this.tsbRequest.Click += new System.EventHandler(this.tsbRequest_Click);
             // 
             // отчетыToolStripMenuItem
             // 
@@ -368,6 +378,7 @@
         private System.Windows.Forms.ToolStripMenuItem miDeliveryNote;
         private System.Windows.Forms.ToolStripMenuItem miLocksmithOperation;
         private System.Windows.Forms.ToolStripMenuItem miPsnHistory;
+        private System.Windows.Forms.ToolStripMenuItem tsbRequest;
     }
 }
 

@@ -27,6 +27,32 @@ namespace Texac
 
             InitializeComponent();
 
+            AutoCompleteStringCollection autoCompleteCustomers = new AutoCompleteStringCollection();
+            autoCompleteCustomers.AddRange(new string[]
+            {
+                "Гринчик А.С.",
+                "Остапук В.П.",
+                "Сахнюк А.П."
+            });
+
+            AutoCompleteStringCollection autoCompleteCustomerPosts = new AutoCompleteStringCollection();
+            autoCompleteCustomers.AddRange(new string[]
+            {
+                "Начальник бюро",
+                "Начальник цеха",
+                "Зам. начальника цеха"
+            });
+
+            tbCustomer.AutoCompleteMode = AutoCompleteMode.Suggest;
+            tbCustomer.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            tbCustomer.AutoCompleteCustomSource = autoCompleteCustomers;
+            tbCustomer.Leave += TbCustomer_Leave;
+
+            tbCustomerPost.AutoCompleteMode = AutoCompleteMode.Suggest;
+            tbCustomerPost.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            tbCustomerPost.AutoCompleteCustomSource = autoCompleteCustomerPosts;
+            tbCustomerPost.Leave += TbCustomerPost_Leave;
+
             LoadData();
 
             DataGridViewColumn colOrderId = new DataGridViewTextBoxColumn();
@@ -78,13 +104,45 @@ namespace Texac
             collection.Add("Грузовые авто. Запчасти и прочие материалы");
 
             cbOsnovanie.DataSource = collection;
-            //cbOsnovanie.AutoCompleteCustomSource = collection;
-            //cbOsnovanie.AutoCompleteMode = AutoCompleteMode.Append;
-            //            cbOsnovanie.AutoCompleteSource = AutoCompleteSource.CustomSource;
             cbOsnovanie.DataSource = collection;
 
-
             dgvTrebovanieDetails.DataError += DgvTrebovanieDetails_DataError;
+        }
+
+        private void TbCustomerPost_Leave(object sender, EventArgs e)
+        {
+            string customerValue = tbCustomerPost.Text.Trim();
+            if (customerValue == "Начальник бюро")
+            {
+                tbCustomer.Text = "Остапук В.П.";
+
+            }
+            else if (customerValue == "Начальник цеха")
+            {
+                tbCustomer.Text = "Гринчик А.С.";
+            }
+            else if (customerValue == "Зам. начальника цеха")
+            {
+                tbCustomer.Text = "Сахнюк А.П.";
+            }
+        }
+
+        private void TbCustomer_Leave(object sender, EventArgs e)
+        {
+            string customerValue = tbCustomer.Text.Trim();
+            if (customerValue == "Остапук В.П.")
+            {
+                tbCustomerPost.Text = "Начальник бюро"; 
+
+            }
+            else if (customerValue == "Гринчик А.С.")
+            {
+                tbCustomerPost.Text = "Начальник цеха";
+            }
+            else if (customerValue == "Сахнюк А.П.")
+            {
+                tbCustomerPost.Text = "Зам. начальника цеха";
+            }
         }
 
         private void DgvTrebovanieDetails_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -205,6 +263,11 @@ namespace Texac
                     dataDataSet1.TrebovanieRow nr = (dataDataSet1.TrebovanieRow)((DataRowView)bsTrebovanie.Current).Row;
                     nr.DocDate = DateTime.Now;
 
+                    nr.Recipient = "Коцуба С.Ф.";
+                    nr.RecipientPost = "Мастер";
+                    nr.Customer = "Остапук В.П.";
+                    nr.CustomerPost = "Начальник бюро";
+                    nr.WorkshopCode = "ИнЦ_122";
 
                 }  //  end if (copy == true) 
 

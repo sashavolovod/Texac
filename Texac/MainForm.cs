@@ -19,6 +19,7 @@ using Texac.Ollama;
 using Texac.TTN;
 using Texac.LocksmithOperations;
 using Texac.PsnHistory;
+using Texac.Request;
 
 namespace Texac
 {
@@ -365,7 +366,7 @@ namespace Texac
 
         private void miDeliveryNote_Click(object sender, EventArgs e)
         {
-            openNewTab("Накладная (сдача оснастки)");
+            new ToolingHandoverNoteForm().Show();
         }
 
         private void miLocksmithOperation_Click(object sender, EventArgs e)
@@ -376,6 +377,11 @@ namespace Texac
         private void miPsnHistory_Click(object sender, EventArgs e)
         {
             openNewTab("Выписанные накладные");
+        }
+
+        private void tsbRequest_Click(object sender, EventArgs e)
+        {
+            new RequestForm().Show();
         }
     }
 }

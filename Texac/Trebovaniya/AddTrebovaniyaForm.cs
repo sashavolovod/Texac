@@ -114,6 +114,7 @@ namespace Texac.Trebovaniya
                     // заполняем поле "Шифр затрат"
                     if (row.IsOrderNumberNull() || row.OrderNumber.StartsWith("24/5"))
                     {
+                        r.Osnovanie = "Текущий ремонт инвентаря и прочие";
                         if (r.IsNЦехаNull() == false)
                         {
                             if (r.NЦеха == 70)

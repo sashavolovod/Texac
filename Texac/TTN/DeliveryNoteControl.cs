@@ -57,7 +57,7 @@ namespace Texac.TTN
             InputOrderNumberForm frm = new InputOrderNumberForm();
             if(frm.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show(frm.tbOrderNumber.Text);
+               // MessageBox.Show(frm.tbOrderNumber.Text);
             }
         }
 

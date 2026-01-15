@@ -45,8 +45,8 @@
             this.cbWorkshop = new System.Windows.Forms.ComboBox();
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.cbOsnovanie = new System.Windows.Forms.ComboBox();
-            this.customerPostTextBox = new System.Windows.Forms.TextBox();
-            this.recipientPostTextBox = new System.Windows.Forms.TextBox();
+            this.tbCustomerPost = new System.Windows.Forms.TextBox();
+            this.tbRecipientPost = new System.Windows.Forms.TextBox();
             this.cbCostCode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbRecipient = new System.Windows.Forms.TextBox();
@@ -178,8 +178,8 @@
             this.panel1.Controls.Add(this.tbDescription);
             this.panel1.Controls.Add(this.cbOsnovanie);
             this.panel1.Controls.Add(workshopCodeLabel);
-            this.panel1.Controls.Add(this.customerPostTextBox);
-            this.panel1.Controls.Add(this.recipientPostTextBox);
+            this.panel1.Controls.Add(this.tbCustomerPost);
+            this.panel1.Controls.Add(this.tbRecipientPost);
             this.panel1.Controls.Add(this.cbCostCode);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.tbRecipient);
@@ -200,7 +200,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 220);
+            this.panel1.Size = new System.Drawing.Size(1095, 220);
             this.panel1.TabIndex = 13;
             // 
             // cbWorkshop
@@ -238,23 +238,23 @@
             this.cbOsnovanie.Size = new System.Drawing.Size(860, 28);
             this.cbOsnovanie.TabIndex = 28;
             // 
-            // customerPostTextBox
+            // tbCustomerPost
             // 
-            this.customerPostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsTrebovanie, "CustomerPost", true));
-            this.customerPostTextBox.Location = new System.Drawing.Point(127, 51);
-            this.customerPostTextBox.Name = "customerPostTextBox";
-            this.customerPostTextBox.Size = new System.Drawing.Size(231, 27);
-            this.customerPostTextBox.TabIndex = 26;
-            this.toolTip1.SetToolTip(this.customerPostTextBox, "Должность");
+            this.tbCustomerPost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsTrebovanie, "CustomerPost", true));
+            this.tbCustomerPost.Location = new System.Drawing.Point(127, 51);
+            this.tbCustomerPost.Name = "tbCustomerPost";
+            this.tbCustomerPost.Size = new System.Drawing.Size(231, 27);
+            this.tbCustomerPost.TabIndex = 26;
+            this.toolTip1.SetToolTip(this.tbCustomerPost, "Должность");
             // 
-            // recipientPostTextBox
+            // tbRecipientPost
             // 
-            this.recipientPostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsTrebovanie, "RecipientPost", true));
-            this.recipientPostTextBox.Location = new System.Drawing.Point(127, 88);
-            this.recipientPostTextBox.Name = "recipientPostTextBox";
-            this.recipientPostTextBox.Size = new System.Drawing.Size(231, 27);
-            this.recipientPostTextBox.TabIndex = 25;
-            this.toolTip1.SetToolTip(this.recipientPostTextBox, "Должность получателя");
+            this.tbRecipientPost.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsTrebovanie, "RecipientPost", true));
+            this.tbRecipientPost.Location = new System.Drawing.Point(127, 88);
+            this.tbRecipientPost.Name = "tbRecipientPost";
+            this.tbRecipientPost.Size = new System.Drawing.Size(231, 27);
+            this.tbRecipientPost.TabIndex = 25;
+            this.toolTip1.SetToolTip(this.tbRecipientPost, "Должность получателя");
             // 
             // cbCostCode
             // 
@@ -381,10 +381,10 @@
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.btnPrint);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 552);
+            this.panel2.Location = new System.Drawing.Point(0, 584);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1100, 86);
+            this.panel2.Size = new System.Drawing.Size(1095, 86);
             this.panel2.TabIndex = 14;
             // 
             // btnCancel
@@ -393,7 +393,7 @@
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(750, 20);
+            this.btnCancel.Location = new System.Drawing.Point(745, 20);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
@@ -408,7 +408,7 @@
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(910, 20);
+            this.btnSave.Location = new System.Drawing.Point(905, 20);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
@@ -441,7 +441,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 220);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1100, 332);
+            this.panel3.Size = new System.Drawing.Size(1095, 364);
             this.panel3.TabIndex = 15;
             // 
             // dgvTrebovanieDetails
@@ -482,7 +482,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvTrebovanieDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTrebovanieDetails.RowTemplate.Height = 28;
-            this.dgvTrebovanieDetails.Size = new System.Drawing.Size(1100, 307);
+            this.dgvTrebovanieDetails.Size = new System.Drawing.Size(1095, 339);
             this.dgvTrebovanieDetails.TabIndex = 12;
             this.dgvTrebovanieDetails.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvTrebovanieDetails_EditingControlShowing);
             // 
@@ -561,7 +561,7 @@
             this.bnTrebovanieDetails.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bnTrebovanieDetails.Name = "bnTrebovanieDetails";
             this.bnTrebovanieDetails.PositionItem = this.bindingNavigatorPositionItem;
-            this.bnTrebovanieDetails.Size = new System.Drawing.Size(1100, 25);
+            this.bnTrebovanieDetails.Size = new System.Drawing.Size(1095, 25);
             this.bnTrebovanieDetails.TabIndex = 13;
             this.bnTrebovanieDetails.Text = "bindingNavigator1";
             // 
@@ -688,12 +688,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 638);
+            this.ClientSize = new System.Drawing.Size(1095, 670);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(1, 1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TrebovanieForm";
             this.Text = "Требование - ";
@@ -762,9 +763,9 @@
         private System.Windows.Forms.TextBox cbCostCode;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbCustomer;
-        private System.Windows.Forms.TextBox customerPostTextBox;
+        private System.Windows.Forms.TextBox tbCustomerPost;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.TextBox recipientPostTextBox;
+        private System.Windows.Forms.TextBox tbRecipientPost;
         private System.Windows.Forms.ComboBox cbOsnovanie;
         private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.Label label5;

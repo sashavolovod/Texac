@@ -341,15 +341,17 @@ namespace Texac.PlanOrders
                         if (techEmps.Find(item => item.id == order.techEmpId) != null)
                             dgv.Rows[i].Cells["colTechEmp"].Value = (int)order.techEmpId;
 
+                        /*
                         if (i == 0)
                         {
                             if (order.reasonOrder != null)
                                 cbReasonOrder.SelectedValue = (int)order.reasonOrder;
-                            /*
+                         
                             if (order.customerId != null)
                                 cbCustomerShop.SelectedValue = (int)order.customerId;
-                            */
                         }
+                       */
+                    
                     }
                     else
                     {
@@ -679,10 +681,10 @@ namespace Texac.PlanOrders
 
                         Boolean spareParts = chSparePart.Checked;
                         command.Parameters.AddWithValue("@spareParts", spareParts);
-
+                        //MessageBox.Show("Запрос подготовлен");
                         connection.Open();
                         command.ExecuteNonQuery();
-
+                        //MessageBox.Show("Запрос выполнен");
                         OleDbCommand cmdIdentity = new OleDbCommand("Select @@Identity", connection);
                         int newOrderId = (int)cmdIdentity.ExecuteScalar();
 
@@ -699,8 +701,8 @@ namespace Texac.PlanOrders
                         else
                         {
                             startOrderNumber = Convert.ToInt32(tbStartOrderNumber.Text);
-                            orderFullNumber = tbOrderType.Text + "/" + startOrderNumber.ToString() + "-" + newOrderId.ToString();
-                            orderNumber = tbOrderType.Text + "/" + startOrderNumber.ToString();
+                            orderFullNumber = tbOrderType.Text + startOrderNumber.ToString() + "-" + newOrderId.ToString();
+                            orderNumber = tbOrderType.Text + startOrderNumber.ToString();
                             tbStartOrderNumber.Text = (++startOrderNumber).ToString();
                             Properties.Settings.Default.StartOrderNumber = startOrderNumber;
                             Properties.Settings.Default.Save();

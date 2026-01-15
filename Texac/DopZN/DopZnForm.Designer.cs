@@ -57,15 +57,15 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dgvMaterialZN = new System.Windows.Forms.DataGridView();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.taMaterialZN = new Texac.dataDataSet1TableAdapters.qMaterialZNTableAdapter();
-            this.tableAdapterManager = new Texac.dataDataSet1TableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMassaRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMassa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CardNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.taMaterialZN = new Texac.dataDataSet1TableAdapters.qMaterialZNTableAdapter();
+            this.tableAdapterManager = new Texac.dataDataSet1TableAdapters.TableAdapterManager();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qMaterialZNBindingNavigator)).BeginInit();
             this.qMaterialZNBindingNavigator.SuspendLayout();
@@ -330,29 +330,6 @@
             this.dgvMaterialZN.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterialZN_CellEndEdit);
             this.dgvMaterialZN.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.qMaterialZNDataGridView_CellPainting);
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 521);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1087, 22);
-            this.statusStrip1.TabIndex = 5;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // taMaterialZN
-            // 
-            this.taMaterialZN.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.MaterialReportDetailsTableAdapter = null;
-            this.tableAdapterManager.TrebovanieDetailsTableAdapter = null;
-            this.tableAdapterManager.TrebovanieTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Texac.dataDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ВидыПрофессиийTableAdapter = null;
-            this.tableAdapterManager.РаботникиЦехаTableAdapter = null;
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "NППЗаказа";
@@ -399,6 +376,29 @@
             this.CardNum.HeaderText = "Номер карточки";
             this.CardNum.Name = "CardNum";
             this.CardNum.Width = 150;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 521);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1087, 22);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // taMaterialZN
+            // 
+            this.taMaterialZN.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.MaterialReportDetailsTableAdapter = null;
+            this.tableAdapterManager.TrebovanieDetailsTableAdapter = null;
+            this.tableAdapterManager.TrebovanieTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Texac.dataDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ВидыПрофессиийTableAdapter = null;
+            this.tableAdapterManager.РаботникиЦехаTableAdapter = null;
             // 
             // DopZnForm
             // 

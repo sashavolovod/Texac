@@ -45,7 +45,7 @@ namespace Texac.TTN
                 
             }
         }
-
+        /*
         private async DeliveryNoteEntity getDeliveryNoteEntityAsync()
         {
             using (HttpClient client = new HttpClient())
@@ -68,5 +68,6 @@ namespace Texac.TTN
                 }
             }
         }
+        */
     }
 }
