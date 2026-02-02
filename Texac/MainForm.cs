@@ -20,6 +20,7 @@ using Texac.TTN;
 using Texac.LocksmithOperations;
 using Texac.PsnHistory;
 using Texac.Request;
+using Texac.Ekon.Inventory;
 
 namespace Texac
 {
@@ -41,7 +42,7 @@ namespace Texac
 
             miAddPlanOrders.Enabled = Environment.MachineName.Equals("WIN7X64") || Environment.MachineName.Equals("INC-TECH08");
             miAdmin.Visible = Environment.MachineName.Equals("WIN7X64");
-            openNewTab("AI ассистент");
+            //openNewTab("Метериальный отчет по оборотной ведомости");
             //openNewTab("Распределение слесарных работ по типу оснастки");
 
         }
@@ -115,7 +116,7 @@ namespace Texac
         {
             switch (tabPageName)
             {
-                case "Список рабоников цеха":
+                case "Список работников цеха":
                     return new EmployeeList();
                 case "Требования":
                     return new TrebovanieList();
@@ -135,6 +136,8 @@ namespace Texac
                     return new LocksmithOperationControl();
                 case "Выписанные накладные":
                     return new PsnListControl();
+                case "Метериальный отчет по оборотной ведомости":
+                    return new InventoryControl();
                 default:
                     return new Control();
             };
@@ -382,6 +385,11 @@ namespace Texac
         private void tsbRequest_Click(object sender, EventArgs e)
         {
             new RequestForm().Show();
+        }
+
+        private void miInventoryReport_Click(object sender, EventArgs e)
+        {
+            openNewTab("Метериальный отчет по оборотной ведомости");
         }
     }
 }

@@ -135,7 +135,7 @@ WHERE
                 }
                 catch (AggregateException ex)
                 {
-                    MessageBox.Show("Ошибка при получении номера документа", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ошибка при получении номера документа." + ex.Message, "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             return "";

@@ -61,6 +61,7 @@
             this.miAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.miDeploy = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.miInventoryReport = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -228,7 +229,8 @@
             this.miPlanZagruzki,
             this.miOsnastka,
             this.miEqupmentByTO,
-            this.miPsnHistory});
+            this.miPsnHistory,
+            this.miInventoryReport});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
@@ -324,6 +326,14 @@
             this.tabControl1.MouseLeave += new System.EventHandler(this.tabControl1_MouseLeave);
             this.tabControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseMove);
             // 
+            // miInventoryReport
+            // 
+            this.miInventoryReport.Image = ((System.Drawing.Image)(resources.GetObject("miInventoryReport.Image")));
+            this.miInventoryReport.Name = "miInventoryReport";
+            this.miInventoryReport.Size = new System.Drawing.Size(371, 22);
+            this.miInventoryReport.Text = "Метериальный отчет по оборотной ведомости";
+            this.miInventoryReport.Click += new System.EventHandler(this.miInventoryReport_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,6 +389,7 @@
         private System.Windows.Forms.ToolStripMenuItem miLocksmithOperation;
         private System.Windows.Forms.ToolStripMenuItem miPsnHistory;
         private System.Windows.Forms.ToolStripMenuItem tsbRequest;
+        private System.Windows.Forms.ToolStripMenuItem miInventoryReport;
     }
 }
 
