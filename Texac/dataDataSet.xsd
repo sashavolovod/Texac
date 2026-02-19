@@ -223,7 +223,12 @@
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT NТабельный, Подразделение, Звено, Имя, Фамилия, ФИО, ПрофессияДолжность, Разряд, Операция, ВыполняемыеОперации, ДатаНайма, Работает, Категория, Адрес, ДомашнийТелефон, ДатаРождения, МестоРождения, МестоУчебы, ГодОкУЗ, Факультет, Специальность, ПредМР, Примечания, УслТруда, КТУ, WORKERSUM, UserLogin, Руководитель, PassportSeria, RealAdress, FamilyStatus, PassportNumber, PassportDate, PassportOffice, PersonalNumber, MobilePhoneZone, MobilePhone, Profession1, Profession2, Profession3, Profession4, Profession5, Profession6, Rost, Razmer, RazmerObuvi, ПрофессияСИЗ, КодРазмера FROM РаботникиЦеха</CommandText>
+                    <CommandText>SELECT        NТабельный, Подразделение, Звено, Имя, Фамилия, ФИО, ПрофессияДолжность, Разряд, Операция, ВыполняемыеОперации, ДатаНайма, Работает, 
+                         Категория, Адрес, ДомашнийТелефон, ДатаРождения, МестоРождения, МестоУчебы, ГодОкУЗ, Факультет, Специальность, ПредМР, Примечания, УслТруда, 
+                         КТУ, WORKERSUM, UserLogin, Руководитель, PassportSeria, RealAdress, FamilyStatus, PassportNumber, PassportDate, PassportOffice, PersonalNumber, 
+                         MobilePhoneZone, MobilePhone, Profession1, Profession2, Profession3, Profession4, Profession5, Profession6, Rost, Razmer, RazmerObuvi, ПрофессияСИЗ, 
+                         КодРазмера
+FROM            РаботникиЦеха</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -379,7 +384,6 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="NТабельный" DataSetColumn="NТабельный" />
-              <Mapping SourceColumn="Подразделение" DataSetColumn="Подразделение" />
               <Mapping SourceColumn="Звено" DataSetColumn="Звено" />
               <Mapping SourceColumn="Имя" DataSetColumn="Имя" />
               <Mapping SourceColumn="Фамилия" DataSetColumn="Фамилия" />
@@ -426,6 +430,7 @@
               <Mapping SourceColumn="RazmerObuvi" DataSetColumn="RazmerObuvi" />
               <Mapping SourceColumn="ПрофессияСИЗ" DataSetColumn="ПрофессияСИЗ" />
               <Mapping SourceColumn="КодРазмера" DataSetColumn="КодРазмера" />
+              <Mapping SourceColumn="Подразделение" DataSetColumn="Подразделение" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -434,7 +439,9 @@
               <DbSource ConnectionRef="connStr (Settings)" DbObjectName="РаботникиView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT NТабельный, ФИО, Название, СокрНазвание, Работает, Подразд FROM РаботникиView Order by ФИО</CommandText>
+                    <CommandText>SELECT        NТабельный, ФИО, Название, СокрНазвание, Работает, Подразд, Категория
+FROM            РаботникиView
+ORDER BY Категория, ФИО</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -447,12 +454,13 @@
               <Mapping SourceColumn="СокрНазвание" DataSetColumn="СокрНазвание" />
               <Mapping SourceColumn="Работает" DataSetColumn="Работает" />
               <Mapping SourceColumn="Подразд" DataSetColumn="Подразд" />
+              <Mapping SourceColumn="Категория" DataSetColumn="Категория" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="connStr (Settings)" DbObjectName="РаботникиView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillWorking" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillWorking" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillWorking">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT NТабельный, Название, Подразд, Работает, СокрНазвание, ФИО FROM РаботникиView WHERE (Работает = true)</CommandText>
+                    <CommandText>SELECT NТабельный, Категория, Название, Подразд, Работает, СокрНазвание, ФИО FROM РаботникиView WHERE (Работает = true)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1105,7 +1113,7 @@ ORDER BY NЗаказаЗавода</CommandText>
   <xs:element name="dataDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dataDataSet" msprop:Generator_UserDSName="dataDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ВидыПрофессиий" msprop:Generator_TableClassName="ВидыПрофессиийDataTable" msprop:Generator_TableVarName="tableВидыПрофессиий" msprop:Generator_RowChangedName="ВидыПрофессиийRowChanged" msprop:Generator_TablePropName="ВидыПрофессиий" msprop:Generator_RowDeletingName="ВидыПрофессиийRowDeleting" msprop:Generator_RowChangingName="ВидыПрофессиийRowChanging" msprop:Generator_RowEvHandlerName="ВидыПрофессиийRowChangeEventHandler" msprop:Generator_RowDeletedName="ВидыПрофессиийRowDeleted" msprop:Generator_RowClassName="ВидыПрофессиийRow" msprop:Generator_UserTableName="ВидыПрофессиий" msprop:Generator_RowEvArgName="ВидыПрофессиийRowChangeEvent">
+        <xs:element name="ВидыПрофессиий" msprop:Generator_TableClassName="ВидыПрофессиийDataTable" msprop:Generator_TableVarName="tableВидыПрофессиий" msprop:Generator_TablePropName="ВидыПрофессиий" msprop:Generator_RowDeletingName="ВидыПрофессиийRowDeleting" msprop:Generator_RowChangingName="ВидыПрофессиийRowChanging" msprop:Generator_RowEvHandlerName="ВидыПрофессиийRowChangeEventHandler" msprop:Generator_RowDeletedName="ВидыПрофессиийRowDeleted" msprop:Generator_UserTableName="ВидыПрофессиий" msprop:Generator_RowChangedName="ВидыПрофессиийRowChanged" msprop:Generator_RowEvArgName="ВидыПрофессиийRowChangeEvent" msprop:Generator_RowClassName="ВидыПрофессиийRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Код" msprop:Generator_ColumnVarNameInTable="columnКод" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_UserColumnName="Код" type="xs:short" />
@@ -1126,11 +1134,10 @@ ORDER BY NЗаказаЗавода</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="РаботникиЦеха" msprop:Generator_TableClassName="РаботникиЦехаDataTable" msprop:Generator_TableVarName="tableРаботникиЦеха" msprop:Generator_RowChangedName="РаботникиЦехаRowChanged" msprop:Generator_TablePropName="РаботникиЦеха" msprop:Generator_RowDeletingName="РаботникиЦехаRowDeleting" msprop:Generator_RowChangingName="РаботникиЦехаRowChanging" msprop:Generator_RowEvHandlerName="РаботникиЦехаRowChangeEventHandler" msprop:Generator_RowDeletedName="РаботникиЦехаRowDeleted" msprop:Generator_RowClassName="РаботникиЦехаRow" msprop:Generator_UserTableName="РаботникиЦеха" msprop:Generator_RowEvArgName="РаботникиЦехаRowChangeEvent">
+        <xs:element name="РаботникиЦеха" msprop:Generator_TableClassName="РаботникиЦехаDataTable" msprop:Generator_TableVarName="tableРаботникиЦеха" msprop:Generator_TablePropName="РаботникиЦеха" msprop:Generator_RowDeletingName="РаботникиЦехаRowDeleting" msprop:Generator_RowChangingName="РаботникиЦехаRowChanging" msprop:Generator_RowEvHandlerName="РаботникиЦехаRowChangeEventHandler" msprop:Generator_RowDeletedName="РаботникиЦехаRowDeleted" msprop:Generator_UserTableName="РаботникиЦеха" msprop:Generator_RowChangedName="РаботникиЦехаRowChanged" msprop:Generator_RowEvArgName="РаботникиЦехаRowChangeEvent" msprop:Generator_RowClassName="РаботникиЦехаRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NТабельный" msprop:Generator_ColumnVarNameInTable="columnNТабельный" msprop:Generator_ColumnPropNameInRow="NТабельный" msprop:Generator_ColumnPropNameInTable="NТабельныйColumn" msprop:Generator_UserColumnName="NТабельный" type="xs:int" />
-              <xs:element name="Подразделение" msprop:Generator_ColumnVarNameInTable="columnПодразделение" msprop:Generator_ColumnPropNameInRow="Подразделение" msprop:Generator_ColumnPropNameInTable="ПодразделениеColumn" msprop:Generator_UserColumnName="Подразделение" type="xs:short" minOccurs="0" />
               <xs:element name="Звено" msprop:Generator_ColumnVarNameInTable="columnЗвено" msprop:Generator_ColumnPropNameInRow="Звено" msprop:Generator_ColumnPropNameInTable="ЗвеноColumn" msprop:Generator_UserColumnName="Звено" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1315,10 +1322,11 @@ ORDER BY NЗаказаЗавода</CommandText>
               <xs:element name="RazmerObuvi" msprop:Generator_ColumnVarNameInTable="columnRazmerObuvi" msprop:Generator_ColumnPropNameInRow="RazmerObuvi" msprop:Generator_ColumnPropNameInTable="RazmerObuviColumn" msprop:Generator_UserColumnName="RazmerObuvi" type="xs:int" minOccurs="0" />
               <xs:element name="ПрофессияСИЗ" msprop:Generator_ColumnVarNameInTable="columnПрофессияСИЗ" msprop:Generator_ColumnPropNameInRow="ПрофессияСИЗ" msprop:Generator_ColumnPropNameInTable="ПрофессияСИЗColumn" msprop:Generator_UserColumnName="ПрофессияСИЗ" type="xs:int" minOccurs="0" />
               <xs:element name="КодРазмера" msprop:Generator_ColumnVarNameInTable="columnКодРазмера" msprop:Generator_ColumnPropNameInRow="КодРазмера" msprop:Generator_ColumnPropNameInTable="КодРазмераColumn" msprop:Generator_UserColumnName="КодРазмера" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Подразделение" msprop:Generator_ColumnVarNameInTable="columnПодразделение" msprop:Generator_ColumnPropNameInRow="Подразделение" msprop:Generator_ColumnPropNameInTable="ПодразделениеColumn" msprop:Generator_UserColumnName="Подразделение" type="xs:short" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="РаботникиView" msprop:Generator_TableClassName="РаботникиViewDataTable" msprop:Generator_TableVarName="tableРаботникиView" msprop:Generator_TablePropName="РаботникиView" msprop:Generator_RowDeletingName="РаботникиViewRowDeleting" msprop:Generator_RowChangingName="РаботникиViewRowChanging" msprop:Generator_RowEvHandlerName="РаботникиViewRowChangeEventHandler" msprop:Generator_RowDeletedName="РаботникиViewRowDeleted" msprop:Generator_UserTableName="РаботникиView" msprop:Generator_RowChangedName="РаботникиViewRowChanged" msprop:Generator_RowEvArgName="РаботникиViewRowChangeEvent" msprop:Generator_RowClassName="РаботникиViewRow">
+        <xs:element name="РаботникиView" msprop:Generator_TableClassName="РаботникиViewDataTable" msprop:Generator_TableVarName="tableРаботникиView" msprop:Generator_RowChangedName="РаботникиViewRowChanged" msprop:Generator_TablePropName="РаботникиView" msprop:Generator_RowDeletingName="РаботникиViewRowDeleting" msprop:Generator_RowChangingName="РаботникиViewRowChanging" msprop:Generator_RowEvHandlerName="РаботникиViewRowChangeEventHandler" msprop:Generator_RowDeletedName="РаботникиViewRowDeleted" msprop:Generator_RowClassName="РаботникиViewRow" msprop:Generator_UserTableName="РаботникиView" msprop:Generator_RowEvArgName="РаботникиViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NТабельный" msprop:Generator_ColumnVarNameInTable="columnNТабельный" msprop:Generator_ColumnPropNameInRow="NТабельный" msprop:Generator_ColumnPropNameInTable="NТабельныйColumn" msprop:Generator_UserColumnName="NТабельный" type="xs:int" minOccurs="0" />
@@ -1351,10 +1359,11 @@ ORDER BY NЗаказаЗавода</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Категория" msprop:Generator_ColumnVarNameInTable="columnКатегория" msprop:Generator_ColumnPropNameInRow="Категория" msprop:Generator_ColumnPropNameInTable="КатегорияColumn" msprop:Generator_UserColumnName="Категория" type="xs:unsignedByte" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RashodMaterialovView" msprop:Generator_TableClassName="RashodMaterialovViewDataTable" msprop:Generator_TableVarName="tableRashodMaterialovView" msprop:Generator_TablePropName="RashodMaterialovView" msprop:Generator_RowDeletingName="RashodMaterialovViewRowDeleting" msprop:Generator_RowChangingName="RashodMaterialovViewRowChanging" msprop:Generator_RowEvHandlerName="RashodMaterialovViewRowChangeEventHandler" msprop:Generator_RowDeletedName="RashodMaterialovViewRowDeleted" msprop:Generator_UserTableName="RashodMaterialovView" msprop:Generator_RowChangedName="RashodMaterialovViewRowChanged" msprop:Generator_RowEvArgName="RashodMaterialovViewRowChangeEvent" msprop:Generator_RowClassName="RashodMaterialovViewRow">
+        <xs:element name="RashodMaterialovView" msprop:Generator_TableClassName="RashodMaterialovViewDataTable" msprop:Generator_TableVarName="tableRashodMaterialovView" msprop:Generator_RowChangedName="RashodMaterialovViewRowChanged" msprop:Generator_TablePropName="RashodMaterialovView" msprop:Generator_RowDeletingName="RashodMaterialovViewRowDeleting" msprop:Generator_RowChangingName="RashodMaterialovViewRowChanging" msprop:Generator_RowEvHandlerName="RashodMaterialovViewRowChangeEventHandler" msprop:Generator_RowDeletedName="RashodMaterialovViewRowDeleted" msprop:Generator_RowClassName="RashodMaterialovViewRow" msprop:Generator_UserTableName="RashodMaterialovView" msprop:Generator_RowEvArgName="RashodMaterialovViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Материал_" msprop:Generator_ColumnVarNameInTable="columnМатериал_" msprop:Generator_ColumnPropNameInRow="Материал_" msprop:Generator_ColumnPropNameInTable="Материал_Column" msprop:Generator_UserColumnName="Материал_" minOccurs="0">
@@ -1415,7 +1424,7 @@ ORDER BY NЗаказаЗавода</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Trebovanie" msprop:Generator_TableClassName="TrebovanieDataTable" msprop:Generator_TableVarName="tableTrebovanie" msprop:Generator_TablePropName="Trebovanie" msprop:Generator_RowDeletingName="TrebovanieRowDeleting" msprop:Generator_RowChangingName="TrebovanieRowChanging" msprop:Generator_RowEvHandlerName="TrebovanieRowChangeEventHandler" msprop:Generator_RowDeletedName="TrebovanieRowDeleted" msprop:Generator_UserTableName="Trebovanie" msprop:Generator_RowChangedName="TrebovanieRowChanged" msprop:Generator_RowEvArgName="TrebovanieRowChangeEvent" msprop:Generator_RowClassName="TrebovanieRow">
+        <xs:element name="Trebovanie" msprop:Generator_TableClassName="TrebovanieDataTable" msprop:Generator_TableVarName="tableTrebovanie" msprop:Generator_RowChangedName="TrebovanieRowChanged" msprop:Generator_TablePropName="Trebovanie" msprop:Generator_RowDeletingName="TrebovanieRowDeleting" msprop:Generator_RowChangingName="TrebovanieRowChanging" msprop:Generator_RowEvHandlerName="TrebovanieRowChangeEventHandler" msprop:Generator_RowDeletedName="TrebovanieRowDeleted" msprop:Generator_RowClassName="TrebovanieRow" msprop:Generator_UserTableName="Trebovanie" msprop:Generator_RowEvArgName="TrebovanieRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TrebovanieId" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTrebovanieId" msprop:Generator_ColumnPropNameInRow="TrebovanieId" msprop:Generator_ColumnPropNameInTable="TrebovanieIdColumn" msprop:Generator_UserColumnName="TrebovanieId" type="xs:int" />
@@ -1442,7 +1451,7 @@ ORDER BY NЗаказаЗавода</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TrebovanieDetails" msprop:Generator_TableClassName="TrebovanieDetailsDataTable" msprop:Generator_TableVarName="tableTrebovanieDetails" msprop:Generator_TablePropName="TrebovanieDetails" msprop:Generator_RowDeletingName="TrebovanieDetailsRowDeleting" msprop:Generator_RowChangingName="TrebovanieDetailsRowChanging" msprop:Generator_RowEvHandlerName="TrebovanieDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="TrebovanieDetailsRowDeleted" msprop:Generator_UserTableName="TrebovanieDetails" msprop:Generator_RowChangedName="TrebovanieDetailsRowChanged" msprop:Generator_RowEvArgName="TrebovanieDetailsRowChangeEvent" msprop:Generator_RowClassName="TrebovanieDetailsRow">
+        <xs:element name="TrebovanieDetails" msprop:Generator_TableClassName="TrebovanieDetailsDataTable" msprop:Generator_TableVarName="tableTrebovanieDetails" msprop:Generator_RowChangedName="TrebovanieDetailsRowChanged" msprop:Generator_TablePropName="TrebovanieDetails" msprop:Generator_RowDeletingName="TrebovanieDetailsRowDeleting" msprop:Generator_RowChangingName="TrebovanieDetailsRowChanging" msprop:Generator_RowEvHandlerName="TrebovanieDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="TrebovanieDetailsRowDeleted" msprop:Generator_RowClassName="TrebovanieDetailsRow" msprop:Generator_UserTableName="TrebovanieDetails" msprop:Generator_RowEvArgName="TrebovanieDetailsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="tblTrebovanieDetailId" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columntblTrebovanieDetailId" msprop:Generator_ColumnPropNameInRow="tblTrebovanieDetailId" msprop:Generator_ColumnPropNameInTable="tblTrebovanieDetailIdColumn" msprop:Generator_UserColumnName="tblTrebovanieDetailId" type="xs:int" />
@@ -1470,7 +1479,7 @@ ORDER BY NЗаказаЗавода</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AddTrebovaniyaView" msprop:Generator_TableClassName="AddTrebovaniyaViewDataTable" msprop:Generator_TableVarName="tableAddTrebovaniyaView" msprop:Generator_RowChangedName="AddTrebovaniyaViewRowChanged" msprop:Generator_TablePropName="AddTrebovaniyaView" msprop:Generator_RowDeletingName="AddTrebovaniyaViewRowDeleting" msprop:Generator_RowChangingName="AddTrebovaniyaViewRowChanging" msprop:Generator_RowEvHandlerName="AddTrebovaniyaViewRowChangeEventHandler" msprop:Generator_RowDeletedName="AddTrebovaniyaViewRowDeleted" msprop:Generator_RowClassName="AddTrebovaniyaViewRow" msprop:Generator_UserTableName="AddTrebovaniyaView" msprop:Generator_RowEvArgName="AddTrebovaniyaViewRowChangeEvent">
+        <xs:element name="AddTrebovaniyaView" msprop:Generator_TableClassName="AddTrebovaniyaViewDataTable" msprop:Generator_TableVarName="tableAddTrebovaniyaView" msprop:Generator_TablePropName="AddTrebovaniyaView" msprop:Generator_RowDeletingName="AddTrebovaniyaViewRowDeleting" msprop:Generator_RowChangingName="AddTrebovaniyaViewRowChanging" msprop:Generator_RowEvHandlerName="AddTrebovaniyaViewRowChangeEventHandler" msprop:Generator_RowDeletedName="AddTrebovaniyaViewRowDeleted" msprop:Generator_UserTableName="AddTrebovaniyaView" msprop:Generator_RowChangedName="AddTrebovaniyaViewRowChanged" msprop:Generator_RowEvArgName="AddTrebovaniyaViewRowChangeEvent" msprop:Generator_RowClassName="AddTrebovaniyaViewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MatCartId" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMatCartId" msprop:Generator_ColumnPropNameInRow="MatCartId" msprop:Generator_ColumnPropNameInTable="MatCartIdColumn" msprop:Generator_UserColumnName="MatCartId" type="xs:int" minOccurs="0" />
@@ -1518,7 +1527,7 @@ ORDER BY NЗаказаЗавода</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DepartmentsView" msprop:Generator_TableClassName="DepartmentsViewDataTable" msprop:Generator_TableVarName="tableDepartmentsView" msprop:Generator_RowChangedName="DepartmentsViewRowChanged" msprop:Generator_TablePropName="DepartmentsView" msprop:Generator_RowDeletingName="DepartmentsViewRowDeleting" msprop:Generator_RowChangingName="DepartmentsViewRowChanging" msprop:Generator_RowEvHandlerName="DepartmentsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentsViewRowDeleted" msprop:Generator_RowClassName="DepartmentsViewRow" msprop:Generator_UserTableName="DepartmentsView" msprop:Generator_RowEvArgName="DepartmentsViewRowChangeEvent">
+        <xs:element name="DepartmentsView" msprop:Generator_TableClassName="DepartmentsViewDataTable" msprop:Generator_TableVarName="tableDepartmentsView" msprop:Generator_TablePropName="DepartmentsView" msprop:Generator_RowDeletingName="DepartmentsViewRowDeleting" msprop:Generator_RowChangingName="DepartmentsViewRowChanging" msprop:Generator_RowEvHandlerName="DepartmentsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartmentsViewRowDeleted" msprop:Generator_UserTableName="DepartmentsView" msprop:Generator_RowChangedName="DepartmentsViewRowChanged" msprop:Generator_RowEvArgName="DepartmentsViewRowChangeEvent" msprop:Generator_RowClassName="DepartmentsViewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DeptId" msprop:Generator_ColumnVarNameInTable="columnDeptId" msprop:Generator_ColumnPropNameInRow="DeptId" msprop:Generator_ColumnPropNameInTable="DeptIdColumn" msprop:Generator_UserColumnName="DeptId" type="xs:int" />
@@ -1539,7 +1548,7 @@ ORDER BY NЗаказаЗавода</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MaterialReportDetails" msprop:Generator_TableClassName="MaterialReportDetailsDataTable" msprop:Generator_TableVarName="tableMaterialReportDetails" msprop:Generator_TablePropName="MaterialReportDetails" msprop:Generator_RowDeletingName="MaterialReportDetailsRowDeleting" msprop:Generator_RowChangingName="MaterialReportDetailsRowChanging" msprop:Generator_RowEvHandlerName="MaterialReportDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialReportDetailsRowDeleted" msprop:Generator_UserTableName="MaterialReportDetails" msprop:Generator_RowChangedName="MaterialReportDetailsRowChanged" msprop:Generator_RowEvArgName="MaterialReportDetailsRowChangeEvent" msprop:Generator_RowClassName="MaterialReportDetailsRow">
+        <xs:element name="MaterialReportDetails" msprop:Generator_TableClassName="MaterialReportDetailsDataTable" msprop:Generator_TableVarName="tableMaterialReportDetails" msprop:Generator_RowChangedName="MaterialReportDetailsRowChanged" msprop:Generator_TablePropName="MaterialReportDetails" msprop:Generator_RowDeletingName="MaterialReportDetailsRowDeleting" msprop:Generator_RowChangingName="MaterialReportDetailsRowChanging" msprop:Generator_RowEvHandlerName="MaterialReportDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialReportDetailsRowDeleted" msprop:Generator_RowClassName="MaterialReportDetailsRow" msprop:Generator_UserTableName="MaterialReportDetails" msprop:Generator_RowEvArgName="MaterialReportDetailsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MaterialDetailID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMaterialDetailID" msprop:Generator_ColumnPropNameInRow="MaterialDetailID" msprop:Generator_ColumnPropNameInTable="MaterialDetailIDColumn" msprop:Generator_UserColumnName="MaterialDetailID" type="xs:int" />
@@ -1579,7 +1588,7 @@ ORDER BY NЗаказаЗавода</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="IssuedMaterialsView" msprop:Generator_TableClassName="IssuedMaterialsViewDataTable" msprop:Generator_TableVarName="tableIssuedMaterialsView" msprop:Generator_TablePropName="IssuedMaterialsView" msprop:Generator_RowDeletingName="IssuedMaterialsViewRowDeleting" msprop:Generator_RowChangingName="IssuedMaterialsViewRowChanging" msprop:Generator_RowEvHandlerName="IssuedMaterialsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="IssuedMaterialsViewRowDeleted" msprop:Generator_UserTableName="IssuedMaterialsView" msprop:Generator_RowChangedName="IssuedMaterialsViewRowChanged" msprop:Generator_RowEvArgName="IssuedMaterialsViewRowChangeEvent" msprop:Generator_RowClassName="IssuedMaterialsViewRow">
+        <xs:element name="IssuedMaterialsView" msprop:Generator_TableClassName="IssuedMaterialsViewDataTable" msprop:Generator_TableVarName="tableIssuedMaterialsView" msprop:Generator_RowChangedName="IssuedMaterialsViewRowChanged" msprop:Generator_TablePropName="IssuedMaterialsView" msprop:Generator_RowDeletingName="IssuedMaterialsViewRowDeleting" msprop:Generator_RowChangingName="IssuedMaterialsViewRowChanging" msprop:Generator_RowEvHandlerName="IssuedMaterialsViewRowChangeEventHandler" msprop:Generator_RowDeletedName="IssuedMaterialsViewRowDeleted" msprop:Generator_RowClassName="IssuedMaterialsViewRow" msprop:Generator_UserTableName="IssuedMaterialsView" msprop:Generator_RowEvArgName="IssuedMaterialsViewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CardNumber" msprop:Generator_ColumnVarNameInTable="columnCardNumber" msprop:Generator_ColumnPropNameInRow="CardNumber" msprop:Generator_ColumnPropNameInTable="CardNumberColumn" msprop:Generator_UserColumnName="CardNumber" type="xs:int" minOccurs="0" />
@@ -1611,7 +1620,7 @@ ORDER BY NЗаказаЗавода</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Orders208" msprop:Generator_TableClassName="Orders208DataTable" msprop:Generator_TableVarName="tableOrders208" msprop:Generator_RowChangedName="Orders208RowChanged" msprop:Generator_TablePropName="Orders208" msprop:Generator_RowDeletingName="Orders208RowDeleting" msprop:Generator_RowChangingName="Orders208RowChanging" msprop:Generator_RowEvHandlerName="Orders208RowChangeEventHandler" msprop:Generator_RowDeletedName="Orders208RowDeleted" msprop:Generator_RowClassName="Orders208Row" msprop:Generator_UserTableName="Orders208" msprop:Generator_RowEvArgName="Orders208RowChangeEvent">
+        <xs:element name="Orders208" msprop:Generator_TableClassName="Orders208DataTable" msprop:Generator_TableVarName="tableOrders208" msprop:Generator_TablePropName="Orders208" msprop:Generator_RowDeletingName="Orders208RowDeleting" msprop:Generator_RowChangingName="Orders208RowChanging" msprop:Generator_RowEvHandlerName="Orders208RowChangeEventHandler" msprop:Generator_RowDeletedName="Orders208RowDeleted" msprop:Generator_UserTableName="Orders208" msprop:Generator_RowChangedName="Orders208RowChanged" msprop:Generator_RowEvArgName="Orders208RowChangeEvent" msprop:Generator_RowClassName="Orders208Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NППЗаказа" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnNППЗаказа" msprop:Generator_ColumnPropNameInRow="NППЗаказа" msprop:Generator_ColumnPropNameInTable="NППЗаказаColumn" msprop:Generator_UserColumnName="NППЗаказа" type="xs:int" minOccurs="0" />
@@ -1675,7 +1684,7 @@ ORDER BY NЗаказаЗавода</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="tblTrebovanietblTrebovanieDetails" msdata:parent="Trebovanie" msdata:child="TrebovanieDetails" msdata:parentkey="TrebovanieId" msdata:childkey="tblTrebovanielId" msprop:Generator_UserChildTable="TrebovanieDetails" msprop:Generator_ChildPropName="GetTrebovanieDetailsRows" msprop:Generator_UserRelationName="tblTrebovanietblTrebovanieDetails" msprop:Generator_RelationVarName="relationtblTrebovanietblTrebovanieDetails" msprop:Generator_UserParentTable="Trebovanie" msprop:Generator_ParentPropName="TrebovanieRow" />
+      <msdata:Relationship name="tblTrebovanietblTrebovanieDetails" msdata:parent="Trebovanie" msdata:child="TrebovanieDetails" msdata:parentkey="TrebovanieId" msdata:childkey="tblTrebovanielId" msprop:Generator_UserChildTable="TrebovanieDetails" msprop:Generator_ChildPropName="GetTrebovanieDetailsRows" msprop:Generator_UserRelationName="tblTrebovanietblTrebovanieDetails" msprop:Generator_ParentPropName="TrebovanieRow" msprop:Generator_RelationVarName="relationtblTrebovanietblTrebovanieDetails" msprop:Generator_UserParentTable="Trebovanie" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -22,9 +22,8 @@ namespace Texac.Ekon.Inventory
             public string ObozTO { get; set; }
         }
 
-        public static InventoryEntity ParseInventoryData(string fileContent)
+        public static async Task<InventoryEntity> ParseInventoryData(string fileContent)
         {
-
             InventoryEntity inventory = new InventoryEntity();
             inventory.entries = new List<InventoryEntry>();
 
@@ -48,7 +47,9 @@ namespace Texac.Ekon.Inventory
             );
 
             inventory.endDate = inventory.startDate.AddMonths(1).AddSeconds(-1);
-            
+
+            List<InventoryStore> storeItems = new List<InventoryStore>();
+
 
             for (int i = 0; i < lines.Length; i++)
             {
@@ -84,18 +85,31 @@ namespace Texac.Ekon.Inventory
                 string field4 = fields[4].Trim();
                 if (field4 == "х")
                 {
-                    var entry = new InventoryEntry
+                    try
                     {
-                        orderNumber = currentOrderNumber,
-                        code = fields[1].Trim(),
-                        name = fields[2].Trim(),
-                        unit = field3,
-                        startQuantity = ParseDouble(fields[5]),
-                        debitQuantity = ParseDouble(fields[7]),
-                        creditQuantity = ParseDouble(fields[9]),
-                        endQuantity = ParseDouble(fields[11]),
-                    };
-                    inventory.entries.Add(entry);
+                        var entry = new InventoryEntry();
+                        entry.orderNumber = currentOrderNumber;
+                        entry.code = fields[1].Trim();
+                        entry.name = fields[2].Trim();
+                        entry.unit = field3;
+                        entry.startQuantity = ParseDouble(fields[5]);
+                        entry.startCost = ParseDouble(fields[6]);
+                        entry.debitQuantity = ParseDouble(fields[7]);
+                        entry.debitCost = ParseDouble(fields[8]);
+                        entry.creditQuantity = ParseDouble(fields[9]);
+                        entry.creditCost = ParseDouble(fields[10]);
+                        entry.endQuantity = ParseDouble(fields[11]);
+                        if (fields.Length > 12)
+                            entry.endCost = ParseDouble(fields[12]);
+                        inventory.entries.Add(entry);
+
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message + line);
+                    }
                 }
                 // Пропускаем служебные строки и строки ТТН (они не содержат "х" в fields[4])
             }
@@ -170,7 +184,7 @@ namespace Texac.Ekon.Inventory
                                     int orderId = Convert.ToInt32(reader[1]);
                                     int remainingQty = reader[2] == DBNull.Value ? 0 : Convert.ToInt32(reader[2]);
                                     double completed = reader[3] == DBNull.Value ? 0 : Convert.ToDouble(reader[3]);
-                                    DateTime? factReadyDate = reader[4] == DBNull.Value ? (DateTime?) null : Convert.ToDateTime(reader[4]);
+                                    DateTime? factReadyDate = reader[4] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader[4]);
                                     string emp = reader[5].ToString();
                                     string obozTO = reader[6].ToString();
 
@@ -244,7 +258,6 @@ GROUP BY o.NППЗаказа, CardNum, Материа",
                         }
 
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -254,16 +267,18 @@ GROUP BY o.NППЗаказа, CardNum, Материа",
 
 
             // списание материалов
-
             foreach (InventoryEntry entry in inventory.entries)
             {
                 if ((entry.remainingQty > 0 && entry.completed > 0) ||
                      (entry.remainingQty == 0 && (entry.factReadyDate != null && (entry.factReadyDate >= inventory.startDate && entry.factReadyDate <= inventory.endDate))))
                 {
-                   // if (entry.startQuantity + entry.debitQuantity <= Math.Round(entry.normQuantity, 3))
+                    // if (entry.startQuantity + entry.debitQuantity <= Math.Round(entry.normQuantity, 3))
                     //{
-                        entry.creditQuantity = entry.startQuantity + entry.debitQuantity;
-                        entry.endQuantity = 0.0;
+                    //entry.creditQuantity = entry.startQuantity + entry.debitQuantity;
+                    entry.creditQuantity = entry.endQuantity;
+                    entry.creditCost = entry.endCost;
+                    entry.endQuantity = 0.0;
+                    entry.endCost = 0.0;
                     //}
                 }
                 else
@@ -271,14 +286,112 @@ GROUP BY o.NППЗаказа, CardNum, Материа",
                     entry.normQuantity = 0.0;
                 }
 
+
+                int cardNum = 0;
+
+                int.TryParse(entry.code, out cardNum);
+
+                if (cardNum > 0 && entry.debitQuantity > 0)
+                {
+                    storeItems.Add(new InventoryStore
+                    {
+                        period = inventory.startDate,
+                        cardNumber = cardNum,
+                        orderId = entry.orderId,
+                        debitQuantity = entry.debitQuantity
+                    });
+                }
             }
+
+
+            if (storeItems.Count > 0)
+                try
+                {
+                    await SaveInventoryListAsync(storeItems);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
 
             return inventory;
         }
 
+        public static Task SaveInventoryListAsync(List<InventoryStore> items)
+        {
+            return Task.Run(() =>
+            {
+                using (var connection =
+                    new OleDbConnection(Properties.Settings.Default.connStr))
+                {
+                    connection.Open();
+
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        try
+                        {
+                            string updateSql = @"UPDATE InventoryStore 
+                                         SET debitQuantity = ? 
+                                         WHERE period = ? AND cardNumber = ?  AND orderId = ?";
+
+                            string insertSql = @"INSERT INTO InventoryStore
+                                         (period, cardNumber, orderId, debitQuantity)
+                                         VALUES (?, ?, ?, ?)";
+
+                            using (var updateCmd = new OleDbCommand(updateSql, connection, transaction))
+                            using (var insertCmd = new OleDbCommand(insertSql, connection, transaction))
+                            {
+                                // Параметры создаём один раз
+                                updateCmd.Parameters.Add("?", OleDbType.Double);
+                                updateCmd.Parameters.Add("?", OleDbType.VarChar);
+                                updateCmd.Parameters.Add("?", OleDbType.Integer);
+                                updateCmd.Parameters.Add("?", OleDbType.Integer);
+
+                                insertCmd.Parameters.Add("?", OleDbType.VarChar);
+                                insertCmd.Parameters.Add("?", OleDbType.Integer);
+                                insertCmd.Parameters.Add("?", OleDbType.Integer);
+                                insertCmd.Parameters.Add("?", OleDbType.Double);
+
+                                foreach (var item in items)
+                                {
+                                    // UPDATE
+                                    updateCmd.Parameters[0].Value = item.debitQuantity;
+                                    updateCmd.Parameters[1].Value = item.period;
+                                    updateCmd.Parameters[2].Value = item.cardNumber;
+                                    updateCmd.Parameters[3].Value = item.orderId;
+
+                                    int rows = updateCmd.ExecuteNonQuery();
+
+                                    // INSERT если не обновилось
+                                    if (rows == 0)
+                                    {
+                                        insertCmd.Parameters[0].Value = item.period;
+                                        insertCmd.Parameters[1].Value = item.cardNumber;
+                                        insertCmd.Parameters[2].Value = item.orderId;
+                                        insertCmd.Parameters[3].Value = item.debitQuantity;
+
+                                        insertCmd.ExecuteNonQuery();
+                                    }
+                                }
+                            }
+
+                            transaction.Commit();
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
+                }
+            });
+        }
+
         private static double ParseDouble(string s)
         {
-            if (string.IsNullOrWhiteSpace(s)) return 0.0;
+            if (string.IsNullOrWhiteSpace(s))
+                return 0.0;
             s = s.Trim().Replace(",", ".");
             double value;
             double.TryParse(s, NumberStyles.Any, CultureInfo.InvariantCulture, out value);

@@ -926,8 +926,6 @@ namespace Texac {
             
             private global::System.Data.DataColumn columnNТабельный;
             
-            private global::System.Data.DataColumn columnПодразделение;
-            
             private global::System.Data.DataColumn columnЗвено;
             
             private global::System.Data.DataColumn columnИмя;
@@ -1020,6 +1018,8 @@ namespace Texac {
             
             private global::System.Data.DataColumn columnКодРазмера;
             
+            private global::System.Data.DataColumn columnПодразделение;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public РаботникиЦехаDataTable() {
@@ -1058,14 +1058,6 @@ namespace Texac {
             public global::System.Data.DataColumn NТабельныйColumn {
                 get {
                     return this.columnNТабельный;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ПодразделениеColumn {
-                get {
-                    return this.columnПодразделение;
                 }
             }
             
@@ -1439,6 +1431,14 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ПодразделениеColumn {
+                get {
+                    return this.columnПодразделение;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1476,7 +1476,6 @@ namespace Texac {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public РаботникиЦехаRow AddРаботникиЦехаRow(
                         int NТабельный, 
-                        short Подразделение, 
                         string Звено, 
                         string Имя, 
                         string Фамилия, 
@@ -1522,11 +1521,11 @@ namespace Texac {
                         int Razmer, 
                         int RazmerObuvi, 
                         int ПрофессияСИЗ, 
-                        byte КодРазмера) {
+                        byte КодРазмера, 
+                        short Подразделение) {
                 РаботникиЦехаRow rowРаботникиЦехаRow = ((РаботникиЦехаRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NТабельный,
-                        Подразделение,
                         Звено,
                         Имя,
                         Фамилия,
@@ -1572,7 +1571,8 @@ namespace Texac {
                         Razmer,
                         RazmerObuvi,
                         ПрофессияСИЗ,
-                        КодРазмера};
+                        КодРазмера,
+                        Подразделение};
                 rowРаботникиЦехаRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowРаботникиЦехаRow);
                 return rowРаботникиЦехаRow;
@@ -1603,7 +1603,6 @@ namespace Texac {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnNТабельный = base.Columns["NТабельный"];
-                this.columnПодразделение = base.Columns["Подразделение"];
                 this.columnЗвено = base.Columns["Звено"];
                 this.columnИмя = base.Columns["Имя"];
                 this.columnФамилия = base.Columns["Фамилия"];
@@ -1650,6 +1649,7 @@ namespace Texac {
                 this.columnRazmerObuvi = base.Columns["RazmerObuvi"];
                 this.columnПрофессияСИЗ = base.Columns["ПрофессияСИЗ"];
                 this.columnКодРазмера = base.Columns["КодРазмера"];
+                this.columnПодразделение = base.Columns["Подразделение"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1657,8 +1657,6 @@ namespace Texac {
             private void InitClass() {
                 this.columnNТабельный = new global::System.Data.DataColumn("NТабельный", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNТабельный);
-                this.columnПодразделение = new global::System.Data.DataColumn("Подразделение", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnПодразделение);
                 this.columnЗвено = new global::System.Data.DataColumn("Звено", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnЗвено);
                 this.columnИмя = new global::System.Data.DataColumn("Имя", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1751,6 +1749,8 @@ namespace Texac {
                 base.Columns.Add(this.columnПрофессияСИЗ);
                 this.columnКодРазмера = new global::System.Data.DataColumn("КодРазмера", typeof(byte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnКодРазмера);
+                this.columnПодразделение = new global::System.Data.DataColumn("Подразделение", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПодразделение);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNТабельный}, true));
                 this.columnNТабельный.AllowDBNull = false;
@@ -1923,6 +1923,8 @@ namespace Texac {
             
             private global::System.Data.DataColumn columnПодразд;
             
+            private global::System.Data.DataColumn columnКатегория;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public РаботникиViewDataTable() {
@@ -2006,6 +2008,14 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn КатегорияColumn {
+                get {
+                    return this.columnКатегория;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2041,7 +2051,7 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public РаботникиViewRow AddРаботникиViewRow(int NТабельный, string ФИО, string Название, string СокрНазвание, bool Работает, string Подразд) {
+            public РаботникиViewRow AddРаботникиViewRow(int NТабельный, string ФИО, string Название, string СокрНазвание, bool Работает, string Подразд, byte Категория) {
                 РаботникиViewRow rowРаботникиViewRow = ((РаботникиViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NТабельный,
@@ -2049,7 +2059,8 @@ namespace Texac {
                         Название,
                         СокрНазвание,
                         Работает,
-                        Подразд};
+                        Подразд,
+                        Категория};
                 rowРаботникиViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowРаботникиViewRow);
                 return rowРаботникиViewRow;
@@ -2078,6 +2089,7 @@ namespace Texac {
                 this.columnСокрНазвание = base.Columns["СокрНазвание"];
                 this.columnРаботает = base.Columns["Работает"];
                 this.columnПодразд = base.Columns["Подразд"];
+                this.columnКатегория = base.Columns["Категория"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2095,6 +2107,8 @@ namespace Texac {
                 base.Columns.Add(this.columnРаботает);
                 this.columnПодразд = new global::System.Data.DataColumn("Подразд", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnПодразд);
+                this.columnКатегория = new global::System.Data.DataColumn("Категория", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКатегория);
                 this.columnФИО.MaxLength = 50;
                 this.columnНазвание.MaxLength = 100;
                 this.columnСокрНазвание.MaxLength = 50;
@@ -5444,22 +5458,6 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short Подразделение {
-                get {
-                    try {
-                        return ((short)(this[this.tableРаботникиЦеха.ПодразделениеColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Подразделение\' in table \'РаботникиЦеха\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableРаботникиЦеха.ПодразделениеColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Звено {
                 get {
                     try {
@@ -6196,14 +6194,18 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsПодразделениеNull() {
-                return this.IsNull(this.tableРаботникиЦеха.ПодразделениеColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetПодразделениеNull() {
-                this[this.tableРаботникиЦеха.ПодразделениеColumn] = global::System.Convert.DBNull;
+            public short Подразделение {
+                get {
+                    try {
+                        return ((short)(this[this.tableРаботникиЦеха.ПодразделениеColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Подразделение\' in table \'РаботникиЦеха\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableРаботникиЦеха.ПодразделениеColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6757,6 +6759,18 @@ namespace Texac {
             public void SetКодРазмераNull() {
                 this[this.tableРаботникиЦеха.КодРазмераColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsПодразделениеNull() {
+                return this.IsNull(this.tableРаботникиЦеха.ПодразделениеColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetПодразделениеNull() {
+                this[this.tableРаботникиЦеха.ПодразделениеColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -6871,6 +6885,22 @@ namespace Texac {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte Категория {
+                get {
+                    try {
+                        return ((byte)(this[this.tableРаботникиView.КатегорияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Категория\' in table \'РаботникиView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableРаботникиView.КатегорияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNТабельныйNull() {
                 return this.IsNull(this.tableРаботникиView.NТабельныйColumn);
             }
@@ -6939,6 +6969,18 @@ namespace Texac {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetПодраздNull() {
                 this[this.tableРаботникиView.ПодраздColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsКатегорияNull() {
+                return this.IsNull(this.tableРаботникиView.КатегорияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetКатегорияNull() {
+                this[this.tableРаботникиView.КатегорияColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10201,7 +10243,6 @@ namespace Texac.dataDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "РаботникиЦеха";
             tableMapping.ColumnMappings.Add("NТабельный", "NТабельный");
-            tableMapping.ColumnMappings.Add("Подразделение", "Подразделение");
             tableMapping.ColumnMappings.Add("Звено", "Звено");
             tableMapping.ColumnMappings.Add("Имя", "Имя");
             tableMapping.ColumnMappings.Add("Фамилия", "Фамилия");
@@ -10248,6 +10289,7 @@ namespace Texac.dataDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("RazmerObuvi", "RazmerObuvi");
             tableMapping.ColumnMappings.Add("ПрофессияСИЗ", "ПрофессияСИЗ");
             tableMapping.ColumnMappings.Add("КодРазмера", "КодРазмера");
+            tableMapping.ColumnMappings.Add("Подразделение", "Подразделение");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -10639,7 +10681,12 @@ namespace Texac.dataDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT NТабельный, Подразделение, Звено, Имя, Фамилия, ФИО, ПрофессияДолжность, Разряд, Операция, ВыполняемыеОперации, ДатаНайма, Работает, Категория, Адрес, ДомашнийТелефон, ДатаРождения, МестоРождения, МестоУчебы, ГодОкУЗ, Факультет, Специальность, ПредМР, Примечания, УслТруда, КТУ, WORKERSUM, UserLogin, Руководитель, PassportSeria, RealAdress, FamilyStatus, PassportNumber, PassportDate, PassportOffice, PersonalNumber, MobilePhoneZone, MobilePhone, Profession1, Profession2, Profession3, Profession4, Profession5, Profession6, Rost, Razmer, RazmerObuvi, ПрофессияСИЗ, КодРазмера FROM РаботникиЦеха";
+            this._commandCollection[0].CommandText = @"SELECT        NТабельный, Подразделение, Звено, Имя, Фамилия, ФИО, ПрофессияДолжность, Разряд, Операция, ВыполняемыеОперации, ДатаНайма, Работает, 
+                         Категория, Адрес, ДомашнийТелефон, ДатаРождения, МестоРождения, МестоУчебы, ГодОкУЗ, Факультет, Специальность, ПредМР, Примечания, УслТруда, 
+                         КТУ, WORKERSUM, UserLogin, Руководитель, PassportSeria, RealAdress, FamilyStatus, PassportNumber, PassportDate, PassportOffice, PersonalNumber, 
+                         MobilePhoneZone, MobilePhone, Profession1, Profession2, Profession3, Profession4, Profession5, Profession6, Rost, Razmer, RazmerObuvi, ПрофессияСИЗ, 
+                         КодРазмера
+FROM            РаботникиЦеха";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12411,6 +12458,7 @@ namespace Texac.dataDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("СокрНазвание", "СокрНазвание");
             tableMapping.ColumnMappings.Add("Работает", "Работает");
             tableMapping.ColumnMappings.Add("Подразд", "Подразд");
+            tableMapping.ColumnMappings.Add("Категория", "Категория");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -12427,13 +12475,13 @@ namespace Texac.dataDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT NТабельный, ФИО, Название, СокрНазвание, Работает, Подразд FROM РаботникиV" +
-                "iew Order by ФИО";
+            this._commandCollection[0].CommandText = "SELECT        NТабельный, ФИО, Название, СокрНазвание, Работает, Подразд, Категор" +
+                "ия\r\nFROM            РаботникиView\r\nORDER BY Категория, ФИО";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT NТабельный, Название, Подразд, Работает, СокрНазвание, ФИО FROM РаботникиV" +
-                "iew WHERE (Работает = true)";
+            this._commandCollection[1].CommandText = "SELECT NТабельный, Категория, Название, Подразд, Работает, СокрНазвание, ФИО FROM" +
+                " РаботникиView WHERE (Работает = true)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         

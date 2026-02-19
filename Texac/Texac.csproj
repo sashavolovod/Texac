@@ -259,6 +259,13 @@
     <Compile Include="Ekon\Inventory\InventoryEntity.cs" />
     <Compile Include="Ekon\Inventory\InventoryEntry.cs" />
     <Compile Include="Ekon\Inventory\InventoryParser.cs" />
+    <Compile Include="Ekon\Inventory\InventoryStore.cs" />
+    <Compile Include="Ekon\OrdersWithoutMaterialsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ekon\OrdersWithoutMaterialsForm.Designer.cs">
+      <DependentUpon>OrdersWithoutMaterialsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ekon\OsnastkaEntity.cs" />
     <Compile Include="Ekon\OsnastkaUserControl.cs">
       <SubType>UserControl</SubType>
@@ -376,7 +383,15 @@
     <Compile Include="PlanZagruzki\PlanZagruzkiForm.Designer.cs">
       <DependentUpon>PlanZagruzkiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreparatorySection\DbHelper.cs" />
+    <Compile Include="PreparatorySection\MaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreparatorySection\MaterialForm.Designer.cs">
+      <DependentUpon>MaterialForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PreparatorySection\MaterialModel.cs" />
+    <Compile Include="PreparatorySection\MaterialOrderGridRow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -447,6 +462,8 @@
       <DependentUpon>ListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\SortableBindingList.cs" />
+    <Compile Include="ToolingDesign\DbHelper.cs" />
+    <Compile Include="ToolingDesign\JobOrderEntity.cs" />
     <Compile Include="Trebovaniya\MaterialAvailabilityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -546,6 +563,9 @@
       <DependentUpon>InventoryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ekon\Inventory\InventoryReport.rdlc" />
+    <EmbeddedResource Include="Ekon\OrdersWithoutMaterialsForm.resx">
+      <DependentUpon>OrdersWithoutMaterialsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ekon\OsnastkaUserControl.resx">
       <DependentUpon>OsnastkaUserControl.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -608,6 +628,9 @@
     <EmbeddedResource Include="PlanZagruzki\PlanZagruzkiForm.resx">
       <DependentUpon>PlanZagruzkiForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PreparatorySection\MaterialForm.resx">
+      <DependentUpon>MaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -645,6 +668,7 @@
     <EmbeddedResource Include="Temp\ListForm.resx">
       <DependentUpon>ListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToolingDesign\JobOrderReport.rdlc" />
     <EmbeddedResource Include="Trebovaniya\MaterialAvailabilityForm.resx">
       <DependentUpon>MaterialAvailabilityForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -721,9 +745,12 @@
     <None Include="Properties\DataSources\Texac.LocksmithOperations.LocksmithOperationView.datasource" />
     <None Include="Properties\DataSources\Texac.PlanZagruzki.GrafikEntity.datasource" />
     <None Include="Properties\DataSources\Texac.PlanZagruzki.PlanZagruzkiEntity.datasource" />
+    <None Include="Properties\DataSources\Texac.PreparatorySection.MaterialOrderGridRow.datasource" />
     <None Include="Properties\DataSources\Texac.PsnHistory.PsnEntity.datasource" />
     <None Include="Properties\DataSources\Texac.Request.RequestEntity.datasource" />
     <None Include="Properties\DataSources\Texac.Temp.EmployeeEntity.datasource" />
+    <None Include="Properties\DataSources\Texac.ToolingDesign.JobOrderMaterialReportModel.datasource" />
+    <None Include="Properties\DataSources\Texac.ToolingDesign.JobOrderReportDto.datasource" />
     <None Include="Properties\DataSources\Texac.TTN.DeliveryNotePositionEntity.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

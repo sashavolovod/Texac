@@ -36,9 +36,6 @@
             this.dataDataSet = new Texac.dataDataSet();
             this.tableAdapterManager = new Texac.dataDataSetTableAdapters.TableAdapterManager();
             this.dgvEmploeyes = new System.Windows.Forms.DataGridView();
-            this.NТабельный = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ФИО = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Должность = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bnEmployee = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -50,12 +47,10 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cbEmployee = new System.Windows.Forms.ToolStripComboBox();
-            this.nТабельныйDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.сокрНазваниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.работаетDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.подраздDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tsbPrintTabel = new System.Windows.Forms.ToolStripButton();
+            this.NТабельный = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ФИО = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Должность = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmploeyes)).BeginInit();
@@ -99,13 +94,7 @@
             this.dgvEmploeyes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NТабельный,
             this.ФИО,
-            this.Должность,
-            this.nТабельныйDataGridViewTextBoxColumn,
-            this.фИОDataGridViewTextBoxColumn,
-            this.названиеDataGridViewTextBoxColumn,
-            this.сокрНазваниеDataGridViewTextBoxColumn,
-            this.работаетDataGridViewCheckBoxColumn,
-            this.подраздDataGridViewTextBoxColumn});
+            this.Должность});
             this.dgvEmploeyes.DataSource = this.bsEmployee;
             this.dgvEmploeyes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmploeyes.Location = new System.Drawing.Point(0, 25);
@@ -117,29 +106,6 @@
             this.dgvEmploeyes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmploeyes.Size = new System.Drawing.Size(1071, 718);
             this.dgvEmploeyes.TabIndex = 5;
-            // 
-            // NТабельный
-            // 
-            this.NТабельный.DataPropertyName = "NТабельный";
-            this.NТабельный.HeaderText = "№ Таб.";
-            this.NТабельный.Name = "NТабельный";
-            this.NТабельный.ReadOnly = true;
-            // 
-            // ФИО
-            // 
-            this.ФИО.DataPropertyName = "ФИО";
-            this.ФИО.HeaderText = "Фамилия И.О.";
-            this.ФИО.Name = "ФИО";
-            this.ФИО.ReadOnly = true;
-            this.ФИО.Width = 150;
-            // 
-            // Должность
-            // 
-            this.Должность.DataPropertyName = "Название";
-            this.Должность.HeaderText = "Должность";
-            this.Должность.Name = "Должность";
-            this.Должность.ReadOnly = true;
-            this.Должность.Width = 200;
             // 
             // bnEmployee
             // 
@@ -157,7 +123,8 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.cbEmployee});
+            this.cbEmployee,
+            this.tsbPrintTabel});
             this.bnEmployee.Location = new System.Drawing.Point(0, 0);
             this.bnEmployee.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bnEmployee.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -243,47 +210,38 @@
             this.cbEmployee.Size = new System.Drawing.Size(105, 25);
             this.cbEmployee.SelectedIndexChanged += new System.EventHandler(this.cbEmployee_SelectedIndexChanged);
             // 
-            // nТабельныйDataGridViewTextBoxColumn
+            // tsbPrintTabel
             // 
-            this.nТабельныйDataGridViewTextBoxColumn.DataPropertyName = "NТабельный";
-            this.nТабельныйDataGridViewTextBoxColumn.HeaderText = "NТабельный";
-            this.nТабельныйDataGridViewTextBoxColumn.Name = "nТабельныйDataGridViewTextBoxColumn";
-            this.nТабельныйDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tsbPrintTabel.Image = global::Texac.Properties.Resources._1383136876_agt_print;
+            this.tsbPrintTabel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPrintTabel.Margin = new System.Windows.Forms.Padding(20, 1, 0, 2);
+            this.tsbPrintTabel.Name = "tsbPrintTabel";
+            this.tsbPrintTabel.Size = new System.Drawing.Size(134, 22);
+            this.tsbPrintTabel.Text = "Распечатать табель";
+            this.tsbPrintTabel.Click += new System.EventHandler(this.tsbPrintTabel_Click);
             // 
-            // фИОDataGridViewTextBoxColumn
+            // NТабельный
             // 
-            this.фИОDataGridViewTextBoxColumn.DataPropertyName = "ФИО";
-            this.фИОDataGridViewTextBoxColumn.HeaderText = "ФИО";
-            this.фИОDataGridViewTextBoxColumn.Name = "фИОDataGridViewTextBoxColumn";
-            this.фИОDataGridViewTextBoxColumn.ReadOnly = true;
+            this.NТабельный.DataPropertyName = "NТабельный";
+            this.NТабельный.HeaderText = "№ Таб.";
+            this.NТабельный.Name = "NТабельный";
+            this.NТабельный.ReadOnly = true;
             // 
-            // названиеDataGridViewTextBoxColumn
+            // ФИО
             // 
-            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
-            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
-            this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ФИО.DataPropertyName = "ФИО";
+            this.ФИО.HeaderText = "Фамилия И.О.";
+            this.ФИО.Name = "ФИО";
+            this.ФИО.ReadOnly = true;
+            this.ФИО.Width = 250;
             // 
-            // сокрНазваниеDataGridViewTextBoxColumn
+            // Должность
             // 
-            this.сокрНазваниеDataGridViewTextBoxColumn.DataPropertyName = "СокрНазвание";
-            this.сокрНазваниеDataGridViewTextBoxColumn.HeaderText = "СокрНазвание";
-            this.сокрНазваниеDataGridViewTextBoxColumn.Name = "сокрНазваниеDataGridViewTextBoxColumn";
-            this.сокрНазваниеDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // работаетDataGridViewCheckBoxColumn
-            // 
-            this.работаетDataGridViewCheckBoxColumn.DataPropertyName = "Работает";
-            this.работаетDataGridViewCheckBoxColumn.HeaderText = "Работает";
-            this.работаетDataGridViewCheckBoxColumn.Name = "работаетDataGridViewCheckBoxColumn";
-            this.работаетDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // подраздDataGridViewTextBoxColumn
-            // 
-            this.подраздDataGridViewTextBoxColumn.DataPropertyName = "Подразд";
-            this.подраздDataGridViewTextBoxColumn.HeaderText = "Подразд";
-            this.подраздDataGridViewTextBoxColumn.Name = "подраздDataGridViewTextBoxColumn";
-            this.подраздDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Должность.DataPropertyName = "Название";
+            this.Должность.HeaderText = "Должность";
+            this.Должность.Name = "Должность";
+            this.Должность.ReadOnly = true;
+            this.Должность.Width = 300;
             // 
             // EmployeeList
             // 
@@ -325,14 +283,9 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripComboBox cbEmployee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Должность;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ФИО;
+        private System.Windows.Forms.ToolStripButton tsbPrintTabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn NТабельный;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nТабельныйDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn фИОDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn сокрНазваниеDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn работаетDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn подраздDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ФИО;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Должность;
     }
 }

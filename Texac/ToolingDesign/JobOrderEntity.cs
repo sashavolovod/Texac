@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Texac.ToolingDesign
+{
+    public class JobOrderReportDto
+    {
+        public int OrderId { get; set; }
+        public string OrderNumber { get; set; }
+        public DateTime OrderDate { get; set; }
+        public int TotalQuantity { get; set; }
+        public List<JobOrderMaterialReportDto2> Materials { get; set; }
+            = new List<JobOrderMaterialReportDto2>();
+    }
+
+    public class JobOrderMaterialReportDto2
+    {
+        public int OrderId { get; set; }
+        public int MaterialId { get; set; }
+        public string MaterialTitle { get; set; }
+        public string Unit { get; set; }
+        public double Quantity { get; set; }
+        public string Description { get; set; }
+    }
+
+    public class JobOrderMaterialReportModel
+    {
+        public int OrderId { get; set; }
+        public string OrderNumber { get; set; }
+        public DateTime OrderDate { get; set; }
+        public int TotalQuantity { get; set; }
+        public int MaterialId { get; set; }
+        public string MaterialTitle { get; set; }
+        public string Unit { get; set; }
+        public double Quantity { get; set; }
+        public string Description { get; set; }
+    }
+
+}

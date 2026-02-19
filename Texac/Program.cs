@@ -51,12 +51,16 @@ namespace Texac
 
                             }
                             break;
+                        case "orders_without_materials":
+                            Application.Run(new Ekon.OrdersWithoutMaterialsForm());
+                            break;
                     }
 
                 }
                 else {
-                    Application.Run(new MainForm());
-                    //Application.Run(new TTN.ToolingHandoverNoteForm());
+                     Application.Run(new MainForm());
+                    // Application.Run(new Texac.PreparatorySection.MaterialForm());
+
                 }
             }
             catch (Exception ex)

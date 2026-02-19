@@ -38,12 +38,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bnInventory = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -64,6 +68,10 @@
             this.employeeTextBox = new System.Windows.Forms.TextBox();
             this.tbFactDateReady = new System.Windows.Forms.TextBox();
             this.orderIdTextBox = new System.Windows.Forms.TextBox();
+            this.startCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creditCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -279,24 +287,28 @@
             this.nameDataGridViewTextBoxColumn,
             this.unitDataGridViewTextBoxColumn,
             this.startQuantityDataGridViewTextBoxColumn,
+            this.startCost,
             this.debitQuantityDataGridViewTextBoxColumn,
+            this.Column1,
             this.normQuantityDataGridViewTextBoxColumn,
             this.creditQuantityDataGridViewTextBoxColumn,
-            this.endQuantityDataGridViewTextBoxColumn});
+            this.creditCost,
+            this.endQuantityDataGridViewTextBoxColumn,
+            this.endCost});
             this.dgvInventory.DataSource = this.bsInventory;
             this.dgvInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInventory.Location = new System.Drawing.Point(0, 25);
             this.dgvInventory.Name = "dgvInventory";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvInventory.RowTemplate.Height = 28;
-            this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvInventory.Size = new System.Drawing.Size(1032, 542);
             this.dgvInventory.TabIndex = 1;
             this.dgvInventory.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvInventory_RowPrePaint);
@@ -375,26 +387,56 @@
             this.orderIdTextBox.Size = new System.Drawing.Size(204, 27);
             this.orderIdTextBox.TabIndex = 1;
             // 
+            // startCost
+            // 
+            this.startCost.DataPropertyName = "startCost";
+            dataGridViewCellStyle4.Format = "#,0.##;-#,0.##;\'\'";
+            this.startCost.DefaultCellStyle = dataGridViewCellStyle4;
+            this.startCost.HeaderText = "Стоимость";
+            this.startCost.Name = "startCost";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "debitCost";
+            dataGridViewCellStyle6.Format = "#,0.##;-#,0.##;\'\'";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column1.HeaderText = "Стоимость";
+            this.Column1.Name = "Column1";
+            // 
+            // creditCost
+            // 
+            this.creditCost.DataPropertyName = "creditCost";
+            dataGridViewCellStyle9.Format = "#,0.##;-#,0.##;\'\'";
+            this.creditCost.DefaultCellStyle = dataGridViewCellStyle9;
+            this.creditCost.HeaderText = "Стоимость";
+            this.creditCost.Name = "creditCost";
+            // 
+            // endCost
+            // 
+            this.endCost.DataPropertyName = "endCost";
+            dataGridViewCellStyle11.Format = "#,0.##;-#,0.##;\'\'";
+            this.endCost.DefaultCellStyle = dataGridViewCellStyle11;
+            this.endCost.HeaderText = "Стоимость";
+            this.endCost.Name = "endCost";
+            // 
             // orderNumberDataGridViewTextBoxColumn
             // 
             this.orderNumberDataGridViewTextBoxColumn.DataPropertyName = "orderNumber";
             this.orderNumberDataGridViewTextBoxColumn.HeaderText = "Номер";
             this.orderNumberDataGridViewTextBoxColumn.Name = "orderNumberDataGridViewTextBoxColumn";
-            this.orderNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // codeDataGridViewTextBoxColumn
             // 
             this.codeDataGridViewTextBoxColumn.DataPropertyName = "code";
             this.codeDataGridViewTextBoxColumn.HeaderText = "Код";
             this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codeDataGridViewTextBoxColumn.Width = 80;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование ТМЦ";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 300;
             // 
             // unitDataGridViewTextBoxColumn
@@ -402,7 +444,6 @@
             this.unitDataGridViewTextBoxColumn.DataPropertyName = "unit";
             this.unitDataGridViewTextBoxColumn.HeaderText = "Ед. изм.";
             this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
-            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // startQuantityDataGridViewTextBoxColumn
             // 
@@ -412,49 +453,44 @@
             this.startQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.startQuantityDataGridViewTextBoxColumn.HeaderText = "Остаток на начало периода";
             this.startQuantityDataGridViewTextBoxColumn.Name = "startQuantityDataGridViewTextBoxColumn";
-            this.startQuantityDataGridViewTextBoxColumn.ReadOnly = true;
             this.startQuantityDataGridViewTextBoxColumn.Width = 150;
             // 
             // debitQuantityDataGridViewTextBoxColumn
             // 
             this.debitQuantityDataGridViewTextBoxColumn.DataPropertyName = "debitQuantity";
-            dataGridViewCellStyle4.Format = "#,0.###;-#,0.###;\'\'";
-            dataGridViewCellStyle4.NullValue = null;
-            this.debitQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Format = "#,0.###;-#,0.###;\'\'";
+            dataGridViewCellStyle5.NullValue = null;
+            this.debitQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.debitQuantityDataGridViewTextBoxColumn.HeaderText = "Приход";
             this.debitQuantityDataGridViewTextBoxColumn.Name = "debitQuantityDataGridViewTextBoxColumn";
-            this.debitQuantityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // normQuantityDataGridViewTextBoxColumn
             // 
             this.normQuantityDataGridViewTextBoxColumn.DataPropertyName = "normQuantity";
-            dataGridViewCellStyle5.Format = "#,0.##;-#,0.##;\'\'";
-            dataGridViewCellStyle5.NullValue = null;
-            this.normQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Format = "#,0.##;-#,0.##;\'\'";
+            dataGridViewCellStyle7.NullValue = null;
+            this.normQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.normQuantityDataGridViewTextBoxColumn.HeaderText = "Расход по норме";
             this.normQuantityDataGridViewTextBoxColumn.Name = "normQuantityDataGridViewTextBoxColumn";
-            this.normQuantityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.normQuantityDataGridViewTextBoxColumn.Width = 150;
+            this.normQuantityDataGridViewTextBoxColumn.Width = 120;
             // 
             // creditQuantityDataGridViewTextBoxColumn
             // 
             this.creditQuantityDataGridViewTextBoxColumn.DataPropertyName = "creditQuantity";
-            dataGridViewCellStyle6.Format = "#,0.###;-#,0.###;\'\'";
-            dataGridViewCellStyle6.NullValue = null;
-            this.creditQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Format = "#,0.###;-#,0.###;\'\'";
+            dataGridViewCellStyle8.NullValue = null;
+            this.creditQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.creditQuantityDataGridViewTextBoxColumn.HeaderText = "Расход";
             this.creditQuantityDataGridViewTextBoxColumn.Name = "creditQuantityDataGridViewTextBoxColumn";
-            this.creditQuantityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // endQuantityDataGridViewTextBoxColumn
             // 
             this.endQuantityDataGridViewTextBoxColumn.DataPropertyName = "endQuantity";
-            dataGridViewCellStyle7.Format = "#,0.###;-#,0.###;\'\'";
-            dataGridViewCellStyle7.NullValue = null;
-            this.endQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle10.Format = "#,0.###;-#,0.###;\'\'";
+            dataGridViewCellStyle10.NullValue = null;
+            this.endQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.endQuantityDataGridViewTextBoxColumn.HeaderText = "Остаток на конец периода";
             this.endQuantityDataGridViewTextBoxColumn.Name = "endQuantityDataGridViewTextBoxColumn";
-            this.endQuantityDataGridViewTextBoxColumn.ReadOnly = true;
             this.endQuantityDataGridViewTextBoxColumn.Width = 150;
             // 
             // bsInventory
@@ -521,9 +557,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn startQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn debitQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn normQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn creditQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn creditCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn endQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endCost;
     }
 }
