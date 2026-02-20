@@ -12,13 +12,6 @@ namespace Texac.ToolingDesign
         public string OrderNumber { get; set; }
         public DateTime OrderDate { get; set; }
         public int TotalQuantity { get; set; }
-        public List<JobOrderMaterialReportDto2> Materials { get; set; }
-            = new List<JobOrderMaterialReportDto2>();
-    }
-
-    public class JobOrderMaterialReportDto2
-    {
-        public int OrderId { get; set; }
         public int MaterialId { get; set; }
         public string MaterialTitle { get; set; }
         public string Unit { get; set; }
@@ -26,12 +19,18 @@ namespace Texac.ToolingDesign
         public string Description { get; set; }
     }
 
-    public class JobOrderMaterialReportModel
+    public class JobOrderReportMaster
     {
         public int OrderId { get; set; }
         public string OrderNumber { get; set; }
         public DateTime OrderDate { get; set; }
         public int TotalQuantity { get; set; }
+        public List<JobOrderReportDetail> Materials { get; set; } = new List<JobOrderReportDetail>();
+    }
+
+    public class JobOrderReportDetail
+    {
+        public int OrderId { get; set; }
         public int MaterialId { get; set; }
         public string MaterialTitle { get; set; }
         public string Unit { get; set; }

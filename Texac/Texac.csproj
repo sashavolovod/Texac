@@ -463,7 +463,13 @@
     </Compile>
     <Compile Include="Common\SortableBindingList.cs" />
     <Compile Include="ToolingDesign\DbHelper.cs" />
-    <Compile Include="ToolingDesign\JobOrderEntity.cs" />
+    <Compile Include="ToolingDesign\JobOrderReportDto.cs" />
+    <Compile Include="ToolingDesign\JobOrderPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolingDesign\JobOrderPrintForm.Designer.cs">
+      <DependentUpon>JobOrderPrintForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trebovaniya\MaterialAvailabilityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -668,6 +674,11 @@
     <EmbeddedResource Include="Temp\ListForm.resx">
       <DependentUpon>ListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToolingDesign\JobOrderDetailReport.rdlc" />
+    <EmbeddedResource Include="ToolingDesign\JobOrderMasterReport.rdlc" />
+    <EmbeddedResource Include="ToolingDesign\JobOrderPrintForm.resx">
+      <DependentUpon>JobOrderPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToolingDesign\JobOrderReport.rdlc" />
     <EmbeddedResource Include="Trebovaniya\MaterialAvailabilityForm.resx">
       <DependentUpon>MaterialAvailabilityForm.cs</DependentUpon>
@@ -749,8 +760,8 @@
     <None Include="Properties\DataSources\Texac.PsnHistory.PsnEntity.datasource" />
     <None Include="Properties\DataSources\Texac.Request.RequestEntity.datasource" />
     <None Include="Properties\DataSources\Texac.Temp.EmployeeEntity.datasource" />
-    <None Include="Properties\DataSources\Texac.ToolingDesign.JobOrderMaterialReportModel.datasource" />
-    <None Include="Properties\DataSources\Texac.ToolingDesign.JobOrderReportDto.datasource" />
+    <None Include="Properties\DataSources\Texac.ToolingDesign.JobOrderReportDetail.datasource" />
+    <None Include="Properties\DataSources\Texac.ToolingDesign.JobOrderReportMaster.datasource" />
     <None Include="Properties\DataSources\Texac.TTN.DeliveryNotePositionEntity.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

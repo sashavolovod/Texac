@@ -51,8 +51,13 @@ namespace Texac
 
                             }
                             break;
+
                         case "orders_without_materials":
                             Application.Run(new Ekon.OrdersWithoutMaterialsForm());
+                            break;
+
+                        case "job_order":
+                            Application.Run(new ToolingDesign.JobOrderPrintForm());
                             break;
                     }
 
