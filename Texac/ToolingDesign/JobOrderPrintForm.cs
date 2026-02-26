@@ -62,11 +62,14 @@ namespace Texac.ToolingDesign
             return result;
         }
 
-        private void JobOrderPrintForm_Load(object sender, EventArgs e)
+        private async void JobOrderPrintForm_Load(object sender, EventArgs e)
         {
             var masters = CreateTestData();
+
+            //var masters = await DbHelper.GetOrderReportDtoListAsync();
+
             _allDetails = masters.SelectMany(x => x.Materials).ToList();
-            
+
             reportViewer1.LocalReport.DataSources.Clear();
 
             reportViewer1.LocalReport.DataSources.Add(
