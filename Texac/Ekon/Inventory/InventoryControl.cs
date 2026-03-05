@@ -12,6 +12,8 @@ using ExcelDataReader;
 using Texac;
 using Texac.Common;
 using Microsoft.Reporting.WinForms;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace Texac.Ekon.Inventory
 {
@@ -149,18 +151,61 @@ namespace Texac.Ekon.Inventory
         private void tsbReport_Click(object sender, EventArgs e)
         {
             bsInventory.EndEdit();
-
             ReportParameter[] parameters = new ReportParameter[1];
             parameters[0] = new ReportParameter("parPeriod", inventory.period);
-
             ReportDataSource rds = new ReportDataSource("DataSet1", inventory.entries);
-
             ReportForm reportForm = new ReportForm("Texac.Ekon.Inventory.InventoryReport.rdlc", "Материальный отчет ИнЦ", parameters, rds);
-
-
             reportForm.Show();
-
         }
 
+
+
+
+        public async Task<InventoryEntity> SaveInventoryReport()
+        {
+            if (inventory == null)
+                throw new ArgumentNullException(nameof(inventory));
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(Texac.Properties.Settings.Default.api_path);
+                client.DefaultRequestHeaders.Add("User-Agent", "TexacHttpClient");
+
+                string json = JsonConvert.SerializeObject(inventory, new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    DateFormatString = "yyyy-MM-ddTHH:mm:ss"
+                });
+
+                using (var content = new StringContent(json, Encoding.UTF8, "application/json"))
+                {
+                    HttpResponseMessage response;
+
+                    // create vs update
+                    if (inventory.inventoryEntityId <= 0)
+                    {
+                        response = await client.PostAsync("/api/inventory_entities", content);
+                    }
+                    else
+                    {
+                        response = await client.PutAsync($"/api/inventory_entities/{inventory.inventoryEntityId}", content);
+                    }
+
+                    // если сервер вернул ошибку — покажем тело (очень помогает при отладке)
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    if (!response.IsSuccessStatusCode)
+                        throw new HttpRequestException($"SaveInventoryReport failed: {(int)response.StatusCode} {response.ReasonPhrase}\n{responseBody}");
+
+                    // ожидаем, что сервер возвращает сохранённую сущность (как у вас в других контроллерах)
+                    var saved = JsonConvert.DeserializeObject<InventoryEntity>(responseBody);
+                    return saved;
+                }
+            }
+        }
+
+        private async void btnSave_Click_1(object sender, EventArgs e)
+        {
+            SaveInventoryReport();
+        }
     }
 }

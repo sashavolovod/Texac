@@ -10,6 +10,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Texac.Domain;
+using Texac.Ekon.Inventory;
+using Texac.MainWindow;
 using Texac.Orders;
 using Texac.Trebovaniya;
 
@@ -31,6 +33,7 @@ namespace Texac
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+                TexacApi.Init(); // один клиент на всё приложение
 
                 // Проверка параметров командной строки
                 if (args.Length > 0)
@@ -63,11 +66,14 @@ namespace Texac
 
                 }
                 else {
-                     Application.Run(new MainForm());
+                    // Application.Run(new MainFormWithLeftMenu());
+                    //  Application.Run(new MainForm());
                     // Application.Run(new Texac.PreparatorySection.MaterialForm());
 
+                     Application.Run(new MaterialRepotByInventoryForm(2));
+
                 }
-            }
+            } 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

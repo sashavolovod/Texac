@@ -35,7 +35,6 @@
             System.Windows.Forms.Label obozToLabel;
             System.Windows.Forms.Label completedLabel;
             System.Windows.Forms.Label remainingQtyLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,6 +42,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -50,17 +50,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bnInventory = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbImportFromInventory = new System.Windows.Forms.ToolStripButton();
-            this.tsbReport = new System.Windows.Forms.ToolStripButton();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
+            this.startCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creditCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.remainingQtyTextBox = new System.Windows.Forms.TextBox();
             this.completedTextBox = new System.Windows.Forms.TextBox();
@@ -68,10 +66,13 @@
             this.employeeTextBox = new System.Windows.Forms.TextBox();
             this.tbFactDateReady = new System.Windows.Forms.TextBox();
             this.orderIdTextBox = new System.Windows.Forms.TextBox();
-            this.startCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creditCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.tsbImportFromInventory = new System.Windows.Forms.ToolStripButton();
+            this.tsbReport = new System.Windows.Forms.ToolStripButton();
             this.orderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -185,24 +186,6 @@
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
@@ -222,48 +205,10 @@
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbImportFromInventory
-            // 
-            this.tsbImportFromInventory.Image = ((System.Drawing.Image)(resources.GetObject("tsbImportFromInventory.Image")));
-            this.tsbImportFromInventory.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbImportFromInventory.Name = "tsbImportFromInventory";
-            this.tsbImportFromInventory.Size = new System.Drawing.Size(81, 22);
-            this.tsbImportFromInventory.Text = "Загрузить";
-            this.tsbImportFromInventory.ToolTipText = "Загрузить из оборотной ведомости";
-            this.tsbImportFromInventory.Click += new System.EventHandler(this.tsbImportFromInventory_Click);
-            // 
-            // tsbReport
-            // 
-            this.tsbReport.Enabled = false;
-            this.tsbReport.Image = ((System.Drawing.Image)(resources.GetObject("tsbReport.Image")));
-            this.tsbReport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbReport.Name = "tsbReport";
-            this.tsbReport.Size = new System.Drawing.Size(144, 22);
-            this.tsbReport.Text = "Сформировать отчет";
-            this.tsbReport.Click += new System.EventHandler(this.tsbReport_Click);
             // 
             // dgvInventory
             // 
@@ -313,8 +258,41 @@
             this.dgvInventory.TabIndex = 1;
             this.dgvInventory.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvInventory_RowPrePaint);
             // 
+            // startCost
+            // 
+            this.startCost.DataPropertyName = "startCost";
+            dataGridViewCellStyle4.Format = "#,0.##;-#,0.##;\'\'";
+            this.startCost.DefaultCellStyle = dataGridViewCellStyle4;
+            this.startCost.HeaderText = "Стоимость";
+            this.startCost.Name = "startCost";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "debitCost";
+            dataGridViewCellStyle6.Format = "#,0.##;-#,0.##;\'\'";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column1.HeaderText = "Стоимость";
+            this.Column1.Name = "Column1";
+            // 
+            // creditCost
+            // 
+            this.creditCost.DataPropertyName = "creditCost";
+            dataGridViewCellStyle9.Format = "#,0.##;-#,0.##;\'\'";
+            this.creditCost.DefaultCellStyle = dataGridViewCellStyle9;
+            this.creditCost.HeaderText = "Стоимость";
+            this.creditCost.Name = "creditCost";
+            // 
+            // endCost
+            // 
+            this.endCost.DataPropertyName = "endCost";
+            dataGridViewCellStyle11.Format = "#,0.##;-#,0.##;\'\'";
+            this.endCost.DefaultCellStyle = dataGridViewCellStyle11;
+            this.endCost.HeaderText = "Стоимость";
+            this.endCost.Name = "endCost";
+            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(remainingQtyLabel);
             this.panel1.Controls.Add(this.remainingQtyTextBox);
             this.panel1.Controls.Add(completedLabel);
@@ -387,37 +365,71 @@
             this.orderIdTextBox.Size = new System.Drawing.Size(204, 27);
             this.orderIdTextBox.TabIndex = 1;
             // 
-            // startCost
+            // btnSave
             // 
-            this.startCost.DataPropertyName = "startCost";
-            dataGridViewCellStyle4.Format = "#,0.##;-#,0.##;\'\'";
-            this.startCost.DefaultCellStyle = dataGridViewCellStyle4;
-            this.startCost.HeaderText = "Стоимость";
-            this.startCost.Name = "startCost";
+            this.btnSave.Location = new System.Drawing.Point(49, 469);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(108, 34);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "button1";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
-            // Column1
+            // bindingNavigatorMoveFirstItem
             // 
-            this.Column1.DataPropertyName = "debitCost";
-            dataGridViewCellStyle6.Format = "#,0.##;-#,0.##;\'\'";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column1.HeaderText = "Стоимость";
-            this.Column1.Name = "Column1";
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
-            // creditCost
+            // bindingNavigatorMovePreviousItem
             // 
-            this.creditCost.DataPropertyName = "creditCost";
-            dataGridViewCellStyle9.Format = "#,0.##;-#,0.##;\'\'";
-            this.creditCost.DefaultCellStyle = dataGridViewCellStyle9;
-            this.creditCost.HeaderText = "Стоимость";
-            this.creditCost.Name = "creditCost";
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
-            // endCost
+            // bindingNavigatorMoveNextItem
             // 
-            this.endCost.DataPropertyName = "endCost";
-            dataGridViewCellStyle11.Format = "#,0.##;-#,0.##;\'\'";
-            this.endCost.DefaultCellStyle = dataGridViewCellStyle11;
-            this.endCost.HeaderText = "Стоимость";
-            this.endCost.Name = "endCost";
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // tsbImportFromInventory
+            // 
+            this.tsbImportFromInventory.Image = ((System.Drawing.Image)(resources.GetObject("tsbImportFromInventory.Image")));
+            this.tsbImportFromInventory.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbImportFromInventory.Name = "tsbImportFromInventory";
+            this.tsbImportFromInventory.Size = new System.Drawing.Size(81, 22);
+            this.tsbImportFromInventory.Text = "Загрузить";
+            this.tsbImportFromInventory.ToolTipText = "Загрузить из оборотной ведомости";
+            this.tsbImportFromInventory.Click += new System.EventHandler(this.tsbImportFromInventory_Click);
+            // 
+            // tsbReport
+            // 
+            this.tsbReport.Enabled = false;
+            this.tsbReport.Image = ((System.Drawing.Image)(resources.GetObject("tsbReport.Image")));
+            this.tsbReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbReport.Name = "tsbReport";
+            this.tsbReport.Size = new System.Drawing.Size(144, 22);
+            this.tsbReport.Text = "Сформировать отчет";
+            this.tsbReport.Click += new System.EventHandler(this.tsbReport_Click);
             // 
             // orderNumberDataGridViewTextBoxColumn
             // 
@@ -565,5 +577,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn creditCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn endQuantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn endCost;
+        private System.Windows.Forms.Button btnSave;
     }
 }

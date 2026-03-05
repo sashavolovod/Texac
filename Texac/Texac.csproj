@@ -257,9 +257,14 @@
       <DependentUpon>InventoryControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Ekon\Inventory\InventoryEntity.cs" />
-    <Compile Include="Ekon\Inventory\InventoryEntry.cs" />
     <Compile Include="Ekon\Inventory\InventoryParser.cs" />
     <Compile Include="Ekon\Inventory\InventoryStore.cs" />
+    <Compile Include="Ekon\Inventory\MaterialRepotByInventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ekon\Inventory\MaterialRepotByInventoryForm.Designer.cs">
+      <DependentUpon>MaterialRepotByInventoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ekon\OrdersWithoutMaterialsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +302,13 @@
     </Compile>
     <Compile Include="MainFormEx.Designer.cs">
       <DependentUpon>MainFormEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\KdeNavMenu.cs" />
+    <Compile Include="MainWindow\MainFormWithLeftMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow\MainFormWithLeftMenu.Designer.cs">
+      <DependentUpon>MainFormWithLeftMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="MaterialDesign\MainForm.cs">
       <SubType>Form</SubType>
@@ -346,6 +358,8 @@
     <Compile Include="MyUIComponents\MyEntityListView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Net\TexacApiClient.cs" />
+    <Compile Include="Net\UiApi.cs" />
     <Compile Include="Ollama\MarkdownViewer.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -434,6 +448,7 @@
     </Compile>
     <Compile Include="RestClient\EntityPath.cs" />
     <Compile Include="RestClient\RestClientTest.cs" />
+    <Compile Include="Services\InventoryService.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="TempForm.cs">
       <SubType>Form</SubType>
@@ -462,6 +477,7 @@
       <DependentUpon>ListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\SortableBindingList.cs" />
+    <Compile Include="TexacApi.cs" />
     <Compile Include="ToolingDesign\DbHelper.cs" />
     <Compile Include="ToolingDesign\JobOrderReportDto.cs" />
     <Compile Include="ToolingDesign\JobOrderPrintForm.cs">
@@ -546,6 +562,10 @@
     <Compile Include="TTN\TtnList.Designer.cs">
       <DependentUpon>TtnList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Win\TexacForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Win\UiStateManager.cs" />
     <EmbeddedResource Include="AboutBoxForm.resx">
       <DependentUpon>AboutBoxForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -569,6 +589,9 @@
       <DependentUpon>InventoryControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ekon\Inventory\InventoryReport.rdlc" />
+    <EmbeddedResource Include="Ekon\Inventory\MaterialRepotByInventoryForm.resx">
+      <DependentUpon>MaterialRepotByInventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ekon\OrdersWithoutMaterialsForm.resx">
       <DependentUpon>OrdersWithoutMaterialsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -591,6 +614,9 @@
     <EmbeddedResource Include="MainFormEx.resx">
       <DependentUpon>MainFormEx.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow\MainFormWithLeftMenu.resx">
+      <DependentUpon>MainFormWithLeftMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialDesign\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -873,6 +899,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1383133237_33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\MainMenuIcons\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\MainMenuIcons\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\MainMenuIcons\materials.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\MainMenuIcons\orders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\MainMenuIcons\production.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\MainMenuIcons\reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\MainMenuIcons\staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\MainMenuIcons\technology.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\MainMenuIcons\icons8-search-16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

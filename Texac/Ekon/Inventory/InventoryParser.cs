@@ -27,6 +27,7 @@ namespace Texac.Ekon.Inventory
             InventoryEntity inventory = new InventoryEntity();
             inventory.entries = new List<InventoryEntry>();
 
+            int pos = 0;
             var lines = fileContent.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
             bool dataStarted = false;
             string currentOrderNumber = null;
@@ -101,9 +102,8 @@ namespace Texac.Ekon.Inventory
                         entry.endQuantity = ParseDouble(fields[11]);
                         if (fields.Length > 12)
                             entry.endCost = ParseDouble(fields[12]);
+                        entry.position = ++pos;
                         inventory.entries.Add(entry);
-
-
 
                     }
                     catch (Exception ex)

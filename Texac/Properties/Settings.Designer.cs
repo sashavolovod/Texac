@@ -84,7 +84,7 @@ namespace Texac.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.11.173:8080")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.2.9:8080")]
         public string api_path {
             get {
                 return ((string)(this["api_path"]));
@@ -114,6 +114,114 @@ namespace Texac.Properties {
         public string connStr2 {
             get {
                 return ((string)(this["connStr2"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MenuExpandedSections {
+            get {
+                return ((string)(this["MenuExpandedSections"]));
+            }
+            set {
+                this["MenuExpandedSections"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MenuHidden {
+            get {
+                return ((bool)(this["MenuHidden"]));
+            }
+            set {
+                this["MenuHidden"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("240")]
+        public int MenuWidth {
+            get {
+                return ((int)(this["MenuWidth"]));
+            }
+            set {
+                this["MenuWidth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
+        public string MainWindowState {
+            get {
+                return ((string)(this["MainWindowState"]));
+            }
+            set {
+                this["MainWindowState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int MainWindowX {
+            get {
+                return ((int)(this["MainWindowX"]));
+            }
+            set {
+                this["MainWindowX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int MainWindowY {
+            get {
+                return ((int)(this["MainWindowY"]));
+            }
+            set {
+                this["MainWindowY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1200")]
+        public int MainWindowW {
+            get {
+                return ((int)(this["MainWindowW"]));
+            }
+            set {
+                this["MainWindowW"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("800")]
+        public int MainWindowH {
+            get {
+                return ((int)(this["MainWindowH"]));
+            }
+            set {
+                this["MainWindowH"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UiState {
+            get {
+                return ((string)(this["UiState"]));
+            }
+            set {
+                this["UiState"] = value;
             }
         }
     }

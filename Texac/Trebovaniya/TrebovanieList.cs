@@ -23,6 +23,7 @@ namespace Texac.Trebovaniya
         public TrebovanieList()
         {
             InitializeComponent();
+            Name = "Требования";
             dgvTrebovania.AutoGenerateColumns = false;
             LoadData();
         }

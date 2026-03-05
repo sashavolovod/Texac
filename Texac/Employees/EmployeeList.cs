@@ -14,7 +14,7 @@ namespace Texac.Employees
         public EmployeeList()
         {
             InitializeComponent();
-
+            Name = "Список сотрудников";
             dept = createDeptDataTable();
             cbEmployee.ComboBox.DataSource = dept;
             cbEmployee.ComboBox.ValueMember = "Code";
