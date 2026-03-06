@@ -29,126 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label orderIdLabel;
-            System.Windows.Forms.Label factReadyDateLabel;
-            System.Windows.Forms.Label employeeLabel;
-            System.Windows.Forms.Label obozToLabel;
-            System.Windows.Forms.Label completedLabel;
-            System.Windows.Forms.Label remainingQtyLabel;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryControl));
             this.bnInventory = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
-            this.startCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creditCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.remainingQtyTextBox = new System.Windows.Forms.TextBox();
-            this.completedTextBox = new System.Windows.Forms.TextBox();
-            this.obozToTextBox = new System.Windows.Forms.TextBox();
-            this.employeeTextBox = new System.Windows.Forms.TextBox();
-            this.tbFactDateReady = new System.Windows.Forms.TextBox();
-            this.orderIdTextBox = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.cmsInventory = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.inventoryEntityIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsInventory = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.tsbImportFromInventory = new System.Windows.Forms.ToolStripButton();
-            this.tsbReport = new System.Windows.Forms.ToolStripButton();
-            this.orderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.debitQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.normQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creditQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsInventory = new System.Windows.Forms.BindingSource(this.components);
-            orderIdLabel = new System.Windows.Forms.Label();
-            factReadyDateLabel = new System.Windows.Forms.Label();
-            employeeLabel = new System.Windows.Forms.Label();
-            obozToLabel = new System.Windows.Forms.Label();
-            completedLabel = new System.Windows.Forms.Label();
-            remainingQtyLabel = new System.Windows.Forms.Label();
+            this.tsbOpen = new System.Windows.Forms.ToolStripButton();
+            this.tsbDelete = new System.Windows.Forms.ToolStripButton();
+            this.miAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.miOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.miDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.bnInventory)).BeginInit();
             this.bnInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.cmsInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsInventory)).BeginInit();
             this.SuspendLayout();
-            // 
-            // orderIdLabel
-            // 
-            orderIdLabel.AutoSize = true;
-            orderIdLabel.Location = new System.Drawing.Point(17, 21);
-            orderIdLabel.Name = "orderIdLabel";
-            orderIdLabel.Size = new System.Drawing.Size(91, 20);
-            orderIdLabel.TabIndex = 0;
-            orderIdLabel.Text = "NППЗаказа:";
-            // 
-            // factReadyDateLabel
-            // 
-            factReadyDateLabel.AutoSize = true;
-            factReadyDateLabel.Location = new System.Drawing.Point(17, 234);
-            factReadyDateLabel.Name = "factReadyDateLabel";
-            factReadyDateLabel.Size = new System.Drawing.Size(181, 20);
-            factReadyDateLabel.TabIndex = 2;
-            factReadyDateLabel.Text = "Факт. дата изготовления:";
-            // 
-            // employeeLabel
-            // 
-            employeeLabel.AutoSize = true;
-            employeeLabel.Location = new System.Drawing.Point(17, 163);
-            employeeLabel.Name = "employeeLabel";
-            employeeLabel.Size = new System.Drawing.Size(76, 20);
-            employeeLabel.TabIndex = 4;
-            employeeLabel.Text = "Технолог:";
-            // 
-            // obozToLabel
-            // 
-            obozToLabel.AutoSize = true;
-            obozToLabel.Location = new System.Drawing.Point(17, 92);
-            obozToLabel.Name = "obozToLabel";
-            obozToLabel.Size = new System.Drawing.Size(130, 20);
-            obozToLabel.TabIndex = 6;
-            obozToLabel.Text = "Обозначение ТО:";
-            // 
-            // completedLabel
-            // 
-            completedLabel.AutoSize = true;
-            completedLabel.Location = new System.Drawing.Point(17, 305);
-            completedLabel.Name = "completedLabel";
-            completedLabel.Size = new System.Drawing.Size(108, 20);
-            completedLabel.TabIndex = 8;
-            completedLabel.Text = "Выполнено, ч:";
-            // 
-            // remainingQtyLabel
-            // 
-            remainingQtyLabel.AutoSize = true;
-            remainingQtyLabel.Location = new System.Drawing.Point(17, 376);
-            remainingQtyLabel.Name = "remainingQtyLabel";
-            remainingQtyLabel.Size = new System.Drawing.Size(101, 20);
-            remainingQtyLabel.TabIndex = 10;
-            remainingQtyLabel.Text = "Не сдано, шт:";
             // 
             // bnInventory
             // 
@@ -167,7 +82,9 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.tsbImportFromInventory,
-            this.tsbReport});
+            this.tsbOpen,
+            this.toolStripSeparator1,
+            this.tsbDelete});
             this.bnInventory.Location = new System.Drawing.Point(0, 0);
             this.bnInventory.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bnInventory.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -210,6 +127,12 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // dgvInventory
             // 
             this.dgvInventory.AllowUserToAddRows = false;
@@ -217,163 +140,77 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInventory.AutoGenerateColumns = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderNumberDataGridViewTextBoxColumn,
-            this.codeDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.unitDataGridViewTextBoxColumn,
-            this.startQuantityDataGridViewTextBoxColumn,
-            this.startCost,
-            this.debitQuantityDataGridViewTextBoxColumn,
-            this.Column1,
-            this.normQuantityDataGridViewTextBoxColumn,
-            this.creditQuantityDataGridViewTextBoxColumn,
-            this.creditCost,
-            this.endQuantityDataGridViewTextBoxColumn,
-            this.endCost});
+            this.inventoryEntityIdDataGridViewTextBoxColumn,
+            this.periodDataGridViewTextBoxColumn,
+            this.startDateDataGridViewTextBoxColumn,
+            this.endDateDataGridViewTextBoxColumn});
+            this.dgvInventory.ContextMenuStrip = this.cmsInventory;
             this.dgvInventory.DataSource = this.bsInventory;
             this.dgvInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInventory.Location = new System.Drawing.Point(0, 25);
+            this.dgvInventory.MultiSelect = false;
             this.dgvInventory.Name = "dgvInventory";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventory.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvInventory.ReadOnly = true;
             this.dgvInventory.RowTemplate.Height = 28;
-            this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvInventory.Size = new System.Drawing.Size(1032, 542);
+            this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInventory.Size = new System.Drawing.Size(1275, 542);
             this.dgvInventory.TabIndex = 1;
-            this.dgvInventory.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvInventory_RowPrePaint);
+            this.dgvInventory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventory_CellDoubleClick);
+            this.dgvInventory.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvInventory_MouseDown);
             // 
-            // startCost
+            // cmsInventory
             // 
-            this.startCost.DataPropertyName = "startCost";
-            dataGridViewCellStyle4.Format = "#,0.##;-#,0.##;\'\'";
-            this.startCost.DefaultCellStyle = dataGridViewCellStyle4;
-            this.startCost.HeaderText = "Стоимость";
-            this.startCost.Name = "startCost";
+            this.cmsInventory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miAdd,
+            this.miOpen,
+            this.toolStripSeparator2,
+            this.miDelete});
+            this.cmsInventory.Name = "cmsInventory";
+            this.cmsInventory.Size = new System.Drawing.Size(152, 76);
             // 
-            // Column1
+            // inventoryEntityIdDataGridViewTextBoxColumn
             // 
-            this.Column1.DataPropertyName = "debitCost";
-            dataGridViewCellStyle6.Format = "#,0.##;-#,0.##;\'\'";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column1.HeaderText = "Стоимость";
-            this.Column1.Name = "Column1";
+            this.inventoryEntityIdDataGridViewTextBoxColumn.DataPropertyName = "inventoryEntityId";
+            this.inventoryEntityIdDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.inventoryEntityIdDataGridViewTextBoxColumn.Name = "inventoryEntityIdDataGridViewTextBoxColumn";
+            this.inventoryEntityIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.inventoryEntityIdDataGridViewTextBoxColumn.Width = 50;
             // 
-            // creditCost
+            // periodDataGridViewTextBoxColumn
             // 
-            this.creditCost.DataPropertyName = "creditCost";
-            dataGridViewCellStyle9.Format = "#,0.##;-#,0.##;\'\'";
-            this.creditCost.DefaultCellStyle = dataGridViewCellStyle9;
-            this.creditCost.HeaderText = "Стоимость";
-            this.creditCost.Name = "creditCost";
+            this.periodDataGridViewTextBoxColumn.DataPropertyName = "period";
+            this.periodDataGridViewTextBoxColumn.HeaderText = "Период";
+            this.periodDataGridViewTextBoxColumn.Name = "periodDataGridViewTextBoxColumn";
+            this.periodDataGridViewTextBoxColumn.ReadOnly = true;
+            this.periodDataGridViewTextBoxColumn.Width = 150;
             // 
-            // endCost
+            // startDateDataGridViewTextBoxColumn
             // 
-            this.endCost.DataPropertyName = "endCost";
-            dataGridViewCellStyle11.Format = "#,0.##;-#,0.##;\'\'";
-            this.endCost.DefaultCellStyle = dataGridViewCellStyle11;
-            this.endCost.HeaderText = "Стоимость";
-            this.endCost.Name = "endCost";
+            this.startDateDataGridViewTextBoxColumn.DataPropertyName = "startDate";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.startDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.startDateDataGridViewTextBoxColumn.HeaderText = "Начало периода";
+            this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
+            this.startDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.startDateDataGridViewTextBoxColumn.Width = 200;
             // 
-            // panel1
+            // endDateDataGridViewTextBoxColumn
             // 
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(remainingQtyLabel);
-            this.panel1.Controls.Add(this.remainingQtyTextBox);
-            this.panel1.Controls.Add(completedLabel);
-            this.panel1.Controls.Add(this.completedTextBox);
-            this.panel1.Controls.Add(obozToLabel);
-            this.panel1.Controls.Add(this.obozToTextBox);
-            this.panel1.Controls.Add(employeeLabel);
-            this.panel1.Controls.Add(this.employeeTextBox);
-            this.panel1.Controls.Add(this.tbFactDateReady);
-            this.panel1.Controls.Add(factReadyDateLabel);
-            this.panel1.Controls.Add(orderIdLabel);
-            this.panel1.Controls.Add(this.orderIdTextBox);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1032, 25);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(243, 542);
-            this.panel1.TabIndex = 2;
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "endDate";
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.endDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "Конец периода";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            this.endDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.endDateDataGridViewTextBoxColumn.Width = 200;
             // 
-            // remainingQtyTextBox
+            // bsInventory
             // 
-            this.remainingQtyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsInventory, "RemainingQty", true));
-            this.remainingQtyTextBox.Location = new System.Drawing.Point(13, 399);
-            this.remainingQtyTextBox.Name = "remainingQtyTextBox";
-            this.remainingQtyTextBox.ReadOnly = true;
-            this.remainingQtyTextBox.Size = new System.Drawing.Size(196, 27);
-            this.remainingQtyTextBox.TabIndex = 11;
-            // 
-            // completedTextBox
-            // 
-            this.completedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsInventory, "Completed", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "0.##"));
-            this.completedTextBox.Location = new System.Drawing.Point(13, 328);
-            this.completedTextBox.Name = "completedTextBox";
-            this.completedTextBox.ReadOnly = true;
-            this.completedTextBox.Size = new System.Drawing.Size(200, 27);
-            this.completedTextBox.TabIndex = 9;
-            // 
-            // obozToTextBox
-            // 
-            this.obozToTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsInventory, "ObozTo", true));
-            this.obozToTextBox.Location = new System.Drawing.Point(13, 115);
-            this.obozToTextBox.Name = "obozToTextBox";
-            this.obozToTextBox.ReadOnly = true;
-            this.obozToTextBox.Size = new System.Drawing.Size(204, 27);
-            this.obozToTextBox.TabIndex = 2;
-            // 
-            // employeeTextBox
-            // 
-            this.employeeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsInventory, "Employee", true));
-            this.employeeTextBox.Location = new System.Drawing.Point(13, 186);
-            this.employeeTextBox.Name = "employeeTextBox";
-            this.employeeTextBox.ReadOnly = true;
-            this.employeeTextBox.Size = new System.Drawing.Size(204, 27);
-            this.employeeTextBox.TabIndex = 3;
-            // 
-            // tbFactDateReady
-            // 
-            this.tbFactDateReady.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsInventory, "FactReadyDate", true));
-            this.tbFactDateReady.Location = new System.Drawing.Point(17, 257);
-            this.tbFactDateReady.Name = "tbFactDateReady";
-            this.tbFactDateReady.ReadOnly = true;
-            this.tbFactDateReady.Size = new System.Drawing.Size(204, 27);
-            this.tbFactDateReady.TabIndex = 4;
-            // 
-            // orderIdTextBox
-            // 
-            this.orderIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsInventory, "OrderId", true));
-            this.orderIdTextBox.Location = new System.Drawing.Point(17, 44);
-            this.orderIdTextBox.Name = "orderIdTextBox";
-            this.orderIdTextBox.ReadOnly = true;
-            this.orderIdTextBox.Size = new System.Drawing.Size(204, 27);
-            this.orderIdTextBox.TabIndex = 1;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(49, 469);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(108, 34);
-            this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "button1";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            this.bsInventory.DataSource = typeof(Texac.Ekon.Inventory.InventoryEntity);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -416,105 +253,64 @@
             this.tsbImportFromInventory.Image = ((System.Drawing.Image)(resources.GetObject("tsbImportFromInventory.Image")));
             this.tsbImportFromInventory.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbImportFromInventory.Name = "tsbImportFromInventory";
-            this.tsbImportFromInventory.Size = new System.Drawing.Size(81, 22);
-            this.tsbImportFromInventory.Text = "Загрузить";
-            this.tsbImportFromInventory.ToolTipText = "Загрузить из оборотной ведомости";
+            this.tsbImportFromInventory.Size = new System.Drawing.Size(70, 22);
+            this.tsbImportFromInventory.Text = "Создать";
+            this.tsbImportFromInventory.ToolTipText = "Создать новый отчет из оборотной ведомости";
             this.tsbImportFromInventory.Click += new System.EventHandler(this.tsbImportFromInventory_Click);
             // 
-            // tsbReport
+            // tsbOpen
             // 
-            this.tsbReport.Enabled = false;
-            this.tsbReport.Image = ((System.Drawing.Image)(resources.GetObject("tsbReport.Image")));
-            this.tsbReport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbReport.Name = "tsbReport";
-            this.tsbReport.Size = new System.Drawing.Size(144, 22);
-            this.tsbReport.Text = "Сформировать отчет";
-            this.tsbReport.Click += new System.EventHandler(this.tsbReport_Click);
+            this.tsbOpen.Image = ((System.Drawing.Image)(resources.GetObject("tsbOpen.Image")));
+            this.tsbOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbOpen.Name = "tsbOpen";
+            this.tsbOpen.Size = new System.Drawing.Size(107, 22);
+            this.tsbOpen.Text = "Открыть отчет";
+            this.tsbOpen.Click += new System.EventHandler(this.tsbOpen_Click);
             // 
-            // orderNumberDataGridViewTextBoxColumn
+            // tsbDelete
             // 
-            this.orderNumberDataGridViewTextBoxColumn.DataPropertyName = "orderNumber";
-            this.orderNumberDataGridViewTextBoxColumn.HeaderText = "Номер";
-            this.orderNumberDataGridViewTextBoxColumn.Name = "orderNumberDataGridViewTextBoxColumn";
+            this.tsbDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbDelete.Image")));
+            this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDelete.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
+            this.tsbDelete.Name = "tsbDelete";
+            this.tsbDelete.Size = new System.Drawing.Size(104, 22);
+            this.tsbDelete.Text = "Удалить отчет";
+            this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
-            // codeDataGridViewTextBoxColumn
+            // miAdd
             // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "Код";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            this.codeDataGridViewTextBoxColumn.Width = 80;
+            this.miAdd.Image = ((System.Drawing.Image)(resources.GetObject("miAdd.Image")));
+            this.miAdd.Name = "miAdd";
+            this.miAdd.Size = new System.Drawing.Size(151, 22);
+            this.miAdd.Text = "Создать";
+            this.miAdd.Click += new System.EventHandler(this.tsbImportFromInventory_Click);
             // 
-            // nameDataGridViewTextBoxColumn
+            // miOpen
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Наименование ТМЦ";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 300;
+            this.miOpen.Image = global::Texac.Properties.Resources.pencil_icon;
+            this.miOpen.Name = "miOpen";
+            this.miOpen.Size = new System.Drawing.Size(151, 22);
+            this.miOpen.Text = "Открыть";
+            this.miOpen.Click += new System.EventHandler(this.tsbOpen_Click);
             // 
-            // unitDataGridViewTextBoxColumn
+            // miDelete
             // 
-            this.unitDataGridViewTextBoxColumn.DataPropertyName = "unit";
-            this.unitDataGridViewTextBoxColumn.HeaderText = "Ед. изм.";
-            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.miDelete.Image = global::Texac.Properties.Resources.Close1;
+            this.miDelete.Name = "miDelete";
+            this.miDelete.Size = new System.Drawing.Size(151, 22);
+            this.miDelete.Text = "Удалить отчет";
+            this.miDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
-            // startQuantityDataGridViewTextBoxColumn
+            // toolStripSeparator2
             // 
-            this.startQuantityDataGridViewTextBoxColumn.DataPropertyName = "startQuantity";
-            dataGridViewCellStyle3.Format = "#,0.###;-#,0.###;\'\'";
-            dataGridViewCellStyle3.NullValue = null;
-            this.startQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.startQuantityDataGridViewTextBoxColumn.HeaderText = "Остаток на начало периода";
-            this.startQuantityDataGridViewTextBoxColumn.Name = "startQuantityDataGridViewTextBoxColumn";
-            this.startQuantityDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // debitQuantityDataGridViewTextBoxColumn
-            // 
-            this.debitQuantityDataGridViewTextBoxColumn.DataPropertyName = "debitQuantity";
-            dataGridViewCellStyle5.Format = "#,0.###;-#,0.###;\'\'";
-            dataGridViewCellStyle5.NullValue = null;
-            this.debitQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.debitQuantityDataGridViewTextBoxColumn.HeaderText = "Приход";
-            this.debitQuantityDataGridViewTextBoxColumn.Name = "debitQuantityDataGridViewTextBoxColumn";
-            // 
-            // normQuantityDataGridViewTextBoxColumn
-            // 
-            this.normQuantityDataGridViewTextBoxColumn.DataPropertyName = "normQuantity";
-            dataGridViewCellStyle7.Format = "#,0.##;-#,0.##;\'\'";
-            dataGridViewCellStyle7.NullValue = null;
-            this.normQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.normQuantityDataGridViewTextBoxColumn.HeaderText = "Расход по норме";
-            this.normQuantityDataGridViewTextBoxColumn.Name = "normQuantityDataGridViewTextBoxColumn";
-            this.normQuantityDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // creditQuantityDataGridViewTextBoxColumn
-            // 
-            this.creditQuantityDataGridViewTextBoxColumn.DataPropertyName = "creditQuantity";
-            dataGridViewCellStyle8.Format = "#,0.###;-#,0.###;\'\'";
-            dataGridViewCellStyle8.NullValue = null;
-            this.creditQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.creditQuantityDataGridViewTextBoxColumn.HeaderText = "Расход";
-            this.creditQuantityDataGridViewTextBoxColumn.Name = "creditQuantityDataGridViewTextBoxColumn";
-            // 
-            // endQuantityDataGridViewTextBoxColumn
-            // 
-            this.endQuantityDataGridViewTextBoxColumn.DataPropertyName = "endQuantity";
-            dataGridViewCellStyle10.Format = "#,0.###;-#,0.###;\'\'";
-            dataGridViewCellStyle10.NullValue = null;
-            this.endQuantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.endQuantityDataGridViewTextBoxColumn.HeaderText = "Остаток на конец периода";
-            this.endQuantityDataGridViewTextBoxColumn.Name = "endQuantityDataGridViewTextBoxColumn";
-            this.endQuantityDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // bsInventory
-            // 
-            this.bsInventory.DataSource = typeof(Texac.Ekon.Inventory.InventoryEntry);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(148, 6);
             // 
             // InventoryControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvInventory);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.bnInventory);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -524,8 +320,7 @@
             this.bnInventory.ResumeLayout(false);
             this.bnInventory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.cmsInventory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -545,14 +340,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.DataGridView dgvInventory;
         private System.Windows.Forms.ToolStripButton tsbImportFromInventory;
-        private System.Windows.Forms.ToolStripButton tsbReport;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox orderIdTextBox;
-        private System.Windows.Forms.TextBox tbFactDateReady;
-        private System.Windows.Forms.TextBox obozToTextBox;
-        private System.Windows.Forms.TextBox employeeTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
@@ -562,21 +350,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.TextBox remainingQtyTextBox;
-        private System.Windows.Forms.TextBox completedTextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startQuantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startCost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn debitQuantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn normQuantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn creditQuantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn creditCost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endQuantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn endCost;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DataGridView dgvInventory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inventoryEntityIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn periodDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripButton tsbOpen;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton tsbDelete;
+        private System.Windows.Forms.ContextMenuStrip cmsInventory;
+        private System.Windows.Forms.ToolStripMenuItem miAdd;
+        private System.Windows.Forms.ToolStripMenuItem miOpen;
+        private System.Windows.Forms.ToolStripMenuItem miDelete;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }

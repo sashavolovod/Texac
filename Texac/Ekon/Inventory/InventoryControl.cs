@@ -14,198 +14,110 @@ using Texac.Common;
 using Microsoft.Reporting.WinForms;
 using System.Net.Http;
 using Newtonsoft.Json;
+using Texac.Services;
+using Texac.Net;
 
 namespace Texac.Ekon.Inventory
 {
     public partial class InventoryControl : UserControl
     {
-        private InventoryEntity inventory;
+
+        private readonly InventoryService _inventoryService = new InventoryService();
+
         public InventoryControl()
         {
             InitializeComponent();
         }
 
-        private async void tsbImportFromInventory_Click(object sender, EventArgs e)
+
+        protected override async void OnLoad(EventArgs e)
         {
-            tsbReport.Enabled = false;
+            base.OnLoad(e);
 
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                // Настройка диалогового окна
-                openFileDialog.Filter = "Excel Files|*.xls;*.xlsx";
-                openFileDialog.Title = "Выберите файл Excel";
-                openFileDialog.Multiselect = false;
+            if (DesignMode)
+                return;
 
-                // Показать диалог и проверить, выбран ли файл
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        // Чтение Excel-файла
-                        string filePath = openFileDialog.FileName;
-                        string fileContent = GetFileContentFromExcel(filePath);
+            await LoadInventoryListAsync();
+        }
 
-                        if (!string.IsNullOrEmpty(fileContent))
-                        {
-                            // Парсинг содержимого файла
-                            Cursor = Cursors.WaitCursor;
-                            try
-                            {
-                                await LoadInventoryAsync(fileContent);
-                            }
-                            finally
-                            {
-                                Cursor = Cursors.Default;
-                                tsbReport.Enabled = true;
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Не удалось прочитать содержимое файла.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Ошибка при обработке файла: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
+        private async Task LoadInventoryListAsync()
+        {
+            var list = await UiApi.SafeCall(() => _inventoryService.GetListAsync(), "Ошибка загрузки списка документов");
+            if (list == null)
+                return;
+
+            bsInventory.DataSource = new SortableBindingList<InventoryEntity>(list);
+        }
+
+        private void tsbImportFromInventory_Click(object sender, EventArgs e)
+        {
+            actAddInventory();
+        }
+
+        private void dgvInventory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            actOpenInventory();
+        }
+
+        private void tsbDelete_Click(object sender, EventArgs e)
+        {
+            actDeleteInventory();
+        }
+
+        private void tsbOpen_Click(object sender, EventArgs e)
+        {
+            actOpenInventory();
+        }
+
+        private async void actAddInventory()
+        {
+            new MaterialReportByInventoryForm(-1).ShowDialog();
+            await LoadInventoryListAsync();
+        }
+
+        private void actOpenInventory()
+        {
+            if (bsInventory.Position < 0)
+                return;
+
+            var item = bsInventory.Current as InventoryEntity;
+            if (item == null)
+                return;
+            new MaterialReportByInventoryForm(item.inventoryEntityId).ShowDialog();
 
         }
 
-        private async Task LoadInventoryAsync(string fileContent)
+        private async void actDeleteInventory()
         {
-            inventory = await Task.Run(() =>
-                InventoryParser.ParseInventoryData(fileContent)
-            );
+            var item = bsInventory.Current as InventoryEntity;
+            if (item == null)
+                return;
 
-            bsInventory.DataSource =
-                new BindingList<InventoryEntry>(inventory.entries);
+            var result = MessageBox.Show( $"Удалить документ \"{item.period}\"?", "Texac", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result != DialogResult.Yes)
+                return;
+
+            bool ok = false;
+
+            await UiApi.SafeCall(async () =>  
+            { await _inventoryService.DeleteAsync(item.inventoryEntityId);
+                ok = true;
+            }, "Ошибка удаления документа");
+
+            if (ok)
+                await LoadInventoryListAsync();
         }
 
-        private string ConvertDataTableToText(DataTable table)
+        private void dgvInventory_MouseDown(object sender, MouseEventArgs e)
         {
-            var sb = new System.Text.StringBuilder();
-            foreach (DataRow row in table.Rows)
+            var dgv = sender as DataGridView;
+            var hti = dgv.HitTest(e.X, e.Y);
+            if (hti.RowIndex >= 0 && hti.ColumnIndex >= 0)
             {
-                var fields = row.ItemArray.Select(field => field?.ToString() ?? "");
-                sb.AppendLine(string.Join("\t", fields));
+                if (dgv.SelectedRows.Count == 1)
+                    dgv.CurrentCell = dgv[hti.ColumnIndex, hti.RowIndex];
             }
-            return sb.ToString();
-        }
-
-        public string GetFileContentFromExcel(string filePath)
-        {
-            try
-            {
-                // Регистрируем кодировку для корректной обработки русских символов
-                //System.Text.Encoding. RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-
-                using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
-                {
-                    using (var reader = ExcelReaderFactory.CreateReader(stream))
-                    {
-                        var result = reader.AsDataSet(new ExcelDataSetConfiguration
-                        {
-                            ConfigureDataTable = (_) => new ExcelDataTableConfiguration
-                            {
-                                UseHeaderRow = false // Заголовки обрабатываем вручную
-                            }
-                        });
-
-                        // Предполагаем, что данные на первом листе
-                        DataTable table = result.Tables[0];
-                        string fileContent = ConvertDataTableToText(table);
-                        return fileContent;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Ошибка при чтении Excel-файла: {ex.Message}");
-                return string.Empty;
-            }
-        }
-
-        private void dgvInventory_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            var row = dgvInventory.Rows[e.RowIndex];
-            var item = row.DataBoundItem as InventoryEntry;
-            if (item == null) return;
-
-            if (item.remainingQty == 0 &&
-                (
-                    item.factReadyDate!=null 
-                    &&
-                    !(item.factReadyDate >= inventory.startDate && item.factReadyDate <= inventory.endDate))
-                ) 
-            {
-                row.DefaultCellStyle.ForeColor = Color.Red;
-            }
-            else
-            {
-                row.DefaultCellStyle.ForeColor = Color.Black;
-            }
-        }
-
-        private void tsbReport_Click(object sender, EventArgs e)
-        {
-            bsInventory.EndEdit();
-            ReportParameter[] parameters = new ReportParameter[1];
-            parameters[0] = new ReportParameter("parPeriod", inventory.period);
-            ReportDataSource rds = new ReportDataSource("DataSet1", inventory.entries);
-            ReportForm reportForm = new ReportForm("Texac.Ekon.Inventory.InventoryReport.rdlc", "Материальный отчет ИнЦ", parameters, rds);
-            reportForm.Show();
-        }
-
-
-
-
-        public async Task<InventoryEntity> SaveInventoryReport()
-        {
-            if (inventory == null)
-                throw new ArgumentNullException(nameof(inventory));
-
-            using (HttpClient client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(Texac.Properties.Settings.Default.api_path);
-                client.DefaultRequestHeaders.Add("User-Agent", "TexacHttpClient");
-
-                string json = JsonConvert.SerializeObject(inventory, new JsonSerializerSettings
-                {
-                    NullValueHandling = NullValueHandling.Ignore,
-                    DateFormatString = "yyyy-MM-ddTHH:mm:ss"
-                });
-
-                using (var content = new StringContent(json, Encoding.UTF8, "application/json"))
-                {
-                    HttpResponseMessage response;
-
-                    // create vs update
-                    if (inventory.inventoryEntityId <= 0)
-                    {
-                        response = await client.PostAsync("/api/inventory_entities", content);
-                    }
-                    else
-                    {
-                        response = await client.PutAsync($"/api/inventory_entities/{inventory.inventoryEntityId}", content);
-                    }
-
-                    // если сервер вернул ошибку — покажем тело (очень помогает при отладке)
-                    string responseBody = await response.Content.ReadAsStringAsync();
-                    if (!response.IsSuccessStatusCode)
-                        throw new HttpRequestException($"SaveInventoryReport failed: {(int)response.StatusCode} {response.ReasonPhrase}\n{responseBody}");
-
-                    // ожидаем, что сервер возвращает сохранённую сущность (как у вас в других контроллерах)
-                    var saved = JsonConvert.DeserializeObject<InventoryEntity>(responseBody);
-                    return saved;
-                }
-            }
-        }
-
-        private async void btnSave_Click_1(object sender, EventArgs e)
-        {
-            SaveInventoryReport();
         }
     }
 }

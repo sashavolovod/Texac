@@ -67,10 +67,10 @@ namespace Texac
                 }
                 else {
                     // Application.Run(new MainFormWithLeftMenu());
-                    //  Application.Run(new MainForm());
+                      Application.Run(new MainForm());
                     // Application.Run(new Texac.PreparatorySection.MaterialForm());
 
-                     Application.Run(new MaterialRepotByInventoryForm(2));
+                    // Application.Run(new MaterialRepotByInventoryForm(2));
 
                 }
             } 
